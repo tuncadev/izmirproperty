@@ -1,0 +1,76 @@
+
+---Downloaded files---
+The import files for: Houzez34 were successfully downloaded!
+Initial max execution time = 60
+Files info:
+Site URL = http://izmirpropertyforsale.com
+Data file = /home/citymody/izmirpropertyforsale.com/www/wp-content/uploads/2023/09/demo-content-import-file_2023-09-19__11-34-12.xml
+Widget file = /home/citymody/izmirpropertyforsale.com/www/wp-content/uploads/2023/09/demo-widgets-import-file_2023-09-19__11-34-12.json
+Customizer file = not defined!
+Redux files:
+houzez_options -> /home/citymody/izmirpropertyforsale.com/www/wp-content/uploads/2023/09/demo-redux-import-file_0-2023-09-19__11-34-12.json 
+
+
+---ocdi/before_content_import---
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Default Sidebar : 
+
+Archives - No Title - Imported
+Categories - No Title - Imported
+Meta - No Title - Imported
+
+Property Listings : 
+
+HOUZEZ: Featured Properties - Immobili in evidenza - Imported
+HOUZEZ: Property Taxonomies - Tipologie - Imported
+HOUZEZ: Property Taxonomies - Aree - Imported
+
+Page Sidebar : 
+
+HOUZEZ: Featured Properties - immobili in evidenza - Imported
+HOUZEZ: Property Taxonomies - Tipologie - Imported
+HOUZEZ: Latest Posts - Ultimi Articoli - Imported
+
+Agency Sidebar : 
+
+HOUZEZ: Agency Search - Trova agenzie - Imported
+HOUZEZ: Featured Properties - Featured - Imported
+
+Agent Sidebar : 
+
+HOUZEZ: Agent Search - Trova un agente - Imported
+HOUZEZ: Recent View Properties - Immobili visitati - Imported
+
+Footer Area 1 : 
+
+HOUZEZ: Property Taxonomies - Cerca - Imported
+
+Footer Area 2 : 
+
+HOUZEZ: Contact Us - Contatti - Imported
+
+Footer Area 3 : 
+
+Mailchimp Sign-Up Form - Newsletter - Imported
+
+
+
+---Importing Redux settings---
+Redux settings import for: houzez_options finished successfully!
+
+---ocdi/after_import---
+
