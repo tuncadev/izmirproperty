@@ -29,7 +29,7 @@ define( 'DB_USER', 'citymody_izmirproperty' );
 define( 'DB_PASSWORD', 'zb3Fd-~74R' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'citymody.mysql.tools' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
