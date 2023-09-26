@@ -30,8 +30,8 @@ class REST
     /** @var array array of import options */
     private $importOptions;
 
-    /** @var object Handle Theme Object*/
-    protected $theme = null;
+    /** @var object Handle Target Product Object*/
+    protected $targetProduct = null;
 
     /**
      * Class Constructor Method
@@ -51,7 +51,17 @@ class REST
         $this->additionalFields = $additionalFields;
         $this->importOptions = $importOptions;
 
-        $this->theme = ThemeFactory::create();
+        $app = App::getInstance( false );
+
+        if ( !$app->getTargetProduct() ){
+            
+            $app->upgradeLegacyFeatures();
+
+        }
+
+        $app->createTargetProductInstance();
+
+        $this->targetProduct = $app->getTargetProduct();
 
         add_action('rest_api_init', array ( $this , 'realtynaIdxRestInit' ) );
 
@@ -66,16 +76,6 @@ class REST
      */
     public function realtynaIdxRestInit()
     {
-
-        register_rest_route( 
-            self::ENDPOINT , 
-            'purge_attachments_cron/(?P<token>[a-zA-Z0-9-]+)', 
-            array(
-                'methods' => 'GET',
-                'callback' => array( $this , 'purgeCron') ,
-                'permission_callback' => '__return_true',
-            )
-        );
 
         register_rest_route( 
             self::ENDPOINT , 
@@ -200,14 +200,20 @@ class REST
         
     }
 
-	public function purgeCron()
+	/**
+     * run purge function to remove attachements
+     * 
+     * @author Chris A <chris.a@realtyna.net>
+     *
+     * @return void
+     */
+    public function purgeCron()
 	{
 		
-		if ( $this->theme && is_object( $this->theme ) ){
+		if ( $this->targetProduct && is_object( $this->targetProduct ) ){
 			
-			if ( \method_exists( $this->theme , 'purgeAttachments' ) ){
-				error_log("purge in REST");
-				$this->theme->purgeAttachments();
+			if ( \method_exists( $this->targetProduct , 'purgeAttachments' ) ){
+				$this->targetProduct->purgeAttachments();
 				
 				wp_send_json_success( array(
 					'message' => __( 'done!' , REALTYNA_MLS_SYNC_SLUG )
@@ -220,7 +226,7 @@ class REST
 		}
 		
 	}
-	
+
     /**
      * Import Property handler for REST
      * 
@@ -238,12 +244,8 @@ class REST
 
         $result = false;
 
-        if ( $this->theme ){
-
-            $mapper = $this->theme->mapper( $this->token , $this->provider , $this->additionalFields , $this->importOptions );
-            $result = $mapper->importProperty( $request->get_json_params() );
-    
-        }
+        $mapper = new Mapper( $this->token , $this->provider , $this->additionalFields , $this->importOptions );
+        $result = $mapper->importProperty( $request->get_json_params() );
 
         if ( $result ){
 
@@ -501,9 +503,11 @@ class REST
 
         $this->requestValidation( $request );
 
-        if ( $this->theme ){
+        $errorMSG = __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG );
 
-            $property = $this->theme->property();
+        if ( $this->targetProduct && \method_exists( $this->targetProduct , 'property' )  ){
+
+            $property = $this->targetProduct->property();
 
             if ( \method_exists( $property , 'removeUnwantedProperties' ) ){
 
@@ -518,12 +522,16 @@ class REST
                     )
                 );
     
+            }else{
+                $errorMSG = __( 'Purge function issue' , REALTYNA_MLS_SYNC_SLUG );
             }
 
+        }else{
+            $errorMSG = __( 'Target Product issue detected.' , REALTYNA_MLS_SYNC_SLUG );
         }
 
         wp_send_json_error( array(
-            'message' => __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG )
+            'message' => $errorMSG
             ), 
             400
         );
@@ -545,9 +553,11 @@ class REST
     
         $this->requestAuthentication( $request );
 
-        if ( $this->theme ){
+        $errorMSG = __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG );
 
-            $property = $this->theme->property();
+        if ( $this->targetProduct && \method_exists( $this->targetProduct , 'property' )  ){
+
+            $property = $this->targetProduct->property();
 
             if ( \method_exists( $property , 'bulkRemoveProperties' ) ){
 
@@ -558,12 +568,16 @@ class REST
                     )
                 );
     
+            }else{
+                $errorMSG = __( 'Purge All function issue' , REALTYNA_MLS_SYNC_SLUG );
             }
 
+        }else{
+            $errorMSG = __( 'Target Product issue detected.' , REALTYNA_MLS_SYNC_SLUG );
         }
 
         wp_send_json_error( array(
-            'message' => __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG )
+            'message' => $errorMSG
             ), 
             400
         );
@@ -584,9 +598,11 @@ class REST
         
         $this->requestAuthentication( $request );
 
-        if ( $this->theme ){
+        $errorMSG = __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG );
 
-            $property = $this->theme->property();
+        if ( $this->targetProduct  && \method_exists( $this->targetProduct , 'property' ) ){
+
+            $property = $this->targetProduct->property();
 
             if ( \method_exists( $property , 'forcePurge' ) ){
 
@@ -597,12 +613,16 @@ class REST
                     )
                 );
     
+            }else{
+                $errorMSG = __( 'Force Purge function issue' , REALTYNA_MLS_SYNC_SLUG );
             }
 
+        }else{
+            $errorMSG = __( 'Target Product issue detected.' , REALTYNA_MLS_SYNC_SLUG );
         }
 
         wp_send_json_error( array(
-            'message' => __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG )
+            'message' => $errorMSG
             ), 
             400
         );
@@ -638,15 +658,17 @@ class REST
     public function clearApiCache( $request )
     {
 
+        $errorMSG = __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG );
+
         if ( \function_exists( 'delete_option' ) ){
 
             delete_option( REALTYNA_MLS_SYNC_SLUG . "-PROVIDERS" );
             delete_option( REALTYNA_MLS_SYNC_SLUG . "_UpdateTime" );
 			delete_option( REALTYNA_MLS_SYNC_SLUG . "-CACHE-NEXT-UPDATE" );
 
-            if ( $this->theme  && \method_exists( $this->theme , 'strtolowerCurrentTheme' ) ){
+            if ( $this->targetProduct  && \method_exists( $this->targetProduct , 'strtolowerCurrentProductName' ) ){
                     
-                delete_option( REALTYNA_MLS_SYNC_SLUG . "-" . $this->provider . "-" . $this->theme->strtolowerCurrentTheme() );
+                delete_option( REALTYNA_MLS_SYNC_SLUG . "-" . $this->provider . "-" . $this->targetProduct->strtolowerCurrentProductName() );
 
             }
 
@@ -655,10 +677,12 @@ class REST
                 )
             );
 
+        }else{
+            $errorMSG = __( 'WP functionality issue detected.' , REALTYNA_MLS_SYNC_SLUG );
         }
 
         wp_send_json_error( array(
-            'message' => __( 'Internal Error!' , REALTYNA_MLS_SYNC_SLUG )
+            'message' => $errorMSG
             ), 
             400
         );
@@ -683,19 +707,15 @@ class REST
 
         $imported = 0;
 
-        if ( $this->theme ){
+        $mapper = new Mapper( $this->token, $this->provider , $this->additionalFields , $this->importOptions );
 
-            $mapper = $this->theme->mapper( $this->token, $this->provider , $this->additionalFields , $this->importOptions );
-
-            if ( \method_exists( $mapper , 'importProperty' ) ){
+        if ( \method_exists( $mapper , 'importProperty' ) ){
                 
-                foreach ( $jsonProperties as $property ) {
+            foreach ( $jsonProperties as $property ) {
     
-                    if ( $mapper->importProperty( $property ) )
-                        $imported++;
+                if ( $mapper->importProperty( $property ) )
+                    $imported++;
             
-                }
-    
             }
     
         }
@@ -863,17 +883,25 @@ class REST
     private function incImportedListings( $incrementalValue = 0 )
     {
         
-        if ( $this->theme && $incrementalValue > 0 ){
+        if ( $incrementalValue > 0 ){
 
-            $property = $this->theme->property();
+            if ( $this->targetProduct && \method_exists( $this->targetProduct , 'property' ) ){
 
-            $totalImportedOptionKey = $property::REALTYNA_IDX_META_MARK . '_total_imported' ;
-            
-            $totals = $property->countTotalImportedListings();
+                $property = $this->targetProduct->property();
 
-            $totals += $incrementalValue ;
-
-            update_option( $totalImportedOptionKey , $totals );
+                if ( \method_exists( $property , 'countTotalImportedListings' ) ){
+    
+                    $totalImportedOptionKey = $property::REALTYNA_IDX_META_MARK . '_total_imported' ;
+                    
+                    $totals = $property->countTotalImportedListings();
+    
+                    $totals += $incrementalValue ;
+    
+                    update_option( $totalImportedOptionKey , $totals );
+    
+                }
+    
+            }
 
         }
 

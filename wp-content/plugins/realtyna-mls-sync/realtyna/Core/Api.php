@@ -75,7 +75,7 @@ class Api
      * 
      * @param string Token
      * 
-     * @return bool
+     * @return array
      */
     public function getProviders( $token )
     {
@@ -148,16 +148,16 @@ class Api
      * @author Chris A <chris.a@realtyna.net>
      * 
      * @param string Provider short name
-     * @param string selected theme for mapping
+     * @param string selected product for mapping
      * 
-     * @return array
+     * @return string|array
      */
-    private function getLocalProviderMapping( $provider, $theme )
+    private function getLocalProviderMapping( $provider, $product )
     {
 		
 		$content = '';
 		
-		$localFile = __DIR__ . DIRECTORY_SEPARATOR . "mappings" . DIRECTORY_SEPARATOR . "{$provider}.{$theme}.json";
+		$localFile = __DIR__ . DIRECTORY_SEPARATOR . "mappings" . DIRECTORY_SEPARATOR . "{$provider}.{$product}.json";
 		
 		if ( file_exists( $localFile ) ){
 			
@@ -168,7 +168,6 @@ class Api
 		return $content;
 	}
 
-
     /**
      * Get Provider Mapping data from API
      * 
@@ -176,33 +175,33 @@ class Api
      * 
      * @param string Token
      * @param string Provider short name
-     * @param string selected theme for mapping
+     * @param string selected product for mapping
      * 
      * @return array
      */
-    private function getProviderMapping( $token, $provider, $theme )
+    private function getProviderMapping( $token, $provider, $product )
     {
 
         $response = array( "status" => "ERROR" , "message" => __("Invalid Token!" , REALTYNA_MLS_SYNC_SLUG ) );
 
         if ( !empty( $token ) ){
 
-            $apiEndpoint = self::API_SERVER . "api/mapping/{$provider}/{$theme}";
+            $apiEndpoint = self::API_SERVER . "api/mapping/{$provider}/{$product}";
             
 			$cacheNextUpdate = get_option( REALTYNA_MLS_SYNC_SLUG . "-CACHE-NEXT-UPDATE" , '' );
 			
-			$responseBody = $this->getLocalProviderMapping( $provider , $theme );
+			$responseBody = $this->getLocalProviderMapping( $provider , $product );
 			
 			if ( empty( $responseBody ) ){
 				
 				if ( !empty( $cacheNextUpdate ) &&  time() < $cacheNextUpdate ){
 					
-					$responseBody = get_option( REALTYNA_MLS_SYNC_SLUG . "-" . $provider . "-" . $theme , '' );
+					$responseBody = get_option( REALTYNA_MLS_SYNC_SLUG . "-" . $provider . "-" . $product , '' );
 					
 				}
 					
 			}
-			
+            
             if ( empty( $responseBody ) ){
 
                 $request = wp_remote_get( $apiEndpoint, array(
@@ -224,8 +223,8 @@ class Api
 
                         $responseBody = $request['body'];
 
-                        update_option( REALTYNA_MLS_SYNC_SLUG . "-" . $provider . "-" . $theme , $responseBody );
-						update_option( REALTYNA_MLS_SYNC_SLUG . "-CACHE-NEXT-UPDATE" , strtotime("+1 day") );
+                        update_option( REALTYNA_MLS_SYNC_SLUG . "-" . $provider . "-" . $product , $responseBody );
+                        update_option( REALTYNA_MLS_SYNC_SLUG . "-CACHE-NEXT-UPDATE" , strtotime("+1 day") );
         
                         $response['status'] = "OK";
                         $response['message'] = $responseBody;
@@ -233,7 +232,7 @@ class Api
                     }
                 
                 }else{
-                    $response['message'] = __("Invalid Request!" , REALTYNA_MLS_SYNC_SLUG ) ;
+                    $response['message'] = __("Invalid Request!" , REALTYNA_MLS_SYNC_SLUG ) . " : " . $request->get_error_message();
                 }    
     
             }else{
@@ -256,18 +255,18 @@ class Api
      * 
      * @param string Token
      * @param string Provider short name
-     * @param string selected theme for mapping
+     * @param string selected product for mapping
      * 
      * @return string Mapping structure in Json encoded string
      */
-    public function getMapping( $token, $provider, $theme )
+    public function getMapping( $token, $provider, $product )
     {
 
-        if ( !empty( $token ) && !empty( $provider ) && !empty( $theme ) ){
+        if ( !empty( $token ) && !empty( $provider ) && !empty( $product ) ){
 
-            $providerMapping = $this->getProviderMapping( $token, $provider, $theme );
-			
-			if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG && defined( 'WP_DEBUG_MLS_SYNC' ) ){
+            $providerMapping = $this->getProviderMapping( $token, $provider, $product );
+        
+            if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG && defined( 'WP_DEBUG_MLS_SYNC' ) ){
 				error_log( "Mapping : " . var_export( $providerMapping , true ) );
 			}
 			
@@ -479,7 +478,7 @@ class Api
             $apiEndpoint = self::API_SERVER . 'api/payment-checkout/';
             
             $request = wp_remote_post( $apiEndpoint, array(
-                'timeout' => 60,
+                'timeout' => 120,
                 'headers' => array(
                     'Authorization' => 'Token ' . $token
                 ),

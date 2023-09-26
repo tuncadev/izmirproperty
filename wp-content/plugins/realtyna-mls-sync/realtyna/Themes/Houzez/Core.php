@@ -29,31 +29,6 @@ class Core extends \Realtyna\Sync\Core\Theme
     static public $url = 'https://houzez.co/';
 
     /**
-     * Get Theme Name
-     * 
-     * @author Chris A <chris.a@realtyna.net>
-     *
-     * @return string
-     */
-    static public function getName()
-    {
-        return self::$name;
-    }
-
-    /**
-     * Get Theme URL
-     * 
-     * @author Chris A <chris.a@realtyna.net>
-     *
-     * @return string
-     */
-    static public function getUrl()
-    {
-        return self::$url;
-    }
-
-
-    /**
      * Get new object of Agency
      * 
      * @author Chris A <chris.a@realtyna.net>
@@ -108,29 +83,6 @@ class Core extends \Realtyna\Sync\Core\Theme
     }
 
     /**
-     * Get Mapper Object
-     *
-     * @author Chris A <chris.a@realtyna.net>
-     * 
-     * @param string|null default Null
-     * @param string|null default Null
-     * @param array|null default Null
-     * @param array|null default Null
-     * 
-     * @return Mapper
-     */
-    public function mapper( $token = null , $provider = null , $addationMapping = null , $propertyImportOptions = null )
-    {
-
-        if ( Mapper::class ){
-
-            return new Mapper( $token , $provider , $addationMapping , $propertyImportOptions );
-
-        }
-
-    }
-
-    /**
      * Get Property Object
      * 
      * @author Chris A <chris.a@realtyna.net>
@@ -161,21 +113,21 @@ class Core extends \Realtyna\Sync\Core\Theme
      */
     public function purgeListings()
     {
-		error_log("Core: purgeListings");
+		
         if ( Property::class ){
 
             $houzezProperty = new Property();
 			 
 			if ( \method_exists(  $houzezProperty , 'purgeListings' ) ){
-				error_log("Core: purgeListings : call property");
+				
 				$houzezProperty->purgeListings();
 			 
-			}else error_log("Core: purgeListings : error call property");
+			}
 
-        }else error_log("Core: purgeListings : error in object");
+        }
 
     }
-	
+
     /**
      * Purge Attachments cron job
      * 
@@ -185,21 +137,20 @@ class Core extends \Realtyna\Sync\Core\Theme
      */
     public function purgeAttachments()
     {
-		error_log("Core: purgeAttachments");
+		
         if ( Property::class ){
 
             $houzezProperty = new Property();
 			 
 			if ( \method_exists(  $houzezProperty , 'purgeAttachments' ) ){
-				error_log("Core: purgeAttachments : call property");
+				
 				$houzezProperty->purgeAttachments();
 			 
-			}else error_log("Core: purgeAttachments : error call property");
+			}
 
-        }else error_log("Core: purgeAttachments : error in object");
+        }
 
     }
-	
 
     /**
      * Remove Imported Properties

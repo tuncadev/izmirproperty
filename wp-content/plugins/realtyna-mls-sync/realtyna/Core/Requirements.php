@@ -294,7 +294,8 @@ class Requirements
                 if ( $requirementSlug == 'max_execution_time' ){
 					return ( $requirement['current_value'] == 0 || $requirement['current_value'] == -1 || $requirement['current_value'] >= $requirement['required_value'] );
 				}else
-					return $requirement['current_value'] >= $requirement['required_value'];
+
+                    return $requirement['current_value'] >= $requirement['required_value'];
 
             }
 
@@ -342,7 +343,7 @@ class Requirements
                 if ( $requirementSlug == 'memory_limit' ){
 					return ( intval( $requirement['current_value'] ) == 0 || intval( $requirement['current_value'] ) == -1 ||  intval( $requirement['current_value'] ) >= intval( $requirement['required_value'] ) );
 				}else
-					return intval( $requirement['current_value'] ) >= intval( $requirement['required_value'] );
+                    return intval( $requirement['current_value'] ) >= intval( $requirement['required_value'] );
 
             }
 

@@ -97,7 +97,8 @@ class Property {
         
         $this->addField( 'post_status', 'Property Status', 'string', array(
             'publish' => "Published" ,
-            'pending' => "Pending Review"
+            'pending' => "Pending Review" ,
+            'draft' => "Draft"
         ) , '' , true , 'publish' , true );
 
         //MLS_KEY
@@ -408,13 +409,33 @@ class Property {
      */
     private function setValue( $slug , $value ){
 
-        if ( isset( $this->customFields[ $slug ] ) ){            
+        $result = false;
+
+		if ( isset( $this->customFields[ $slug ] ) ){
+
+			if ( !isset( $this->customFields[ $slug ]['idxMappedTo'] ) ){
+				
+				 $this->customFields[ $slug ] = array ( "idxMappedTo" => array( "value" => $value )  ) ;
+				
+				$result = true;
+				
+			}elseif ( !isset( $this->customFields[ $slug ]['idxMappedTo']['value'] ) ){
+				
+				 $this->customFields[ $slug ]['idxMappedTo'] = array( "value" => $value ) ;
+				
+				$result = true;
+				
+			}else{
             
-            return ( $this->customFields[ $slug ]['idxMappedTo']['value'] = $value );
+				$this->customFields[ $slug ]['idxMappedTo']['value'] = $value;
+				
+				$result = true;
+				
+			}
 
         }
 
-        return false;
+        return $result;
         
     }
 
@@ -455,7 +476,7 @@ class Property {
      * 
      * @param string Field Slug
      * 
-     * @return string|array|object
+     * @return mixed
      */
     private function getValuePostType( $fieldSlug ){
 
@@ -476,7 +497,7 @@ class Property {
 
             }
 
-        return '';
+        return false;
 
     }
 
@@ -536,10 +557,10 @@ class Property {
 
             if ( is_array( $this->customFields[ $fieldSlug ]['enumValues'] )){
 
-                foreach ( $this->customFields[ $fieldSlug ]['enumValues'] as $fieldId => $fieldSlug ){
+                foreach ( $this->customFields[ $fieldSlug ]['enumValues'] as $fieldId => $enumFieldSlug ){
                     
                     //Extract Values 
-                    $subField = $this->getValue( $fieldSlug ) ; 
+                    $subField = $this->getValue( $enumFieldSlug ) ; 
 
                     if ( !empty( $subField ) ){
 
@@ -1428,17 +1449,15 @@ class Property {
             
 			global $wpdb;
 			
-            $excludedIDs = "'" . implode( "','" , $excludedProperties['listing_ids'] ) . "'";
-
-            $sql = "DELETE FROM {$wpdb->prefix}posts WHERE `ID` IN ( SELECT `post_id` FROM {$wpdb->prefix}postmeta WHERE `meta_key` = '" . self::IDX_IDENTITY_FIELD . "' AND `meta_value` NOT IN (" . $excludedIDs . ") ) LIMIT " . self::REALTYNA_REMOVE_RECORDS_PER_REQUEST;
+            $sql = "DELETE FROM $wpdb->posts WHERE `ID` IN ( SELECT `post_id` FROM $wpdb->postmeta WHERE `meta_key` = %s AND `meta_value` NOT IN (" . implode( "," , $excludedProperties['listing_ids'] ) . ") ) LIMIT " . self::REALTYNA_REMOVE_RECORDS_PER_REQUEST;
     
-            $removedPosts = $wpdb->query( $sql );
+            $removedPosts = $wpdb->query( $wpdb->prepare( $sql , self::IDX_IDENTITY_FIELD ) );
 
             if ( $removedPosts > 0 ){
 
-                $sql = "DELETE FROM {$wpdb->prefix}postmeta WHERE `post_id` NOT IN ( SELECT `ID` FROM {$wpdb->prefix}posts ) ";
+                $sql = "DELETE FROM $wpdb->postmeta WHERE `post_id` NOT IN ( SELECT `ID` FROM $wpdb->posts ) ) LIMIT " . self::REALTYNA_REMOVE_RECORDS_PER_REQUEST;
 				    
-                $removedPostMeta = $wpdb->query( $sql );
+                $removedPostMeta = $wpdb->query( $wpdb->prepare( $sql , self::IDX_IDENTITY_FIELD ) );
     
             }
 
@@ -1520,31 +1539,26 @@ class Property {
 
         $idxIdentityFieldValue = $this->getValue( self::IDX_IDENTITY_FIELD );
 
-        // if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ){
+		$exists = false;
 
-        //     error_log( 'propertyExists -> ' . self::IDX_IDENTITY_FIELD . ' : ' . $idxIdentityFieldValue );
-            
-        // }
+        if ( !empty( $idxIdentityFieldValue ) && is_numeric( $idxIdentityFieldValue ) ){
+			
+			global $wpdb;
+			
+			if ( !empty( $wpdb ) ){
 
-        if ( !empty( $idxIdentityFieldValue ) ){
+				$totalsQuery =  "SELECT count(1) FROM `" . $wpdb->prefix . "postmeta` 
+										WHERE	`meta_key` = '" . self::IDX_IDENTITY_FIELD . "' AND
+												`meta_value` = '" . $idxIdentityFieldValue . "'
+								";
 
-            $meta = array();
-            $meta[] = array( "key" => self::REALTYNA_IDX_META_MARK , "value" => 1 , "compare" => "=" );
-            $meta[] = array( "key" => self::IDX_IDENTITY_FIELD , "value" => $idxIdentityFieldValue , "compare" => "=" );
-    
-            $postArgs = array(
-                'posts_per_page' => 1,
-                'post_type'   => self::THEME_POST_TYPE,
-                'meta_query' => $meta
-            );
-            
-            $posts = new \WP_Query( $postArgs );
-    
-            return $posts->have_posts();
+				$exists = ( $wpdb->get_var( $totalsQuery ) > 0 );
+
+			}
     
         }
 
-        return false;
+        return $exists;
 
     }
 
@@ -1555,37 +1569,24 @@ class Property {
      * 
      * @return int WordPress Post ID
      */
-    private function getPropertyIdByIdxIdentity(){
+    private function getPropertyIdByIdxIdentity()
+    {
+
+        global $wpdb;
 
         $idxIdentityFieldValue = $this->getValue( self::IDX_IDENTITY_FIELD );
+		
+        $postId = 0;
 
-        $postId = 0 ;
+        if ( !empty( $wpdb ) ){
 
-        if ( !empty( $idxIdentityFieldValue ) ){
+            $query =  "SELECT `post_id` FROM `" . $wpdb->prefix . "postmeta` 
+                                    WHERE `meta_key` = '" . self::IDX_IDENTITY_FIELD . "' AND `meta_value` = '" . $idxIdentityFieldValue . "'
+                            ";
 
-            $meta = array();
-            $meta[] = array( "key" => self::REALTYNA_IDX_META_MARK , "value" => 1 , "compare" => "=" );
-            $meta[] = array( "key" => self::IDX_IDENTITY_FIELD , "value" => $idxIdentityFieldValue , "compare" => "=" );
-    
-            $postArgs = array(
-                'posts_per_page' => 1,
-                'post_type'   => self::THEME_POST_TYPE,
-                'meta_query' => $meta
-            );
-            
-            $posts = new \WP_Query( $postArgs );
-    
-            if ( $posts->have_posts() ){
-                
-                $posts->the_post();
-    
-                $postId = get_the_ID();
-    
-                wp_reset_postdata();
-    
-            }
-    
-        }
+            $postId = $wpdb->get_var( $query );
+
+        }		
 
         return $postId;
 
@@ -1630,7 +1631,7 @@ class Property {
 
         if ( is_numeric( $postId ) && $postId > 0 ){
 
-            $this->deletePropertyAttachments( $postsId );
+            $this->deletePropertyAttachments( $postId );
 
             return !empty( wp_delete_post( $postId , true ) ) ;
             
@@ -1973,35 +1974,49 @@ class Property {
     private function updateProperty( $postId , $demo = true ){
 
         set_time_limit( 0 );
-        error_log("update process : #" . $postId);
-        $postTitle = str_replace( ',,' , ', ' , $this->getValue( 'post_title' ) );
-        $postSlug = $this->getValue( 'post_name' ) ?? str_replace("," , " " , $postTitle );
 
-        $arrayPost = array(
-            'ID' => $postId,
-            'post_content' => nl2br( $this->getValue( 'post_content' ) ),
-            'post_name'    => $postSlug ,
-            'post_title'   => $postTitle,
-            'post_type'    => self::THEME_POST_TYPE,
-            'post_status'  => $this->getValue( 'post_status' ),
-            'post_excerpt' => $this->getValue( 'post_excerpt' )
-        );
+        $result = false;
+		
+		if ( !empty( $postId ) && is_numeric( $postId ) ){
+			
+			$postTitle = str_replace( ',,' , ', ' , $this->getValue( 'post_title' ) );
+			$postSlug = $this->getValue( 'post_name' ) ?? str_replace("," , " " , $postTitle );
 
-        error_log("Post array: " . var_export( $arrayPost , true ) );
+			$arrayPost = array(
+				'ID' => $postId,
+				'post_content' => nl2br( $this->getValue( 'post_content' ) ),
+				'post_name'    => $postSlug ,
+				'post_title'   => $postTitle,
+				'post_type'    => self::THEME_POST_TYPE,
+				'post_status'  => $this->getValue( 'post_status' ),
+				'post_excerpt' => $this->getValue( 'post_excerpt' )
+			);
 
-        $postId = wp_update_post( $arrayPost , true );
+			$updateResult = wp_update_post( $arrayPost , true );
 
-        if ( $postId == 0 || is_wp_error($postId) )
-            return false;
+			if ( is_wp_error( $updateResult ) ){
+				
+				error_log("Update WP Error:" . var_export( $updateResult->get_error_message() , true ) );
+				
+			}elseif( empty( $updateResult ) ){
+				
+				error_log("Update Error:" . var_export( $updateResult , true ) );
+				
+			}elseif( is_numeric( $updateResult ) ){
 
-        //remove old metas from the property
-        $this->deletePropertyMetas( $postId );
-        
-        $this->insertPropertyMetas( $postId , $demo );
+				$result = true;
+				//remove old metas from the property
+				$this->deletePropertyMetas( $postId );
+				
+				$this->insertPropertyMetas( $postId , $demo );
 
-        $this->importedProperty++;
+				$this->importedProperty++;
+			
+			}
+		
+		}
 
-        return $postId;
+        return $result;
 
     }
 
@@ -2017,9 +2032,11 @@ class Property {
     private function insertProperty( $demo = true ){
 
         set_time_limit( 0 );
-        $postId = -1;
+
+		$result = false;
+        
         $postTitle = str_replace( ',,' , ', ' , $this->getValue( 'post_title' ) );
-        $postSlug = !empty( $this->getValue( 'post_name' ) ) ? $this->getValue( 'post_name' ) : str_replace("," , " " , $postTitle );
+        $postSlug = $this->getValue( 'post_name' ) ?? str_replace("," , " " , $postTitle );
         $postAuthor = $this->importOptions['post_author'] ?? 0;
 
         $arrayPost = array(
@@ -2031,32 +2048,29 @@ class Property {
             'post_excerpt' => $this->getValue( 'post_excerpt' ),
             'post_author'  => $postAuthor
         );
-        //error_log("post array:" . var_export( $arrayPost , true ) );
 
-        try{
+        $postId = wp_insert_post( $arrayPost );
 
-            $postId = wp_insert_post( $arrayPost , true );
 
-        }catch( Exception $e ) {
+		if ( is_wp_error( $postId ) ){
+				
+			error_log("Insert WP Error:" . var_export( $postId->get_error_message() , true ) );
+				
+		}elseif( empty( $postId ) ){
+				
+			error_log("Insert Error:" . var_export( $postId , true ) );
+				
+		}elseif( is_numeric( $postId ) ){
 
-            error_log("insertProperty erro:" . $e->getMessage() );
+			$result = $postId;
+				
+			$this->insertPropertyMetas( $postId , $demo );
 
-        }
+			$this->importedProperty++;
+			
+		}
 
-         if ( is_wp_error( $postId ) ) {
-             error_log( "insert erro: " . $postId->get_error_message() ) ;
-        }
-        
-        if ( $postId == 0 || is_wp_error($postId) )
-            return false;
-        
-        $this->insertPropertyMetas( $postId , $demo );
-
-        $this->update_after_import( $postId );
-
-        $this->importedProperty++;
-
-        return $postId;
+        return $result;
 
     }
 
