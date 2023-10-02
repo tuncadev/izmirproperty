@@ -21,7 +21,7 @@ $sticky_header = houzez_option('main-menu-sticky', 0);
 				<?php
 $currency_switcher_enable = houzez_option('currency_switcher_enable');
 $is_multi_currency = houzez_option('multi_currency');
-if( $currency_switcher_enable != 0 && $is_multi_currency != 1 ) {
+if( $is_multi_currency != 1 ) {
     if (class_exists('FCC_Rates')) {
 
         $supported_currencies = houzez_get_list_of_supported_currencies();
