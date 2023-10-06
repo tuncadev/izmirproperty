@@ -8,7 +8,7 @@ if(houzez_get_map_system() == 'google') {
 ?>
 <div class="property-overview-wrap property-overview-wrap-v2 property-section-wrap" id="property-overview-wrap">
 	<div class="block-wrap">
-		
+	asdasd
 		<div class="block-title-wrap d-flex justify-content-between align-items-center">
 			<h2><?php echo houzez_option('sps_overview', 'Overview'); ?></h2>
 		</div><!-- block-title-wrap -->
