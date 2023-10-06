@@ -59,8 +59,8 @@ $args = array(
     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
     'allow_sub_menu'       => true,
     // Show the sections below the admin menu item or not
-    'menu_title'           => esc_html__( 'Theme Options', 'houzez' ),
-    'page_title'           => esc_html__( 'Options Options', 'houzez' ),
+    'menu_title'           => esc_html__( 'Theme Options', 'houzez-child' ),
+    'page_title'           => esc_html__( 'Options Options', 'houzez-child' ),
     // You will need to generate a Google API key to use this feature.
     // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
     'google_api_key'       => '',
@@ -160,7 +160,7 @@ $args = array(
 $args['admin_bar_links'][] = array(
     'id'    => 'houzez-support',
     'href'  => 'https://favethemes.zendesk.com/hc/en-us/requests/new',
-    'title' => esc_html__( 'Support', 'houzez' ),
+    'title' => esc_html__( 'Support', 'houzez-child' ),
 );
 
 

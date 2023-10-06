@@ -9,8 +9,8 @@ class houzez_Code_Banner extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_code_banner', // Base ID
-			esc_html__( 'HOUZEZ: Code Banner', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'Paste your banner JS or Google Adsense code', 'houzez' ), ) // Args
+			esc_html__( 'HOUZEZ: Code Banner', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'Paste your banner JS or Google Adsense code', 'houzez-child' ), ) // Args
 		);
 		
 	}
@@ -88,16 +88,16 @@ class houzez_Code_Banner extends WP_Widget {
 		
 	?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'banner_code' ) ); ?>"><?php esc_html_e('JS or Google AdSense Code', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'banner_code' ) ); ?>"><?php esc_html_e('JS or Google AdSense Code', 'houzez-child'); ?></label>
 			<textarea id="<?php echo esc_attr( $this->get_field_id( 'banner_code' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'banner_code' ) ); ?>" class="widefat" style="height:70px;"><?php echo esc_textarea( $instance['banner_code'] ); ?></textarea>
 		</p>
         <p>
 			<input class="checkbox" type="checkbox" <?php if( $instance['hide_title'] == true ) echo 'checked'; ?> id="<?php echo esc_attr( $this->get_field_id( 'hide_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'hide_title' ) ); ?>" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'hide_title' ) ); ?>"><?php esc_html_e( 'Do not display the title', 'houzez' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'hide_title' ) ); ?>"><?php esc_html_e( 'Do not display the title', 'houzez-child' ); ?></label>
 		</p>
 	<?php
 	}

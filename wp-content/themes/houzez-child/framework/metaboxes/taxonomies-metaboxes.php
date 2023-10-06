@@ -6,14 +6,14 @@ if( !function_exists('houzez_taxonomies_metaboxes') ) {
         
         $meta_boxes[] = array(
             'id'        => 'houzez_taxonomies',
-            'title'     => esc_html__('Other Settings', 'houzez' ),
+            'title'     => esc_html__('Other Settings', 'houzez-child' ),
             'taxonomies' => array('property_status', 'property_type', 'property_label', 'property_country', 'property_state', 'property_city', 'property_area'),
             
 
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Image', 'houzez' ),
-                    'desc'      => esc_html__('Recommended image size 770 x 700 px', 'houzez' ),
+                    'name'      => esc_html__('Image', 'houzez-child' ),
+                    'desc'      => esc_html__('Recommended image size 770 x 700 px', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'taxonomy_img',
                     'type'      => 'image_advanced',
                     'max_file_uploads' => 1,
@@ -30,17 +30,17 @@ if( !function_exists('houzez_taxonomies_metaboxes') ) {
 
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Map Marker Icon', 'houzez' ),
+                    'name'      => esc_html__('Map Marker Icon', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'marker_icon',
-                    'desc'      => esc_html__('Recommended image size 44 x 56 px', 'houzez' ),
+                    'desc'      => esc_html__('Recommended image size 44 x 56 px', 'houzez-child' ),
                     'type'      => 'image_advanced',
                     'class'      => 'houzez_full_width',
                     'max_file_uploads' => 1,
                 ),
                 array(
-                    'name'      => esc_html__('Map Marker Retina Icon', 'houzez' ),
+                    'name'      => esc_html__('Map Marker Retina Icon', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'marker_retina_icon',
-                    'desc'      => esc_html__('Recommended image size 88 x 112 px', 'houzez' ),
+                    'desc'      => esc_html__('Recommended image size 88 x 112 px', 'houzez-child' ),
                     'type'      => 'image_advanced',
                     'class'      => 'houzez_full_width',
                     'max_file_uploads' => 1,
@@ -56,10 +56,10 @@ if( !function_exists('houzez_taxonomies_metaboxes') ) {
 
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Custom Link', 'houzez' ),
+                    'name'      => esc_html__('Custom Link', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'prop_taxonomy_custom_link',
                     'type'      => 'text',
-                    'desc' => esc_html__('Enter a custom link for this taxonomy if you want to link it with an external site', 'houzez'),
+                    'desc' => esc_html__('Enter a custom link for this taxonomy if you want to link it with an external site', 'houzez-child'),
                 ),
                 
             )
@@ -72,29 +72,29 @@ if( !function_exists('houzez_taxonomies_metaboxes') ) {
             
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Icon Type', 'houzez' ),
+                    'name'      => esc_html__('Icon Type', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'feature_icon_type',
                     'type'      => 'select',
                     'options'   => array(
-                        'fontawesome' => esc_html__('Fontawesome v5', 'houzez' ),
-                        'custom' => esc_html__('Custom Image', 'houzez' ),
+                        'fontawesome' => esc_html__('Fontawesome v5', 'houzez-child' ),
+                        'custom' => esc_html__('Custom Image', 'houzez-child' ),
                     ),
                     'std'       => array( 'fontawesome' ),
                     'desc'      => '',
                 ),
                 array(
-                    'name'      => esc_html__('Icon', 'houzez' ),
+                    'name'      => esc_html__('Icon', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'prop_features_icon',
                     'type'      => 'text',
-                    'placeholder' => esc_html__('Enter the fontawesome icon class', 'houzez'),
+                    'placeholder' => esc_html__('Enter the fontawesome icon class', 'houzez-child'),
                     'visible' => array( $houzez_prefix.'feature_icon_type', '=', 'fontawesome' ),
                 ),
                 array(
-                    'name'      => esc_html__('Icon', 'houzez' ),
+                    'name'      => esc_html__('Icon', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'feature_img_icon',
                     'type'      => 'image_advanced',
                     'max_file_uploads' => 1,
-                    'desc'      =>esc_html__('Upload icon', 'houzez' ),
+                    'desc'      =>esc_html__('Upload icon', 'houzez-child' ),
                     'visible' => array( $houzez_prefix.'feature_icon_type', '=', 'custom' ),
                 )
                 

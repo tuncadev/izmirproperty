@@ -48,7 +48,7 @@ get_header();
             <?php
             if( empty( $fav_ids ) ) { ?>
             <div class="dashboard-content-block">
-                <?php echo esc_html__("You don't have any favorite listings yet!", 'houzez'); ?>
+                <?php echo esc_html__("You don't have any favorite listings yet!", 'houzez-child'); ?>
             </div>
 
             <?php 
@@ -57,12 +57,12 @@ get_header();
             <table class="dashboard-table dashboard-table-properties table-lined responsive-table">
                 <thead>
                     <tr>
-                        <th><?php echo esc_html__('Thumbnail', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Title', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Type', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Status', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Price', 'houzez'); ?></th>
-                        <th class="action-col"><?php echo esc_html__('Actions', 'houzez'); ?></th>
+                        <th><?php echo esc_html__('Thumbnail', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Title', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Type', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Status', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Price', 'houzez-child'); ?></th>
+                        <th class="action-col"><?php echo esc_html__('Actions', 'houzez-child'); ?></th>
                     </tr>
                 </thead>
                 <tbody>

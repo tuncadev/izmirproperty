@@ -15,8 +15,8 @@ class HOUZEZ_properties_viewed extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_properties_viewed', // Base ID
-			esc_html__( 'HOUZEZ: Recent View Properties', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'Show properties Recently viewed properties', 'houzez' ), 'classname' => 'widget-properties') // Args
+			esc_html__( 'HOUZEZ: Recent View Properties', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'Show properties Recently viewed properties', 'houzez-child' ), 'classname' => 'widget-properties') // Args
 		);
 		
 	}
@@ -123,11 +123,11 @@ class HOUZEZ_properties_viewed extends WP_Widget {
 		
 	?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"><?php esc_html_e('Maximum posts to show:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"><?php esc_html_e('Maximum posts to show:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'items_num' ) ); ?>" value="<?php echo esc_attr( $instance['items_num'] ); ?>" size="1" />
 		</p>
 		

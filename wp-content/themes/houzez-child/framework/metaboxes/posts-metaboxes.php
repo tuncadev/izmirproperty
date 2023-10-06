@@ -6,14 +6,14 @@ if( !function_exists('houzez_posts_metaboxes') ) {
         
         $meta_boxes[] = array(
             'id' => 'fave_format_gallery',
-            'title' => esc_html__('Gallery Format', 'houzez' ),
+            'title' => esc_html__('Gallery Format', 'houzez-child' ),
             'post_types' => array( 'post' ),
             'context' => 'normal',
             'priority' => 'high',
 
             'fields' => array(
                 array(
-                    'name' => esc_html__('Upload Gallery Images ', 'houzez' ),
+                    'name' => esc_html__('Upload Gallery Images ', 'houzez-child' ),
                     'desc' => '',
                     'id' => $houzez_prefix . 'gallery_posts',
                     'type' => 'image_advanced',
@@ -24,38 +24,38 @@ if( !function_exists('houzez_posts_metaboxes') ) {
 
         $meta_boxes[] = array(
             'id' => 'fave_format_video',
-            'title' => esc_html__('Video Format', 'houzez' ),
+            'title' => esc_html__('Video Format', 'houzez-child' ),
             'pages' => array( 'post' ),
             'context' => 'normal',
             'priority' => 'high',
 
             'fields' => array(
                 array(
-                    'name' => esc_html__('Add the video URL', 'houzez' ),
+                    'name' => esc_html__('Add the video URL', 'houzez-child' ),
                     'desc' => '',
                     'id' => $houzez_prefix . 'video_post',
                     'type' => 'text',
                     'std' => '',
-                    'desc'  => __('Exmaple https://vimeo.com/120596335', 'houzez' )
+                    'desc'  => __('Exmaple https://vimeo.com/120596335', 'houzez-child' )
                 )
             )
         );
 
         $meta_boxes[] = array(
             'id' => 'fave_format_audio',
-            'title' => esc_html__('Audio Format', 'houzez' ),
+            'title' => esc_html__('Audio Format', 'houzez-child' ),
             'pages' => array( 'post' ),
             'context' => 'normal',
             'priority' => 'high',
 
             'fields' => array(
                 array(
-                    'name' => esc_html__('Add SoundCloud Audio', 'houzez' ),
+                    'name' => esc_html__('Add SoundCloud Audio', 'houzez-child' ),
                     'desc' => '',
                     'id' => $houzez_prefix . 'audio_post',
                     'type' => 'text',
                     'std' => '',
-                    'desc'  => esc_html__('Paste the page URL from SoundCloud', 'houzez' )
+                    'desc'  => esc_html__('Paste the page URL from SoundCloud', 'houzez-child' )
                 )
             )
         );

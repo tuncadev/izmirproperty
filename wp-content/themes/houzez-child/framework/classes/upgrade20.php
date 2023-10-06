@@ -85,7 +85,7 @@ if ( ! class_exists( 'Houzez_upgrade_20' ) ) {
 		 */
 		public function admin_menus() {
 
-			add_theme_page( esc_html__( 'Upgrade 2.0', 'houzez' ), esc_html__( 'Upgrade 2.0', 'houzez' ), 'manage_options', $this->page_slug, array(
+			add_theme_page( esc_html__( 'Upgrade 2.0', 'houzez-child' ), esc_html__( 'Upgrade 2.0', 'houzez-child' ), 'manage_options', $this->page_slug, array(
 					$this,
 					'upgrade_wizard',
 				) );

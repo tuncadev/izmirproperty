@@ -291,11 +291,11 @@ if( !function_exists('houzez_check_saved_search') ) :
                     $value_message = fave_option('houzez_matching_submissions');
                     $value_subject = fave_option('houzez_subject_matching_submissions');
 
-                    do_action( 'wpml_register_single_string', 'houzez', 'houzez_email_' . $value_message, $value_message );
-                    do_action( 'wpml_register_single_string', 'houzez', 'houzez_email_subject_' . $value_subject, $value_subject );
+                    do_action( 'wpml_register_single_string', 'houzez-child', 'houzez_email_' . $value_message, $value_message );
+                    do_action( 'wpml_register_single_string', 'houzez-child', 'houzez_email_subject_' . $value_subject, $value_subject );
 
-                    $value_message = apply_filters('wpml_translate_single_string', $value_message, 'houzez', 'houzez_email_' . $value_message );
-                    $value_subject = apply_filters('wpml_translate_single_string', $value_subject, 'houzez', 'houzez_email_subject_' . $value_subject );
+                    $value_message = apply_filters('wpml_translate_single_string', $value_message, 'houzez-child', 'houzez_email_' . $value_message );
+                    $value_subject = apply_filters('wpml_translate_single_string', $value_subject, 'houzez-child', 'houzez_email_subject_' . $value_subject );
 
                     houzez_emails_filter_replace_2( $user_email, $value_message, $value_subject, $args);
 
@@ -440,7 +440,7 @@ if( !function_exists('houzez_compose_send_email') ):
             $mail_content .= '</div>';
             $mail_content .= '</div>';
             $mail_content .= '</div>';
-            $mail_content .= "\r\n".esc_html__('If you do not wish to be notified anymore please enter your account and delete the saved search.Thank you!', 'houzez');
+            $mail_content .= "\r\n".esc_html__('If you do not wish to be notified anymore please enter your account and delete the saved search.Thank you!', 'houzez-child');
             $mail_content .= '</div>';
             
         }else{

@@ -390,13 +390,13 @@ if( !function_exists('houzez_ajax_update_profile') ):
             $useremail = sanitize_email( $_POST['useremail'] );
             $useremail = is_email( $useremail );
             if( !$useremail ) {
-                echo json_encode( array( 'success' => false, 'msg' => esc_html__('The Email you entered is not valid. Please try again.', 'houzez') ) );
+                echo json_encode( array( 'success' => false, 'msg' => esc_html__('The Email you entered is not valid. Please try again.', 'houzez-child') ) );
                 wp_die();
             } else {
                 $email_exists = email_exists( $useremail );
                 if( $email_exists ) {
                     if( $email_exists != $userID ) {
-                        echo json_encode( array( 'success' => false, 'msg' => esc_html__('This Email is already used by another user. Please try a different one.', 'houzez') ) );
+                        echo json_encode( array( 'success' => false, 'msg' => esc_html__('This Email is already used by another user. Please try a different one.', 'houzez-child') ) );
                         wp_die();
                     }
                 } else {
@@ -422,7 +422,7 @@ if( !function_exists('houzez_ajax_update_profile') ):
 
             }
         }
-        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Profile updated', 'houzez') ) );
+        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Profile updated', 'houzez-child') ) );
         die();
     }
 endif; // end   houzez_ajax_update_profile
@@ -553,11 +553,11 @@ if( !function_exists('houzez_ajax_password_reset') ):
         $confirmpass    = wp_kses( $_POST['confirmpass'], $allowed_html );
 
         if( $newpass == '' || $confirmpass == '' ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('New password or confirm password is blank', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('New password or confirm password is blank', 'houzez-child') ) );
             die();
         }
         if( $newpass != $confirmpass ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Passwords do not match', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Passwords do not match', 'houzez-child') ) );
             die();
         }
 
@@ -566,9 +566,9 @@ if( !function_exists('houzez_ajax_password_reset') ):
         $user = get_user_by( 'id', $userID );
         if( $user ) {
             wp_set_password( $newpass, $userID );
-            echo json_encode( array( 'success' => true, 'msg' => esc_html__('Password Updated', 'houzez') ) );
+            echo json_encode( array( 'success' => true, 'msg' => esc_html__('Password Updated', 'houzez-child') ) );
         } else {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Something went wrong', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Something went wrong', 'houzez-child') ) );
         }
         die();
     }
@@ -651,7 +651,7 @@ if ( !function_exists( 'houzez_delete_account' ) ) :
         
         houzez_delete_user_searches($userID);
 
-        echo json_encode( array( 'success' => true, 'msg' => esc_html__('success', 'houzez') ) );
+        echo json_encode( array( 'success' => true, 'msg' => esc_html__('success', 'houzez-child') ) );
         wp_die();
     }
 
@@ -720,7 +720,7 @@ if ( !function_exists( 'houzez_delete_agency_agent' ) ) :
             wp_delete_post( $agent_cpt_id, true );
         }
 
-        echo json_encode( array( 'success' => true, 'msg' => esc_html__('success', 'houzez') ) );
+        echo json_encode( array( 'success' => true, 'msg' => esc_html__('success', 'houzez-child') ) );
         wp_die();
     }
 
@@ -739,7 +739,7 @@ if(!function_exists('houzez_change_user_currency')) {
 
             update_user_meta( $userID, 'fave_author_currency', $_POST['currency']);
 
-            $ajax_response = array('success' => true, 'reason' => esc_html__('Currency updated!', 'houzez'));
+            $ajax_response = array('success' => true, 'reason' => esc_html__('Currency updated!', 'houzez-child'));
 
             echo json_encode($ajax_response);
 
@@ -776,11 +776,11 @@ if ( !function_exists( 'houzez_change_user_role' ) ) :
 
             if ( is_wp_error( $user_id ) ) {
 
-                $ajax_response = array('success' => false, 'reason' => esc_html__('Role not updated!', 'houzez'));
+                $ajax_response = array('success' => false, 'reason' => esc_html__('Role not updated!', 'houzez-child'));
 
             } else {
 
-                $ajax_response = array('success' => true, 'reason' => esc_html__('Role updated!', 'houzez'));
+                $ajax_response = array('success' => true, 'reason' => esc_html__('Role updated!', 'houzez-child'));
 
                 if( $role == 'houzez_agent' || $role == 'houzez_agency' ) {
                     if( $role == 'houzez_agency' ) {
@@ -803,7 +803,7 @@ if ( !function_exists( 'houzez_change_user_role' ) ) :
 
         } else {
 
-            $ajax_response = array('success' => false, 'reason' => esc_html__('Role not updated!', 'houzez'));
+            $ajax_response = array('success' => false, 'reason' => esc_html__('Role not updated!', 'houzez-child'));
 
         }
 
@@ -909,25 +909,25 @@ if( !function_exists('houzez_reset_password_2') ) {
         if ( ! $user || is_wp_error( $user ) ) {
 
             if ($user && $user->get_error_code() === 'expired_key') {
-                echo json_encode(array('success' => false, 'msg' => esc_html__('Reset password Session key expired.', 'houzez')));
+                echo json_encode(array('success' => false, 'msg' => esc_html__('Reset password Session key expired.', 'houzez-child')));
                 die();
             } else {
-                echo json_encode(array('success' => false, 'msg' => esc_html__('Invalid password reset Key', 'houzez')));
+                echo json_encode(array('success' => false, 'msg' => esc_html__('Invalid password reset Key', 'houzez-child')));
                 die();
             }
         }
 
         if( $newpass == '' || $confirmpass == '' ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('New password or confirm password is blank', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('New password or confirm password is blank', 'houzez-child') ) );
             die();
         }
         if( $newpass != $confirmpass ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Passwords do not match', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Passwords do not match', 'houzez-child') ) );
             die();
         }
 
         reset_password( $user, $newpass );
-        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Password reset successfully, you can login now.', 'houzez') ) );
+        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Password reset successfully, you can login now.', 'houzez-child') ) );
         die();
     }
 }
@@ -943,20 +943,20 @@ if ( ! function_exists( 'houzez_author_info' ) ) :
         $current_user = wp_get_current_user();
 
 
-        $contactmethods['fave_author_title']          = esc_html__( 'Title/Position', 'houzez' );
-        $contactmethods['fave_author_company']        = esc_html__( 'Company Name', 'houzez' );
-        $contactmethods['fave_author_phone']          = esc_html__( 'Phone', 'houzez' );
-        $contactmethods['fave_author_fax']            = esc_html__( 'Fax Number', 'houzez' );
-        $contactmethods['fave_author_mobile']         = esc_html__( 'Mobile', 'houzez' );
-        $contactmethods['fave_author_skype']          = esc_html__( 'Skype', 'houzez' );
-        $contactmethods['fave_author_custom_picture'] = esc_html__( 'Picture Url', 'houzez' );
+        $contactmethods['fave_author_title']          = esc_html__( 'Title/Position', 'houzez-child' );
+        $contactmethods['fave_author_company']        = esc_html__( 'Company Name', 'houzez-child' );
+        $contactmethods['fave_author_phone']          = esc_html__( 'Phone', 'houzez-child' );
+        $contactmethods['fave_author_fax']            = esc_html__( 'Fax Number', 'houzez-child' );
+        $contactmethods['fave_author_mobile']         = esc_html__( 'Mobile', 'houzez-child' );
+        $contactmethods['fave_author_skype']          = esc_html__( 'Skype', 'houzez-child' );
+        $contactmethods['fave_author_custom_picture'] = esc_html__( 'Picture Url', 'houzez-child' );
 
         //if ( in_array('houzez_agency', (array)$current_user->roles) ) {
-        $contactmethods['fave_author_agency_id'] = esc_html__( 'Agency ID', 'houzez' );
+        $contactmethods['fave_author_agency_id'] = esc_html__( 'Agency ID', 'houzez-child' );
         //}
 
         //if ( in_array('houzez_agent', (array)$current_user->roles) || in_array('author', (array)$current_user->roles) || in_array('administrator', (array)$current_user->roles) ) {
-        $contactmethods['fave_author_agent_id'] = esc_html__( 'User Agent ID', 'houzez' );
+        $contactmethods['fave_author_agent_id'] = esc_html__( 'User Agent ID', 'houzez-child' );
         //}
 
         $contactmethods['package_id']                   = 'Package Id';
@@ -965,16 +965,16 @@ if ( ! function_exists( 'houzez_author_info' ) ) :
         $contactmethods['package_featured_listings']    = 'Featured Listings available';
         $contactmethods['fave_paypal_profile']          = 'Paypal Recuring Profile';
         $contactmethods['fave_stripe_user_profile']     = 'Stripe Consumer Profile';
-        $contactmethods['fave_author_facebook']       = esc_html__( 'Facebook', 'houzez' );
-        $contactmethods['fave_author_linkedin']       = esc_html__( 'LinkedIn', 'houzez' );
-        $contactmethods['fave_author_twitter']        = esc_html__( 'Twitter', 'houzez' );
-        $contactmethods['fave_author_pinterest']      = esc_html__( 'Pinterest', 'houzez' );
-        $contactmethods['fave_author_instagram']      = esc_html__( 'Instagram', 'houzez' );
-        $contactmethods['fave_author_youtube']        = esc_html__( 'Youtube', 'houzez' );
-        $contactmethods['fave_author_tiktok']        = esc_html__( 'TikTok', 'houzez' );
-        $contactmethods['fave_author_telegram']        = esc_html__( 'Telegram', 'houzez' );
-        $contactmethods['fave_author_vimeo']        = esc_html__( 'Vimeo', 'houzez' );
-        $contactmethods['fave_author_googleplus']     = esc_html__( 'Google Plus', 'houzez' );
+        $contactmethods['fave_author_facebook']       = esc_html__( 'Facebook', 'houzez-child' );
+        $contactmethods['fave_author_linkedin']       = esc_html__( 'LinkedIn', 'houzez-child' );
+        $contactmethods['fave_author_twitter']        = esc_html__( 'Twitter', 'houzez-child' );
+        $contactmethods['fave_author_pinterest']      = esc_html__( 'Pinterest', 'houzez-child' );
+        $contactmethods['fave_author_instagram']      = esc_html__( 'Instagram', 'houzez-child' );
+        $contactmethods['fave_author_youtube']        = esc_html__( 'Youtube', 'houzez-child' );
+        $contactmethods['fave_author_tiktok']        = esc_html__( 'TikTok', 'houzez-child' );
+        $contactmethods['fave_author_telegram']        = esc_html__( 'Telegram', 'houzez-child' );
+        $contactmethods['fave_author_vimeo']        = esc_html__( 'Vimeo', 'houzez-child' );
+        $contactmethods['fave_author_googleplus']     = esc_html__( 'Google Plus', 'houzez-child' );
 
         return $contactmethods;
     }
@@ -1115,19 +1115,19 @@ if( !function_exists('houzez_custom_user_profile_fields')) {
     function houzez_custom_user_profile_fields($user) {
 
         if ( in_array('houzez_agent', (array)$user->roles ) ) {
-            $information_title = esc_html__('Agent Profile Info', 'houzez');
-            $title = esc_html__('Title/Position', 'houzez');
+            $information_title = esc_html__('Agent Profile Info', 'houzez-child');
+            $title = esc_html__('Title/Position', 'houzez-child');
 
         } elseif ( in_array('houzez_agency', (array)$user->roles ) ) {
-            $information_title = esc_html__('Agency Profile Info', 'houzez');
-            $title = esc_html__('Agency Name', 'houzez');
+            $information_title = esc_html__('Agency Profile Info', 'houzez-child');
+            $title = esc_html__('Agency Name', 'houzez-child');
 
         } elseif ( in_array('author', (array)$user->roles ) ) {
-            $information_title = esc_html__('Author Profile Info', 'houzez');
-            $title = esc_html__('Title/Position', 'houzez');
+            $information_title = esc_html__('Author Profile Info', 'houzez-child');
+            $title = esc_html__('Title/Position', 'houzez-child');
         } else {
-            $information_title = esc_html__('Profile Info', 'houzez');
-            $title = esc_html__('Title/Position', 'houzez');
+            $information_title = esc_html__('Profile Info', 'houzez-child');
+            $title = esc_html__('Title/Position', 'houzez-child');
         }
     ?>
         <h2><?php echo $information_title; ?></h2>
@@ -1141,147 +1141,147 @@ if( !function_exists('houzez_custom_user_profile_fields')) {
 
                 <?php if ( !in_array('houzez_agency', (array)$user->roles ) ) { ?>
                 <tr class="user-fave_author_company-wrap">
-                    <th><label for="fave_author_company"><?php echo esc_html__('Company Name', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_company"><?php echo esc_html__('Company Name', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_company" id="fave_author_company" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_company', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <?php } ?>
 
                 <tr class="user-fave_author_language-wrap">
-                    <th><label for="fave_author_language"><?php echo esc_html__('Language', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_language"><?php echo esc_html__('Language', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_language" id="fave_author_language" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_language', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_license-wrap">
-                    <th><label for="fave_author_license"><?php echo esc_html__('License', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_license"><?php echo esc_html__('License', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_license" id="fave_author_license" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_license', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_tax_no-wrap">
-                    <th><label for="fave_author_tax_no"><?php echo esc_html__('Tax Number', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_tax_no"><?php echo esc_html__('Tax Number', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_tax_no" id="fave_author_tax_no" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_tax_no', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_phone-wrap">
-                    <th><label for="fave_author_phone"><?php echo esc_html__('Phone', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_phone"><?php echo esc_html__('Phone', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_phone" id="fave_author_phone" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_phone', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_fax-wrap">
-                    <th><label for="fave_author_fax"><?php echo esc_html__('Fax Number', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_fax"><?php echo esc_html__('Fax Number', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_fax" id="fave_author_fax" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_fax', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_mobile-wrap">
-                    <th><label for="fave_author_mobile"><?php echo esc_html__('Mobile', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_mobile"><?php echo esc_html__('Mobile', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_mobile" id="fave_author_mobile" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_mobile', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_whatsapp-wrap">
-                    <th><label for="fave_author_whatsapp"><?php echo esc_html__('WhatsApp', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_whatsapp"><?php echo esc_html__('WhatsApp', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_whatsapp" id="fave_author_whatsapp" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_whatsapp', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_skype-wrap">
-                    <th><label for="fave_author_skype"><?php echo esc_html__('Skype', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_skype"><?php echo esc_html__('Skype', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_skype" id="fave_author_skype" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_skype', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_custom_picture-wrap">
-                    <th><label for="fave_author_custom_picture"><?php echo esc_html__('Picture Url', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_custom_picture"><?php echo esc_html__('Picture Url', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_custom_picture" id="fave_author_custom_picture" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_custom_picture', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_agency_id-wrap">
-                    <th><label for="fave_author_agency_id"><?php echo esc_html__('Agency ID', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_agency_id"><?php echo esc_html__('Agency ID', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_agency_id" id="fave_author_agency_id" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_agency_id', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_agent_id-wrap">
-                    <th><label for="fave_author_agent_id"><?php echo esc_html__('User Agent ID', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_agent_id"><?php echo esc_html__('User Agent ID', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_agent_id" id="fave_author_agent_id" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_agent_id', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_agent_id-wrap">
-                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Currency', 'houzez'); ?></label></th>
-                    <td><input placeholder="<?php echo esc_html__('Enter currency shortcode', 'houzez'); ?>" type="text" name="fave_author_currency" id="fave_author_currency" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_currency', $user->ID ) ); ?>" class="regular-text"></td>
+                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Currency', 'houzez-child'); ?></label></th>
+                    <td><input placeholder="<?php echo esc_html__('Enter currency shortcode', 'houzez-child'); ?>" type="text" name="fave_author_currency" id="fave_author_currency" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_currency', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
 
                 <tr class="user-fave_author_agent_id-wrap">
-                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Service Areas', 'houzez'); ?></label></th>
-                    <td><input placeholder="<?php echo esc_html__('Enter your service areas', 'houzez'); ?>" type="text" name="fave_author_service_areas" id="fave_author_service_areas" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_service_areas', $user->ID ) ); ?>" class="regular-text"></td>
+                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Service Areas', 'houzez-child'); ?></label></th>
+                    <td><input placeholder="<?php echo esc_html__('Enter your service areas', 'houzez-child'); ?>" type="text" name="fave_author_service_areas" id="fave_author_service_areas" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_service_areas', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
 
                 <tr class="user-fave_author_agent_id-wrap">
-                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Specialties', 'houzez'); ?></label></th>
-                    <td><input placeholder="<?php echo esc_html__('Enter your specialties', 'houzez'); ?>" type="text" name="fave_author_specialties" id="fave_author_specialties" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_specialties', $user->ID ) ); ?>" class="regular-text"></td>
+                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Specialties', 'houzez-child'); ?></label></th>
+                    <td><input placeholder="<?php echo esc_html__('Enter your specialties', 'houzez-child'); ?>" type="text" name="fave_author_specialties" id="fave_author_specialties" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_specialties', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_agent_id-wrap">
-                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Address', 'houzez'); ?></label></th>
-                    <td><input placeholder="<?php echo esc_html__('Enter your address', 'houzez'); ?>" type="text" name="fave_author_address" id="fave_author_address" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_address', $user->ID ) ); ?>" class="regular-text"></td>
+                    <th><label for="fave_author_agent_id"><?php echo esc_html__('Address', 'houzez-child'); ?></label></th>
+                    <td><input placeholder="<?php echo esc_html__('Enter your address', 'houzez-child'); ?>" type="text" name="fave_author_address" id="fave_author_address" value="<?php echo esc_attr( get_the_author_meta( 'fave_author_address', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
             </tbody>
         </table>
 
-        <h2><?php echo esc_html__('Package Info', 'houzez'); ?></h2>
+        <h2><?php echo esc_html__('Package Info', 'houzez-child'); ?></h2>
         <table class="form-table">
             <tbody>
                 <tr class="user-package_id-wrap">
-                    <th><label for="package_id"><?php echo esc_html__('Package Id', 'houzez'); ?></label></th>
+                    <th><label for="package_id"><?php echo esc_html__('Package Id', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="package_id" id="package_id" value="<?php echo esc_attr( get_the_author_meta( 'package_id', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-package_activation-wrap">
-                    <th><label for="package_activation"><?php echo esc_html__('Package Activation', 'houzez'); ?></label></th>
+                    <th><label for="package_activation"><?php echo esc_html__('Package Activation', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="package_activation" id="package_activation" value="<?php echo esc_attr( get_the_author_meta( 'package_activation', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-package_listings-wrap">
-                    <th><label for="package_listings"><?php echo esc_html__('Listings available', 'houzez'); ?></label></th>
+                    <th><label for="package_listings"><?php echo esc_html__('Listings available', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="package_listings" id="package_listings" value="<?php echo esc_attr( get_the_author_meta( 'package_listings', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-package_featured_listings-wrap">
-                    <th><label for="package_featured_listings"><?php echo esc_html__('Featured Listings available', 'houzez'); ?></label></th>
+                    <th><label for="package_featured_listings"><?php echo esc_html__('Featured Listings available', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="package_featured_listings" id="package_featured_listings" value="<?php echo esc_attr( get_the_author_meta( 'package_featured_listings', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_paypal_profile-wrap">
-                    <th><label for="fave_paypal_profile"><?php echo esc_html__('Paypal Recuring Profile', 'houzez'); ?></label></th>
+                    <th><label for="fave_paypal_profile"><?php echo esc_html__('Paypal Recuring Profile', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_paypal_profile" id="fave_paypal_profile" value="<?php echo esc_attr( get_the_author_meta( 'fave_paypal_profile', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_stripe_user_profile-wrap">
-                    <th><label for="fave_stripe_user_profile"><?php echo esc_html__('Stripe Consumer Profile', 'houzez'); ?></label></th>
+                    <th><label for="fave_stripe_user_profile"><?php echo esc_html__('Stripe Consumer Profile', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_stripe_user_profile" id="fave_stripe_user_profile" value="<?php echo esc_attr( get_the_author_meta( 'fave_stripe_user_profile', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
             </tbody>
         </table>
 
-        <h2><?php echo esc_html__('Social Info', 'houzez'); ?></h2>
+        <h2><?php echo esc_html__('Social Info', 'houzez-child'); ?></h2>
         <table class="form-table">
             <tbody>
                 <tr class="user-fave_author_facebook-wrap">
-                    <th><label for="fave_author_facebook"><?php echo esc_html__('Facebook', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_facebook"><?php echo esc_html__('Facebook', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_facebook" id="fave_author_facebook" value="<?php echo esc_url( get_the_author_meta( 'fave_author_facebook', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_linkedin-wrap">
-                    <th><label for="fave_author_linkedin"><?php echo esc_html__('LinkedIn', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_linkedin"><?php echo esc_html__('LinkedIn', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_linkedin" id="fave_author_linkedin" value="<?php echo esc_url( get_the_author_meta( 'fave_author_linkedin', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_twitter-wrap">
-                    <th><label for="fave_author_twitter"><?php echo esc_html__('Twitter', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_twitter"><?php echo esc_html__('Twitter', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_twitter" id="fave_author_twitter" value="<?php echo esc_url( get_the_author_meta( 'fave_author_twitter', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_pinterest-wrap">
-                    <th><label for="fave_author_pinterest"><?php echo esc_html__('Pinterest', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_pinterest"><?php echo esc_html__('Pinterest', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_pinterest" id="fave_author_pinterest" value="<?php echo esc_url( get_the_author_meta( 'fave_author_pinterest', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_instagram-wrap">
-                    <th><label for="fave_author_instagram"><?php echo esc_html__('Instagram', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_instagram"><?php echo esc_html__('Instagram', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_instagram" id="fave_author_instagram" value="<?php echo esc_url( get_the_author_meta( 'fave_author_instagram', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_youtube-wrap">
-                    <th><label for="fave_author_youtube"><?php echo esc_html__('Youtube', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_youtube"><?php echo esc_html__('Youtube', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_youtube" id="fave_author_youtube" value="<?php echo esc_url( get_the_author_meta( 'fave_author_youtube', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_telegram-wrap">
-                    <th><label for="fave_author_telegram"><?php echo esc_html__('Telegram', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_telegram"><?php echo esc_html__('Telegram', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_telegram" id="fave_author_telegram" value="<?php echo esc_url( get_the_author_meta( 'fave_author_telegram', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_tiktok-wrap">
-                    <th><label for="fave_author_tiktok"><?php echo esc_html__('TikTok', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_tiktok"><?php echo esc_html__('TikTok', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_tiktok" id="fave_author_tiktok" value="<?php echo esc_url( get_the_author_meta( 'fave_author_tiktok', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_vimeo-wrap">
-                    <th><label for="fave_author_vimeo"><?php echo esc_html__('Vimeo', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_vimeo"><?php echo esc_html__('Vimeo', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_vimeo" id="fave_author_vimeo" value="<?php echo esc_url( get_the_author_meta( 'fave_author_vimeo', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
                 <tr class="user-fave_author_googleplus-wrap">
-                    <th><label for="fave_author_googleplus"><?php echo esc_html__('Google Plus', 'houzez'); ?></label></th>
+                    <th><label for="fave_author_googleplus"><?php echo esc_html__('Google Plus', 'houzez-child'); ?></label></th>
                     <td><input type="text" name="fave_author_googleplus" id="fave_author_googleplus" value="<?php echo esc_url( get_the_author_meta( 'fave_author_googleplus', $user->ID ) ); ?>" class="regular-text"></td>
                 </tr>
             </tbody>
@@ -1393,18 +1393,18 @@ if(!function_exists('houzez_gdrf_data_request')) {
 
         if ( ! empty( $gdrf_data_email ) ) {
             if ( ! wp_verify_nonce( $gdrf_data_nonce, 'houzez_gdrf_nonce' ) ) {
-                $errors[] = esc_html__( 'Security check failed, please refresh page and try again.', 'houzez' );
+                $errors[] = esc_html__( 'Security check failed, please refresh page and try again.', 'houzez-child' );
             } else {
                 if ( ! is_email( $gdrf_data_email ) ) {
-                    $errors[] = esc_html__( 'Email address is not valid.', 'houzez' );
+                    $errors[] = esc_html__( 'Email address is not valid.', 'houzez-child' );
                 }
                 
                 if ( ! in_array( $gdpr_data_type, array( 'export_personal_data', 'remove_personal_data' ), true ) ) {
-                    $errors[] = esc_html__( 'Please select request type.', 'houzez' );
+                    $errors[] = esc_html__( 'Please select request type.', 'houzez-child' );
                 }
             }
         } else {
-            $errors[] = esc_html__( 'Fields are required', 'houzez' );
+            $errors[] = esc_html__( 'Fields are required', 'houzez-child' );
         }
 
         if ( empty( $errors ) ) {
@@ -1412,10 +1412,10 @@ if(!function_exists('houzez_gdrf_data_request')) {
             if ( is_wp_error( $request_id ) ) {
                 wp_send_json_error( $request_id->get_error_message() );
             } elseif ( ! $request_id ) {
-                wp_send_json_error( esc_html__( 'Unable to initiate confirmation request. Please contact the administrator.', 'houzez' ) );
+                wp_send_json_error( esc_html__( 'Unable to initiate confirmation request. Please contact the administrator.', 'houzez-child' ) );
             } else {
                 $send_request = wp_send_user_request( $request_id );
-                wp_send_json_success( esc_html__('Confirmation request initiated successfully.', 'houzez'));
+                wp_send_json_success( esc_html__('Confirmation request initiated successfully.', 'houzez-child'));
             }
         } else {
             wp_send_json_error($errors);

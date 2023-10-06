@@ -2,7 +2,7 @@
 global $houzez_opt_name;
 
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Typography', 'houzez' ),
+    'title'  => esc_html__( 'Typography', 'houzez-child' ),
     'id'     => 'houzez-typography',
     'desc'   => '',
     'icon'   => 'el-icon-font el-icon-small',
@@ -10,7 +10,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'          => 'typo-body',
             'type'        => 'typography',
-            'title'       => esc_html__('Body', 'houzez'),
+            'title'       => esc_html__('Body', 'houzez-child'),
             'google'      => true,
             'font-family' => true,
             'color'       => false,
@@ -19,7 +19,7 @@ Redux::setSection( $houzez_opt_name, array(
             'text-transform' => true,
             'font-style' => false,
             'units'       =>'px',
-            'subtitle'    => esc_html__('Select the main content font.', 'houzez'),
+            'subtitle'    => esc_html__('Select the main content font.', 'houzez-child'),
             'all_styles'  => true,
             'default'     => array(
                 'font-weight'  => '300',
@@ -35,7 +35,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'          => 'typo-headers',
             'type'        => 'typography',
-            'title'       => esc_html__('Navigations', 'houzez'),
+            'title'       => esc_html__('Navigations', 'houzez-child'),
             'google'      => true,
             'font-family' => true,
             'line-height' => false,
@@ -45,7 +45,7 @@ Redux::setSection( $houzez_opt_name, array(
             'color' => false,
             'font-style' => false,
             'units'       =>'px',
-            'subtitle'    => esc_html__('Select the navigation font.', 'houzez'),
+            'subtitle'    => esc_html__('Select the navigation font.', 'houzez-child'),
             'default'     => array(
                 'font-family' => 'Roboto',
                 'font-weight'  => '500',
@@ -59,8 +59,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'        => 'navigation-letter-spacing',
             'type'      => 'slider',
-            'title'     => esc_html__('Letter Spacing', 'houzez'),
-            'subtitle'  => esc_html__('Navigation letter spacing', 'houzez'),
+            'title'     => esc_html__('Letter Spacing', 'houzez-child'),
+            'subtitle'  => esc_html__('Navigation letter spacing', 'houzez-child'),
             "default" => 0,
             "min" => 0,
             "step" => .5,
@@ -73,7 +73,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'          => 'typo-footer',
             'type'        => 'typography',
-            'title'       => esc_html__('Footer', 'houzez'),
+            'title'       => esc_html__('Footer', 'houzez-child'),
             'google'      => true,
             'font-family' => true,
             'line-height' => true,
@@ -83,7 +83,7 @@ Redux::setSection( $houzez_opt_name, array(
             'color' => false,
             'font-style' => false,
             'units'       =>'px',
-            'subtitle'    => esc_html__('Select the footer font.', 'houzez'),
+            'subtitle'    => esc_html__('Select the footer font.', 'houzez-child'),
             'default'     => array(
                 'font-family' => 'Roboto',
                 'font-weight'  => '300',
@@ -97,7 +97,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'          => 'typo-topbar',
             'type'        => 'typography',
-            'title'       => esc_html__('Top Bar', 'houzez'),
+            'title'       => esc_html__('Top Bar', 'houzez-child'),
             'google'      => true,
             'font-family' => true,
             'line-height' => true,
@@ -107,7 +107,7 @@ Redux::setSection( $houzez_opt_name, array(
             'color' => false,
             'font-style' => false,
             'units'       =>'px',
-            'subtitle'    => esc_html__('Select the top bar font.', 'houzez'),
+            'subtitle'    => esc_html__('Select the top bar font.', 'houzez-child'),
             'default'     => array(
                 'font-family' => 'Roboto',
                 'font-weight'  => '300',
@@ -123,7 +123,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'          => 'typo-headings',
             'type'        => 'typography',
-            'title'       => esc_html__('Headings', 'houzez'),
+            'title'       => esc_html__('Headings', 'houzez-child'),
             'google'      => true,
             'font-family' => true,
             'font-backup' => false,
@@ -134,7 +134,7 @@ Redux::setSection( $houzez_opt_name, array(
             'color' => false,
             'font-style' => false,
             'units'       =>'px',
-            'subtitle'    => esc_html__('Select the heading font ( h1, h2, h3, h3 etc ).', 'houzez'),
+            'subtitle'    => esc_html__('Select the heading font ( h1, h2, h3, h3 etc ).', 'houzez-child'),
             'default'     => array(
                 'font-family' => 'Roboto',
                 'font-weight'  => '500',

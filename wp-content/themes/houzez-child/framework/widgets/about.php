@@ -9,8 +9,8 @@ class houzez_about_site extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_about_widget', // Base ID
-			esc_html__( 'HOUZEZ: About Site', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'About site widget', 'houzez' ), 'classname' => 'widget-about-site' ) // Args
+			esc_html__( 'HOUZEZ: About Site', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'About site widget', 'houzez-child' ), 'classname' => 'widget-about-site' ) // Args
 		);
 		
 	}
@@ -57,7 +57,7 @@ class houzez_about_site extends WP_Widget {
 
 				<?php if( !empty($more_url) ) { ?>
 				<div class="widget-read-more">
-					<a href="<?php echo esc_url($more_url);?>"><?php esc_html_e('Read more', 'houzez'); ?> </a>
+					<a href="<?php echo esc_url($more_url);?>"><?php esc_html_e('Read more', 'houzez-child'); ?> </a>
 				</div><!-- widget-read-more -->
 				<?php } ?>
 			</div><!-- widget-body -->
@@ -102,22 +102,22 @@ class houzez_about_site extends WP_Widget {
 		
 	?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 		
         <p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'img_url' ) ); ?>"><?php esc_html_e('Image Url:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'img_url' ) ); ?>"><?php esc_html_e('Image Url:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'img_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'img_url' ) ); ?>" value="<?php echo esc_url( $instance['img_url'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'about_text' ) ); ?>"><?php esc_html_e('Text:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'about_text' ) ); ?>"><?php esc_html_e('Text:', 'houzez-child'); ?></label>
 			<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'about_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'about_text' ) ); ?>"><?php echo wp_kses_post( $instance['about_text'] ); ?></textarea>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'more_url' ) ); ?>"><?php esc_html_e('Read More Link:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'more_url' ) ); ?>"><?php esc_html_e('Read More Link:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'more_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'more_url' ) ); ?>" value="<?php echo esc_url( $instance['more_url'] ); ?>" class="widefat" />
 		</p>
 		

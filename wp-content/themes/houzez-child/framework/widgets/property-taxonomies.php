@@ -15,8 +15,8 @@ class HOUZEZ_property_taxonomies extends WP_Widget {
 
         parent::__construct(
             'houzez_property_taxonomies', // Base ID
-            esc_html__( 'HOUZEZ: Property Taxonomies', 'houzez' ), // Name
-            array( 'classname' => 'widget-taxonomy', 'description' => esc_html__( 'Show property type, status, features, cities, states', 'houzez' ), ) // Args
+            esc_html__( 'HOUZEZ: Property Taxonomies', 'houzez-child' ), // Name
+            array( 'classname' => 'widget-taxonomy', 'description' => esc_html__( 'Show property type, status, features, cities, states', 'houzez-child' ), ) // Args
         );
 
     }
@@ -98,50 +98,50 @@ class HOUZEZ_property_taxonomies extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
             <input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
         </p>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"><?php esc_html_e( 'Taxonomy', 'houzez' ); ?>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"><?php esc_html_e( 'Taxonomy', 'houzez-child' ); ?>
                 <select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'taxonomy' ) ); ?>">
                     
-                    <option value="property_type" <?php echo ($instance['taxonomy'] == 'property_type') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Type', 'houzez' ); ?></option>
+                    <option value="property_type" <?php echo ($instance['taxonomy'] == 'property_type') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Type', 'houzez-child' ); ?></option>
                     
-                    <option value="property_status" <?php echo ($instance['taxonomy'] == 'property_status') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Status', 'houzez' ); ?></option>
+                    <option value="property_status" <?php echo ($instance['taxonomy'] == 'property_status') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Status', 'houzez-child' ); ?></option>
                     
-                    <option value="property_city" <?php echo ($instance['taxonomy'] == 'property_city') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property City', 'houzez' ); ?></option>
+                    <option value="property_city" <?php echo ($instance['taxonomy'] == 'property_city') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property City', 'houzez-child' ); ?></option>
                     
-                    <option value="property_state" <?php echo ($instance['taxonomy'] == 'property_state') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property State', 'houzez' ); ?></option>
+                    <option value="property_state" <?php echo ($instance['taxonomy'] == 'property_state') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property State', 'houzez-child' ); ?></option>
                     
-                    <option value="property_label" <?php echo ($instance['taxonomy'] == 'property_label') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Label', 'houzez' ); ?></option>
+                    <option value="property_label" <?php echo ($instance['taxonomy'] == 'property_label') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Label', 'houzez-child' ); ?></option>
                     
-                    <option value="property_feature" <?php echo ($instance['taxonomy'] == 'property_feature') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Feature', 'houzez' ); ?></option>
+                    <option value="property_feature" <?php echo ($instance['taxonomy'] == 'property_feature') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Feature', 'houzez-child' ); ?></option>
                     
-                    <option value="property_area" <?php echo ($instance['taxonomy'] == 'property_area') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Neighbourhood', 'houzez' ); ?></option>
+                    <option value="property_area" <?php echo ($instance['taxonomy'] == 'property_area') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Property Neighbourhood', 'houzez-child' ); ?></option>
                     
 
                 </select>
             </label>
         </p>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'tax_count' ) ); ?>"><?php esc_html_e( 'Count', 'houzez' ); ?>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'tax_count' ) ); ?>"><?php esc_html_e( 'Count', 'houzez-child' ); ?>
                 <select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'tax_count' ) ); ?>">
-                    <option value="yes" <?php echo ($instance['tax_count'] == 'yes') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Show Count', 'houzez' ); ?></option>
-                    <option value="no" <?php echo ($instance['tax_count'] == 'no') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Hide Count', 'houzez' ); ?></option>
+                    <option value="yes" <?php echo ($instance['tax_count'] == 'yes') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Show Count', 'houzez-child' ); ?></option>
+                    <option value="no" <?php echo ($instance['tax_count'] == 'no') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Hide Count', 'houzez-child' ); ?></option>
                 </select>
             </label>
         </p>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'tax_child' ) ); ?>"><?php esc_html_e( 'Child', 'houzez' ); ?>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'tax_child' ) ); ?>"><?php esc_html_e( 'Child', 'houzez-child' ); ?>
                 <select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'tax_child' ) ); ?>">
-                    <option value="no" <?php echo ($instance['tax_child'] == 'no') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Hide Child', 'houzez' ); ?></option>
-                    <option value="yes" <?php echo ($instance['tax_child'] == 'yes') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Show Child', 'houzez' ); ?></option>
+                    <option value="no" <?php echo ($instance['tax_child'] == 'no') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Hide Child', 'houzez-child' ); ?></option>
+                    <option value="yes" <?php echo ($instance['tax_child'] == 'yes') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Show Child', 'houzez-child' ); ?></option>
                 </select>
             </label>
         </p>
 
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'item_number' ) ); ?>"><?php esc_html_e('Number of Records:', 'houzez'); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'item_number' ) ); ?>"><?php esc_html_e('Number of Records:', 'houzez-child'); ?></label>
             <input type="text" id="<?php echo esc_attr( $this->get_field_id( 'item_number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'item_number' ) ); ?>" value="<?php echo esc_attr( $instance['item_number'] ); ?>" class="widefat" />
         </p>
 

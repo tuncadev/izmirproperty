@@ -1,7 +1,7 @@
 <?php
 global $houzez_opt_name, $allowed_html_array;
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Price & Currency', 'houzez' ),
+    'title'  => esc_html__( 'Price & Currency', 'houzez-child' ),
     'id'     => 'price-format',
     'desc'   => '',
     'icon'   => 'el-icon-usd el-icon-small',
@@ -10,18 +10,18 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'multi_currency',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Multi-currency', 'houzez' ),
-            'subtitle'     => esc_html__( 'Please note: the currency switcher will not work if this option is enabled', 'houzez' ),
-            'desc' => esc_html__('Enable or disable multi-currency', 'houzez'),
+            'title'    => esc_html__( 'Multi-currency', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Please note: the currency switcher will not work if this option is enabled', 'houzez-child' ),
+            'desc' => esc_html__('Enable or disable multi-currency', 'houzez-child'),
             'default'  => 0,
-            'on'       => esc_html__( 'Enabled', 'houzez' ),
-            'off'      => esc_html__( 'Disabled', 'houzez' ),
+            'on'       => esc_html__( 'Enabled', 'houzez-child' ),
+            'off'      => esc_html__( 'Disabled', 'houzez-child' ),
         ),
         array(
             'id'       => 'default_multi_currency',
             'type'     => 'select',
-            'title'    => esc_html__('Default Currency', 'houzez' ),
-            'desc' => esc_html__('Select the default currency', 'houzez'),
+            'title'    => esc_html__('Default Currency', 'houzez-child' ),
+            'desc' => esc_html__('Select the default currency', 'houzez-child'),
             'required'  => array('multi_currency', '=', '1'),
             'default' => 'USD',
             'options'  => houzez_available_currencies()
@@ -29,69 +29,69 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'   => 'info_normal',
             'type' => 'info',
-            'title'    => esc_html__( 'Info', 'houzez' ),
-            'desc'     => wp_kses(__( '<a target="_blank" href="admin.php?page=houzez_currencies">Add Currencies</a>', 'houzez' ), $allowed_html_array),
+            'title'    => esc_html__( 'Info', 'houzez-child' ),
+            'desc'     => wp_kses(__( '<a target="_blank" href="admin.php?page=houzez_currencies">Add Currencies</a>', 'houzez-child' ), $allowed_html_array),
             'required'  => array('multi_currency', '=', '1'),
         ),
         array(
             'id'       => 'short_prices',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Short Price', 'houzez' ),
-            'subtitle'     => esc_html__( 'Please note: the currency switcher will not work if the short price option is enabled', 'houzez' ),
-            'desc' => esc_html__( 'Enable or disable the short price numbers like 12K, 10M, 10B.', 'houzez' ),
+            'title'    => esc_html__( 'Short Price', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Please note: the currency switcher will not work if the short price option is enabled', 'houzez-child' ),
+            'desc' => esc_html__( 'Enable or disable the short price numbers like 12K, 10M, 10B.', 'houzez-child' ),
             'default'  => 0,
-            'on'       => esc_html__( 'Enabled', 'houzez' ),
-            'off'      => esc_html__( 'Disabled', 'houzez' ),
+            'on'       => esc_html__( 'Enabled', 'houzez-child' ),
+            'off'      => esc_html__( 'Disabled', 'houzez-child' ),
         ),
         array(
             'id'       => 'short_prices_indian_format',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Short Price Indian - Format', 'houzez' ),
+            'title'    => esc_html__( 'Short Price Indian - Format', 'houzez-child' ),
             'subtitle'     => '',
-            'desc' => esc_html__( 'Enable or disable the short price numbers like 1 Hundred, 10 thousand, 10 crore.', 'houzez' ),
+            'desc' => esc_html__( 'Enable or disable the short price numbers like 1 Hundred, 10 thousand, 10 crore.', 'houzez-child' ),
             'default'  => 0,
             'required' => array('short_prices', '=', '1'),
-            'on'       => esc_html__( 'Enabled', 'houzez' ),
-            'off'      => esc_html__( 'Disabled', 'houzez' ),
+            'on'       => esc_html__( 'Enabled', 'houzez-child' ),
+            'off'      => esc_html__( 'Disabled', 'houzez-child' ),
         ),
         array(
             'id'       => 'indian_format',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Indian Currency Format', 'houzez' ),
-            'desc' => esc_html__( 'Enable or disable the Indian Currency format', 'houzez' ),
+            'title'    => esc_html__( 'Indian Currency Format', 'houzez-child' ),
+            'desc' => esc_html__( 'Enable or disable the Indian Currency format', 'houzez-child' ),
             'default'  => 0,
-            'on'       => esc_html__( 'Enabled', 'houzez' ),
-            'off'      => esc_html__( 'Disabled', 'houzez' ),
+            'on'       => esc_html__( 'Enabled', 'houzez-child' ),
+            'off'      => esc_html__( 'Disabled', 'houzez-child' ),
         ),
         array(
             'id'		=> 'currency_symbol',
             'type'		=> 'text',
-            'title'		=> esc_html__( 'Currency Symbol', 'houzez' ),
+            'title'		=> esc_html__( 'Currency Symbol', 'houzez-child' ),
             'read-only'	=> false,
             'default'	=> '$',
             'required'  => array('multi_currency', '=', '0'),
-            'desc'	=> esc_html__( 'Enter the currency sign. (For Example: $)', 'houzez' ),
+            'desc'	=> esc_html__( 'Enter the currency sign. (For Example: $)', 'houzez-child' ),
         ),
         array(
             'id'		=> 'currency_position',
             'type'		=> 'select',
-            'title'		=> esc_html__( 'Currency Symbol Position', 'houzez' ),
+            'title'		=> esc_html__( 'Currency Symbol Position', 'houzez-child' ),
             'read-only'	=> false,
             'required'  => array('multi_currency', '=', '0'),
             'options'	=> array(
-                'before'	=> esc_html__( 'Before the price', 'houzez' ),
-                'after'		=> esc_html__( 'After the price', 'houzez' )
+                'before'	=> esc_html__( 'Before the price', 'houzez-child' ),
+                'after'		=> esc_html__( 'After the price', 'houzez-child' )
             ),
             'default'	=> 'before',
             'subtitle'	=> '',
-            'desc'  => esc_html__( 'Select the currency symbol position', 'houzez' ),
+            'desc'  => esc_html__( 'Select the currency symbol position', 'houzez-child' ),
         ),
         array(
             'id'		=> 'decimals',
             'type'		=> 'select',
-            'title'		=> esc_html__( 'Number of decimal points', 'houzez' ),
+            'title'		=> esc_html__( 'Number of decimal points', 'houzez-child' ),
             'read-only'	=> false,
-            'desc'  => esc_html__( 'Select the decimal points', 'houzez' ),
+            'desc'  => esc_html__( 'Select the decimal points', 'houzez-child' ),
             //'required'  => array('multi_currency', '=', '0'),
 
             'required' => array( 
@@ -118,7 +118,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'		=> 'decimal_point_separator',
             'type'		=> 'text',
-            'title'		=> esc_html__( 'Decimal Points Separator', 'houzez' ),
+            'title'		=> esc_html__( 'Decimal Points Separator', 'houzez-child' ),
             'read-only'	=> false,
             //'required'  => array('multi_currency', '=', '0'),
 
@@ -127,12 +127,12 @@ Redux::setSection( $houzez_opt_name, array(
                 array('indian_format','=','0') 
             ),
             'default'	=> '.',
-            'desc'	=> esc_html__( 'Enter the decimal points separator (For Example: .)', 'houzez' ),
+            'desc'	=> esc_html__( 'Enter the decimal points separator (For Example: .)', 'houzez-child' ),
         ),
         array(
             'id'		=> 'thousands_separator',
             'type'		=> 'text',
-            'title'		=> esc_html__( 'Thousands Separator', 'houzez' ),
+            'title'		=> esc_html__( 'Thousands Separator', 'houzez-child' ),
             'read-only'	=> false,
             //'required'  => array('multi_currency', '=', '0'),
 
@@ -141,16 +141,16 @@ Redux::setSection( $houzez_opt_name, array(
                 array('indian_format','=','0') 
             ),
             'default'	=> ',',
-            'desc'	=> esc_html__( 'Enter the thousands separator (For Example: ,)', 'houzez' ),
+            'desc'	=> esc_html__( 'Enter the thousands separator (For Example: ,)', 'houzez-child' ),
         ),
         array(
             'id'        => 'currency_separator',
             'type'      => 'text',
-            'title'     => esc_html__( 'Price Separator', 'houzez' ),
+            'title'     => esc_html__( 'Price Separator', 'houzez-child' ),
             'read-only' => false,
             'default'   => '/',
             'subtitle'  => '',
-            'desc'  => esc_html__( 'Provide what you want to show between price and price label. Example: / or empty space', 'houzez' )
+            'desc'  => esc_html__( 'Provide what you want to show between price and price label. Example: / or empty space', 'houzez-child' )
         ),
     ),
 ));

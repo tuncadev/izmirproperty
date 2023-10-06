@@ -15,8 +15,8 @@ class houzez_latest_posts extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_latest_posts', // Base ID
-			esc_html__( 'HOUZEZ: Latest Posts', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'Show latest posts by category', 'houzez' ), 'classname' => 'widget-blog-posts' ) // Args
+			esc_html__( 'HOUZEZ: Latest Posts', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'Show latest posts by category', 'houzez-child' ), 'classname' => 'widget-blog-posts' ) // Args
 		);
 		
 	}
@@ -127,11 +127,11 @@ class houzez_latest_posts extends WP_Widget {
 		
 	?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"><?php esc_html_e('Maximum posts to show:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"><?php esc_html_e('Maximum posts to show:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'items_num' ) ); ?>" value="<?php echo esc_attr( $instance['items_num'] ); ?>" size="1" />
 		</p>
 		<?php
@@ -139,10 +139,10 @@ class houzez_latest_posts extends WP_Widget {
 		$cats_array = array();
 		?>
 		<p>
-          <label for="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>"><?php esc_html_e('Category:', 'houzez'); ?></label>
+          <label for="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>"><?php esc_html_e('Category:', 'houzez-child'); ?></label>
           <select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'category' ) ); ?>">
           
-          <option value=""><?php esc_html_e( 'All', 'houzez' ); ?></option>
+          <option value=""><?php esc_html_e( 'All', 'houzez-child' ); ?></option>
           <?php foreach($blog_cats as $blog_cat) { ?>
 				
 		  		<option <?php echo ($instance['category'] == $blog_cat->term_id ) ? ' selected="selected"' : ''; ?> value="<?php echo esc_attr( $blog_cat->term_id ); ?>"><?php echo esc_attr( $blog_cat->name ); ?></option>

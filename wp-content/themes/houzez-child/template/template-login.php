@@ -33,14 +33,14 @@ get_header(); ?>
 						    if ( $email_verification_token == $stored_token ) {
 						        update_user_meta( $user_id, 'houzez_email_verified', true );
 						        delete_user_meta( $user_id, 'houzez_email_verification_token' );
-						        echo esc_html__('We are pleased to inform you that your email address has been successfully verified. You can now log in to your account.', 'houzez');
+						        echo esc_html__('We are pleased to inform you that your email address has been successfully verified. You can now log in to your account.', 'houzez-child');
 
 						        if( houzez_option('header_login') != 0 ) { ?>
-								<a href="<?php echo esc_url($template);?>"><?php esc_html_e('Login', 'houzez'); ?></a>
+								<a href="<?php echo esc_url($template);?>"><?php esc_html_e('Login', 'houzez-child'); ?></a>
 								<?php }
 
 						    } else {
-						        echo esc_html__('Invalid verification token.', 'houzez');
+						        echo esc_html__('Invalid verification token.', 'houzez-child');
 						    }
 		                	?>
 			                
@@ -52,11 +52,11 @@ get_header(); ?>
 			                <div class="login-register-tabs">
 			                    <ul class="nav nav-tabs">
 			                        <li class="nav-item">
-			                            <a class="modal-toggle-1 nav-link active" data-toggle="tab" href="#login-form-tab" role="tab"><?php esc_html_e('Login', 'houzez'); ?></a>
+			                            <a class="modal-toggle-1 nav-link active" data-toggle="tab" href="#login-form-tab" role="tab"><?php esc_html_e('Login', 'houzez-child'); ?></a>
 			                        </li>
 			                        <?php if( houzez_option('header_register') ) { ?>
 			                        <li class="nav-item">
-			                            <a class="modal-toggle-2 nav-link" data-toggle="tab" href="#register-form-tab" role="tab"><?php esc_html_e('Register', 'houzez'); ?></a>
+			                            <a class="modal-toggle-2 nav-link" data-toggle="tab" href="#register-form-tab" role="tab"><?php esc_html_e('Register', 'houzez-child'); ?></a>
 			                        </li>
 			                    	<?php } ?>
 			                    </ul>    
@@ -77,7 +77,7 @@ get_header(); ?>
                <?php 
            		} else { 
            			echo '<div class="login-form-page-text">'; 
-           			echo '<strong>'.esc_html__('You are already logged in!', 'houzez').'</strong>';
+           			echo '<strong>'.esc_html__('You are already logged in!', 'houzez-child').'</strong>';
            			echo '</div>';
                }?>
                

@@ -9,8 +9,8 @@ class houzez_contact_us extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_contact', // Base ID
-			esc_html__( 'HOUZEZ: Contact Us', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'Contact us widget', 'houzez' ), 'classname' => 'widget-contact-us' ) // Args
+			esc_html__( 'HOUZEZ: Contact Us', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'Contact us widget', 'houzez-child' ), 'classname' => 'widget-contact-us' ) // Args
 		);
 		
 	}
@@ -76,7 +76,7 @@ class houzez_contact_us extends WP_Widget {
 
 				<?php if( !empty($more_url) ) { ?>
 				<div class="widget-read-more">
-					<a href="<?php echo esc_url( $more_url ); ?>"><?php esc_html_e( 'Contact us', 'houzez' ); ?></a>
+					<a href="<?php echo esc_url( $more_url ); ?>"><?php esc_html_e( 'Contact us', 'houzez-child' ); ?></a>
 				</div><!-- widget-read-more -->
 				<?php } ?>
 
@@ -128,37 +128,37 @@ class houzez_contact_us extends WP_Widget {
 		
 	?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'about_text' )); ?>"><?php esc_html_e('Text:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'about_text' )); ?>"><?php esc_html_e('Text:', 'houzez-child'); ?></label>
 			<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'about_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'about_text' ) ); ?>"><?php echo esc_textarea( $instance['about_text'] ); ?></textarea>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'address' )); ?>"><?php esc_html_e('Address:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'address' )); ?>"><?php esc_html_e('Address:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'address' )); ?>" name="<?php echo esc_attr( $this->get_field_name( 'address' )); ?>" value="<?php echo esc_attr( $instance['address']); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_html_e('Phone Number (Text|Number):', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>"><?php esc_html_e('Phone Number (Text|Number):', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'phone' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'phone' ) ); ?>" value="<?php echo esc_attr( $instance['phone'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'fax' ) ); ?>"><?php esc_html_e('Fax:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'fax' ) ); ?>"><?php esc_html_e('Fax:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'fax' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'fax' ) ); ?>" value="<?php echo esc_attr( $instance['fax'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e('Email:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e('Email:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" value="<?php echo esc_attr( $instance['email'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'more_url' ) ); ?>"><?php esc_html_e('Link:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'more_url' ) ); ?>"><?php esc_html_e('Link:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'more_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'more_url' ) ); ?>" value="<?php echo esc_url( $instance['more_url'] ); ?>" class="widefat" />
 		</p>
 		

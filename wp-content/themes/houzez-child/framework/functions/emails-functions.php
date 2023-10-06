@@ -135,7 +135,7 @@ if( !function_exists('houzez_send_emails_with_reply') ):
         $socials = '';
         if( !empty($social_1_icon) || !empty($social_2_icon) || !empty($social_3_icon) || !empty($social_4_icon) ) {
             $socials = '<div style="font-size: 0; text-align: center; padding-top: 20px;">';
-            $socials .= '<p style="margin:0;margin-bottom: 10px; text-align: center; font-size: 14px; color:#777777;">'.esc_html__('Follow us on', 'houzez').'</p>';
+            $socials .= '<p style="margin:0;margin-bottom: 10px; text-align: center; font-size: 14px; color:#777777;">'.esc_html__('Follow us on', 'houzez-child').'</p>';
 
             if( !empty($social_1_icon) ) {
                 $socials .= '<a href="'.esc_url($social_1_link).'" style="margin-right: 5px"><img src="'.esc_url($social_1_icon).'" width="" height="" alt=""> </a>';
@@ -254,7 +254,7 @@ if( !function_exists('houzez_send_emails') ):
         $socials = '';
         if( !empty($social_1_icon) || !empty($social_2_icon) || !empty($social_3_icon) || !empty($social_4_icon) ) {
             $socials = '<div style="font-size: 0; text-align: center; padding-top: 20px;">';
-            $socials .= '<p style="margin:0;margin-bottom: 10px; text-align: center; font-size: 14px; color:#777777;">'.esc_html__('Follow us on', 'houzez').'</p>';
+            $socials .= '<p style="margin:0;margin-bottom: 10px; text-align: center; font-size: 14px; color:#777777;">'.esc_html__('Follow us on', 'houzez-child').'</p>';
 
             if( !empty($social_1_icon) ) {
                 $socials .= '<a href="'.esc_url($social_1_link).'" style="margin-right: 5px"><img src="'.esc_url($social_1_icon).'" width="" height="" alt=""> </a>';
@@ -347,7 +347,7 @@ if( !function_exists('houzez_send_emails_match_submission') ):
         $socials = '';
         if( !empty($social_1_icon) || !empty($social_2_icon) || !empty($social_3_icon) || !empty($social_4_icon) ) {
             $socials = '<div class="follow">';
-            $socials .= '<p>'.esc_html__('Follow us on', 'houzez').'</p>';
+            $socials .= '<p>'.esc_html__('Follow us on', 'houzez-child').'</p>';
 
             $socials .= '<div>';
             if( !empty($social_1_icon) ) {
@@ -627,7 +627,7 @@ if( !function_exists('houzez_send_messages_emails') ):
         $socials = '';
         if( !empty($social_1_icon) || !empty($social_2_icon) || !empty($social_3_icon) || !empty($social_4_icon) ) {
             $socials = '<div style="font-size: 0; text-align: center; padding-top: 20px;">';
-            $socials .= '<p style="margin:0;margin-bottom: 10px; text-align: center; font-size: 14px; color:#777777;">'.esc_html__('Follow us on', 'houzez').'</p>';
+            $socials .= '<p style="margin:0;margin-bottom: 10px; text-align: center; font-size: 14px; color:#777777;">'.esc_html__('Follow us on', 'houzez-child').'</p>';
 
             if( !empty($social_1_icon) ) {
                 $socials .= '<a href="'.esc_url($social_1_link).'" style="margin-right: 5px"><img src="'.esc_url($social_1_icon).'" width="" height="" alt=""> </a>';
@@ -711,7 +711,7 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
         if (!wp_verify_nonce( $nonce, 'contact_realtor_nonce') ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Unverified Nonce!', 'houzez')
+                'msg' => esc_html__('Unverified Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -726,7 +726,7 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
         if (!$target_email) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => sprintf( esc_html__('%s Target Email address is not properly configured!', 'houzez'), $target_email )
+                'msg' => sprintf( esc_html__('%s Target Email address is not properly configured!', 'houzez-child'), $target_email )
             ));
             wp_die();
         }
@@ -736,7 +736,7 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
         if ( empty($sender_name) && $hide_form_fields['name'] != 1 ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Name field is empty!', 'houzez')
+                'msg' => esc_html__('Name field is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -746,7 +746,7 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
         if (!$sender_email) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Provided Email address is invalid!', 'houzez')
+                'msg' => esc_html__('Provided Email address is invalid!', 'houzez-child')
             ));
             wp_die();
         }
@@ -755,7 +755,7 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
         if ( empty($sender_msg) && $hide_form_fields['message'] != 1 ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Your message empty!', 'houzez')
+                'msg' => esc_html__('Your message empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -774,18 +774,18 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
 
         houzez_google_recaptcha_callback();
 
-        $email_subject = sprintf( esc_html__('New message sent by %s using contact form at %s', 'houzez'), $sender_name, get_bloginfo('name') );
+        $email_subject = sprintf( esc_html__('New message sent by %s using contact form at %s', 'houzez-child'), $sender_name, get_bloginfo('name') );
 
-        $email_body = esc_html__("You have received a message from: ", 'houzez') . $sender_name . " <br/>";
+        $email_body = esc_html__("You have received a message from: ", 'houzez-child') . $sender_name . " <br/>";
         if (!empty($sender_phone)) {
-            $email_body .= esc_html__("Phone Number : ", 'houzez') . $sender_phone . " <br/>";
+            $email_body .= esc_html__("Phone Number : ", 'houzez-child') . $sender_phone . " <br/>";
         }
         if (!empty($user_type)) {
-            $email_body .= esc_html__("User Type : ", 'houzez') . $user_type . " <br/>";
+            $email_body .= esc_html__("User Type : ", 'houzez-child') . $user_type . " <br/>";
         }
-        $email_body .= esc_html__("Additional message is as follows.", 'houzez') . " <br/>";
+        $email_body .= esc_html__("Additional message is as follows.", 'houzez-child') . " <br/>";
         $email_body .= wp_kses_post( wpautop( wptexturize( $sender_msg ) ) ) . " <br/>";
-        $email_body .= sprintf( esc_html__( 'You can contact %s via email %s', 'houzez'), $sender_name, $sender_email );
+        $email_body .= sprintf( esc_html__( 'You can contact %s via email %s', 'houzez-child'), $sender_name, $sender_email );
 
         $headers = array();
         $headers[] = "From: $sender_name <$sender_email>";
@@ -796,7 +796,7 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
         if (wp_mail( $target_email, $email_subject, $email_body, $headers)) {
             echo json_encode( array(
                 'success' => true,
-                'msg' => esc_html__("Message Sent Successfully!", 'houzez')
+                'msg' => esc_html__("Message Sent Successfully!", 'houzez-child')
             ));
 
             if( houzez_option('webhook_agency_contact') == 1 && $agent_type == "agency_info" ) {
@@ -823,7 +823,7 @@ if( !function_exists( 'houzez_contact_realtor' ) ) {
         } else {
             echo json_encode(array(
                     'success' => false,
-                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez')
+                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez-child')
                 )
             );
             wp_die();
@@ -863,7 +863,7 @@ if( !function_exists( 'houzez_ele_contact_form' ) ) {
         if (!$email_to) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => sprintf( esc_html__('%s Target Email address is not properly configured!', 'houzez'), $target_email )
+                'msg' => sprintf( esc_html__('%s Target Email address is not properly configured!', 'houzez-child'), $target_email )
             ));
             wp_die();
         }
@@ -890,65 +890,65 @@ if( !function_exists( 'houzez_ele_contact_form' ) ) {
         $email_body = '';
 
         if (!empty($full_name)) {
-            $email_body .= esc_html__("Full Name : ", 'houzez') . $full_name . " <br/>";
+            $email_body .= esc_html__("Full Name : ", 'houzez-child') . $full_name . " <br/>";
         }
 
         if (!empty($first_name)) {
-            $email_body .= esc_html__("First Name : ", 'houzez') . $first_name . " <br/>";
+            $email_body .= esc_html__("First Name : ", 'houzez-child') . $first_name . " <br/>";
         }
 
         if (!empty($last_name)) {
-            $email_body .= esc_html__("Last Name : ", 'houzez') . $last_name . " <br/>";
+            $email_body .= esc_html__("Last Name : ", 'houzez-child') . $last_name . " <br/>";
         }
 
         if (!empty($sender_email)) {
-            $email_body .= esc_html__("Email : ", 'houzez') . $sender_email . " <br/>";
+            $email_body .= esc_html__("Email : ", 'houzez-child') . $sender_email . " <br/>";
         }
 
         if (!empty($mobile)) {
-            $email_body .= esc_html__("Mobile : ", 'houzez') . $mobile . " <br/>";
+            $email_body .= esc_html__("Mobile : ", 'houzez-child') . $mobile . " <br/>";
         }
 
         if (!empty($home_phone)) {
-            $email_body .= esc_html__("Phone Number : ", 'houzez') . $home_phone . " <br/>";
+            $email_body .= esc_html__("Phone Number : ", 'houzez-child') . $home_phone . " <br/>";
         }
 
         if (!empty($work_phone)) {
-            $email_body .= esc_html__("Work Phone : ", 'houzez') . $work_phone . " <br/>";
+            $email_body .= esc_html__("Work Phone : ", 'houzez-child') . $work_phone . " <br/>";
         }
 
         if (!empty($address)) {
-            $email_body .= esc_html__("Address : ", 'houzez') . $address . " <br/>";
+            $email_body .= esc_html__("Address : ", 'houzez-child') . $address . " <br/>";
         }
 
         if (!empty($country)) {
-            $email_body .= esc_html__("Country : ", 'houzez') . $country . " <br/>";
+            $email_body .= esc_html__("Country : ", 'houzez-child') . $country . " <br/>";
         }
 
         if (!empty($state)) {
-            $email_body .= esc_html__("State : ", 'houzez') . $state . " <br/>";
+            $email_body .= esc_html__("State : ", 'houzez-child') . $state . " <br/>";
         }
 
         if (!empty($city)) {
-            $email_body .= esc_html__("City : ", 'houzez') . $city . " <br/>";
+            $email_body .= esc_html__("City : ", 'houzez-child') . $city . " <br/>";
         }
 
         if (!empty($zip)) {
-            $email_body .= esc_html__("Zip/Postal Code : ", 'houzez') . $zip . " <br/>";
+            $email_body .= esc_html__("Zip/Postal Code : ", 'houzez-child') . $zip . " <br/>";
         }
 
         if (!empty($user_type)) {
-            $email_body .= esc_html__("User Type : ", 'houzez') . $user_type . " <br/>";
+            $email_body .= esc_html__("User Type : ", 'houzez-child') . $user_type . " <br/>";
         }
             
         if( !empty($sender_msg) ) {
-            $email_body .= '<br/><br/>'.esc_html__("Message:", 'houzez');
+            $email_body .= '<br/><br/>'.esc_html__("Message:", 'houzez-child');
             $email_body .= wp_kses_post( wpautop( wptexturize( $sender_msg ) ) ) . " <br/><br/>";
         }
 
         if( !empty($gdpr_agreement) ) {
             
-            $email_body .= sprintf( esc_html__('GDPR accepted on: %s at %s', 'houzez'),  houzez_get_date(), houzez_get_time() );
+            $email_body .= sprintf( esc_html__('GDPR accepted on: %s at %s', 'houzez-child'),  houzez_get_date(), houzez_get_time() );
              
         }
         
@@ -972,7 +972,7 @@ if( !function_exists( 'houzez_ele_contact_form' ) ) {
             echo json_encode( array(
                 'success' => true,
                 'redirect_to' => $redirect_to,
-                'msg' => esc_html__("Message Sent Successfully!", 'houzez')
+                'msg' => esc_html__("Message Sent Successfully!", 'houzez-child')
             ));
 
             $webhook = isset( $_POST['webhook'] ) ? $_POST['webhook'] : '';
@@ -1001,7 +1001,7 @@ if( !function_exists( 'houzez_ele_contact_form' ) ) {
             echo json_encode(array(
                     'success' => false,
                     'redirect_to' => '',
-                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez')
+                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez-child')
                 )
             );
             wp_die();
@@ -1046,7 +1046,7 @@ if( !function_exists( 'houzez_ele_inquiry_form' ) ) {
         if (!$email_to) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => sprintf( esc_html__('%s Target Email address is not properly configured!', 'houzez'), $target_email )
+                'msg' => sprintf( esc_html__('%s Target Email address is not properly configured!', 'houzez-child'), $target_email )
             ));
             wp_die();
         }
@@ -1073,90 +1073,90 @@ if( !function_exists( 'houzez_ele_inquiry_form' ) ) {
         $headers .= sprintf( 'Reply-To: %s' . "\r\n", $email_reply_to );
         $headers .= 'Content-Type: text/html; charset=UTF-8' . "\r\n";
 
-        $email_body = esc_html__("You have received new lead from: ", 'houzez') . $sender_name . " <br/><br/>";
+        $email_body = esc_html__("You have received new lead from: ", 'houzez-child') . $sender_name . " <br/><br/>";
 
         if (!empty($user_type)) {
-            $email_body .= esc_html__("User Type : ", 'houzez') . $user_type . " <br/>";
+            $email_body .= esc_html__("User Type : ", 'houzez-child') . $user_type . " <br/>";
         }
         
         if (!empty($sender_name)) {
-            $email_body .= esc_html__("Full Name : ", 'houzez') . $sender_name . " <br/>";
+            $email_body .= esc_html__("Full Name : ", 'houzez-child') . $sender_name . " <br/>";
         }
 
         if (!empty($first_name)) {
-            $email_body .= esc_html__("First Name : ", 'houzez') . $first_name . " <br/>";
+            $email_body .= esc_html__("First Name : ", 'houzez-child') . $first_name . " <br/>";
         }
 
         if (!empty($last_name)) {
-            $email_body .= esc_html__("Last Name : ", 'houzez') . $last_name . " <br/>";
+            $email_body .= esc_html__("Last Name : ", 'houzez-child') . $last_name . " <br/>";
         }
 
         if (!empty($sender_email)) {
-            $email_body .= esc_html__("Email : ", 'houzez') . $sender_email . " <br/>";
+            $email_body .= esc_html__("Email : ", 'houzez-child') . $sender_email . " <br/>";
         }
 
         if (!empty($sender_phone)) {
-            $email_body .= esc_html__("Phone Number : ", 'houzez') . $sender_phone . " <br/>";
+            $email_body .= esc_html__("Phone Number : ", 'houzez-child') . $sender_phone . " <br/>";
         }
 
         if (!empty($enquiry_type)) {
-            $email_body .= esc_html__("Inquiry Type : ", 'houzez') . $enquiry_type . " <br/>";
+            $email_body .= esc_html__("Inquiry Type : ", 'houzez-child') . $enquiry_type . " <br/>";
         }
         if (!empty($property_type)) {
-            $email_body .= esc_html__("Property Type : ", 'houzez') . $property_type . " <br/>";
+            $email_body .= esc_html__("Property Type : ", 'houzez-child') . $property_type . " <br/>";
         }
 
         if (!empty($price)) {
-            $email_body .= esc_html__("Price : ", 'houzez') . $price . " <br/>";
+            $email_body .= esc_html__("Price : ", 'houzez-child') . $price . " <br/>";
         }
 
         if (!empty($beds)) {
-            $email_body .= esc_html__("Beds : ", 'houzez') . $beds . " <br/>";
+            $email_body .= esc_html__("Beds : ", 'houzez-child') . $beds . " <br/>";
         }
 
         if (!empty($baths)) {
-            $email_body .= esc_html__("Baths : ", 'houzez') . $baths . " <br/>";
+            $email_body .= esc_html__("Baths : ", 'houzez-child') . $baths . " <br/>";
         }
 
         if (!empty($area_size)) {
-            $email_body .= esc_html__("Area Size : ", 'houzez') . $area_size . " <br/>";
+            $email_body .= esc_html__("Area Size : ", 'houzez-child') . $area_size . " <br/>";
         }
 
         if (!empty($country)) {
-            $email_body .= esc_html__("Country : ", 'houzez') . $country . " <br/>";
+            $email_body .= esc_html__("Country : ", 'houzez-child') . $country . " <br/>";
         }
 
         if (!empty($state)) {
-            $email_body .= esc_html__("State : ", 'houzez') . $state . " <br/>";
+            $email_body .= esc_html__("State : ", 'houzez-child') . $state . " <br/>";
         }
 
         if (!empty($city)) {
-            $email_body .= esc_html__("City : ", 'houzez') . $city . " <br/>";
+            $email_body .= esc_html__("City : ", 'houzez-child') . $city . " <br/>";
         }
 
         if (!empty($area)) {
-            $email_body .= esc_html__("Area : ", 'houzez') . $area . " <br/>";
+            $email_body .= esc_html__("Area : ", 'houzez-child') . $area . " <br/>";
         }
 
         if (!empty($zipcode)) {
-            $email_body .= esc_html__("Zip/Postal Code : ", 'houzez') . $zipcode . " <br/>";
+            $email_body .= esc_html__("Zip/Postal Code : ", 'houzez-child') . $zipcode . " <br/>";
         }
 
         if (!empty($streat_address)) {
-            $email_body .= esc_html__("Street Address : ", 'houzez') . $streat_address . " <br/>";
+            $email_body .= esc_html__("Street Address : ", 'houzez-child') . $streat_address . " <br/>";
         }
 
 
         if( !empty($sender_msg) ) {
-            $email_body .= '<br/><br/>'.esc_html__("Message:", 'houzez');
+            $email_body .= '<br/><br/>'.esc_html__("Message:", 'houzez-child');
             $email_body .= wp_kses_post( wpautop( wptexturize( $sender_msg ) ) ) . " <br/>";
         }
 
-        $email_body .= sprintf( esc_html__( 'You can see more details here %s', 'houzez'), $crm_enquiries ). " <br/>";
+        $email_body .= sprintf( esc_html__( 'You can see more details here %s', 'houzez-child'), $crm_enquiries ). " <br/>";
 
         if( !empty($gdpr_agreement) ) {
             
-            $email_body .= sprintf( esc_html__('GDPR accepted on: %s at %s', 'houzez'),  houzez_get_date(), houzez_get_time() );
+            $email_body .= sprintf( esc_html__('GDPR accepted on: %s at %s', 'houzez-child'),  houzez_get_date(), houzez_get_time() );
              
         }
 
@@ -1179,7 +1179,7 @@ if( !function_exists( 'houzez_ele_inquiry_form' ) ) {
             echo json_encode( array(
                 'success' => true,
                 'redirect_to' => $redirect_to,
-                'msg' => esc_html__("Message Sent Successfully!", 'houzez')
+                'msg' => esc_html__("Message Sent Successfully!", 'houzez-child')
             ));
 
             $webhook = isset( $_POST['webhook'] ) ? $_POST['webhook'] : '';
@@ -1208,7 +1208,7 @@ if( !function_exists( 'houzez_ele_inquiry_form' ) ) {
             echo json_encode(array(
                     'success' => false,
                     'redirect_to' => '',
-                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez')
+                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez-child')
                 )
             );
             wp_die();
@@ -1229,7 +1229,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
         if (!wp_verify_nonce( $nonce, 'property_agent_contact_nonce') ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid Nonce!', 'houzez')
+                'msg' => esc_html__('Invalid Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1249,7 +1249,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
         if (!$target_email) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => sprintf( esc_html__('%s Email address is not configured!', 'houzez'), $target_email )
+                'msg' => sprintf( esc_html__('%s Email address is not configured!', 'houzez-child'), $target_email )
             ));
             wp_die();
         }
@@ -1258,7 +1258,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
         if ( empty($sender_name) && $hide_form_fields['name'] != 1 ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Name field is empty!', 'houzez')
+                'msg' => esc_html__('Name field is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1267,7 +1267,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
         if ( empty($sender_phone) && $hide_form_fields['phone'] != 1 ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Phone field is empty!', 'houzez')
+                'msg' => esc_html__('Phone field is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1277,7 +1277,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
         if (!$sender_email) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid email address!', 'houzez')
+                'msg' => esc_html__('Invalid email address!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1287,7 +1287,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
         if ( empty($sender_msg) && $hide_form_fields['message'] != 1 ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Your message is empty!', 'houzez')
+                'msg' => esc_html__('Your message is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1336,7 +1336,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
 
             echo json_encode( array(
                 'success' => true,
-                'msg' => esc_html__("Email Sent Successfully!", 'houzez')
+                'msg' => esc_html__("Email Sent Successfully!", 'houzez-child')
             ));
 
             $activity_args = array(
@@ -1356,7 +1356,7 @@ if( !function_exists('houzez_property_agent_contact') ) {
         } else {
             echo json_encode(array(
                     'success' => false,
-                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez')
+                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez-child')
                 )
             );
             wp_die();
@@ -1377,7 +1377,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         if (!wp_verify_nonce( $nonce, 'schedule-contact-form-nonce') ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid Nonce!', 'houzez')
+                'msg' => esc_html__('Invalid Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1396,7 +1396,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         if (!$target_email) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => sprintf( esc_html__('%s Email address is not configured!', 'houzez'), $target_email )
+                'msg' => sprintf( esc_html__('%s Email address is not configured!', 'houzez-child'), $target_email )
             ));
             wp_die();
         }
@@ -1405,7 +1405,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         if ( empty($sender_name) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Name field is empty!', 'houzez')
+                'msg' => esc_html__('Name field is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1415,7 +1415,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         /*if ( empty($sender_phone) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Phone field is empty!', 'houzez')
+                'msg' => esc_html__('Phone field is empty!', 'houzez-child')
             ));
             wp_die();
         }*/
@@ -1425,7 +1425,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         if (!$sender_email) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid email address!', 'houzez')
+                'msg' => esc_html__('Invalid email address!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1434,7 +1434,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         if ( empty($sender_msg) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Your message is empty!', 'houzez')
+                'msg' => esc_html__('Your message is empty!', 'houzez-child')
             ));
             wp_die();
         }*/
@@ -1443,7 +1443,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         if ( empty($schedule_date) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Date field is empty!', 'houzez')
+                'msg' => esc_html__('Date field is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1452,7 +1452,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
         if ( empty($schedule_time) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Time field is empty!', 'houzez')
+                'msg' => esc_html__('Time field is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1496,7 +1496,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
             echo json_encode( array(
                 'success' => true,
                 'redirect_to' => $redirect_to,
-                'msg' => esc_html__("Email Sent Successfully!", 'houzez')
+                'msg' => esc_html__("Email Sent Successfully!", 'houzez-child')
             ));
 
 
@@ -1525,7 +1525,7 @@ if( !function_exists('houzez_schedule_send_message') ) {
             echo json_encode(array(
                     'success' => false,
                     'redirect_to' => '',
-                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez')
+                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez-child')
                 )
             );
             wp_die();
@@ -1643,16 +1643,16 @@ if(!function_exists('houzez_google_recaptcha_callback')) {
 
             //Error codes - https://developers.google.com/recaptcha/docs/verify
             $captach_errors  = array(
-                'missing-input-secret'   => esc_html__('The secret parameter is missing.', 'houzez'),
-                'invalid-input-secret'   => esc_html__('The secret parameter is invalid or malformed.', 'houzez'),
-                'missing-input-response' => esc_html__('The response parameter is missing.', 'houzez'),
-                'invalid-input-response' => esc_html__('The response parameter is invalid or malformed.', 'houzez'),
-                'bad-request' => esc_html__('The request is invalid or malformed.', 'houzez'),
+                'missing-input-secret'   => esc_html__('The secret parameter is missing.', 'houzez-child'),
+                'invalid-input-secret'   => esc_html__('The secret parameter is invalid or malformed.', 'houzez-child'),
+                'missing-input-response' => esc_html__('The response parameter is missing.', 'houzez-child'),
+                'invalid-input-response' => esc_html__('The response parameter is invalid or malformed.', 'houzez-child'),
+                'bad-request' => esc_html__('The request is invalid or malformed.', 'houzez-child'),
             );
             $error_message = $captach_errors[ $error_codes[ 0 ]];
             echo json_encode( array(
                 'success' => false,
-                'msg' => esc_html__( 'reCAPTCHA Failed:', 'houzez' ) . ' ' . $error_message
+                'msg' => esc_html__( 'reCAPTCHA Failed:', 'houzez-child' ) . ' ' . $error_message
             ) );
             wp_die();
         endif;

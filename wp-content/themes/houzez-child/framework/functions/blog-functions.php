@@ -32,13 +32,13 @@ if ( ! function_exists( 'houzez_comments_callback' ) ) {
                         <i class="houzez-icon icon-time-clock-circle mr-1 ml-2"></i> <?php echo get_comment_time(); ?>
                     </time>
                     <?php if ( $comment->comment_approved == '0' ) : ?>
-                    <em><?php esc_html_e( 'Your comment is awaiting moderation.', 'houzez' ); ?></em>
+                    <em><?php esc_html_e( 'Your comment is awaiting moderation.', 'houzez-child' ); ?></em>
                     <br />
                     <?php else: ?>
                         <?php comment_text(); ?>
                     <?php endif; ?>
-                    <?php edit_comment_link( esc_html__( 'Edit', 'houzez' ), ' ' ); ?>
-                    <?php comment_reply_link( array_merge( $args, array( 'reply_text' => wp_kses(__( 'Reply', 'houzez' ), $allowed_html_array ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                    <?php edit_comment_link( esc_html__( 'Edit', 'houzez-child' ), ' ' ); ?>
+                    <?php comment_reply_link( array_merge( $args, array( 'reply_text' => wp_kses(__( 'Reply', 'houzez-child' ), $allowed_html_array ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
                 </div><!-- post-comment-content -->
             </div><!-- d-flex -->
         </li><!-- comment -->

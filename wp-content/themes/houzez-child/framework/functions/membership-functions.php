@@ -31,7 +31,7 @@ if( !function_exists('houzez_register_user_with_membership') ) {
 
         if( isset( $_POST['user_role'] ) && empty($_POST['user_role']) ) {
             
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__(' The type field is empty.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__(' The type field is empty.', 'houzez-child') ) );
             wp_die();
            
         } else {
@@ -47,48 +47,48 @@ if( !function_exists('houzez_register_user_with_membership') ) {
         }
 
         if( houzez_option('header_register') != 1 ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Access denied.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Access denied.', 'houzez-child') ) );
             wp_die();
         }
 
         if( get_option('users_can_register') != 1 ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Access denied.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Access denied.', 'houzez-child') ) );
             wp_die();
         }
 
         if( empty( $username ) ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__(' The username field is empty.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__(' The username field is empty.', 'houzez-child') ) );
             wp_die();
         }
         if( strlen( $username ) < 3 ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Minimum 3 characters required', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Minimum 3 characters required', 'houzez-child') ) );
             wp_die();
         }
         if (preg_match("/^[0-9A-Za-z_]+$/", $username) == 0) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid username (do not use special characters or spaces)!', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid username (do not use special characters or spaces)!', 'houzez-child') ) );
             wp_die();
         }
         if( empty( $email ) ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('The email field is empty.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('The email field is empty.', 'houzez-child') ) );
             wp_die();
         }
         if( username_exists( $username ) ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('This username is already registered.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('This username is already registered.', 'houzez-child') ) );
             wp_die();
         }
         if( email_exists( $email ) ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('This email address is already registered.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('This email address is already registered.', 'houzez-child') ) );
             wp_die();
         }
 
         if( !is_email( $email ) ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid email address.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid email address.', 'houzez-child') ) );
             wp_die();
         }
 
         $phone_number = isset( $_POST['phone_number'] ) ? $_POST['phone_number'] : '';
         if( isset( $_POST['phone_number'] ) && empty($phone_number) && houzez_option('register_mobile', 0) == 1 ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Please enter your number', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Please enter your number', 'houzez-child') ) );
             wp_die();
         }
 
@@ -97,12 +97,12 @@ if( !function_exists('houzez_register_user_with_membership') ) {
             $user_pass_retype = trim(sanitize_text_field(wp_kses($_POST['register_pass_retype'], $allowed_html)));
 
             if ($user_pass == '' || $user_pass_retype == '') {
-                echo json_encode(array('success' => false, 'msg' => esc_html__('One of the password field is empty!', 'houzez')));
+                echo json_encode(array('success' => false, 'msg' => esc_html__('One of the password field is empty!', 'houzez-child')));
                 wp_die();
             }
 
             if ($user_pass !== $user_pass_retype) {
-                echo json_encode(array('success' => false, 'msg' => esc_html__('Passwords do not match', 'houzez')));
+                echo json_encode(array('success' => false, 'msg' => esc_html__('Passwords do not match', 'houzez-child')));
                 wp_die();
             }
         } else {
@@ -144,7 +144,7 @@ if( !function_exists('houzez_register_user_with_membership') ) {
                 //do_action( 'wp_login', $user->user_login );
                 do_action( 'wp_login', $user->user_login, $user);
 
-                echo json_encode( array( 'success' => true, 'msg' => esc_html__('Register successful, redirecting...', 'houzez') ) );
+                echo json_encode( array( 'success' => true, 'msg' => esc_html__('Register successful, redirecting...', 'houzez-child') ) );
                 wp_die();
             }
         }
@@ -222,7 +222,7 @@ if( !function_exists('houzez_2checkout_payment_membership') ) {
         require_once( get_template_directory() . '/framework/2checkout/lib/Twocheckout.php' );
     ?>
         <p class="" style="display:none" id="twocheckout_error_creditcard">
-            <?php esc_html_e('Credit Card details are incorrect, please try again.', 'houzez');?>
+            <?php esc_html_e('Credit Card details are incorrect, please try again.', 'houzez-child');?>
         </p>
 
         <p class="alert alert-danger" style="display:none" id="twocheckout_error_required"></p>
@@ -238,37 +238,37 @@ if( !function_exists('houzez_2checkout_payment_membership') ) {
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chname"><?php echo __( 'Card holder’s name', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chname"><?php echo __( 'Card holder’s name', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="128" name="tc_chname" id="tc_chname" required autocomplete="off" value="<?php echo esc_attr($display_name);?>" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chaddress"><?php echo __( 'Street address (64 characters max)', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chaddress"><?php echo __( 'Street address (64 characters max)', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="64" name="tc_chaddress" id="tc_chaddress" required autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chcity"><?php echo __( 'City', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chcity"><?php echo __( 'City', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="64" name="tc_chcity" id="tc_chcity" required autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chstate"><?php echo __( 'State', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chstate"><?php echo __( 'State', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="64" required name="tc_chstate" id="tc_chstate" autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chzipCode"><?php echo __( 'zipCode', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chzipCode"><?php echo __( 'zipCode', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="14" required name="tc_chzipCode" id="tc_chzipCode" autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chcountry"><?php echo __( 'Country', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chcountry"><?php echo __( 'Country', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <select name="tc_chcountry" id="tc_chcountry" class="selectpicker" data-live-search="true">
                             <?php
                             foreach( houzez_countries_list() as $key=>$country ) {
@@ -280,13 +280,13 @@ if( !function_exists('houzez_2checkout_payment_membership') ) {
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chemail"><?php echo __( 'Email Address', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chemail"><?php echo __( 'Email Address', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="email" class="input-text form-control" name="tc_chemail" id="tc_chemail" required autocomplete="off" value="<?php echo $user_email; ?>" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chphone"><?php echo __( 'Phone Number', 'houzez' ) ?></label>
+                        <label for="tc_chphone"><?php echo __( 'Phone Number', 'houzez-child' ) ?></label>
                         <input type="text" class="input-text form-control" name="tc_chphone" id="tc_chphone" autocomplete="off" value="<?php echo esc_attr($user_mobile);?>" />
                     </div>
                 </div>
@@ -298,16 +298,16 @@ if( !function_exists('houzez_2checkout_payment_membership') ) {
                 <!-- Credit card number -->
                 <div class="col-sm-6 col-xs-6">
                     <div class="form-group">
-                        <label for="ccNo"><?php echo __( 'Credit Card number', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="ccNo"><?php echo __( 'Credit Card number', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" id="ccNo" required autocomplete="off" value="" />
                     </div>
                 </div>
                 <!-- Credit card expiration -->
                 <div class="col-sm-3 col-xs-12">
                     <div class="form-group">
-                        <label for="cc-expire-month"><?php echo __( 'Expiration date', 'houzez') ?> <span class="required">*</span></label>
+                        <label for="cc-expire-month"><?php echo __( 'Expiration date', 'houzez-child') ?> <span class="required">*</span></label>
                         <select id="expMonth" class="houzez-select houzez-cc-month form-control">
-                            <option value=""><?php _e( 'Month', 'houzez' ) ?></option><?php
+                            <option value=""><?php _e( 'Month', 'houzez-child' ) ?></option><?php
                             $months = array();
                             for ( $i = 1; $i <= 12; $i ++ ) {
                                 $timestamp = mktime( 0, 0, 0, $i, 1 );
@@ -323,7 +323,7 @@ if( !function_exists('houzez_2checkout_payment_membership') ) {
                     <div class="form-group">
                         <label>&nbsp;</label>
                         <select id="expYear" class="houzez-select houzez-cc-year form-control">
-                            <option value=""><?php _e( 'Year', 'houzez' ) ?></option>
+                            <option value=""><?php _e( 'Year', 'houzez-child' ) ?></option>
                             <?php
                             $years = array();
                             for ( $i = date( 'y' ); $i <= date( 'y' ) + 15; $i ++ ) {
@@ -335,11 +335,11 @@ if( !function_exists('houzez_2checkout_payment_membership') ) {
                 </div>
                 <!-- Credit card security code -->
                 <div class="col-sm-12 col-xs-12">
-                    <label for="cvv"><?php _e( 'Card security code', 'houzez' ) ?> <span class="required">*</span></label>
+                    <label for="cvv"><?php _e( 'Card security code', 'houzez-child' ) ?> <span class="required">*</span></label>
                     <input type="text" class="input-text form-control" id="cvv" autocomplete="off" maxlength="4" style="width:55px">
                 </div>
                 <div class="col-sm-12 col-xs-12">
-                    <span class="help-block" style="text-align: left"><?php _e( '3 or 4 digits usually found on the signature strip.', 'houzez' ) ?></span>
+                    <span class="help-block" style="text-align: left"><?php _e( '3 or 4 digits usually found on the signature strip.', 'houzez-child' ) ?></span>
                 </div>
             </div>
 
@@ -434,43 +434,43 @@ if( !function_exists('houzez_2checkout_payment_membership') ) {
                 var tc_chcountry = document.getElementById("tc_chcountry");
 
                 if (tc_chname.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Card holder’s name required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Card holder’s name required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chaddress.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Street address required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Street address required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chcity.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'City required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'City required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chstate.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'State required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'State required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chzipcode.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Zipcode required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Zipcode required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chcountry.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Country field required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Country field required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chemail.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Valid email address required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Valid email address required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
@@ -513,7 +513,7 @@ if( !function_exists('houzez_2checkout_payment') ) {
         require_once( get_template_directory() . '/framework/2checkout/lib/Twocheckout.php' );
         ?>
         <p class="alert alert-danger" style="display:none" id="twocheckout_error_creditcard">
-            <?php esc_html_e('Credit Card details are incorrect, please try again.', 'houzez');?>
+            <?php esc_html_e('Credit Card details are incorrect, please try again.', 'houzez-child');?>
         </p>
 
         <p class="alert alert-danger" style="display:none" id="twocheckout_error_required"></p>
@@ -528,37 +528,37 @@ if( !function_exists('houzez_2checkout_payment') ) {
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chname"><?php echo __( 'Card holder’s name', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chname"><?php echo __( 'Card holder’s name', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="128" name="tc_chname" id="tc_chname" required autocomplete="off" value="<?php echo esc_attr($display_name);?>" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chaddress"><?php echo __( 'Street address (64 characters max)', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chaddress"><?php echo __( 'Street address (64 characters max)', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="64" name="tc_chaddress" id="tc_chaddress" required autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chcity"><?php echo __( 'City', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chcity"><?php echo __( 'City', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="64" name="tc_chcity" id="tc_chcity" required autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chstate"><?php echo __( 'State', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chstate"><?php echo __( 'State', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="64" required name="tc_chstate" id="tc_chstate" autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chzipCode"><?php echo __( 'zipCode', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chzipCode"><?php echo __( 'zipCode', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" maxlength="14" required name="tc_chzipCode" id="tc_chzipCode" autocomplete="off" value="" />
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="form-group">
-                        <label for="tc_chcountry"><?php echo __( 'Country', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chcountry"><?php echo __( 'Country', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <select name="tc_chcountry" id="tc_chcountry" class="selectpicker" data-live-search="true">
                             <?php
                             foreach( houzez_countries_list() as $key=>$country ) {
@@ -570,13 +570,13 @@ if( !function_exists('houzez_2checkout_payment') ) {
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chemail"><?php echo __( 'Email Address', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="tc_chemail"><?php echo __( 'Email Address', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="email" class="input-text form-control" name="tc_chemail" id="tc_chemail" required autocomplete="off" value="<?php echo $user_email; ?>" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="tc_chphone"><?php echo __( 'Phone Number', 'houzez' ) ?></label>
+                        <label for="tc_chphone"><?php echo __( 'Phone Number', 'houzez-child' ) ?></label>
                         <input type="text" class="input-text form-control" name="tc_chphone" id="tc_chphone" autocomplete="off" value="<?php echo esc_attr($user_mobile);?>" />
                     </div>
                 </div>
@@ -587,16 +587,16 @@ if( !function_exists('houzez_2checkout_payment') ) {
                 <!-- Credit card number -->
                 <div class="col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <label for="ccNo"><?php echo __( 'Credit Card number', 'houzez' ) ?> <span class="required">*</span></label>
+                        <label for="ccNo"><?php echo __( 'Credit Card number', 'houzez-child' ) ?> <span class="required">*</span></label>
                         <input type="text" class="input-text form-control" id="ccNo" required autocomplete="off" value="" />
                     </div>
                 </div>
                 <!-- Credit card expiration -->
                 <div class="col-sm-3 col-xs-12">
                     <div class="form-group">
-                        <label for="cc-expire-month"><?php echo __( 'Expiration date', 'houzez') ?> <span class="required">*</span></label>
+                        <label for="cc-expire-month"><?php echo __( 'Expiration date', 'houzez-child') ?> <span class="required">*</span></label>
                         <select id="expMonth" class="houzez-select houzez-cc-month form-control">
-                            <option value=""><?php _e( 'Month', 'houzez' ) ?></option><?php
+                            <option value=""><?php _e( 'Month', 'houzez-child' ) ?></option><?php
                             $months = array();
                             for ( $i = 1; $i <= 12; $i ++ ) {
                                 $timestamp = mktime( 0, 0, 0, $i, 1 );
@@ -612,7 +612,7 @@ if( !function_exists('houzez_2checkout_payment') ) {
                     <div class="form-group">
                         <label>&nbsp;</label>
                         <select id="expYear" class="houzez-select houzez-cc-year form-control">
-                            <option value=""><?php _e( 'Year', 'houzez' ) ?></option>
+                            <option value=""><?php _e( 'Year', 'houzez-child' ) ?></option>
                             <?php
                             $years = array();
                             for ( $i = date( 'y' ); $i <= date( 'y' ) + 15; $i ++ ) {
@@ -624,11 +624,11 @@ if( !function_exists('houzez_2checkout_payment') ) {
                 </div>
                 <!-- Credit card security code -->
                 <div class="col-sm-12 col-xs-12">
-                    <label for="cvv"><?php _e( 'Card security code', 'houzez' ) ?> <span class="required">*</span></label>
+                    <label for="cvv"><?php _e( 'Card security code', 'houzez-child' ) ?> <span class="required">*</span></label>
                     <input type="text" class="input-text form-control" id="cvv" autocomplete="off" maxlength="4" style="width:55px">
                 </div>
                 <div class="col-sm-12 col-xs-12">
-                    <span class="help-block" style="text-align: left"><?php _e( '3 or 4 digits usually found on the signature strip.', 'houzez' ) ?></span>
+                    <span class="help-block" style="text-align: left"><?php _e( '3 or 4 digits usually found on the signature strip.', 'houzez-child' ) ?></span>
                 </div>
             </div>
 
@@ -724,43 +724,43 @@ if( !function_exists('houzez_2checkout_payment') ) {
                 var tc_chcountry = document.getElementById("tc_chcountry");
 
                 if (tc_chname.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Card holder’s name required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Card holder’s name required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chaddress.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Street address required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Street address required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chcity.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'City required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'City required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chstate.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'State required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'State required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chzipcode.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Zipcode required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Zipcode required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chcountry.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Country field required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Country field required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
                 }
                 if (tc_chemail.checkValidity() == false) {
-                    errorMsg = '<?php echo __( 'Valid email address required', 'houzez' ) ?>';
+                    errorMsg = '<?php echo __( 'Valid email address required', 'houzez-child' ) ?>';
                     jQuery("#twocheckout_error_required").show();
                     document.getElementById("twocheckout_error_required").innerHTML = errorMsg;
                     return false;
@@ -826,8 +826,8 @@ if( !function_exists('houzez_stripe_payment_membership') ) {
                 data-zip-code="true"
                 data-locale="'.get_locale().'"
                 data-billing-address="true"
-                data-label="'.__('Pay with Credit Card','houzez').'"
-                data-description="'.$title.' '.__('Package Payment','houzez').'">
+                data-label="'.__('Pay with Credit Card','houzez-child').'"
+                data-description="'.$title.' '.__('Package Payment','houzez-child').'">
                 </script>
             </div>
             <input type="hidden" id="pack_id" name="pack_id" value="' . $pack_id . '">
@@ -896,8 +896,8 @@ if( !function_exists('houzez_stripe_payment_perlisting') ) {
             data-billing-address="true"
             data-locale="'.get_locale().'"
             data-currency="' . $submission_currency . '"
-            data-label="' . esc_html__('Pay with Credit Card', 'houzez') . '"
-            data-description="' . esc_html__('Submission Payment', 'houzez') . '">
+            data-label="' . esc_html__('Pay with Credit Card', 'houzez-child') . '"
+            data-description="' . esc_html__('Submission Payment', 'houzez-child') . '">
             </script>
         </div>
         <input type="hidden" id="propID" name="propID" value="' . $postID . '">
@@ -915,8 +915,8 @@ if( !function_exists('houzez_stripe_payment_perlisting') ) {
             data-billing-address="true"
             data-locale="'.get_locale().'"
             data-currency="' . $submission_currency . '"
-            data-label="' . esc_html__('Pay with Credit Card', 'houzez') . '"
-            data-description="' . esc_html__('Submission & Featured Payment', 'houzez') . '">
+            data-label="' . esc_html__('Pay with Credit Card', 'houzez-child') . '"
+            data-description="' . esc_html__('Submission & Featured Payment', 'houzez-child') . '">
             </script>
         </div>';
     }
@@ -1174,14 +1174,14 @@ if( ! function_exists( 'houzez_stripe_package_payment' ) ) {
         if( empty($api_error) && $checkout_session ) { 
             $response = array( 
                 'status' => true, 
-                'message' => esc_html__('Checkout Session created successfully!', 'houzez'), 
+                'message' => esc_html__('Checkout Session created successfully!', 'houzez-child'), 
                 'sessionId' => $checkout_session['id'],
                 'paymeny_link' => $checkout_session->url
             ); 
         }else{ 
             $response = array( 
                 'status' => false, 
-                'message' => esc_html__('Checkout Session creation failed!', 'houzez').' '.$api_error
+                'message' => esc_html__('Checkout Session creation failed!', 'houzez-child').' '.$api_error
             ); 
         } 
         update_user_meta( get_current_user_id(), 'houzez_stripe_temp_session_id', $checkout_session->id );
@@ -1228,7 +1228,7 @@ if( !function_exists('houzez_property_stripe_payment') ) {
         $price_per_submission       =   floatval( $price_per_submission );
         $price_featured_submission  =   floatval( $price_featured_submission );
         $submission_currency         =   esc_html( $currency );
-        $payment_description        =   esc_html__('Listing payment on ','houzez').$blogInfo;
+        $payment_description        =   esc_html__('Listing payment on ','houzez-child').$blogInfo;
 
         $with_featured = 0;
         $is_upgrade = 0;
@@ -1238,14 +1238,14 @@ if( !function_exists('houzez_property_stripe_payment') ) {
         } else {
             $total_price = $price_per_submission + $price_featured_submission;
             $total_price = number_format( $total_price, 2, '.','' );
-            $payment_description = __('Submission & Featured Payment on ','houzez').$blogInfo;
+            $payment_description = __('Submission & Featured Payment on ','houzez-child').$blogInfo;
             $with_featured = 1;
 
         }
 
         if ( $is_prop_upgrade == 1 ) {
             $total_price     =  number_format($price_featured_submission, 2, '.','');
-            $payment_description =   esc_html__('Upgrade to featured listing on ','houzez').$blogInfo;
+            $payment_description =   esc_html__('Upgrade to featured listing on ','houzez-child').$blogInfo;
             $is_upgrade = 1;
         }
 
@@ -1302,14 +1302,14 @@ if( !function_exists('houzez_property_stripe_payment') ) {
         if( empty($api_error) && $checkout_session ) { 
             $response = array( 
                 'status' => true, 
-                'message' => esc_html__('Checkout Session created successfully!', 'houzez'), 
+                'message' => esc_html__('Checkout Session created successfully!', 'houzez-child'), 
                 'sessionId' => $checkout_session['id'],
                 'paymeny_link' => $checkout_session->url
             ); 
         }else{ 
             $response = array( 
                 'status' => false, 
-                'message' => esc_html__('Checkout Session creation failed!', 'houzez').' '.$api_error
+                'message' => esc_html__('Checkout Session creation failed!', 'houzez-child').' '.$api_error
             ); 
         } 
         echo json_encode($response);
@@ -1349,7 +1349,7 @@ if( !function_exists('houzez_property_paypal_payment') ) {
         $price_per_submission       =   floatval( $price_per_submission );
         $price_featured_submission  =   floatval( $price_featured_submission );
         $submission_curency         =   esc_html( $currency );
-        $payment_description        =   esc_html__('Listing payment on ','houzez').$blogInfo;
+        $payment_description        =   esc_html__('Listing payment on ','houzez-child').$blogInfo;
 
         if( $is_prop_featured == 0 ) {
             $total_price =  number_format( $price_per_submission, 2, '.','' );
@@ -1360,7 +1360,7 @@ if( !function_exists('houzez_property_paypal_payment') ) {
 
         if ( $is_prop_upgrade == 1 ) {
             $total_price     =  number_format($price_featured_submission, 2, '.','');
-            $payment_description =   esc_html__('Upgrade to featured listing on ','houzez').$blogInfo;
+            $payment_description =   esc_html__('Upgrade to featured listing on ','houzez-child').$blogInfo;
         }
 
         // Check if payal live
@@ -1408,7 +1408,7 @@ if( !function_exists('houzez_property_paypal_payment') ) {
 
             $payment['transactions'][0]['item_list']['items'][] = array(
                 'quantity' => '1',
-                'name' => esc_html__('Upgrade to Featured Listing','houzez'),
+                'name' => esc_html__('Upgrade to Featured Listing','houzez-child'),
                 'price' => $total_price,
                 'currency' => $submission_curency,
                 'sku' => 'Upgrade Listing',
@@ -1419,7 +1419,7 @@ if( !function_exists('houzez_property_paypal_payment') ) {
 
                 $payment['transactions'][0]['item_list']['items'][] = array(
                     'quantity' => '1',
-                    'name' => esc_html__('Listing with Featured Payment option','houzez'),
+                    'name' => esc_html__('Listing with Featured Payment option','houzez-child'),
                     'price' => $total_price,
                     'currency' => $submission_curency,
                     'sku' => 'Featured Paid Listing',
@@ -1428,7 +1428,7 @@ if( !function_exists('houzez_property_paypal_payment') ) {
             } else {
                 $payment['transactions'][0]['item_list']['items'][] = array(
                     'quantity' => '1',
-                    'name' => esc_html__('Listing Payment','houzez'),
+                    'name' => esc_html__('Listing Payment','houzez-child'),
                     'price' => $total_price,
                     'currency' => $submission_curency,
                     'sku' => 'Paid Listing',
@@ -1500,7 +1500,7 @@ if( !function_exists('houzez_paypal_package_payment') ) {
 
 
         $currency            = houzez_option('currency_paid_submission');
-        $payment_description = $houzez_package_name.' '.__('Membership payment on ','houzez').$blogInfo;
+        $payment_description = $houzez_package_name.' '.__('Membership payment on ','houzez-child').$blogInfo;
 
         $is_paypal_live      = houzez_option('paypal_api');
         $host                = 'https://api.sandbox.paypal.com';
@@ -1540,11 +1540,11 @@ if( !function_exists('houzez_paypal_package_payment') ) {
 
         $payment['transactions'][0]['item_list']['items'][] = array(
             'quantity' => '1',
-            'name' => __('Membership Payment ','houzez'),
+            'name' => __('Membership Payment ','houzez-child'),
             'price' => $houzez_package_price,
             'tax'         => '0.00',
             'currency' => $currency,
-            'sku' => $houzez_package_name.' '.__('Membership Payment ','houzez'),
+            'sku' => $houzez_package_name.' '.__('Membership Payment ','houzez-child'),
         );
 
         // Convert PHP array into json format
@@ -1656,7 +1656,7 @@ if(!function_exists('houzez_create_billing_plan')) {
         $submissionCurency  =  houzez_option('currency_paid_submission');
         $return_url      = houzez_get_template_link('template/template-thankyou.php');
         $cancel_url   =  houzez_get_dashboard_profile_link();
-        $plan_description = $packName.' '.esc_html__('Membership payment on ','houzez').$blogInfo;
+        $plan_description = $packName.' '.esc_html__('Membership payment on ','houzez-child').$blogInfo;
 
         $pack_tax = get_post_meta( $package_id, 'fave_package_tax', true );
         if( !empty($pack_tax) && !empty($packPrice) ) {
@@ -1800,7 +1800,7 @@ function houzez_create_paypal_agreement($package_id, $access_token, $plan_id) {
 
     $submissionCurency  =  houzez_option('currency_paid_submission');
     $return_url      = houzez_get_template_link('template/template-thankyou.php');
-    $plan_description = $packName.' '.__('Membership payment on ','houzez').$blogInfo;
+    $plan_description = $packName.' '.__('Membership payment on ','houzez-child').$blogInfo;
     $return_url      = houzez_get_template_link('template/template-thankyou.php');
 
     $url        = $host.'/v1/payments/billing-agreements/';
@@ -1950,7 +1950,7 @@ if( !function_exists('houzez_mollie_package_payment') ) {
         }
 
         $currency = houzez_option('currency_paid_submission');
-        $payment_description = $houzez_package_name . ' ' . esc_html__('Membership payment on ', 'houzez') . $blogInfo;
+        $payment_description = $houzez_package_name . ' ' . esc_html__('Membership payment on ', 'houzez-child') . $blogInfo;
 
         /*
          * Payment parameters:
@@ -2177,11 +2177,11 @@ if( !function_exists('houzez_downgrade_package') ):
         $user_email = $user->user_email;
 
         $headers = 'From: No Reply <noreply@'.$_SERVER['HTTP_HOST'].'>' . "\r\n";
-        $message  = esc_html__('Account Downgraded,','houzez') . "\r\n\r\n";
-        $message .= sprintf( __("Hello, You downgraded your subscription on  %s. Because your listings number was greater than what the actual package offers, we set the status of all your listings to \"expired\". You will need to choose which listings you want live and send them again for approval. Thank you!",'houzez'), get_option('blogname')) . "\r\n\r\n";
+        $message  = esc_html__('Account Downgraded,','houzez-child') . "\r\n\r\n";
+        $message .= sprintf( __("Hello, You downgraded your subscription on  %s. Because your listings number was greater than what the actual package offers, we set the status of all your listings to \"expired\". You will need to choose which listings you want live and send them again for approval. Thank you!",'houzez-child'), get_option('blogname')) . "\r\n\r\n";
 
         wp_mail($user_email,
-            sprintf(esc_html__('[%s] Account Downgraded','houzez'), get_option('blogname')),
+            sprintf(esc_html__('[%s] Account Downgraded','houzez-child'), get_option('blogname')),
             $message,
             $headers);
     }
@@ -2274,7 +2274,7 @@ if( !function_exists('houzez_resend_for_approval') ) {
             if ($available_listings != -1) { // if !unlimited
                 update_user_meta($userID, 'package_listings', $available_listings - 1);
             }
-            echo json_encode(array('success' => true, 'msg' => esc_html__('Reactivated', 'houzez')));
+            echo json_encode(array('success' => true, 'msg' => esc_html__('Reactivated', 'houzez-child')));
 
             $submit_title = get_the_title($prop_id);
 
@@ -2286,7 +2286,7 @@ if( !function_exists('houzez_resend_for_approval') ) {
 
 
         } else {
-            echo json_encode(array('success' => false, 'msg' => esc_html__('No listings available', 'houzez')));
+            echo json_encode(array('success' => false, 'msg' => esc_html__('No listings available', 'houzez-child')));
             wp_die();
         }
         wp_die();
@@ -2339,10 +2339,10 @@ if( !function_exists('houzez_property_on_hold_package') ) {
             }
             $prop_id =  wp_update_post($post);
 
-            echo json_encode(array('success' => true, 'msg' => esc_html__('Listings set on hold', 'houzez')));
+            echo json_encode(array('success' => true, 'msg' => esc_html__('Listings set on hold', 'houzez-child')));
 
         /*} else {
-            echo json_encode(array('success' => false, 'msg' => esc_html__('No listings available', 'houzez')));
+            echo json_encode(array('success' => false, 'msg' => esc_html__('No listings available', 'houzez-child')));
             wp_die();
         }*/
         wp_die();
@@ -2359,7 +2359,7 @@ if( !function_exists('houzez_get_user_current_package') ) {
         $packages_page_link = houzez_get_template_link('template/template-packages.php');
 
         if( $remaining_listings == -1 ) {
-            $remaining_listings = esc_html__('Unlimited', 'houzez');
+            $remaining_listings = esc_html__('Unlimited', 'houzez-child');
         }
 
         if( !empty( $package_id ) ) {
@@ -2386,19 +2386,19 @@ if( !function_exists('houzez_get_user_current_package') ) {
             $expired_date = date_i18n( get_option('date_format').' '.get_option('time_format'),  $expired_date );
 
            
-            echo '<li>'.esc_html__( 'Your Current Package', 'houzez' ).'<strong>'.esc_attr( $pack_title ).'</strong></li>';
+            echo '<li>'.esc_html__( 'Your Current Package', 'houzez-child' ).'<strong>'.esc_attr( $pack_title ).'</strong></li>';
 
             if( $pack_unmilited_listings == 1 ) {
-                echo '<li>'.esc_html__('Listings Included: ','houzez').'<strong>'.esc_html__('unlimited listings ','houzez').'</strong></li>';
-                echo '<li>'.esc_html__('Listings Remaining: ','houzez').'<strong>'.esc_html__('unlimited listings ','houzez').'</strong></li>';
+                echo '<li>'.esc_html__('Listings Included: ','houzez-child').'<strong>'.esc_html__('unlimited listings ','houzez-child').'</strong></li>';
+                echo '<li>'.esc_html__('Listings Remaining: ','houzez-child').'<strong>'.esc_html__('unlimited listings ','houzez-child').'</strong></li>';
             } else {
-                echo '<li>'.esc_html__('Listings Included: ','houzez').'<strong>'.esc_attr( $pack_listings ).'</strong></li>';
-                echo '<li>'.esc_html__('Listings Remaining: ','houzez').'<strong>'.esc_attr( $remaining_listings ).'</strong></li>';
+                echo '<li>'.esc_html__('Listings Included: ','houzez-child').'<strong>'.esc_attr( $pack_listings ).'</strong></li>';
+                echo '<li>'.esc_html__('Listings Remaining: ','houzez-child').'<strong>'.esc_attr( $remaining_listings ).'</strong></li>';
             }
 
-            echo '<li>'.esc_html__('Featured Included: ','houzez').'<strong>'.esc_attr( $pack_featured_listings ).'</strong></li>';
-            echo '<li>'.esc_html__('Featured Remaining: ','houzez').'<strong>'.esc_attr( $pack_featured_remaining_listings ).'</strong></li>';
-            echo '<li>'.esc_html__('Ends On','houzez').'<strong>';
+            echo '<li>'.esc_html__('Featured Included: ','houzez-child').'<strong>'.esc_attr( $pack_featured_listings ).'</strong></li>';
+            echo '<li>'.esc_html__('Featured Remaining: ','houzez-child').'<strong>'.esc_attr( $pack_featured_remaining_listings ).'</strong></li>';
+            echo '<li>'.esc_html__('Ends On','houzez-child').'<strong>';
             echo ' '.esc_attr( $expired_date );
             echo '</strong></li>';
 
@@ -2463,7 +2463,7 @@ if( !function_exists('houzez_direct_pay_per_listing') ) {
 
         if (function_exists('icl_translate') ){
             $mes_wire         =  strip_tags( $wire_payment_instruction );
-            $payment_details  =  icl_translate('houzez','houzez_wire_payment_instruction_text', $mes_wire );
+            $payment_details  =  icl_translate('houzez-child','houzez_wire_payment_instruction_text', $mes_wire );
         }else{
             $payment_details =  strip_tags( $wire_payment_instruction );
         }
@@ -2617,7 +2617,7 @@ if( !function_exists('houzez_wire_transfer_per_listing') ) {
 
         if (function_exists('icl_translate') ){
             $mes_wire         =  strip_tags( $wire_payment_instruction );
-            $payment_details  =  icl_translate('houzez','houzez_wire_payment_instruction_text', $mes_wire );
+            $payment_details  =  icl_translate('houzez-child','houzez_wire_payment_instruction_text', $mes_wire );
         }else{
             $payment_details =  strip_tags( $wire_payment_instruction );
         }
@@ -2698,7 +2698,7 @@ if( !function_exists('houzez_direct_pay_package') ) {
 
         if (function_exists('icl_translate')) {
             $mes_wire = strip_tags($wire_payment_instruction);
-            $payment_details = icl_translate('houzez', 'houzez_wire_payment_instruction_text', $mes_wire);
+            $payment_details = icl_translate('houzez-child', 'houzez_wire_payment_instruction_text', $mes_wire);
         } else {
             $payment_details = strip_tags($wire_payment_instruction);
         }
@@ -2778,7 +2778,7 @@ if( !function_exists('houzez_recuring_paypal_package_payment_deprecated') ) {
 
             $obj->environment               =   esc_html( $environment );
             $obj->paymentType               =   urlencode('Sale');
-            $obj->productDesc               =   urlencode( $houzez_package_name.__(' package on ','houzez').get_bloginfo('name') );
+            $obj->productDesc               =   urlencode( $houzez_package_name.__(' package on ','houzez-child').get_bloginfo('name') );
             $time                           =   time();
             $date                           =   date('Y-m-d H:i:s',$time);
             $obj->startDate                 =   urlencode($date);

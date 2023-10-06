@@ -16,8 +16,8 @@ class houzez_login_widget extends WP_Widget {
 
         parent::__construct(
             'houzez_login_widget', // Base ID
-            esc_html__( 'HOUZEZ: Login', 'houzez' ), // Name
-            array( 'description' => esc_html__( 'houzez login widget', 'houzez' ), 'classname' => 'widget-login' ) // Args
+            esc_html__( 'HOUZEZ: Login', 'houzez-child' ), // Name
+            array( 'description' => esc_html__( 'houzez login widget', 'houzez-child' ), 'classname' => 'widget-login' ) // Args
         );
 
     }
@@ -66,7 +66,7 @@ class houzez_login_widget extends WP_Widget {
                     </div>
                     <div class="media-body v-align-middle">
                         <p><?php echo esc_attr( $current_user->display_name ); ?></p>
-                        <a href="<?php echo wp_logout_url( home_url('/') ); ?>"> <i class="fa fa-unlock"></i> <?php esc_html_e( 'Log out', 'houzez' ); ?> </a>
+                        <a href="<?php echo wp_logout_url( home_url('/') ); ?>"> <i class="fa fa-unlock"></i> <?php esc_html_e( 'Log out', 'houzez-child' ); ?> </a>
                     </div>
                 </div>
             </div>
@@ -75,8 +75,8 @@ class houzez_login_widget extends WP_Widget {
 
                 <div class="widget-body">
                     <ul class="login-tabs">
-                        <li class="active"><?php esc_html_e( 'Login', 'houzez' ); ?></li>
-                        <li><?php esc_html_e( 'Register', 'houzez' ); ?></li>
+                        <li class="active"><?php esc_html_e( 'Login', 'houzez-child' ); ?></li>
+                        <li><?php esc_html_e( 'Register', 'houzez-child' ); ?></li>
                     </ul>
                     <div class="modal-body login-block">
                         <?php get_template_part('template-parts/login-register'); ?>
@@ -119,7 +119,7 @@ class houzez_login_widget extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
             <input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
         </p>
 

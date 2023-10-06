@@ -441,12 +441,12 @@ if( is_user_logged_in() ) { ?>
                     if(houzez_edit_property()) { 
                         $view_link = isset($_GET['edit_property']) ? get_permalink($_GET['edit_property']) : '';
                     ?>
-                    <a class="btn btn-primary-outlined" target="_blank" href="<?php echo esc_url($view_link); ?>"><?php echo houzez_option('fal_view_property', esc_html__('View Property', 'houzez')); ?></a>
+                    <a class="btn btn-primary-outlined" target="_blank" href="<?php echo esc_url($view_link); ?>"><?php echo houzez_option('fal_view_property', esc_html__('View Property', 'houzez-child')); ?></a>
 
                     <?php if( get_post_status( $_GET['edit_property'] ) == 'draft' ) { ?>
                     <button id="save_as_draft" class="btn btn-primary-outlined fave-load-more">
                         <?php get_template_part('template-parts/loader'); ?>
-                        <?php echo houzez_option('fal_save_draft', esc_html__('Save as Draft', 'houzez')); ?>        
+                        <?php echo houzez_option('fal_save_draft', esc_html__('Save as Draft', 'houzez-child')); ?>        
                     </button>
                     <?php } ?>
 
@@ -454,7 +454,7 @@ if( is_user_logged_in() ) { ?>
 
                     <button id="save_as_draft" class="btn btn-primary-outlined fave-load-more">
                         <?php get_template_part('template-parts/loader'); ?>
-                        <?php echo houzez_option('fal_save_draft', esc_html__('Save as Draft', 'houzez')); ?>        
+                        <?php echo houzez_option('fal_save_draft', esc_html__('Save as Draft', 'houzez-child')); ?>        
                     </button>
 
                     <?php } ?>

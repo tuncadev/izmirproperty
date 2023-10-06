@@ -197,7 +197,7 @@ $basic_info = $prop_address = $prop_status = $prop_type = $listing_title = $list
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong><?php esc_html_e('Title', 'houzez'); ?></strong></td>
+                                <td><strong><?php esc_html_e('Title', 'houzez-child'); ?></strong></td>
                                 <?php echo $listing_title; ?>
                             </tr>
                             <tr>

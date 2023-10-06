@@ -9,12 +9,12 @@ if ( !function_exists( 'houzez_property_city_add_meta_fields' ) ) :
             $all_states = houzez_get_all_states();
         ?>
         <div class="form-field">
-            <label><?php _e( 'Which state has this city?', 'houzez' ); ?></label>
+            <label><?php _e( 'Which state has this city?', 'houzez-child' ); ?></label>
             <select name="fave[parent_state]" class="widefat">
-                <option value=""><?php esc_html_e('Select State', 'houzez'); ?></option>
+                <option value=""><?php esc_html_e('Select State', 'houzez-child'); ?></option>
                 <?php echo $all_states; ?>
             </select>
-            <p class="description"><?php _e( 'Select state which has this city.', 'houzez' ); ?></p>
+            <p class="description"><?php _e( 'Select state which has this city.', 'houzez-child' ); ?></p>
         </div>
         <?php
         }
@@ -46,13 +46,13 @@ if ( !function_exists( 'houzez_property_city_edit_meta_fields' ) ) :
         ?>
 
         <tr class="form-field">
-            <th scope="row" valign="top"><label><?php _e( 'Which state has this city?', 'houzez' ); ?></label></th>
+            <th scope="row" valign="top"><label><?php _e( 'Which state has this city?', 'houzez-child' ); ?></label></th>
             <td>
                 <select name="fave[parent_state]" class="widefat">
-                    <option value=""><?php esc_html_e('Select State', 'houzez'); ?></option>
+                    <option value=""><?php esc_html_e('Select State', 'houzez-child'); ?></option>
                     <?php echo $all_states; ?>
                 </select>
-                <p class="description"><?php _e( 'Select state which has this city.', 'houzez' ); ?></p>
+                <p class="description"><?php _e( 'Select state which has this city.', 'houzez-child' ); ?></p>
             </td>
         </tr>
 

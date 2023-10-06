@@ -31,12 +31,12 @@ $documents_download = houzez_option('documents_download');
 								
 								<?php if( $documents_download == 1 ) {
 				                    if( is_user_logged_in() ) { ?>
-				                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez' ); ?></a>
+				                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez-child' ); ?></a>
 				                    <?php } else { ?>
-				                        <a href="#" data-toggle="modal" data-target="#login-register-form"><?php esc_html_e( 'Download', 'houzez' ); ?></a>
+				                        <a href="#" data-toggle="modal" data-target="#login-register-form"><?php esc_html_e( 'Download', 'houzez-child' ); ?></a>
 				                    <?php } ?>
 				                <?php } else { ?>
-				                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez' ); ?></a>
+				                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez-child' ); ?></a>
 				                <?php } ?>
 							</div>
 						</div>

@@ -35,13 +35,13 @@ endif;
 
 if ( !function_exists( 'houzez_load_property_metaboxes' ) ) :
 	function houzez_load_property_metaboxes() {
-		add_meta_box('houzez-paid-submission', esc_html__('Paid Submission',   'houzez'), 'houzez_paid_submission', 'property', 'side', 'high' );
+		add_meta_box('houzez-paid-submission', esc_html__('Paid Submission',   'houzez-child'), 'houzez_paid_submission', 'property', 'side', 'high' );
 	}
 endif;
 
 if ( !function_exists( 'houzez_load_page_metaboxes' ) ) :
 	function houzez_load_page_metaboxes() {
-		add_meta_box('houzez-page-metaboxes', esc_html__('Page Sidebar',   'houzez'), 'houzez_page_metaboxes', 'page', 'side', 'high' );
+		add_meta_box('houzez-page-metaboxes', esc_html__('Page Sidebar',   'houzez-child'), 'houzez_page_metaboxes', 'page', 'side', 'high' );
 	}
 endif;
 
@@ -50,7 +50,7 @@ if ( !function_exists( 'houzez_load_invoices_metaboxes' ) ) :
 	function houzez_load_invoices_metaboxes() {
 		add_meta_box(
 			'houzez_invoice_metaboxes',
-			esc_html__('Invoice Details', 'houzez'),
+			esc_html__('Invoice Details', 'houzez-child'),
 			'houzez_invoice_meta',
 			array('houzez_invoice'),
 			'normal',
@@ -59,7 +59,7 @@ if ( !function_exists( 'houzez_load_invoices_metaboxes' ) ) :
 
 		add_meta_box(
 			'houzez_invoice_payment_status',
-			esc_html__('Payment Status', 'houzez'),
+			esc_html__('Payment Status', 'houzez-child'),
 			'houzez_invoice_payment_status',
 			array('houzez_invoice'),
 			'side',
@@ -73,7 +73,7 @@ if ( !function_exists( 'houzez_load_user_packages_metaboxes' ) ) :
 	function houzez_load_user_packages_metaboxes() {
 		add_meta_box(
 			'houzez_user_packages_metaboxes',
-			esc_html__('Package Details', 'houzez'),
+			esc_html__('Package Details', 'houzez-child'),
 			'houzez_user_packages_meta',
 			array('user_packages'),
 			'normal',
@@ -93,26 +93,26 @@ if( !function_exists('houzez_paid_submission') ):
 
 		$paid_submission_type  = houzez_option('enable_paid_submission');
 		if($paid_submission_type=='no'){
-			esc_html_e('Paid Submission is disabled','houzez');
+			esc_html_e('Paid Submission is disabled','houzez-child');
 		}
 
 		//if($paid_submission_type=='per_listing'){
-			esc_html_e('Payment Status: ','houzez');
+			esc_html_e('Payment Status: ','houzez-child');
 
 			$payment_status = get_post_meta( $object->ID, 'fave_payment_status', true);
 			if( $payment_status == 'paid' ) {
-				echo '<span class="fave_admin_label label-green">'.esc_html__('Paid','houzez').'</span>';
+				echo '<span class="fave_admin_label label-green">'.esc_html__('Paid','houzez-child').'</span>';
 			} else {
-				echo '<span class="fave_admin_label label-red">'.esc_html__('Not Paid','houzez').'</span>';
+				echo '<span class="fave_admin_label label-red">'.esc_html__('Not Paid','houzez-child').'</span>';
 			}
 		//}
 		?>
 
 		<div class="favethemes_meta_control custom_sidebar_js">
-			<p><?php esc_html_e( 'Change Payment Status:', 'houzez' ); ?></p>
+			<p><?php esc_html_e( 'Change Payment Status:', 'houzez-child' ); ?></p>
 			<select name="fave[fave_payment_status]" class="fave-dropdown widefat">
-				<option value="not_paid" <?php selected( $payment_status, 'not_paid' );?>><?php esc_html_e( 'Not Paid', 'houzez' ); ?></option>
-				<option value="paid" <?php selected( $payment_status, 'paid' );?>><?php esc_html_e( 'Paid', 'houzez' ); ?></option>
+				<option value="not_paid" <?php selected( $payment_status, 'not_paid' );?>><?php esc_html_e( 'Not Paid', 'houzez-child' ); ?></option>
+				<option value="paid" <?php selected( $payment_status, 'paid' );?>><?php esc_html_e( 'Paid', 'houzez-child' ); ?></option>
 			</select>
 		</div>
 
@@ -137,15 +137,15 @@ if( !function_exists('houzez_page_metaboxes') ):
 		$selected_sidebar = $fave_meta['selected_sidebar'];
 	?>
 		<div class="favethemes_meta_control custom_sidebar_js">
-			<p><?php esc_html_e('Show Specific Sidebar?', 'houzez' ); ?></p>
+			<p><?php esc_html_e('Show Specific Sidebar?', 'houzez-child' ); ?></p>
 			<select id="specific_sidebar" name="fave[specific_sidebar]" class="fave-dropdown widefat">
-				<option value="no" <?php selected( $specific_sidebar, 'no' );?>><?php esc_html_e( 'No', 'houzez' ); ?></option>
-				<option value="yes" <?php selected( $specific_sidebar, 'yes' );?>><?php esc_html_e( 'Yes', 'houzez' ); ?></option>
+				<option value="no" <?php selected( $specific_sidebar, 'no' );?>><?php esc_html_e( 'No', 'houzez-child' ); ?></option>
+				<option value="yes" <?php selected( $specific_sidebar, 'yes' );?>><?php esc_html_e( 'Yes', 'houzez-child' ); ?></option>
 			</select>
 		</div>
 
 		<div id="houzez_selected_sidebar" class="favethemes_meta_control" style="display: none;">
-			<p><?php esc_html_e('Select Sidebar', 'houzez' ); ?></p>
+			<p><?php esc_html_e('Select Sidebar', 'houzez-child' ); ?></p>
 			<select name="fave[selected_sidebar]" class="fave-dropdown widefat">
 				<?php
 				foreach( $wp_registered_sidebars as $sidebar ) { ?>
@@ -218,23 +218,23 @@ if ( !function_exists( 'houzez_invoice_meta' ) ) :
 			<div class="favethemes_meta_control">
 				<?php
 				if( $invoice_billion_for =='package' || $invoice_billion_for =='Package' ) {
-					print '<div id="activate_package" class="houzez_activate_listing button button-primary button-large" data-invoice="'.$object->ID.'" data-item="'.esc_attr($fave_meta['invoice_item_id']).'"><span class="btn-loader houzez-loader-js"></span>'.esc_html__('Wire Payment Received - Activate the purchase', 'houzez').'</div>';
+					print '<div id="activate_package" class="houzez_activate_listing button button-primary button-large" data-invoice="'.$object->ID.'" data-item="'.esc_attr($fave_meta['invoice_item_id']).'"><span class="btn-loader houzez-loader-js"></span>'.esc_html__('Wire Payment Received - Activate the purchase', 'houzez-child').'</div>';
 				} else {
-					print '<div id="activate_purchase_listing" class="houzez_activate_listing button button-primary button-large" data-invoice="'.$object->ID.'" data-item="'.esc_attr($fave_meta['invoice_item_id']).' " data-purchaseType="'.$purchase_type.'"><span class="btn-loader houzez-loader-js"></span>'.esc_html__('Wire Payment Received - Activate the purchase', 'houzez').'</div>';
+					print '<div id="activate_purchase_listing" class="houzez_activate_listing button button-primary button-large" data-invoice="'.$object->ID.'" data-item="'.esc_attr($fave_meta['invoice_item_id']).' " data-purchaseType="'.$purchase_type.'"><span class="btn-loader houzez-loader-js"></span>'.esc_html__('Wire Payment Received - Activate the purchase', 'houzez-child').'</div>';
 				}
 				?>
 			</div>
 		<?php } ?>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Invoice ID', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Invoice ID', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong><?php echo intval( $object->ID ); ?></strong>
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Billing For', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Billing For', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<!--<strong><?php /*echo esc_attr( $fave_meta['invoice_billion_for'] ); */?></strong>-->
 				<input class="fave-input-text-backend-large" type="text" name="fave[invoice_billion_for]" value="<?php echo esc_attr($fave_meta['invoice_billion_for']); ?>" /> <br/>
@@ -243,7 +243,7 @@ if ( !function_exists( 'houzez_invoice_meta' ) ) :
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Billing Type', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Billing Type', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<!--<strong><?php /*echo esc_attr( $fave_meta['invoice_billing_type'] ); */?></strong>-->
 				<input class="fave-input-text-backend-large" type="text" name="fave[invoice_billing_type]" value="<?php echo esc_html($fave_meta['invoice_billing_type']); ?>" />
@@ -251,7 +251,7 @@ if ( !function_exists( 'houzez_invoice_meta' ) ) :
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Payment Method', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Payment Method', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<!--<strong>
 					<?php /*echo esc_attr( $fave_meta['invoice_payment_method'] );  */?>
@@ -261,35 +261,35 @@ if ( !function_exists( 'houzez_invoice_meta' ) ) :
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Item ID (Listing or Package ID)', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Item ID (Listing or Package ID)', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<input class="fave-input-text-backend-large" type="text" name="fave[invoice_item_id]" value="<?php echo esc_attr($fave_meta['invoice_item_id']); ?>" />
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Item Price:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Item Price:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<input class="fave-input-text-backend-large" type="text" name="fave[invoice_item_price]" value="<?php echo esc_attr($fave_meta['invoice_item_price']); ?>" />
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Tax:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Tax:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<input class="fave-input-text-backend-large" type="text" name="fave[invoice_tax]" value="<?php echo esc_attr($fave_meta['invoice_tax']); ?>" />
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Purchase Date:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Purchase Date:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<input class="fave-input-text-backend-large" type="text" name="fave[invoice_purchase_date]" value="<?php echo esc_attr($fave_meta['invoice_purchase_date']); ?>" />
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Username (Buyer Name):', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Username (Buyer Name):', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong>
 					<?php
@@ -301,7 +301,7 @@ if ( !function_exists( 'houzez_invoice_meta' ) ) :
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Email Address:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Email Address:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong>
 					<?php
@@ -312,7 +312,7 @@ if ( !function_exists( 'houzez_invoice_meta' ) ) :
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'User ID (Buyer):', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'User ID (Buyer):', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<input class="fave-input-text-backend-large" type="text" name="fave[invoice_buyer_id]" value="<?php echo esc_attr($fave_meta['invoice_buyer_id']); ?>" />
 			</div>
@@ -320,7 +320,7 @@ if ( !function_exists( 'houzez_invoice_meta' ) ) :
 
 		<?php if( $paypal_txn_id !='' ) { ?>
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Paypal - Reccuring Payment ID:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Paypal - Reccuring Payment ID:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong>
 					<?php echo print $paypal_txn_id; ?>
@@ -345,9 +345,9 @@ if( !function_exists('houzez_invoice_payment_status') ):
 			<?php
 			$payment_status = get_post_meta( $object->ID, 'invoice_payment_status', true);
 			if( $payment_status == 0 ) {
-				echo '<span class="fave_admin_label label-red" style="float: none;">'.esc_html__('Not Paid','houzez').'</span>';
+				echo '<span class="fave_admin_label label-red" style="float: none;">'.esc_html__('Not Paid','houzez-child').'</span>';
 			} else {
-				echo '<span class="fave_admin_label label-green" style="float: none;">'.esc_html__('Paid','houzez').'</span>';
+				echo '<span class="fave_admin_label label-green" style="float: none;">'.esc_html__('Paid','houzez-child').'</span>';
 			}
 			?>
 		</div>
@@ -484,42 +484,42 @@ if ( !function_exists( 'houzez_user_packages_meta' ) ) :
 		?>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Username:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Username:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong> <?php echo esc_attr( $user_info->display_name ); ?> </strong>
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Package:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Package:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong> <?php echo esc_attr( $package_name ); ?> </strong>
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Listings available:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Listings available:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong> <?php echo esc_attr( $pack_available_listings ); ?> </strong>
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Featured Listings available:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Featured Listings available:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong> <?php echo esc_attr( $pack_featured_available_listings ); ?> </strong>
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Package Activation:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Package Activation:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong> <?php echo esc_attr( $package_activation ); ?> </strong>
 			</div>
 		</div>
 
 		<div class="favethemes_meta_control">
-			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Expire Date:', 'houzez' ); ?></span></p>
+			<p class="fave-inline-block-wrap"><span class="fave_meta_title"><?php esc_html_e( 'Expire Date:', 'houzez-child' ); ?></span></p>
 			<div class="fave-inline-block-wrap">
 				<strong> <?php echo esc_attr( $expired_date ); ?> </strong>
 			</div>

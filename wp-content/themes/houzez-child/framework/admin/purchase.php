@@ -12,7 +12,7 @@ $purchase_code = get_option( 'houzez_purchase_code' );
 	<?php get_template_part('framework/admin/tabs'); ?>
 
 	<div class="admin-houzez-content">
-		<h2><?php esc_html_e('Houzez Purchase Verification', 'houzez'); ?></h2>
+		<h2><?php esc_html_e('Houzez Purchase Verification', 'houzez-child'); ?></h2>
 		<div class="admin-houzez-row">
 			
 			<div class="admin-houzez-box-wrap">
@@ -21,7 +21,7 @@ $purchase_code = get_option( 'houzez_purchase_code' );
 					
 					<div class="admin-houzez-box-content">
 						
-						<p><?php esc_html_e('Enter purchase code to verify your purchase. This will allow you to install plugins, import demo and unlock all features', 'houzez'); ?></p>
+						<p><?php esc_html_e('Enter purchase code to verify your purchase. This will allow you to install plugins, import demo and unlock all features', 'houzez-child'); ?></p>
 
 						<form id="admin-houzez-form" class="admin-houzez-form">
 							
@@ -30,7 +30,7 @@ $purchase_code = get_option( 'houzez_purchase_code' );
 							<div class="form-field">
 								<?php if( $houzez_activation == 'activated' ) { ?>
 				
-									<label><?php esc_html_e('Purchase Code', 'houzez'); ?> *</label>
+									<label><?php esc_html_e('Purchase Code', 'houzez-child'); ?> *</label>
 									<?php if( ! empty( $purchase_code ) ) { ?>
 									<input id="item_purchase_code" autocomplete="off" readonly class="regular-text" type="text" placeholder="Enter item purchase code." value="<?php echo esc_attr($purchase_code); ?>">
 									<?php } ?>
@@ -38,7 +38,7 @@ $purchase_code = get_option( 'houzez_purchase_code' );
 									<span class="ps-verified">Verified</span>
 								<?php
 								} else { ?>
-									<label><?php esc_html_e('Purchase Code', 'houzez'); ?> *</label>
+									<label><?php esc_html_e('Purchase Code', 'houzez-child'); ?> *</label>
 									<input id="item_purchase_code" autocomplete="off" class="regular-text" type="text" placeholder="Enter item purchase code.">
 									<input type="hidden" name="action" value="houzez_purchase_verify">
 								<?php
@@ -54,10 +54,10 @@ $purchase_code = get_option( 'houzez_purchase_code' );
 							<div class="submit">
 
 								<?php if( $houzez_activation == 'activated' ) { ?>
-									<button id="houzez-deactivate-code" type="submit" class="button button-primary"><?php esc_html_e('Deactivate', 'houzez'); ?></button>
+									<button id="houzez-deactivate-code" type="submit" class="button button-primary"><?php esc_html_e('Deactivate', 'houzez-child'); ?></button>
 								<?php
 								} else { ?>
-									<button id="houzez-purchase-code" type="submit" class="button button-primary"><?php esc_html_e('Verify Purchase', 'houzez'); ?></button>
+									<button id="houzez-purchase-code" type="submit" class="button button-primary"><?php esc_html_e('Verify Purchase', 'houzez-child'); ?></button>
 								<?php
 								} ?>
 							</div>

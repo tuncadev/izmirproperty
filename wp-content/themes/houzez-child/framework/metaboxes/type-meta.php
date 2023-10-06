@@ -7,9 +7,9 @@ if ( !function_exists( 'houzez_property_type_add_meta_fields' ) ) :
 ?>
 
 	<div class="form-field">
-		 <label for="Color"><?php _e( 'Global Color', 'houzez'); ?></label><br/>
-		 <label><input type="radio" name="fave[color_type]" value="inherit" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'inherit' );?>> <?php _e( 'Inherit from default accent color', 'houzez' ); ?></label>
-		 <label><input type="radio" name="fave[color_type]" value="custom" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'custom' );?>> <?php _e( 'Custom', 'houzez' ); ?></label>
+		 <label for="Color"><?php _e( 'Global Color', 'houzez-child'); ?></label><br/>
+		 <label><input type="radio" name="fave[color_type]" value="inherit" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'inherit' );?>> <?php _e( 'Inherit from default accent color', 'houzez-child' ); ?></label>
+		 <label><input type="radio" name="fave[color_type]" value="custom" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'custom' );?>> <?php _e( 'Custom', 'houzez-child' ); ?></label>
 		 <div id="fave_color_wrap">
 		 <p>
 		   	<input name="fave[color]" type="text" class="fave_colorpicker" value="<?php echo $houzez_meta['color']; ?>" data-default-color="<?php echo $houzez_meta['color']; ?>"/>
@@ -17,7 +17,7 @@ if ( !function_exists( 'houzez_property_type_add_meta_fields' ) ) :
 		 <?php if ( !empty( $colors ) ) { echo $colors; } ?>
 		 </div>
 		 <div class="clear"></div>
-		 <p class="howto"><?php _e( 'Choose color', 'houzez' ); ?></p>
+		 <p class="howto"><?php _e( 'Choose color', 'houzez-child' ); ?></p>
 	</div>
 
 
@@ -46,7 +46,7 @@ if ( !function_exists( 'houzez_property_type_edit_meta_fields' ) ) :
 		$colors = '';
 
 		if ( !empty( $most_used ) ) {
-			$colors .= '<p>'.__( 'Recently used', 'houzez' ).': <br/>';
+			$colors .= '<p>'.__( 'Recently used', 'houzez-child' ).': <br/>';
 			foreach ( $most_used as $color ) {
 				$colors .= '<a href="#" style="width: 20px; height: 20px; background: '.$color.'; float: left; margin-right:3px; border: 1px solid #aaa;" class="fave_colorpick" data-color="'.$color.'"></a>';
 			}
@@ -56,10 +56,10 @@ if ( !function_exists( 'houzez_property_type_edit_meta_fields' ) ) :
 	?>
 
 	 <tr class="form-field">
-		<th scope="row" valign="top"><label><?php _e( 'Color', 'houzez' ); ?></label></th>
+		<th scope="row" valign="top"><label><?php _e( 'Color', 'houzez-child' ); ?></label></th>
 			<td>
-				<label><input type="radio" name="fave[color_type]" value="inherit" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'inherit' );?>> <?php _e( 'Inherit from default accent color', 'houzez' ); ?></label> <br/>
-				<label><input type="radio" name="fave[color_type]" value="custom" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'custom' );?>> <?php _e( 'Custom', 'houzez' ); ?></label>
+				<label><input type="radio" name="fave[color_type]" value="inherit" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'inherit' );?>> <?php _e( 'Inherit from default accent color', 'houzez-child' ); ?></label> <br/>
+				<label><input type="radio" name="fave[color_type]" value="custom" class="fave-radio color-type" <?php checked( $houzez_meta['color_type'], 'custom' );?>> <?php _e( 'Custom', 'houzez-child' ); ?></label>
 			  <div id="fave_color_wrap">
 			  <p>
 			    	<input name="fave[color]" type="text" class="fave_colorpicker" value="<?php echo $houzez_meta['color']; ?>" data-default-color="<?php echo $houzez_meta['color']; ?>"/>
@@ -67,7 +67,7 @@ if ( !function_exists( 'houzez_property_type_edit_meta_fields' ) ) :
 			  <?php if ( !empty( $colors ) ) { echo $colors; } ?>
 				</div>
 				<div class="clear"></div>
-				<p class="howto"><?php _e( 'Choose color', 'houzez' ); ?></p>
+				<p class="howto"><?php _e( 'Choose color', 'houzez-child' ); ?></p>
 			</td>
 		</tr>
 

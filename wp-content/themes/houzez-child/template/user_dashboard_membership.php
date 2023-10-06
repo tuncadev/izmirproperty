@@ -41,7 +41,7 @@ get_header(); ?>
                 </div>
 
                 <?php
-                echo '<a href="' . esc_url($packages_page_link) . '" class="btn btn-primary mb-2"> ' . esc_html__('Change Membership Plan', 'houzez') . ' </a>';
+                echo '<a href="' . esc_url($packages_page_link) . '" class="btn btn-primary mb-2"> ' . esc_html__('Change Membership Plan', 'houzez-child') . ' </a>';
                 $stripe_profile_user    =   get_user_meta($userID,'fave_stripe_user_profile',true);
                 $subscription_id        =   get_user_meta( $userID, 'houzez_stripe_subscription_id', true );
                 $paypal_subscription_id =   get_user_meta( $userID, 'houzez_paypal_recurring_profile_id', true );
@@ -50,22 +50,22 @@ get_header(); ?>
                 $enable_paypal_status   =   houzez_option('enable_paypal');
 
                 if( $subscription_id != '' && $enable_stripe_status != 0 ) {
-                    echo '<a style="margin-left:10px;" id="houzez_stripe_cancel" data-message="'.esc_html__('Done: Subscription will be cancelled at the end of current period', 'houzez').'" class="btn btn-primary-outlined mb-2">'.esc_html__('Cancel Stripe Subscription', 'houzez').'</a>';
+                    echo '<a style="margin-left:10px;" id="houzez_stripe_cancel" data-message="'.esc_html__('Done: Subscription will be cancelled at the end of current period', 'houzez-child').'" class="btn btn-primary-outlined mb-2">'.esc_html__('Cancel Stripe Subscription', 'houzez-child').'</a>';
                     echo '<span style="margin-left:10px; color:green" id="stripe_cancel_success"></span>';
                 }
 
                 if( $paypal_subscription_id != '' && $enable_paypal_status != 0 ) {
-                    echo '<a style="margin-left:10px;" id="houzez_paypal_cancel" data-message="'.esc_html__('Done: Subscription will be cancelled at the end of current period', 'houzez').'" class="btn btn-primary-outlined mb-2">'.esc_html__('Cancel PayPal Subscription', 'houzez').'</a>';
+                    echo '<a style="margin-left:10px;" id="houzez_paypal_cancel" data-message="'.esc_html__('Done: Subscription will be cancelled at the end of current period', 'houzez-child').'" class="btn btn-primary-outlined mb-2">'.esc_html__('Cancel PayPal Subscription', 'houzez-child').'</a>';
                     echo '<span style="margin-left:10px; color:green" id="paypal_cancel_success"></span>';
                 }
             } else { ?>
 
                 <div class="dashboard-content-block">
-                    <?php esc_html_e("You don't have any membership.", 'houzez'); ?>
+                    <?php esc_html_e("You don't have any membership.", 'houzez-child'); ?>
                 </div>
 
                 <?php
-                echo '<a href="' . esc_url($packages_page_link) . '" class="btn btn-primary mb-2"> ' . esc_html__('Get Membership Plan', 'houzez') . ' </a>';
+                echo '<a href="' . esc_url($packages_page_link) . '" class="btn btn-primary mb-2"> ' . esc_html__('Get Membership Plan', 'houzez-child') . ' </a>';
             }
             ?>                
         </div><!-- dashboard-content-block-wrap -->

@@ -41,20 +41,20 @@ endif;
 
                 <div class="dashboard-content-block hz-password-reset-page">
                     <?php if ( $rp_login == 'invalidkey' ) : $resetpass = false; ?>
-						<div class="alert alert-danger" role="alert"> <?php esc_html_e('Oops something went wrong.', 'houzez'); ?>  </div>
+						<div class="alert alert-danger" role="alert"> <?php esc_html_e('Oops something went wrong.', 'houzez-child'); ?>  </div>
 						<div class="login-register-title text-center">
-			                <p class="text-danger"> <?php esc_html_e('Oops something went wrong.', 'houzez'); ?> </p>
+			                <p class="text-danger"> <?php esc_html_e('Oops something went wrong.', 'houzez-child'); ?> </p>
 			            </div>
 					<?php endif; ?>
 					<?php if ( $rp_login == 'expiredkey' ) : $resetpass = false; ?>
 			        	<div class="login-register-title text-center">
-			                <p class="text-danger"> <?php esc_html_e('Session key expired.', 'houzez'); ?> </p>
+			                <p class="text-danger"> <?php esc_html_e('Session key expired.', 'houzez-child'); ?> </p>
 			            </div>
 					<?php endif; ?>
 					<?php if ( isset( $_REQUEST['password'] ) && $_REQUEST['password'] == 'changed' ) : $resetpass = false; ?>
 			        	<div class="login-register-title text-center">
-			                <p> <?php esc_html_e('Password has been changed, you can login now.', 'houzez'); ?> </p>
-			                <a href="#" data-toggle="modal" data-target="#pop-login" class="back text-center"> <?php esc_html_e('Log in | Register', 'houzez'); ?> </a>
+			                <p> <?php esc_html_e('Password has been changed, you can login now.', 'houzez-child'); ?> </p>
+			                <a href="#" data-toggle="modal" data-target="#pop-login" class="back text-center"> <?php esc_html_e('Log in | Register', 'houzez-child'); ?> </a>
 			            </div>
 					<?php endif; ?>
 		            <?php if ( $resetpass ) : ?>
@@ -63,14 +63,14 @@ endif;
 							<input type="hidden" name="rp_key" value="<?php echo $rp_key; ?>" />
 							<?php wp_nonce_field( 'fave_resetpassword_nonce', 'fave_resetpassword_security' ); ?>
 			                <div class="form-group">
-			                    <input type="password" name="pass1" class="form-control" placeholder="<?php esc_html_e('New Password', 'houzez'); ?>">
+			                    <input type="password" name="pass1" class="form-control" placeholder="<?php esc_html_e('New Password', 'houzez-child'); ?>">
 			                </div>
 			                <div class="form-group">
-			                    <input type="password" name="pass2" class="form-control" placeholder="<?php esc_html_e('Confirm Password', 'houzez'); ?>">
+			                    <input type="password" name="pass2" class="form-control" placeholder="<?php esc_html_e('Confirm Password', 'houzez-child'); ?>">
 			                </div>
 			                <button type="submit" id="houzez_reset_password" class="btn btn-primary btn-block">
 			                	<?php get_template_part('template-parts/loader'); ?>
-			                	<?php esc_html_e('Reset Password', 'houzez'); ?>		
+			                	<?php esc_html_e('Reset Password', 'houzez-child'); ?>		
 			                </button>
 			                
 			            </form>

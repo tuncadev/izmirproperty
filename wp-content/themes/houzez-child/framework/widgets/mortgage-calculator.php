@@ -16,8 +16,8 @@ if(!class_exists('HOUZEZ_mortgage_calculator')) {
 
             parent::__construct(
                 'houzez_mortgage_calculator', // Base ID
-                esc_html__( 'HOUZEZ: Mortgage Calculator', 'houzez' ), // Name
-                array( 'description' => esc_html__( 'Add a responsive mortgage calculator widget', 'houzez' ), 'classname' => 'widget-mortgage-calculator' ) // Args
+                esc_html__( 'HOUZEZ: Mortgage Calculator', 'houzez-child' ), // Name
+                array( 'description' => esc_html__( 'Add a responsive mortgage calculator widget', 'houzez-child' ), 'classname' => 'widget-mortgage-calculator' ) // Args
             );
 
         }
@@ -82,7 +82,7 @@ if(!class_exists('HOUZEZ_mortgage_calculator')) {
 
             ?>
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
                 <input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
             </p>
 
@@ -111,7 +111,7 @@ if( ! function_exists('houzez_mortgage_calculator_widget') ) {
                     <div class="input-group-prepend">
                         <div class="input-group-text"><?php echo esc_attr($currency_symbol);?></div>
                     </div><!-- input-group-prepend -->
-                    <input class="form-control" id="mc_total_amount" placeholder="<?php esc_html_e('Total Amount', 'houzez'); ?>" type="text">
+                    <input class="form-control" id="mc_total_amount" placeholder="<?php esc_html_e('Total Amount', 'houzez-child'); ?>" type="text">
                 </div><!-- input-group -->
             </div><!-- form-group -->
             <div class="form-group">
@@ -119,7 +119,7 @@ if( ! function_exists('houzez_mortgage_calculator_widget') ) {
                     <div class="input-group-prepend">
                         <div class="input-group-text"><?php echo esc_attr($currency_symbol);?></div>
                     </div><!-- input-group-prepend -->
-                    <input class="form-control" id="mc_down_payment" placeholder="<?php esc_html_e('Down Payment', 'houzez'); ?>" type="text">
+                    <input class="form-control" id="mc_down_payment" placeholder="<?php esc_html_e('Down Payment', 'houzez-child'); ?>" type="text">
                 </div><!-- input-group -->
             </div><!-- form-group -->
             <div class="form-group">
@@ -127,7 +127,7 @@ if( ! function_exists('houzez_mortgage_calculator_widget') ) {
                     <div class="input-group-prepend">
                         <div class="input-group-text">%</div>
                     </div><!-- input-group-prepend -->
-                    <input class="form-control" id="mc_interest_rate" placeholder="<?php esc_html_e('Interest Rate', 'houzez'); ?>" type="text">
+                    <input class="form-control" id="mc_interest_rate" placeholder="<?php esc_html_e('Interest Rate', 'houzez-child'); ?>" type="text">
                 </div><!-- input-group -->
             </div><!-- form-group -->
             <div class="form-group">
@@ -137,36 +137,36 @@ if( ! function_exists('houzez_mortgage_calculator_widget') ) {
                             <i class="houzez-icon icon-calendar-3"></i>
                         </div>
                     </div><!-- input-group-prepend -->
-                    <input class="form-control" id="mc_term_years" placeholder="<?php esc_html_e('Loan Term (Years)', 'houzez'); ?>" type="text">
+                    <input class="form-control" id="mc_term_years" placeholder="<?php esc_html_e('Loan Term (Years)', 'houzez-child'); ?>" type="text">
                 </div><!-- input-group -->
             </div><!-- form-group -->
             <div class="form-group">
                 <select class="selectpicker form-control bs-select-hidden" id="mc_payment_period" data-live-search="false" data-live-search-style="begins">
-                    <option value="12"><?php esc_html_e('Monthly', 'houzez'); ?></option>
-                    <option value="26"><?php esc_html_e('Bi-Weekly', 'houzez'); ?></option>
-                    <option value="52"><?php esc_html_e('Weekly', 'houzez'); ?></option>
+                    <option value="12"><?php esc_html_e('Monthly', 'houzez-child'); ?></option>
+                    <option value="26"><?php esc_html_e('Bi-Weekly', 'houzez-child'); ?></option>
+                    <option value="52"><?php esc_html_e('Weekly', 'houzez-child'); ?></option>
                 </select>
             </div><!-- form-group -->
-            <button id="houzez_mortgage_calculate" type="submit" class="btn btn-search btn-secondary btn-full-width"><?php esc_html_e('Calculate', 'houzez'); ?></button>
+            <button id="houzez_mortgage_calculate" type="submit" class="btn btn-search btn-secondary btn-full-width"><?php esc_html_e('Calculate', 'houzez-child'); ?></button>
             <div class="mortgage-details detail-wrap">
                 <ul>
                     <li>
-                        <strong><?php esc_html_e('Principal Amount:', 'houzez'); ?></strong> 
+                        <strong><?php esc_html_e('Principal Amount:', 'houzez-child'); ?></strong> 
                         <span id="amount_financed" class="result-value"></span>
                     </li>
                     <li>
-                        <strong><?php esc_html_e('Years:', 'houzez'); ?></strong> 
+                        <strong><?php esc_html_e('Years:', 'houzez-child'); ?></strong> 
                         <span id="cal_years" class="result-value"></span>
                     </li>
                     <li id="mortgage_mwbi">
                         
                     </li>
                     <li>
-                        <strong><?php esc_html_e('Balance Payable With Interest:', 'houzez'); ?></strong> 
+                        <strong><?php esc_html_e('Balance Payable With Interest:', 'houzez-child'); ?></strong> 
                         <span id="balance_payable_with_interest" class="result-value"></span>
                     </li>
                     <li>
-                        <strong><?php esc_html_e('Total With Down Payment:', 'houzez'); ?></strong> 
+                        <strong><?php esc_html_e('Total With Down Payment:', 'houzez-child'); ?></strong> 
                         <span id="total_with_down_payment" class="result-value"></span>
                     </li>
 

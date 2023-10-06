@@ -11,13 +11,13 @@ if( isset($multi_units[0]['fave_mu_title']) && !empty( $multi_units[0]['fave_mu_
 			<table class="sub-listings-table table-lined responsive-table">
 				<thead>
 					<tr>
-						<th><?php esc_html_e('Title', 'houzez'); ?></th>
-                        <th><?php esc_html_e('Property Type', 'houzez'); ?></th>
-                        <th><?php esc_html_e('Price', 'houzez'); ?></th>
-                        <th><?php esc_html_e('Beds', 'houzez'); ?></th>
-                        <th><?php esc_html_e('Baths', 'houzez'); ?></th>
-                        <th><?php esc_html_e('Property Size', 'houzez'); ?></th>
-                        <th><?php esc_html_e('Availability Date', 'houzez'); ?></th>
+						<th><?php esc_html_e('Title', 'houzez-child'); ?></th>
+                        <th><?php esc_html_e('Property Type', 'houzez-child'); ?></th>
+                        <th><?php esc_html_e('Price', 'houzez-child'); ?></th>
+                        <th><?php esc_html_e('Beds', 'houzez-child'); ?></th>
+                        <th><?php esc_html_e('Baths', 'houzez-child'); ?></th>
+                        <th><?php esc_html_e('Property Size', 'houzez-child'); ?></th>
+                        <th><?php esc_html_e('Availability Date', 'houzez-child'); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -55,23 +55,23 @@ if( isset($multi_units[0]['fave_mu_title']) && !empty( $multi_units[0]['fave_mu_
                         }
                         ?>
 						<tr>
-							<td data-label="<?php esc_html_e('Title', 'houzez'); ?>">
+							<td data-label="<?php esc_html_e('Title', 'houzez-child'); ?>">
 								<strong><?php echo esc_attr( $mu['fave_mu_title'] ); ?></strong>
 							</td>
-							<td data-label="<?php esc_html_e('Property Type', 'houzez'); ?>"><?php echo esc_attr( $mu['fave_mu_type'] ); ?></td>
-							<td data-label="<?php esc_html_e('Price', 'houzez'); ?>">
+							<td data-label="<?php esc_html_e('Property Type', 'houzez-child'); ?>"><?php echo esc_attr( $mu['fave_mu_type'] ); ?></td>
+							<td data-label="<?php esc_html_e('Price', 'houzez-child'); ?>">
 								<strong><?php echo houzez_get_property_price( $mu['fave_mu_price'] ).$mu_price_postfix; ?></strong>
 							</td>
-							<td data-label="<?php esc_html_e('Beds', 'houzez'); ?>">
+							<td data-label="<?php esc_html_e('Beds', 'houzez-child'); ?>">
 								<i class="houzez-icon icon-hotel-double-bed-1 mr-1"></i>
 								<?php echo esc_attr( $fave_mu_beds ); ?> 
 							</td>
-							<td data-label="<?php esc_html_e('Baths', 'houzez'); ?>">
+							<td data-label="<?php esc_html_e('Baths', 'houzez-child'); ?>">
 								<i class="houzez-icon icon-bathroom-shower-1 mr-1"></i>
 								<?php echo esc_attr( $fave_mu_baths ); ?> 
 							</td>
-							<td data-label="<?php esc_html_e('Property Size', 'houzez'); ?>"><?php echo $fave_mu_size.' '.$postfix; ?></td>
-							<td data-label="<?php esc_html_e('Availability Date', 'houzez'); ?>"><?php echo esc_attr($fave_mu_availability_date); ?></td>
+							<td data-label="<?php esc_html_e('Property Size', 'houzez-child'); ?>"><?php echo $fave_mu_size.' '.$postfix; ?></td>
+							<td data-label="<?php esc_html_e('Availability Date', 'houzez-child'); ?>"><?php echo esc_attr($fave_mu_availability_date); ?></td>
 						</tr>
 					<?php endforeach; ?>
 					

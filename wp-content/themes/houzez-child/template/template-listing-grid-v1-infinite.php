@@ -118,7 +118,7 @@ if( $listings_tabs != 'enable' ) {
                 <?php if( $next_link ) { ?>
                 <div id="fave-pagination-loadmore" class="load-more-wrap houzez-infinite-load">
                     <a class="btn btn-primary-outlined btn-load-more" href="<?php echo esc_url($next_link); ?>">
-                        <span class="btn-loader houzez-loader-js"></span> <?php esc_html_e('Load More', 'houzez');  ?>       
+                        <span class="btn-loader houzez-loader-js"></span> <?php esc_html_e('Load More', 'houzez-child');  ?>       
                     </a>               
                 </div>
                 <?php } ?>

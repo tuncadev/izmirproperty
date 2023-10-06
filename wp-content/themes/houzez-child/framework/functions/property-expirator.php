@@ -29,7 +29,7 @@ if( !function_exists('houzez_load_expiration_metaboxes') ) {
     {
         add_meta_box(
             'houzez_expiration_date',
-            esc_html__('Property Expirator', 'houzez'),
+            esc_html__('Property Expirator', 'houzez-child'),
             'houzez_expiration_meta_box',
             'property',
             'side',
@@ -76,15 +76,15 @@ if( !function_exists('houzez_expiration_meta_box') ) {
         $output = '';
         $output .= '<p>';
         $output .= '<input type="checkbox" name="houzez_enable_expiration_date" id="houzez_enable_expiration_date" ' . $enabled . ' value="checked" onclick="houzez_expiration_date_ajax(\'houzez_enable_expiration_date\')">';
-        $output .= '<label for="houzez_enable_expiration_date">' . esc_html__('Enable Property Expiration', 'houzez') . '</label>';
+        $output .= '<label for="houzez_enable_expiration_date">' . esc_html__('Enable Property Expiration', 'houzez-child') . '</label>';
         $output .= '</p>';
 
         $output .= '<table width="100%">';
         $output .= '<tbody>';
         $output .= '<tr>';
-        $output .= '<th style="text-align: left;">' . esc_html__('Year', 'houzez') . '</th>';
-        $output .= '<th style="text-align: left;">' . esc_html__('Month', 'houzez') . '</th>';
-        $output .= '<th style="text-align: left;">' . esc_html__('Day', 'houzez') . '</th>';
+        $output .= '<th style="text-align: left;">' . esc_html__('Year', 'houzez-child') . '</th>';
+        $output .= '<th style="text-align: left;">' . esc_html__('Month', 'houzez-child') . '</th>';
+        $output .= '<th style="text-align: left;">' . esc_html__('Day', 'houzez-child') . '</th>';
         $output .= '</tr>';
 
         $output .= '<tr>';
@@ -127,8 +127,8 @@ if( !function_exists('houzez_expiration_meta_box') ) {
 
         $output .= '<tr>';
         $output .= '<th style="text-align: left;"></th>';
-        $output .= '<th style="text-align: left;">' . esc_html__('Hour', 'houzez') . '(' . date_i18n('T', mktime(0, 0, 0, $i, 1, date_i18n('Y'))) . ')</th>';
-        $output .= '<th style="text-align: left;">' . esc_html__('Minute', 'houzez') . '</th>';
+        $output .= '<th style="text-align: left;">' . esc_html__('Hour', 'houzez-child') . '(' . date_i18n('T', mktime(0, 0, 0, $i, 1, date_i18n('Y'))) . ')</th>';
+        $output .= '<th style="text-align: left;">' . esc_html__('Minute', 'houzez-child') . '</th>';
         $output .= '</tr>';
 
         $output .= '<tr>';

@@ -59,7 +59,7 @@ function houzez_agent_metabox_fields( $metabox_fields ) {
             'ajax' => true,
             'post_type'   => 'houzez_agent',
             'field_type'  => 'select_advanced',
-            'placeholder' => esc_html__('Select an Agent', 'houzez'),
+            'placeholder' => esc_html__('Select an Agent', 'houzez-child'),
             'query_args'  => array(
                 'post_status'    => 'publish',
                 'posts_per_page' => 10,
@@ -76,7 +76,7 @@ function houzez_agent_metabox_fields( $metabox_fields ) {
             'ajax' => true,
             'post_type'   => 'houzez_agency',
             'field_type'  => 'select_advanced',
-            'placeholder' => esc_html__('Select an Agency', 'houzez'),
+            'placeholder' => esc_html__('Select an Agency', 'houzez-child'),
             'query_args'  => array(
                 'post_status'    => 'publish',
                 'posts_per_page' => 10,

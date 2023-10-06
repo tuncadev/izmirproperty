@@ -33,36 +33,36 @@ function houzez_listing_layout_metabox_fields( $metabox_fields ) {
 	$fields = array(
 		array(
             'id' => "{$houzez_prefix}single_top_area",
-            'name' => esc_html__('Property Top Type', 'houzez'),
-            'desc' => esc_html__('Set the property top area type.', 'houzez'),
+            'name' => esc_html__('Property Top Type', 'houzez-child'),
+            'desc' => esc_html__('Set the property top area type.', 'houzez-child'),
             'type' => 'select',
             'std' => "global",
             'options' => array(
-                'global' => esc_html__( 'Global', 'houzez' ),
-                'v1' => esc_html__( 'Version 1', 'houzez' ),
-                'v2' => esc_html__( 'Version 2', 'houzez' ),
-                'v3' => esc_html__( 'Version 3', 'houzez' ),
-                'v4' => esc_html__( 'Version 4', 'houzez' ),
-                'v5' => esc_html__( 'Version 5', 'houzez' ),
-                'v6' => esc_html__( 'Version 6', 'houzez' )
+                'global' => esc_html__( 'Global', 'houzez-child' ),
+                'v1' => esc_html__( 'Version 1', 'houzez-child' ),
+                'v2' => esc_html__( 'Version 2', 'houzez-child' ),
+                'v3' => esc_html__( 'Version 3', 'houzez-child' ),
+                'v4' => esc_html__( 'Version 4', 'houzez-child' ),
+                'v5' => esc_html__( 'Version 5', 'houzez-child' ),
+                'v6' => esc_html__( 'Version 6', 'houzez-child' )
             ),
             'columns' => 12,
             'tab' => 'listing_layout'
         ),
         array(
             'id' => "{$houzez_prefix}single_content_area",
-            'name' => esc_html__('Property Content Layout', 'houzez'),
-            'desc' => esc_html__('Set property content area type.', 'houzez'),
+            'name' => esc_html__('Property Content Layout', 'houzez-child'),
+            'desc' => esc_html__('Set property content area type.', 'houzez-child'),
             'type' => 'select',
             'std' => "global",
             'options' => array(
-                'global' => esc_html__( 'Global', 'houzez' ),
-                'simple' => esc_html__( 'Default', 'houzez' ),
-                'tabs'   => esc_html__( 'Tabs', 'houzez' ),
-                'tabs-vertical' => esc_html__( 'Tabs Vertical', 'houzez' ),
-                'v2' => esc_html__( 'Luxury Homes', 'houzez' ),
-                'minimal' => esc_html__( 'Minimal', 'houzez' ),
-                'boxed' => esc_html__( 'Boxed', 'houzez' )
+                'global' => esc_html__( 'Global', 'houzez-child' ),
+                'simple' => esc_html__( 'Default', 'houzez-child' ),
+                'tabs'   => esc_html__( 'Tabs', 'houzez-child' ),
+                'tabs-vertical' => esc_html__( 'Tabs Vertical', 'houzez-child' ),
+                'v2' => esc_html__( 'Luxury Homes', 'houzez-child' ),
+                'minimal' => esc_html__( 'Minimal', 'houzez-child' ),
+                'boxed' => esc_html__( 'Boxed', 'houzez-child' )
             ),
             'columns' => 12,
             'tab' => 'listing_layout'

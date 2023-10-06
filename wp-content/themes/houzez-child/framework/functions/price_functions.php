@@ -609,7 +609,7 @@ if( !function_exists('currency_maker_for_print')) {
 
 if(!function_exists('houzez_available_currencies')) {
     function houzez_available_currencies() {
-        $currencies_array = array( '' => esc_html__('Choose Currency', 'houzez'));
+        $currencies_array = array( '' => esc_html__('Choose Currency', 'houzez-child'));
         if(class_exists('Houzez_Currencies')) {
             $currencies = Houzez_Currencies::get_currency_codes();
             if($currencies) {
@@ -645,7 +645,7 @@ if(!function_exists('houzez_get_currency')){
         $houzez_default_currency = fave_option( 'currency_symbol' );
 
         if(empty($houzez_default_currency)){
-            return esc_html__( '$' , 'houzez' );
+            return esc_html__( '$' , 'houzez-child' );
         }
         return $houzez_default_currency;
     }
@@ -1358,21 +1358,21 @@ if ( ! function_exists( 'houzez_currency_converter' ) ) {
                 } else {
                     echo json_encode(array(
                         'success' => false,
-                        'msg' => __("Cookie update failed", 'houzez')
+                        'msg' => __("Cookie update failed", 'houzez-child')
                     ));
                 }
 
             } else {
                 echo json_encode(array(
                     'success' => false,
-                    'msg' => __('Please install and activate wp-currencies plugin!', 'houzez')
+                    'msg' => __('Please install and activate wp-currencies plugin!', 'houzez-child')
                 ));
             }
 
         } else {
             echo json_encode(array(
                     'success' => false,
-                    'msg' => __("Request not valid", 'houzez')
+                    'msg' => __("Request not valid", 'houzez-child')
                 )
             );
         }

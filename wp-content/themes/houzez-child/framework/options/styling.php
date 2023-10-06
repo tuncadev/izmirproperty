@@ -1,7 +1,7 @@
 <?php
 global $houzez_opt_name;
 Redux::setSection( $houzez_opt_name, array(
-    'title'            => esc_html__( 'Styling', 'houzez' ),
+    'title'            => esc_html__( 'Styling', 'houzez-child' ),
     'id'               => 'houzez-styling',
     'desc'             => '',
     'customizer_width' => '',
@@ -11,7 +11,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Body
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Body', 'houzez' ),
+    'title'  => esc_html__( 'Body', 'houzez-child' ),
     'id'     => 'styling-body',
     'desc'   => '',
     'subsection' => true,
@@ -19,8 +19,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'body_text_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
-            'desc' => esc_html__('Select the body text color', 'houzez'),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the body text color', 'houzez-child'),
             'default'  => '#222222',
             'transparent' => false,
         ),
@@ -28,8 +28,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'body_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Body Background Color', 'houzez' ),
-            'desc' => esc_html__('Select body background color', 'houzez'),
+            'title'    => esc_html__( 'Body Background Color', 'houzez-child' ),
+            'desc' => esc_html__('Select body background color', 'houzez-child'),
             'default'  => '#f8f8f8',
             'transparent' => false,
         ),
@@ -37,8 +37,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'body_bg_color_v2',
             'type'     => 'color',
-            'title'    => esc_html__( 'Body Background Color', 'houzez' ),
-            'desc' => esc_html__('Select body background color for listing grid v7, agents v2, agencies v2', 'houzez'),
+            'title'    => esc_html__( 'Body Background Color', 'houzez-child' ),
+            'desc' => esc_html__('Select body background color for listing grid v7, agents v2, agencies v2', 'houzez-child'),
             'default'  => '#ffffff',
             'transparent' => false,
         ),
@@ -46,16 +46,16 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'houzez_primary_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Primary Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the primary color.', 'houzez' ),
+            'title'    => esc_html__( 'Primary Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the primary color.', 'houzez-child' ),
             'default'  => '#00aeff',
             'transparent' => false
         ),
         array(
             'id'       => 'houzez_primary_color_hover',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Primary Hover Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the primary hover color.', 'houzez' ),
+            'title'    => esc_html__( 'Primary Hover Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the primary hover color.', 'houzez-child' ),
             'default'  => array(
                 'color' => '#33beff',
                 'alpha' => '.65',
@@ -66,16 +66,16 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'houzez_secondary_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Secondary Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the secondary color.', 'houzez' ),
+            'title'    => esc_html__( 'Secondary Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the secondary color.', 'houzez-child' ),
             'default'  => '#28a745',
             'transparent' => false
         ),
         array(
             'id'       => 'houzez_secondary_color_hover',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Secondary Hover Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the secondary hover color.', 'houzez' ),
+            'title'    => esc_html__( 'Secondary Hover Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the secondary hover color.', 'houzez-child' ),
             'default'  => array(
                 'color' => '#34ce57',
                 'alpha' => '.75',
@@ -89,7 +89,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Navigation bars
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Navigation Bar', 'houzez' ),
+    'title'  => esc_html__( 'Navigation Bar', 'houzez-child' ),
     'id'     => 'styling-headers',
     'desc'   => '',
     'subsection' => true,
@@ -101,8 +101,8 @@ Redux::setSection( $houzez_opt_name, array(
             'id'       => 'header_1_bg',
             'type'     => 'color',
             'required' => array('header_style', '=', '1'),
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the navigation background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the navigation background color', 'houzez-child' ),
             'subtitle' => '',
             'default'  =>'#004274',
             'mode'     => 'background',
@@ -111,8 +111,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_1_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'required' => array('header_style', '=', '1'),
             'subtitle' => '',
             'default'  => '#FFFFFF',
@@ -121,8 +121,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_1_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'required' => array('header_style', '=', '1'),
             'subtitle' => '',
             'default'  => '#00aeff',
@@ -131,8 +131,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_1_links_hover_bg_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez-child' ),
             'required' => array('header_style', '=', '1'),
             'subtitle' => '',
             'default'  => array(
@@ -152,7 +152,7 @@ Redux::setSection( $houzez_opt_name, array(
                 array('header_style', '!=', '4'),
                 array('header_style', '!=', '6'),
             ),
-            'title'    => esc_html__( 'Top Area', 'houzez' ),
+            'title'    => esc_html__( 'Top Area', 'houzez-child' ),
             'indent'   => true,
         ),
         array(
@@ -164,8 +164,8 @@ Redux::setSection( $houzez_opt_name, array(
                 array('header_style', '!=', '4'),
                 array('header_style', '!=', '6'),
             ),
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc' => esc_html__('Select the top area background color', 'houzez'),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the top area background color', 'houzez-child'),
             'default'  => '#ffffff',
             'transparent' => false
         ),
@@ -178,8 +178,8 @@ Redux::setSection( $houzez_opt_name, array(
                 array('header_style', '!=', '4'),
                 array('header_style', '!=', '6'),
             ),
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
-            'desc' => esc_html__('Select the top area text color', 'houzez'),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the top area text color', 'houzez-child'),
             'default'  => '#004274',
             'transparent' => false
         ),
@@ -204,16 +204,16 @@ Redux::setSection( $houzez_opt_name, array(
                 array('header_style', '!=', '4'),
                 array('header_style', '!=', '6'),
             ),
-            'title'    => esc_html__( 'Menu Background Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the menu background color', 'houzez' ),
+            'title'    => esc_html__( 'Menu Background Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the menu background color', 'houzez-child' ),
             'default'  => '#004274',
             'transparent' => false
         ),
         array(
             'id'       => 'header_2_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'required' => array(
                 array('header_style', '!=', '1'),
                 array('header_style', '!=', '3'),
@@ -227,8 +227,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_2_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc' => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'required' => array(
                 array('header_style', '!=', '1'),
                 array('header_style', '!=', '3'),
@@ -242,8 +242,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_2_links_hover_bg_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez' ),
-            'desc' => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez-child' ),
             'required' => array(
                 array('header_style', '!=', '1'),
                 array('header_style', '!=', '3'),
@@ -260,8 +260,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_2_border',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Border Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the border color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Border Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the border color of the menu tabs', 'houzez-child' ),
             'required' => array(
                 array('header_style', '!=', '1'),
                 array('header_style', '!=', '3'),
@@ -281,8 +281,8 @@ Redux::setSection( $houzez_opt_name, array(
             'id'       => 'header_3_bg',
             'type'     => 'color',
             'required' => array('header_style', '=', '3'),
-            'title'    => esc_html__( 'Top Area Background Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the top area background color', 'houzez' ),
+            'title'    => esc_html__( 'Top Area Background Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the top area background color', 'houzez-child' ),
             'default'  => '#004274',
             'transparent' => false
         ),
@@ -290,8 +290,8 @@ Redux::setSection( $houzez_opt_name, array(
             'id'       => 'header_3_callus_color',
             'type'     => 'color',
             'required' => array('header_style', '=', '3'),
-            'title'    => esc_html__( 'Call Us Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the call us text color', 'houzez' ),
+            'title'    => esc_html__( 'Call Us Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the call us text color', 'houzez-child' ),
             'default'  => '#ffffff',
             'transparent' => false
         ),
@@ -299,8 +299,8 @@ Redux::setSection( $houzez_opt_name, array(
             'id'       => 'header_3_callus_bg_color',
             'type'     => 'color',
             'required' => array('header_style', '=', '3'),
-            'title'    => esc_html__( 'Call Us Background Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the call us background color', 'houzez' ),
+            'title'    => esc_html__( 'Call Us Background Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the call us background color', 'houzez-child' ),
             'default'  => '#00aeff',
             'transparent' => false
         ),
@@ -308,8 +308,8 @@ Redux::setSection( $houzez_opt_name, array(
             'id'       => 'header_3_bg_menu',
             'type'     => 'color',
             'required' => array('header_style', '=', '3'),
-            'title'    => esc_html__( 'Menu Background Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the menu background color', 'houzez' ),
+            'title'    => esc_html__( 'Menu Background Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the menu background color', 'houzez-child' ),
             'default'  => '#004274',
             'transparent' => false
         ),
@@ -319,8 +319,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_3_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'required' => array('header_style', '=', '3'),
             'subtitle' => '',
             'default'  => '#FFFFFF',
@@ -330,8 +330,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_3_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc' => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'required' => array('header_style', '=', '3'),
             'subtitle' => '',
             'default'  => '#00aeff',
@@ -340,8 +340,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_3_links_hover_bg_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Background Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the background color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Background Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the background color of the menu tabs', 'houzez-child' ),
             'required' => array('header_style', '=', '3'),
             'subtitle' => '',
             'default'  => array(
@@ -353,8 +353,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_3_border',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Border Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the border color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Border Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the border color of the menu tabs', 'houzez-child' ),
             'required' => array('header_style', '=', '3'),
             'subtitle' => '',
             'default'  => array(
@@ -366,8 +366,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_3_social_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Social Icons color', 'houzez' ),
-            'desc' => esc_html__( 'Select the social icons color', 'houzez' ),
+            'title'    => esc_html__( 'Social Icons color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the social icons color', 'houzez-child' ),
             'required' => array('header_style', '=', '3'),
             'subtitle' => '',
             'default'  => '#004274',
@@ -379,8 +379,8 @@ Redux::setSection( $houzez_opt_name, array(
             'id'       => 'header_4_bg',
             'type'     => 'color',
             'required' => array('header_style', '=', '4'),
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the background color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => false
@@ -389,8 +389,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'required' => array('header_style', '=', '4'),
             'subtitle' => '',
             'default'  => '#004274',
@@ -399,8 +399,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc' => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'required' => array('header_style', '=', '4'),
             'subtitle' => '',
             'default'  => '#00aeef'
@@ -409,8 +409,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_links_hover_bg_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez' ),
-            'desc' => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez-child' ),
             'required' => array('header_style', '=', '4'),
             'subtitle' => '',
             'default'  => array(
@@ -425,8 +425,8 @@ Redux::setSection( $houzez_opt_name, array(
             'id'       => 'header_6_bg',
             'type'     => 'color',
             'required' => array('header_style', '=', '6'),
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the background color', 'houzez-child' ),
             'subtitle' => '',
             'default'  =>'#004274',
             'mode'     => 'background',
@@ -435,8 +435,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_6_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'required' => array('header_style', '=', '6'),
             'subtitle' => '',
             'default'  => '#FFFFFF',
@@ -445,8 +445,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_6_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'required' => array('header_style', '=', '6'),
             'subtitle' => '',
             'default'  => '#00aeff',
@@ -455,8 +455,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_6_links_hover_bg_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez-child' ),
             'required' => array('header_style', '=', '6'),
             'subtitle' => '',
             'default'  => array(
@@ -469,8 +469,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_6_social_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Social Icons Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the color of the social icons', 'houzez' ),
+            'title'    => esc_html__( 'Social Icons Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the color of the social icons', 'houzez-child' ),
             'required' => array('header_style', '=', '6'),
             'subtitle' => '',
             'default'  => '#FFFFFF',
@@ -485,15 +485,15 @@ Redux::setSection( $houzez_opt_name, array(
             'type'   => 'info',
             'notice' => false,
             'style'  => 'info',
-            'title'  => esc_html__( 'Transparent Menu Options (The transparent navigation is displayed on the splash page and when you select the trasparent header)', 'houzez' ),
+            'title'  => esc_html__( 'Transparent Menu Options (The transparent navigation is displayed on the splash page and when you select the trasparent header)', 'houzez-child' ),
             'desc'   => ''
         ),
 
         array(
             'id'       => 'header_4_transparent_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => false
@@ -501,8 +501,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#00aeef',
             'transparent' => false
@@ -511,8 +511,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_border_bottom1',
             'type'     => 'border',
-            'title'    => esc_html__( 'Border Bottom', 'houzez' ),
-            'desc'    => esc_html__( 'Select the border dimention and style', 'houzez' ),
+            'title'    => esc_html__( 'Border Bottom', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the border dimention and style', 'houzez-child' ),
             'subtitle' => '',
             'color' => false,
             'default'  => array(
@@ -526,8 +526,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_border_bottom_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Border Bottom Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the border color', 'houzez' ),
+            'title'    => esc_html__( 'Border Bottom Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the border color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'color' => '#ffffff',
@@ -542,7 +542,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Sub Menu
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Sub Menu', 'houzez' ),
+    'title'  => esc_html__( 'Sub Menu', 'houzez-child' ),
     'id'     => 'styling-submenu',
     'desc'   => '',
     'subsection' => true,
@@ -550,8 +550,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_submenu_bg',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the background color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'color' => '#FFFFFF',
@@ -563,8 +563,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_submenu_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#004274',
             'transparent' => false
@@ -572,16 +572,16 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_submenu_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#00aeff'
         ),
         array(
             'id'       => 'header_submenu_bg_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Text Background Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Background Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'color' => '#00aeff',
@@ -592,8 +592,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_submenu_border_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Border color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the border color', 'houzez' ),
+            'title'    => esc_html__( 'Border color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the border color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#dce0e0',
             'transparent' => true
@@ -604,7 +604,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Create Listing
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Create Listing Button', 'houzez' ),
+    'title'  => esc_html__( 'Create Listing Button', 'houzez-child' ),
     'id'     => 'styling-create-listing',
     'desc'   => '',
     'subsection' => true,
@@ -612,8 +612,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_btn_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Button Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color', 'houzez' ),
+            'title'    => esc_html__( 'Button Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => true
@@ -621,8 +621,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_btn_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Button Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color on hover', 'houzez' ),
+            'title'    => esc_html__( 'Button Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color on hover', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'color' => '#ffffff',
@@ -633,16 +633,16 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_btn_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Button Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button background color', 'houzez' ),
+            'title'    => esc_html__( 'Button Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button background color', 'houzez-child' ),
             'default'  => '#00aeff',
             'transparent' => true
         ),
         array(
             'id'       => 'header_4_btn_bg_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Button Background Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button background color on hover', 'houzez' ),
+            'title'    => esc_html__( 'Button Background Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button background color on hover', 'houzez-child' ),
             'default'  => array(
                 'color' => '#00aeff',
                 'alpha' => '.65',
@@ -652,8 +652,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_btn_border',
             'type'     => 'border',
-            'title'    => esc_html__( 'Button Border', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button border options', 'houzez' ),
+            'title'    => esc_html__( 'Button Border', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button border options', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'border-color'  => '#00aeff',
@@ -667,8 +667,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_btn_border_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Button Border On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button border color on hover', 'houzez' ),
+            'title'    => esc_html__( 'Button Border On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button border color on hover', 'houzez-child' ),
             'default'  => array(
                 'color' => '#00aeff',
                 'alpha' => '.99',
@@ -684,15 +684,15 @@ Redux::setSection( $houzez_opt_name, array(
             'type'   => 'info',
             'notice' => false,
             'style'  => 'info',
-            'title'  => esc_html__( 'Transparent Header - Create Listing Button', 'houzez' ),
+            'title'  => esc_html__( 'Transparent Header - Create Listing Button', 'houzez-child' ),
             'desc'   => ''
         ),
 
         array(
             'id'       => 'header_4_transparent_btn_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Button Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color', 'houzez' ),
+            'title'    => esc_html__( 'Button Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => false
@@ -700,8 +700,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_btn_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Button Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color on hover', 'houzez' ),
+            'title'    => esc_html__( 'Button Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color on hover', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'color' => '#ffffff',
@@ -712,8 +712,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_btn_bg_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Button Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button background color', 'houzez' ),
+            'title'    => esc_html__( 'Button Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button background color', 'houzez-child' ),
             'default'  => array(
                 'color' => '#ffffff',
                 'alpha' => '.2',
@@ -723,8 +723,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_btn_bg_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Button Background Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button background color on hover', 'houzez' ),
+            'title'    => esc_html__( 'Button Background Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button background color on hover', 'houzez-child' ),
             'default'  => array(
                 'color' => '#00aeff',
                 'alpha' => '.65',
@@ -734,8 +734,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_btn_border',
             'type'     => 'border',
-            'title'    => esc_html__( 'Button Border', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button border options', 'houzez' ),
+            'title'    => esc_html__( 'Button Border', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button border options', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'border-color'  => '#ffffff',
@@ -749,8 +749,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'header_4_transparent_btn_border_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Button Border On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button border color on hover', 'houzez' ),
+            'title'    => esc_html__( 'Button Border On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button border color on hover', 'houzez-child' ),
             'default'  => array(
                 'color' => '#00AEEF',
                 'alpha' => '1',
@@ -764,7 +764,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Login Register
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Login & Register', 'houzez' ),
+    'title'  => esc_html__( 'Login & Register', 'houzez-child' ),
     'id'     => 'styling-login-register',
     'desc'   => '',
     'subsection' => true,
@@ -772,7 +772,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'hd_login_register_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '',
@@ -781,7 +781,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'hd_login_register_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color On Hover', 'houzez' ),
+            'title'    => esc_html__( 'Text Color On Hover', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => ''
@@ -795,14 +795,14 @@ Redux::setSection( $houzez_opt_name, array(
             'type'   => 'info',
             'notice' => false,
             'style'  => 'info',
-            'title'  => esc_html__( 'Transparent Header - Login & Register', 'houzez' ),
+            'title'  => esc_html__( 'Transparent Header - Login & Register', 'houzez-child' ),
             'desc'   => ''
         ),
 
         array(
             'id'       => 'login_register_transparent_text_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '',
@@ -811,7 +811,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'login_register_transparent_text_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color On Hover', 'houzez' ),
+            'title'    => esc_html__( 'Text Color On Hover', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => ''
@@ -822,7 +822,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Mobile Navigation
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Mobile Menu', 'houzez' ),
+    'title'  => esc_html__( 'Mobile Menu', 'houzez-child' ),
     'id'     => 'styling-mobile-menu',
     'desc'   => '',
     'subsection' => true,
@@ -830,39 +830,39 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'mob_menu_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Mobile Header Background Color', 'houzez' ),
-            'desc' => esc_html__('Select the background color of the mobile header', 'houzez'),
+            'title'    => esc_html__( 'Mobile Header Background Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the background color of the mobile header', 'houzez-child'),
             'default'  => '#004274',
             'transparent' => false
         ),
         array(
             'id'       => 'mob_menu_btn_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Mobile Header Icon Color', 'houzez' ),
-            'subtitle'    => esc_html__( 'Navicon and User-menu icon color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the color of the incons in the mobile header', 'houzez' ),
+            'title'    => esc_html__( 'Mobile Header Icon Color', 'houzez-child' ),
+            'subtitle'    => esc_html__( 'Navicon and User-menu icon color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the color of the incons in the mobile header', 'houzez-child' ),
             'default'  => '#FFFFFF'
         ),
         array(
             'id'       => 'mob_nav_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the background color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the background color of the menu tabs', 'houzez-child' ),
             'default'  => '#ffffff',
             'transparent' => false
         ),
         array(
             'id'       => 'mob_link_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'default'  => '#004274'
         ),
         array(
             'id'       => 'mobile_nav_border',
             'type'     => 'border',
-            'title'    => esc_html__( 'Border', 'houzez' ),
-            'desc'    => esc_html__( 'Select the button border options', 'houzez' ),
+            'title'    => esc_html__( 'Border', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the button border options', 'houzez-child' ),
             'desc'     => '',
             'default'  => array(
                 'border-color'  => '#dce0e0',
@@ -879,7 +879,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Advance Search
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Advanced Search', 'houzez' ),
+    'title'  => esc_html__( 'Advanced Search', 'houzez-child' ),
     'id'     => 'styling-advanced-search',
     'desc'   => '',
     'subsection' => true,
@@ -887,55 +887,55 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'adv_background',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'subtitle' => esc_html__( 'Select the advanced search background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'subtitle' => esc_html__( 'Select the advanced search background color', 'houzez-child' ),
             'default'  => '#ffffff',
             'validate' => 'color',
         ),
         array(
             'id'       => 'side_search_background',
             'type'     => 'color',
-            'title'    => esc_html__( 'Half Map Search Background Color', 'houzez' ),
-            'subtitle' => esc_html__( 'Select the background color for half map side search', 'houzez' ),
+            'title'    => esc_html__( 'Half Map Search Background Color', 'houzez-child' ),
+            'subtitle' => esc_html__( 'Select the background color for half map side search', 'houzez-child' ),
             'default'  => '#ffffff',
             'validate' => 'color',
         ),
         array(
             'id'       => 'adv_textfields_borders',
             'type'     => 'color',
-            'title'    => esc_html__( 'Fields Border Color ', 'houzez' ),
-            'subtitle' => esc_html__( 'Select the border color of the search fields', 'houzez' ),
+            'title'    => esc_html__( 'Fields Border Color ', 'houzez-child' ),
+            'subtitle' => esc_html__( 'Select the border color of the search fields', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#dce0e0',
         ),
         array(
             'id'       => 'adv_text_color20',
             'type'     => 'color',
-            'title'    => esc_html__( 'Fields Placeholder Color', 'houzez' ),
-            'subtitle' => esc_html__('Select placeholder text color', 'houzez'),
+            'title'    => esc_html__( 'Fields Placeholder Color', 'houzez-child' ),
+            'subtitle' => esc_html__('Select placeholder text color', 'houzez-child'),
             'default'  => '#a1a7a8',
         ),
         array(
             'id'       => 'adv_other_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
-            'subtitle' => esc_html__( 'Text color for price range slider and other features', 'houzez' ),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
+            'subtitle' => esc_html__( 'Text color for price range slider and other features', 'houzez-child' ),
             'default'  => '#222222',
             'validate' => 'color',
         ),
         array(
             'id'       => 'adv_halfmap_other_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Half Map Text Color', 'houzez' ),
-            'subtitle' => esc_html__( 'Text color for price range slider and other features for half map side search', 'houzez' ),
+            'title'    => esc_html__( 'Half Map Text Color', 'houzez-child' ),
+            'subtitle' => esc_html__( 'Text color for price range slider and other features for half map side search', 'houzez-child' ),
             'default'  => '#222222',
             'validate' => 'color',
         ),
         array(
             'id'       => 'adv_search_btn_bg',
             'type'     => 'link_color',
-            'title'    => esc_html__( 'Search Button Background Color', 'houzez' ),
-            'subtitle'     => esc_html__( 'Select the search button background color', 'houzez' ),
+            'title'    => esc_html__( 'Search Button Background Color', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Select the search button background color', 'houzez-child' ),
             'active'    => false,
             'default'  => array(
                 'regular' => '#28a745',
@@ -945,8 +945,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'adv_search_btn_text',
             'type'     => 'link_color',
-            'title'    => esc_html__( 'Search Button Text Color', 'houzez' ),
-            'subtitle'     => esc_html__( 'Select the search button text color', 'houzez' ),
+            'title'    => esc_html__( 'Search Button Text Color', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Select the search button text color', 'houzez-child' ),
             'active'    => false,
             'default'  => array(
                 'regular' => '#ffffff',
@@ -956,8 +956,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'adv_search_border',
             'type'     => 'link_color',
-            'title'    => esc_html__( 'Search Button Border Color', 'houzez' ),
-            'subtitle'     => esc_html__( 'Select the search button border color', 'houzez' ),
+            'title'    => esc_html__( 'Search Button Border Color', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Select the search button border color', 'houzez-child' ),
             'active'    => false,
             'default'  => array(
                 'regular' => '#28a745',
@@ -967,8 +967,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'adv_button_color',
             'type'     => 'link_color',
-            'title'    => esc_html__( 'Advanced Button Text Color', 'houzez' ),
-            'subtitle'     => esc_html__( 'Select the advanced button text color', 'houzez' ),
+            'title'    => esc_html__( 'Advanced Button Text Color', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Select the advanced button text color', 'houzez-child' ),
             'active'    => false,
             'default'  => array(
                 'regular' => '#00aeff',
@@ -978,8 +978,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'adv_button_bg_color',
             'type'     => 'link_color',
-            'title'    => esc_html__( 'Advanced Button Background Color', 'houzez' ),
-            'subtitle'     => esc_html__( 'Select the advanced button background color', 'houzez' ),
+            'title'    => esc_html__( 'Advanced Button Background Color', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Select the advanced button background color', 'houzez-child' ),
             'active'    => false,
             'default'  => array(
                 'regular' => '#ffffff',
@@ -989,8 +989,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'adv_button_border_color',
             'type'     => 'link_color',
-            'title'    => esc_html__( 'Advanced Button Border Color', 'houzez' ),
-            'subtitle'     => esc_html__( 'Select the advanced button border color', 'houzez' ),
+            'title'    => esc_html__( 'Advanced Button Border Color', 'houzez-child' ),
+            'subtitle'     => esc_html__( 'Select the advanced button border color', 'houzez-child' ),
             'active'    => false,
             'default'  => array(
                 'regular' => '#dce0e0',
@@ -1006,8 +1006,8 @@ Redux::setSection( $houzez_opt_name, array(
             'units_extended' => 'false',
             'left' => 'false',
             'right' => 'false',
-            'title'          => esc_html__('Padding', 'houzez'),
-            'subtitle'       => esc_html__('Add top and bottom padding for header search', 'houzez'),
+            'title'          => esc_html__('Padding', 'houzez-child'),
+            'subtitle'       => esc_html__('Add top and bottom padding for header search', 'houzez-child'),
             'default'            => array(
                 'padding-top'     => '10px', 
                 'padding-bottom'  => '10px', 
@@ -1018,18 +1018,18 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'adv_overlay_open_close_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Open/Close Button Background Color', 'houzez' ),
-            'subtitle' => esc_html__('This setting works for the advanced search over headers map, video, image, etc.', 'houzez'),
-            'desc'     => esc_html__( 'Select the open/close button background color', 'houzez' ),
+            'title'    => esc_html__( 'Open/Close Button Background Color', 'houzez-child' ),
+            'subtitle' => esc_html__('This setting works for the advanced search over headers map, video, image, etc.', 'houzez-child'),
+            'desc'     => esc_html__( 'Select the open/close button background color', 'houzez-child' ),
             'default'  => '#00aeff',
             'transparent' => false
         ),
         array(
             'id'       => 'adv_overlay_open_close_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Open/Close Button Color', 'houzez' ),
-            'subtitle' => esc_html__('This setting works for the advanced search over headers map, video, image, etc.', 'houzez'),
-            'desc'     => esc_html__( 'Select the open/close button text color', 'houzez' ),
+            'title'    => esc_html__( 'Open/Close Button Color', 'houzez-child' ),
+            'subtitle' => esc_html__('This setting works for the advanced search over headers map, video, image, etc.', 'houzez-child'),
+            'desc'     => esc_html__( 'Select the open/close button text color', 'houzez-child' ),
             'default'  => '#ffffff',
             'transparent' => false
         ),
@@ -1039,7 +1039,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Saved Search Button
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Saved Search Button', 'houzez' ),
+    'title'  => esc_html__( 'Saved Search Button', 'houzez-child' ),
     'id'     => 'styling-saved-search',
     'desc'   => '',
     'subsection' => true,
@@ -1047,7 +1047,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ssb_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '#ffffff'
@@ -1056,7 +1056,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ssb_color_hover',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color Hover', 'houzez' ),
+            'title'    => esc_html__( 'Text Color Hover', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '#ffffff'
@@ -1065,7 +1065,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ssb_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '#28a745'
@@ -1074,7 +1074,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ssb_bg_color_hover',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color Hover', 'houzez' ),
+            'title'    => esc_html__( 'Background Color Hover', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '#28a745'
@@ -1083,7 +1083,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ssb_border_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Border Color', 'houzez' ),
+            'title'    => esc_html__( 'Border Color', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '#28a745'
@@ -1092,7 +1092,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ssb_border_color_hover',
             'type'     => 'color',
-            'title'    => esc_html__( 'Border Color Hover', 'houzez' ),
+            'title'    => esc_html__( 'Border Color Hover', 'houzez-child' ),
             'desc'    => '',
             'subtitle' => '',
             'default'  => '#28a745'
@@ -1105,7 +1105,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Header Account Navigation
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'User Account Menu', 'houzez' ),
+    'title'  => esc_html__( 'User Account Menu', 'houzez-child' ),
     'id'     => 'styling-user-account-menu',
     'desc'   => '',
     'subsection' => true,
@@ -1113,8 +1113,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ua_menu_bg',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the menu background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the menu background color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#FFFFFF'
 
@@ -1122,8 +1122,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ua_menu_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#004274',
             'transparent' => false
@@ -1131,8 +1131,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ua_menu_links_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#00aeff',
             'transparent' => false
@@ -1140,8 +1140,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ua_menu_links_hover_bg_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Background Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the background color of the menu tabs on hover', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'color' => '#00aeff',
@@ -1152,8 +1152,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'ua_menu_border_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Border Color', 'houzez' ),
-            'desc' => esc_html__( 'Select the border color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Border Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select the border color of the menu tabs', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#dce0e0',
             'transparent' => true
@@ -1164,7 +1164,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Dashboard Menu
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Dashboard Menu', 'houzez' ),
+    'title'  => esc_html__( 'Dashboard Menu', 'houzez-child' ),
     'id'     => 'styling-dashboardmenu',
     'desc'   => '',
     'subsection' => true,
@@ -1172,8 +1172,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'dm_background',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the menu background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the menu background color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#002B4B',
             'transparent' => true
@@ -1181,8 +1181,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'dm_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez' ),
+            'title'    => esc_html__( 'Menu Tabs Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#839EB2',
             'transparent' => true
@@ -1190,16 +1190,16 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'dm_hover_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez' ),
-            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez' ),            'subtitle' => '',
+            'title'    => esc_html__( 'Menu Tabs Text Color On Hover', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the text color of the menu tabs on hover', 'houzez-child' ),            'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => true
         ),
         array(
             'id'       => 'dm_submenu_active_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Sub Menu Active Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select submenu active color', 'houzez' ),
+            'title'    => esc_html__( 'Sub Menu Active Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select submenu active color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#00aeff'
         ),
@@ -1209,7 +1209,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Property Details
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Property Details', 'houzez' ),
+    'title'  => esc_html__( 'Property Details', 'houzez-child' ),
     'id'     => 'styling-property-detail',
     'desc'   => '',
     'subsection' => true,
@@ -1217,8 +1217,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'houzez_prop_details_bg',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Property Details Module Background Color', 'houzez' ),
-            'desc' => esc_html__( 'Select property details module background color.', 'houzez' ),
+            'title'    => esc_html__( 'Property Details Module Background Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select property details module background color.', 'houzez-child' ),
             'default'  => array(
                 'color' => '#00aeff',
                 'alpha' => '.1',
@@ -1229,8 +1229,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'prop_details_border_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Property Details Border Color', 'houzez' ),
-            'desc' => esc_html__( 'Select property details module border color.', 'houzez' ),
+            'title'    => esc_html__( 'Property Details Border Color', 'houzez-child' ),
+            'desc' => esc_html__( 'Select property details module border color.', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#00aeff',
             'transparent' => false
@@ -1241,7 +1241,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Featured Label
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Featured Label', 'houzez' ),
+    'title'  => esc_html__( 'Featured Label', 'houzez-child' ),
     'id'     => 'styling-featured-label',
     'desc'   => '',
     'subsection' => true,
@@ -1249,8 +1249,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'featured_label_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the label background color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the label background color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#77c720',
             'transparent' => true
@@ -1258,8 +1258,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'featured_label_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
-            'desc'    => esc_html__( 'Select the label text color', 'houzez' ),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
+            'desc'    => esc_html__( 'Select the label text color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => false
@@ -1270,7 +1270,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Top Bar
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Top Bar', 'houzez' ),
+    'title'  => esc_html__( 'Top Bar', 'houzez-child' ),
     'id'     => 'styling-top-bar',
     'desc'   => '',
     'subsection' => true,
@@ -1278,7 +1278,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'top_bar_bg',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#000000',
             'transparent' => true
@@ -1286,7 +1286,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'top_bar_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Color', 'houzez' ),
+            'title'    => esc_html__( 'Color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => false
@@ -1294,7 +1294,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'top_bar_color_hover',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Hover Color', 'houzez' ),
+            'title'    => esc_html__( 'Hover Color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'color' => '#00AEEF',
@@ -1308,7 +1308,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Widgets
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Agent & Agency Detail', 'houzez' ),
+    'title'  => esc_html__( 'Agent & Agency Detail', 'houzez-child' ),
     'id'     => 'styling-single-agent-agency',
     'desc'   => '',
     'subsection' => true,
@@ -1316,7 +1316,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'aad_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
             'desc'     => '',
             'subtitle' => '',
             'default'  => '#0e4c7b',
@@ -1324,7 +1324,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'aad_text_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
             'desc'     => '',
             'subtitle' => '',
             'default'  => '#ffffff',
@@ -1332,7 +1332,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'aad_links_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Links Color', 'houzez' ),
+            'title'    => esc_html__( 'Links Color', 'houzez-child' ),
             'desc'     => '',
             'subtitle' => '',
             'default'  => '#00aeff',
@@ -1343,7 +1343,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Widgets
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Widgets', 'houzez' ),
+    'title'  => esc_html__( 'Widgets', 'houzez-child' ),
     'id'     => 'styling-hz-widgets',
     'desc'   => '',
     'subsection' => true,
@@ -1351,8 +1351,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'widgets_custom_design',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Widgets Custom Design', 'houzez' ),
-            'desc'     => esc_html__( 'Enable or disable widgets custom design', 'houzez' ),
+            'title'    => esc_html__( 'Widgets Custom Design', 'houzez-child' ),
+            'desc'     => esc_html__( 'Enable or disable widgets custom design', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 0,
             'on'       => 'Enabled',
@@ -1361,7 +1361,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'widgets_custom_design_apply',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Where to Apply Custom Design?', 'houzez' ),
+            'title'    => esc_html__( 'Where to Apply Custom Design?', 'houzez-child' ),
             'desc'     => '',
             'subtitle' => '',
             'default'  => 1,
@@ -1372,7 +1372,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'widget_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Background Color', 'houzez' ),
+            'title'    => esc_html__( 'Background Color', 'houzez-child' ),
             'subtitle' => '',
             'default'  => '#ffffff',
             'transparent' => true,
@@ -1381,7 +1381,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'widget_border',
             'type'     => 'border',
-            'title'    => esc_html__( 'Border', 'houzez' ),
+            'title'    => esc_html__( 'Border', 'houzez-child' ),
             'subtitle' => '',
             'default'  => array(
                 'border-color' => '#ffffff', 
@@ -1392,8 +1392,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'widget_border_radius',
             'type'     => 'text',
-            'title'    => esc_html__( 'Border Radius', 'houzez' ),
-            'subtitle' => esc_html__( 'Example: 4px', 'houzez' ),
+            'title'    => esc_html__( 'Border Radius', 'houzez-child' ),
+            'subtitle' => esc_html__( 'Example: 4px', 'houzez-child' ),
             'default'  => '4px',
             'required' => array('widgets_custom_design', '=', '1'),
         ),
@@ -1401,8 +1401,8 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'widget_padding',
             'type'     => 'text',
-            'title'    => esc_html__( 'Padding', 'houzez' ),
-            'subtitle' => esc_html__( 'Example: 30px', 'houzez' ),
+            'title'    => esc_html__( 'Padding', 'houzez-child' ),
+            'subtitle' => esc_html__( 'Example: 30px', 'houzez-child' ),
             'default'  => '30px',
             'required' => array('widgets_custom_design', '=', '1'),
         ),
@@ -1413,7 +1413,7 @@ Redux::setSection( $houzez_opt_name, array(
 /* Footer
 ----------------------------------------------------------------*/
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Footer', 'houzez' ),
+    'title'  => esc_html__( 'Footer', 'houzez-child' ),
     'id'     => 'styling-footer',
     'desc'   => '',
     'subsection' => true,
@@ -1421,31 +1421,31 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'footer_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Footer Top Background Color', 'houzez' ),
-            'desc' => esc_html__('Select the footer top background color', 'houzez'),
+            'title'    => esc_html__( 'Footer Top Background Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the footer top background color', 'houzez-child'),
             'default'  => '#004274',
             'transparent' => false,
         ),
         array(
             'id'       => 'footer_bottom_bg_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Footer Bottom Background Color', 'houzez' ),
-            'desc' => esc_html__('Select the footer bottom background color', 'houzez'),
+            'title'    => esc_html__( 'Footer Bottom Background Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the footer bottom background color', 'houzez-child'),
             'default'  => '#00335A',
             'transparent' => false,
         ),
         array(
             'id'       => 'footer_color',
             'type'     => 'color',
-            'title'    => esc_html__( 'Text Color', 'houzez' ),
-            'desc' => esc_html__('Select the footer text color', 'houzez'),
+            'title'    => esc_html__( 'Text Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the footer text color', 'houzez-child'),
             'default'  => '#ffffff'
         ),
         array(
             'id'       => 'footer_hover_color',
             'type'     => 'color_rgba',
-            'title'    => esc_html__( 'Links Hover Color', 'houzez' ),
-            'desc' => esc_html__('Select the footer links hover color', 'houzez'),
+            'title'    => esc_html__( 'Links Hover Color', 'houzez-child' ),
+            'desc' => esc_html__('Select the footer links hover color', 'houzez-child'),
             'default'  => array(
                 'color' => '#00aeff',
                 'alpha' => '1',

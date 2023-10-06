@@ -15,8 +15,8 @@ class houzez_Flickr_Feeds extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_flickr_feeds', // Base ID
-			esc_html__( 'HOUZEZ: Flickr', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'Show photos from Flickr.', 'houzez' ), ) // Args
+			esc_html__( 'HOUZEZ: Flickr', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'Show photos from Flickr.', 'houzez-child' ), ) // Args
 		);
 		
 	}
@@ -145,26 +145,26 @@ class houzez_Flickr_Feeds extends WP_Widget {
 		
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'houzez' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'houzez-child' ); ?>:</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'userid' ) ); ?>"><?php esc_html_e( 'Flickr ID', 'houzez' ); ?>:</label> <small><a href="http://idgettr.com/" target="_blank"><?php esc_html_e( 'What\'s my Flickr ID?', 'houzez' ); ?></a></small>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'userid' ) ); ?>"><?php esc_html_e( 'Flickr ID', 'houzez-child' ); ?>:</label> <small><a href="http://idgettr.com/" target="_blank"><?php esc_html_e( 'What\'s my Flickr ID?', 'houzez-child' ); ?></a></small>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'userid' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'userid' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['userid'] ); ?>" />
-			<small class="howto"><?php esc_html_e( 'Example ID: 23100287@N07', 'houzez' ); ?></small>
+			<small class="howto"><?php esc_html_e( 'Example ID: 23100287@N07', 'houzez-child' ); ?></small>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Number of photos', 'houzez' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Number of photos', 'houzez-child' ); ?>:</label>
 			<input class="small-text" type="text" value="<?php echo absint( $instance['count'] ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 't_width' ) ); ?>"><?php esc_html_e( 'Thumbnail width', 'houzez' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 't_width' ) ); ?>"><?php esc_html_e( 'Thumbnail width', 'houzez-child' ); ?>:</label>
 			<input class="small-text" type="text" value="<?php echo absint( $instance['t_width'] ); ?>" id="<?php echo esc_attr( $this->get_field_id( 't_width' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 't_width' ) ); ?>" /> px
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 't_height' ) ); ?>"><?php esc_html_e( 'Thumbnail height', 'houzez' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 't_height' ) ); ?>"><?php esc_html_e( 'Thumbnail height', 'houzez-child' ); ?>:</label>
 			<input class="small-text" type="text" value="<?php echo absint( $instance['t_height'] ); ?>" id="<?php echo esc_attr( $this->get_field_id( 't_height' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 't_height' ) ); ?>" /> px
 		</p>
 

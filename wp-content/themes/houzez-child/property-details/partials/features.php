@@ -48,7 +48,7 @@ if( is_array($all_features) ) {
 }
 if( $single_feature !='' ) {
     if( $has_child ) {
-        $output_html .= '<div class="features_group_name">'.esc_html__('Other Features','houzez').'</div>';
+        $output_html .= '<div class="features_group_name">'.esc_html__('Other Features','houzez-child').'</div>';
     }
     $output_html .= '<ul class="'.$data_column_class.' list-unstyled">'.$single_feature .'</ul>';
 }

@@ -19,7 +19,7 @@
 			</a>
 			<div>
 				<a class="property-nav-link" href="<?php the_permalink(); ?>">
-					<?php echo esc_html__('Prev', 'houzez'); ?>
+					<?php echo esc_html__('Prev', 'houzez-child'); ?>
 				</a>	
 			</div>
 		</div><!-- prev-property -->
@@ -42,7 +42,7 @@
 		<div class="next-property d-flex align-items-center">
 			<div>
 				<a class="property-nav-link" href="<?php the_permalink(); ?>">
-					<?php echo esc_html__('Next', 'houzez'); ?>
+					<?php echo esc_html__('Next', 'houzez-child'); ?>
 				</a>	
 			</div>
 			<a href="<?php the_permalink(); ?>">

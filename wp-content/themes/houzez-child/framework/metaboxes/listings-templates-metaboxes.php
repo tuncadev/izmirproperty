@@ -29,7 +29,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         
         $meta_boxes[] = array(
             'id'        => 'fave_page_content_area',
-            'title'     => esc_html__('Content Area', 'houzez'),
+            'title'     => esc_html__('Content Area', 'houzez-child'),
             'post_types'     => array( 'page' ),
             'context'    => 'normal',
             //'priority'   => 'normal',
@@ -75,8 +75,8 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
             'fields'    => array(
                 array(
                     'id' => $houzez_prefix."listing_page_content_area",
-                    'name' => esc_html__('Show Content Above Footer?', 'houzez'),
-                    'desc' => esc_html__( 'Yes', 'houzez' ),
+                    'name' => esc_html__('Show Content Above Footer?', 'houzez-child'),
+                    'desc' => esc_html__( 'Yes', 'houzez-child' ),
                     'type' => 'checkbox',
                     'std' => 0,
                 ),
@@ -92,7 +92,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         );
         if( !in_array('property_area', (array)$page_filters) ) {
             $property_area_filter = array(
-                    'name'      => esc_html__('Areas', 'houzez'),
+                    'name'      => esc_html__('Areas', 'houzez-child'),
                     'id'        => $houzez_prefix . 'area',
                     'type'      => 'select',
                     'options'   => $prop_neighborhood,
@@ -111,7 +111,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         );
         if( !in_array('property_type', (array)$page_filters) ) {
             $property_type_filter = array(
-                    'name'      => esc_html__('Types', 'houzez'),
+                    'name'      => esc_html__('Types', 'houzez-child'),
                     'id'        => $houzez_prefix . 'types',
                     'type'      => 'select',
                     'options'   => $prop_types,
@@ -130,7 +130,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         );
         if( !in_array('property_status', (array)$page_filters) ) {
             $property_status_filter = array(
-                    'name'      => esc_html__('Status', 'houzez' ),
+                    'name'      => esc_html__('Status', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'status',
                     'type'      => 'select',
                     'options'   => $prop_status,
@@ -149,7 +149,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         );
         if( !in_array('property_label', (array)$page_filters) ) {
             $property_label_filter = array(
-                    'name'      => esc_html__('Labels', 'houzez'),
+                    'name'      => esc_html__('Labels', 'houzez-child'),
                     'id'        => $houzez_prefix . 'labels',
                     'type'      => 'select',
                     'options'   => $prop_label,
@@ -168,7 +168,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         );
         if( !in_array('property_state', (array)$page_filters) ) {
             $property_state_filter = array(
-                    'name'      => esc_html__('States', 'houzez'),
+                    'name'      => esc_html__('States', 'houzez-child'),
                     'id'        => $houzez_prefix . 'states',
                     'type'      => 'select',
                     'options'   => $prop_states,
@@ -187,7 +187,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         );
         if( !in_array('property_city', (array)$page_filters) ) {
             $property_city_filter = array(
-                    'name'      => esc_html__('Cities', 'houzez'),
+                    'name'      => esc_html__('Cities', 'houzez-child'),
                     'id'        => $houzez_prefix . 'locations',
                     'type'      => 'select',
                     'options'   => $prop_locations,
@@ -206,7 +206,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         );
         if( !in_array('property_feature', (array)$page_filters) ) {
             $property_feature_filter = array(
-                    'name'      => esc_html__('Features', 'houzez' ),
+                    'name'      => esc_html__('Features', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'features',
                     'type'      => 'select',
                     'options'   => $prop_features,
@@ -222,7 +222,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
         *-----------------------------------------------------------------------*/
         $meta_boxes[] = array(
             'id'        => 'fave_listing_template',
-            'title'     => esc_html__('Listings Template Settings', 'houzez'),
+            'title'     => esc_html__('Listings Template Settings', 'houzez-child'),
             'post_types'     => array( 'page' ),
             'context'    => 'normal',
             'priority'   => 'high',
@@ -265,7 +265,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
             'fields'    => array(
                 array(
                     'id' => $houzez_prefix."prop_no",
-                    'name' => esc_html__('Number of listings to display', 'houzez'),
+                    'name' => esc_html__('Number of listings to display', 'houzez-child'),
                     'desc' => "",
                     'type' => 'number',
                     'std' => "9",
@@ -273,19 +273,19 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
                     'columns' => 6
                 ),
                 array(
-                    'name'      => esc_html__('Order Properties By', 'houzez'),
+                    'name'      => esc_html__('Order Properties By', 'houzez-child'),
                     'id'        => $houzez_prefix . 'properties_sort',
                     'type'      => 'select',
                     'options'   => array(
-                        'a_title'  => esc_html__('Title - ASC', 'houzez'),
-                        'd_title'  => esc_html__('Title - DESC', 'houzez'),
-                        'd_date'  => esc_html__('Date New to Old', 'houzez'),
-                        'a_date'  => esc_html__('Date Old to New', 'houzez'),
-                        'd_price' => esc_html__('Price (High to Low)', 'houzez'),
-                        'a_price' => esc_html__('Price (Low to High)', 'houzez'),
-                        'featured_first' => esc_html__('Show Featured Listings on Top', 'houzez'),
-                        'featured' => esc_html__('Show Featured Listings', 'houzez'),
-                        'random' => esc_html__('Random Listings', 'houzez')
+                        'a_title'  => esc_html__('Title - ASC', 'houzez-child'),
+                        'd_title'  => esc_html__('Title - DESC', 'houzez-child'),
+                        'd_date'  => esc_html__('Date New to Old', 'houzez-child'),
+                        'a_date'  => esc_html__('Date Old to New', 'houzez-child'),
+                        'd_price' => esc_html__('Price (High to Low)', 'houzez-child'),
+                        'a_price' => esc_html__('Price (Low to High)', 'houzez-child'),
+                        'featured_first' => esc_html__('Show Featured Listings on Top', 'houzez-child'),
+                        'featured' => esc_html__('Show Featured Listings', 'houzez-child'),
+                        'random' => esc_html__('Random Listings', 'houzez-child')
                     ),
                     'std'       => array( 'd_date' ),
                     'desc'      => '',
@@ -294,17 +294,17 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
                 
                 array(
                     'id' => $houzez_prefix."listings_tabs",
-                    'name' => esc_html__('Tabs', 'houzez'),
-                    'desc' => esc_html__('Enable/disable the tabs on the listing page(not work for half map and parallax listing template)', 'houzez'),
+                    'name' => esc_html__('Tabs', 'houzez-child'),
+                    'desc' => esc_html__('Enable/disable the tabs on the listing page(not work for half map and parallax listing template)', 'houzez-child'),
                     'type' => 'select',
                     'std' => "disable",
-                    'options' => array('enable' => esc_html__('Enabled', 'houzez'), 'disable' => esc_html__('Disabled', 'houzez')),
+                    'options' => array('enable' => esc_html__('Enabled', 'houzez-child'), 'disable' => esc_html__('Disabled', 'houzez-child')),
                     'columns' => 12
                 ),
                 array(
                     'id' => $houzez_prefix."listings_tab_1",
-                    'name' => esc_html__('Tabs One', 'houzez'),
-                    'desc' => esc_html__('Choose the property status for this tab', 'houzez'),
+                    'name' => esc_html__('Tabs One', 'houzez-child'),
+                    'desc' => esc_html__('Choose the property status for this tab', 'houzez-child'),
                     'type' => 'select',
                     'std' => "",
                     'options' => $prop_status,
@@ -312,8 +312,8 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
                 ),
                 array(
                     'id' => $houzez_prefix."listings_tab_2",
-                    'name' => esc_html__('Tabs Two', 'houzez'),
-                    'desc' => esc_html__('Choose the property status for this tab', 'houzez'),
+                    'name' => esc_html__('Tabs Two', 'houzez-child'),
+                    'desc' => esc_html__('Choose the property status for this tab', 'houzez-child'),
                     'type' => 'select',
                     'std' => "",
                     'options' => $prop_status,
@@ -331,7 +331,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
                 
 
                 array(
-                    'name'            => esc_html__( 'Properties by Agents', 'houzez' ),
+                    'name'            => esc_html__( 'Properties by Agents', 'houzez-child' ),
                     'id'              => $houzez_prefix. 'properties_by_agents',
                     'type'            => 'select',
                     'options'         => $agents_for_templates,
@@ -340,7 +340,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
                     'columns'         => 6,
                 ),
                 array(
-                    'name'            => esc_html__( 'Properties by Agencies', 'houzez' ),
+                    'name'            => esc_html__( 'Properties by Agencies', 'houzez-child' ),
                     'id'              => $houzez_prefix. 'properties_by_agency',
                     'type'            => 'select',
                     'options'         => $agencies_for_templates,
@@ -350,7 +350,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
                 ),
 
                 array(
-                    'name'      => esc_html__('Min Price', 'houzez'),
+                    'name'      => esc_html__('Min Price', 'houzez-child'),
                     'id'        => $houzez_prefix . 'min_price',
                     'type'      => 'number',
                     'options'   => '',
@@ -358,7 +358,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
                     'columns' => 6
                 ),
                 array(
-                    'name'      => esc_html__('Max Price', 'houzez'),
+                    'name'      => esc_html__('Max Price', 'houzez-child'),
                     'id'        => $houzez_prefix . 'max_price',
                     'type'      => 'number',
                     'options'   => '',
@@ -368,7 +368,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
 
                 array(
                     'id'      => $houzez_prefix. 'properties_min_beds',
-                    'name'    => esc_html__( 'Minimum Beds', 'houzez' ),
+                    'name'    => esc_html__( 'Minimum Beds', 'houzez-child' ),
                     'type'    => 'number',
                     'step'    => 'any',
                     'min'     => 0,
@@ -378,7 +378,7 @@ if( !function_exists('houzez_listings_templates_metaboxes') ) {
 
                 array(
                     'id'      => $houzez_prefix. 'properties_min_baths',
-                    'name'    => esc_html__( 'Minimum Baths', 'houzez' ),
+                    'name'    => esc_html__( 'Minimum Baths', 'houzez-child' ),
                     'type'    => 'number',
                     'step'    => 'any',
                     'min'     => 0,

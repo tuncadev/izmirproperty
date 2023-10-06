@@ -16,8 +16,8 @@ class houzez_Image_Banner_300_250 extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_image_banner_300_250', // Base ID
-			esc_html__( 'HOUZEZ: Image Banner 300x250', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'Add image banner 300x300 or 300x250', 'houzez' ), ) // Args
+			esc_html__( 'HOUZEZ: Image Banner 300x250', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'Add image banner 300x300 or 300x250', 'houzez-child' ), ) // Args
 		);
 		
 	}
@@ -99,20 +99,20 @@ class houzez_Image_Banner_300_250 extends WP_Widget {
 		
 	?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'banner_url' ) ); ?>"><?php esc_html_e('Image Banner URL:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'banner_url' ) ); ?>"><?php esc_html_e('Image Banner URL:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'banner_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'banner_url' ) ); ?>" value="<?php echo esc_url( $instance['banner_url'] ); ?>" class="widefat" />
 		</p>
         <p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'banner_link' ) ); ?>"><?php esc_html_e('Image Banner Link:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'banner_link' ) ); ?>"><?php esc_html_e('Image Banner Link:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'banner_link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'banner_link' ) ); ?>" value="<?php echo esc_url( $instance['banner_link'] ); ?>" class="widefat" />
 		</p>
         <p>
 			<input class="checkbox" type="checkbox" <?php if( $instance['hide_title'] == true ) echo 'checked'; ?> id="<?php echo esc_attr( $this->get_field_id( 'hide_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'hide_title' ) ); ?>" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'hide_title' ) ); ?>"><?php esc_html_e( 'Do not display the title', 'houzez' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'hide_title' ) ); ?>"><?php esc_html_e( 'Do not display the title', 'houzez-child' ); ?></label>
 		</p>
 	<?php
 	}

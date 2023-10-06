@@ -41,7 +41,7 @@ if ( is_front_page()  ) {
 
             } else { ?>
 
-            <h2><?php echo esc_html__('Search Invoices', 'houzez'); ?></h2>
+            <h2><?php echo esc_html__('Search Invoices', 'houzez-child'); ?></h2>
             <div class="dashboard-content-block">
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
@@ -51,7 +51,7 @@ if ( is_front_page()  ) {
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="houzez-icon icon-calendar-3"></i></div>
                                 </div>
-                                <input id="startDate" type="text" class="form-control db_input_date" placeholder="<?php echo esc_html__('Select a date', 'houzez'); ?>" readonly>
+                                <input id="startDate" type="text" class="form-control db_input_date" placeholder="<?php echo esc_html__('Select a date', 'houzez-child'); ?>" readonly>
                             </div><!-- input-group -->
                         </div><!-- form-group -->
                     </div><!-- col-md-3 col-sm-12 -->
@@ -62,7 +62,7 @@ if ( is_front_page()  ) {
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="houzez-icon icon-calendar-3"></i></div>
                                 </div>
-                                <input id="endDate" type="text" class="form-control db_input_date" placeholder="<?php echo esc_html__('Select a date', 'houzez'); ?>" readonly>
+                                <input id="endDate" type="text" class="form-control db_input_date" placeholder="<?php echo esc_html__('Select a date', 'houzez-child'); ?>" readonly>
                             </div><!-- input-group -->
                         </div><!-- form-group -->
                     </div><!-- col-md-3 col-sm-12 -->
@@ -101,7 +101,7 @@ if ( is_front_page()  ) {
                         <th><?php echo $houzez_local['invoice_status']; ?></th>
                         <th><?php echo $houzez_local['payment_method']; ?></th>
                         <th><?php echo $houzez_local['total']; ?></th>
-                        <th class="action-col"><?php echo esc_html__('Actions', 'houzez'); ?></th>
+                        <th class="action-col"><?php echo esc_html__('Actions', 'houzez-child'); ?></th>
                     </tr>
                 </thead>
                 <tbody id="invoices_content">

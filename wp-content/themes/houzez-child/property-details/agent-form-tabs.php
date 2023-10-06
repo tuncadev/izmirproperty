@@ -74,12 +74,12 @@ if(houzez_form_type()) {
         <ul class="nav nav-tabs">
         	<li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#tab_tour" role="tab">
-                    <span class="tab-title"><?php esc_html_e('Schedule a tour', 'houzez'); ?></span>
+                    <span class="tab-title"><?php esc_html_e('Schedule a tour', 'houzez-child'); ?></span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#tab_agent_form" role="tab">
-                    <span class="tab-title"><?php esc_html_e('Request Info', 'houzez'); ?></span>
+                    <span class="tab-title"><?php esc_html_e('Request Info', 'houzez-child'); ?></span>
                 </a>
             </li>
         </ul>
@@ -302,7 +302,7 @@ if(houzez_form_type()) {
 							<?php endif; ?>
 
 							<?php if( $return_array['is_single_agent'] == true && !empty($agent_whatsapp_call) && $agent_whatsapp_num ) { ?>
-							<a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo esc_attr( $agent_whatsapp_call ); ?>&text=<?php echo houzez_option('spl_con_interested', "Hello, I am interested in").' ['.get_the_title().'] '.get_permalink(); ?> " class="btn btn-secondary-outlined <?php echo esc_attr($whatsappBtnClass); ?>"><i class="houzez-icon icon-messaging-whatsapp mr-1"></i> <?php esc_html_e('WhatsApp', 'houzez'); ?></a>
+							<a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo esc_attr( $agent_whatsapp_call ); ?>&text=<?php echo houzez_option('spl_con_interested', "Hello, I am interested in").' ['.get_the_title().'] '.get_permalink(); ?> " class="btn btn-secondary-outlined <?php echo esc_attr($whatsappBtnClass); ?>"><i class="houzez-icon icon-messaging-whatsapp mr-1"></i> <?php esc_html_e('WhatsApp', 'houzez-child'); ?></a>
 							<?php } ?>
 
 							<?php if( $return_array['is_single_agent'] == true && houzez_option('agent_direct_messages', 0) ) { ?>

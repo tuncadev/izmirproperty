@@ -81,7 +81,7 @@ if($agent_display != 'none') {
 					<?php if( $hide_form_fields['usertype'] != 1 ) { ?>
 					<div class="col-md-6 col-sm-12">
 						<div class="form-group">
-							<label><?php esc_html_e("I'm a", 'houzez'); ?></label>
+							<label><?php esc_html_e("I'm a", 'houzez-child'); ?></label>
 							<select name="user_type" class="selectpicker form-control bs-select-hidden" title="<?php echo houzez_option('spl_con_select', 'Select'); ?>">
 								<option value="buyer"><?php echo houzez_option('spl_con_buyer', "I'm a buyer"); ?></option>
 								<option value="tennant"><?php echo houzez_option('spl_con_tennant', "I'm a tennant"); ?></option>

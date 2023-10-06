@@ -72,7 +72,7 @@ if ( is_user_logged_in() ) {
                 <form name="houzez_checkout" method="post" class="houzez_payment_form" action="<?php echo $stripe_processor_link; ?>">
                     <?php if ( $houzez_need_register ) { ?>
                     <div class="dashboard-content-block-wrap">
-                        <h2><?php esc_html_e('Account Information', 'houzez'); ?></h2>
+                        <h2><?php esc_html_e('Account Information', 'houzez-child'); ?></h2>
                         <div class="dashboard-content-block">
                             <?php get_template_part('template-parts/membership/create-account-form'); ?>    
                         </div>

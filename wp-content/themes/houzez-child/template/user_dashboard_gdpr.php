@@ -28,24 +28,24 @@ get_header(); ?>
             <div class="dashboard-content-block-wrap">
                 <div class="dashboard-content-block activities-list-wrap">
                     
-                    <p><?php esc_html_e('An email will be sent to the user at this email address asking them to verify the request.', 'houzez');?></p>
+                    <p><?php esc_html_e('An email will be sent to the user at this email address asking them to verify the request.', 'houzez-child');?></p>
 
-                    <p><strong><?php esc_html_e( 'Select your request*', 'houzez' ); ?></strong></p>
+                    <p><strong><?php esc_html_e( 'Select your request*', 'houzez-child' ); ?></strong></p>
                     <div class="form-group">
                         <label class="control control--radio">
-                            <input id="gdrf_data_export" type="radio" name="gdrf_data_type" value="export_personal_data"> <?php esc_html_e( 'Export Personal Data', 'houzez' ); ?>
+                            <input id="gdrf_data_export" type="radio" name="gdrf_data_type" value="export_personal_data"> <?php esc_html_e( 'Export Personal Data', 'houzez-child' ); ?>
                             <span class="control__indicator"></span>
                         </label>
                     </div>
                     <div class="form-group">
                         <label class="control control--radio">
-                            <input id="gdrf_data_remove" type="radio" name="gdrf_data_type" value="remove_personal_data"> <?php esc_html_e( 'Remove Personal Data', 'houzez' ); ?>
+                            <input id="gdrf_data_remove" type="radio" name="gdrf_data_type" value="remove_personal_data"> <?php esc_html_e( 'Remove Personal Data', 'houzez-child' ); ?>
                             <span class="control__indicator"></span>
                         </label>
                     </div>
                     <div class="form-group">
-                        <label><?php esc_html_e( 'Your email address*', 'houzez' ); ?></label>
-                        <input class="form-control" type="email" id="gdrf_data_email" name="gdrf_data_email" placeholder="<?php esc_html_e('Enter your email address', 'houzez'); ?>"/>
+                        <label><?php esc_html_e( 'Your email address*', 'houzez-child' ); ?></label>
+                        <input class="form-control" type="email" id="gdrf_data_email" name="gdrf_data_email" placeholder="<?php esc_html_e('Enter your email address', 'houzez-child'); ?>"/>
                     </div>
                 </div>
             </div><!-- dashboard-content-block-wrap -->
@@ -53,7 +53,7 @@ get_header(); ?>
                 <input type="hidden" name="houzez_gdrf_data_nonce" id="houzez_gdrf_data_nonce" value="<?php echo wp_create_nonce( 'houzez_gdrf_nonce' ); ?>" />
                 <button class="btn btn-success" id="houzez_gdpr_data">
                     <?php get_template_part('template-parts/loader'); ?>
-                    <?php esc_html_e('Send Request','houzez'); ?>
+                    <?php esc_html_e('Send Request','houzez-child'); ?>
                 </button>
             </div>
         </form>

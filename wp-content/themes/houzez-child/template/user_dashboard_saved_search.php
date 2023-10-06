@@ -46,8 +46,8 @@ get_header(); ?>
                 <table class="dashboard-table table-lined responsive-table">
                     <thead>
                         <tr>
-                            <th><?php echo esc_html__('Search Parameters', 'houzez'); ?></th>
-                            <th class="action-col"><?php echo esc_html__('Actions', 'houzez'); ?></th>
+                            <th><?php echo esc_html__('Search Parameters', 'houzez-child'); ?></th>
+                            <th class="action-col"><?php echo esc_html__('Actions', 'houzez-child'); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +67,7 @@ get_header(); ?>
             else :
 
                 echo '<div class="dashboard-content-block">
-                        '.esc_html__("You don't have any saved search.", 'houzez').'
+                        '.esc_html__("You don't have any saved search.", 'houzez-child').'
                     </div>';
 
             endif;

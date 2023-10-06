@@ -6,7 +6,7 @@ if( !function_exists('houzez_transparent_menu_metaboxes') ) {
         
         $meta_boxes[] = array(
             'id'        => 'fave_menu_settings',
-            'title'     => esc_html__('Page Navigation Options', 'houzez' ),
+            'title'     => esc_html__('Page Navigation Options', 'houzez-child' ),
             'post_types'     => array( 'page' ),
             'context' => 'normal',
             'hide'       => array(
@@ -32,15 +32,15 @@ if( !function_exists('houzez_transparent_menu_metaboxes') ) {
             ),
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Main Menu Transparent?', 'houzez'),
+                    'name'      => esc_html__('Main Menu Transparent?', 'houzez-child'),
                     'id'        => $houzez_prefix . 'main_menu_trans',
                     'type'      => 'select',
                     'options'   => array(
-                        'no' => esc_html__('No', 'houzez' ),
-                        'yes' => esc_html__('Yes', 'houzez' )
+                        'no' => esc_html__('No', 'houzez-child' ),
+                        'yes' => esc_html__('Yes', 'houzez-child' )
                     ),
                     'std'       => array( 'no' ),
-                    'desc'      => esc_html__('This option only works if you are using the header 4. You can choose the header 4 from theme options','houzez')
+                    'desc'      => esc_html__('This option only works if you are using the header 4. You can choose the header 4 from theme options','houzez-child')
                 ),
             )
         );

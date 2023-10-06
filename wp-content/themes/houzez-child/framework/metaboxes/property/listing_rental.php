@@ -33,8 +33,8 @@ function houzez_listing_rental_metabox_fields( $metabox_fields ) {
 	$fields = array(
 		array(
             'id' => "{$houzez_prefix}booking_shortcode",
-            'name' => esc_html__('Booking Shortcode', 'houzez'),
-            'desc' => esc_html__('Enter the booking form shortcode. Example [booking]', 'houzez'),
+            'name' => esc_html__('Booking Shortcode', 'houzez-child'),
+            'desc' => esc_html__('Enter the booking form shortcode. Example [booking]', 'houzez-child'),
             'type' => 'text',
             'placeholder' => '[booking]',
             'std' => "",

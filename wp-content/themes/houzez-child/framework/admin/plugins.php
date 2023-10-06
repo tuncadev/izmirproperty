@@ -153,7 +153,7 @@ $plugins_array = array(
 	<?php get_template_part('framework/admin/tabs'); ?>
 
 	<div class="admin-houzez-content">
-		<h2><?php esc_html_e('Plugins', 'houzez'); ?></h2>
+		<h2><?php esc_html_e('Plugins', 'houzez-child'); ?></h2>
 		<div class="admin-houzez-row">
 			
 			<div class="admin-houzez-box-wrap admin-houzez-box-wrap-plugins">
@@ -184,19 +184,19 @@ $plugins_array = array(
 								<?php echo esc_html( $plugin['description'] ); ?>
 								<br>
 								<?php if( $plugin['required'] ) { ?>
-								<div class="admin-houzez-required-label"><?php esc_html_e('Required', 'houzez'); ?></div>
+								<div class="admin-houzez-required-label"><?php esc_html_e('Required', 'houzez-child'); ?></div>
 								<?php } else { ?>
-								<div class="admin-houzez-recommended-label"><?php esc_html_e('Recommended', 'houzez'); ?></div>
+								<div class="admin-houzez-recommended-label"><?php esc_html_e('Recommended', 'houzez-child'); ?></div>
 								<?php } ?> 
 							</div>
 						</div><!-- admin-houzez-box-content -->
 						<div class="admin-houzez-box-footer">
 							<div class="active second plugin-version-author-uri">
 								<?php if( !empty($plugin['version'])) { ?>
-									<?php esc_html_e('Version', 'houzez'); ?> <?php echo esc_attr($plugin['version']); ?> | 
+									<?php esc_html_e('Version', 'houzez-child'); ?> <?php echo esc_attr($plugin['version']); ?> | 
 								<?php } ?>
 
-								<?php esc_html_e('By', 'houzez'); ?> <a target="_blank" href="<?php echo esc_url($plugin['author_url']); ?>"><?php echo esc_attr($plugin['author']); ?></a>
+								<?php esc_html_e('By', 'houzez-child'); ?> <a target="_blank" href="<?php echo esc_url($plugin['author_url']); ?>"><?php echo esc_attr($plugin['author']); ?></a>
 							</div>
 							
 						</div><!-- admin-houzez-box-footer -->
@@ -237,7 +237,7 @@ function houzez_get_action_links( $plugin ) {
 
 			case 'install':
 
-			$install_text = esc_attr__( 'Install Now', 'houzez' );
+			$install_text = esc_attr__( 'Install Now', 'houzez-child' );
 			if ( ! empty( $plugin_source ) ) {
 				$button = sprintf(
 					'<a class="houzez-plugin-js houzez-install-btn button" data-name="%s" data-slug="%s" data-source="%s" data-file="%s" href="#">%s</a>',
@@ -266,11 +266,11 @@ function houzez_get_action_links( $plugin ) {
 					esc_attr( $plugin_name ),
 					esc_attr( $plugin_slug ),
 					esc_attr( $plugin_file ),
-					esc_attr__( 'Activate', 'houzez' )
+					esc_attr__( 'Activate', 'houzez-child' )
 				);
 			} else {
 				$button = sprintf('<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
-					esc_attr__( 'Active', 'houzez' )
+					esc_attr__( 'Active', 'houzez-child' )
 				);
 			}
 			break;

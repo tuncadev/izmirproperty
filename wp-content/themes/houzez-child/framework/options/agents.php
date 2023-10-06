@@ -1,7 +1,7 @@
 <?php
 global $houzez_opt_name, $allowed_html_array;
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Agents', 'houzez' ),
+    'title'  => esc_html__( 'Agents', 'houzez-child' ),
     'id'     => 'houzez-agents',
     'desc'   => '',
     'icon'   => 'el-icon-user el-icon-small',
@@ -9,7 +9,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agents-template-layout',
             'type'     => 'image_select',
-            'title'    => esc_html__('Agents Layout', 'houzez'),
+            'title'    => esc_html__('Agents Layout', 'houzez-child'),
             'subtitle' => '',
             'desc'     => '',
             'options'  => array(
@@ -31,9 +31,9 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'num_of_agents',
             'type'     => 'text',
-            'title'    => esc_html__( 'Number of Agents', 'houzez' ),
-            'subtitle'    => esc_html__( 'Number of agents to display on the All Agents page template', 'houzez' ),
-            'desc'    => esc_html__( 'Enter the number of agents', 'houzez' ),
+            'title'    => esc_html__( 'Number of Agents', 'houzez-child' ),
+            'subtitle'    => esc_html__( 'Number of agents to display on the All Agents page template', 'houzez-child' ),
+            'desc'    => esc_html__( 'Enter the number of agents', 'houzez-child' ),
             'default'  => '9'
         ),
         
@@ -41,7 +41,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_header_search',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Agent Header Search', 'houzez' ),
+            'title'    => esc_html__( 'Agent Header Search', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -50,7 +50,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_mobile',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Mobile', 'houzez' ),
+            'title'    => esc_html__( 'Mobile', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -59,7 +59,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_phone',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Office Phone', 'houzez' ),
+            'title'    => esc_html__( 'Office Phone', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -69,7 +69,7 @@ Redux::setSection( $houzez_opt_name, array(
          array(
             'id'       => 'agent_fax',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Fax', 'houzez' ),
+            'title'    => esc_html__( 'Fax', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -79,7 +79,7 @@ Redux::setSection( $houzez_opt_name, array(
          array(
             'id'       => 'agent_email',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Email', 'houzez' ),
+            'title'    => esc_html__( 'Email', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -89,7 +89,7 @@ Redux::setSection( $houzez_opt_name, array(
          array(
             'id'       => 'agent_website',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Website', 'houzez' ),
+            'title'    => esc_html__( 'Website', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -99,7 +99,7 @@ Redux::setSection( $houzez_opt_name, array(
          array(
             'id'       => 'agent_social',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Social', 'houzez' ),
+            'title'    => esc_html__( 'Social', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -110,7 +110,7 @@ Redux::setSection( $houzez_opt_name, array(
 ));
 
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'Agent Detail Page', 'houzez' ),
+    'title'  => esc_html__( 'Agent Detail Page', 'houzez-child' ),
     'id'     => 'agent-detail-page',
     'desc'   => '',
     'subsection' => true,
@@ -118,7 +118,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent-detail-layout',
             'type'     => 'image_select',
-            'title'    => esc_html__('Single Agent Layout', 'houzez'),
+            'title'    => esc_html__('Single Agent Layout', 'houzez-child'),
             'subtitle' => '',
             'desc'     => '',
             'options'  => array(
@@ -136,9 +136,9 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_tabs',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Tabs', 'houzez' ),
-            'subtitle' => esc_html__('Property status tabs displayed in the agent detail page', 'houzez'),
-            'desc' => esc_html__( 'Enable or disable the tabs on agent detail page', 'houzez' ),
+            'title'    => esc_html__( 'Tabs', 'houzez-child' ),
+            'subtitle' => esc_html__('Property status tabs displayed in the agent detail page', 'houzez-child'),
+            'desc' => esc_html__( 'Enable or disable the tabs on agent detail page', 'houzez-child' ),
             'default'  => 0,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
@@ -146,9 +146,9 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_detail_tab_1',
             'type'     => 'select',
-            'title'    => esc_html__('Tab 1', 'houzez'),
-            'subtitle' => esc_html__('Property status tab in the agent detail page', 'houzez'),
-            'desc'     => esc_html__('Select the status', 'houzez'),
+            'title'    => esc_html__('Tab 1', 'houzez-child'),
+            'subtitle' => esc_html__('Property status tab in the agent detail page', 'houzez-child'),
+            'desc'     => esc_html__('Select the status', 'houzez-child'),
             'data'     => 'terms',
             'required' => array('agent_tabs', '=', '1'),
             'args'        =>  array('taxonomy'=>'property_status'),
@@ -157,9 +157,9 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_detail_tab_2',
             'type'     => 'select',
-            'title'    => esc_html__('Tab 2', 'houzez'),
-            'subtitle' => esc_html__('Property status tab in the agent detail page', 'houzez'),
-            'desc'     => esc_html__('Select the status', 'houzez'),
+            'title'    => esc_html__('Tab 2', 'houzez-child'),
+            'subtitle' => esc_html__('Property status tab in the agent detail page', 'houzez-child'),
+            'desc'     => esc_html__('Select the status', 'houzez-child'),
             'required' => array('agent_tabs', '=', '1'),
             'data'        => 'terms',
             'args'        =>  array('taxonomy'=>'property_status'),
@@ -169,9 +169,9 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_listings_layout',
             'type'     => 'select',
-            'title'    => __('Listings Layout', 'houzez'),
-            'subtitle' => __('Select the listings layout for the agent detail page', 'houzez'),
-            'desc'     => esc_html__('Select the layout', 'houzez'),
+            'title'    => __('Listings Layout', 'houzez-child'),
+            'subtitle' => __('Select the listings layout for the agent detail page', 'houzez-child'),
+            'desc'     => esc_html__('Select the layout', 'houzez-child'),
             'options'  => array(
                 'Listings Version 1' => array(
                     'list-view-v1' => 'List View',
@@ -209,34 +209,34 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'num_of_agent_listings',
             'type'     => 'text',
-            'title'    => esc_html__( 'Number of Listings', 'houzez' ),
-            'subtitle'    => esc_html__( 'Number of listings to display on the agent detail page', 'houzez' ),
-            'desc'    => esc_html__( 'Enter the number of listings', 'houzez' ),
+            'title'    => esc_html__( 'Number of Listings', 'houzez-child' ),
+            'subtitle'    => esc_html__( 'Number of listings to display on the agent detail page', 'houzez-child' ),
+            'desc'    => esc_html__( 'Enter the number of listings', 'houzez-child' ),
             'default'  => '10'
         ),
         array(
             'id'       => 'agent_listings_order',
             'type'     => 'select',
-            'title'    => __('Default Order', 'houzez'),
-            'subtitle' => __('Listings order on the agent detail page', 'houzez'),
-            'desc' => __('Select the listings order.', 'houzez'),
+            'title'    => __('Default Order', 'houzez-child'),
+            'subtitle' => __('Listings order on the agent detail page', 'houzez-child'),
+            'desc' => __('Select the listings order.', 'houzez-child'),
             'options'  => array(
-                'default' => esc_html__( 'Default', 'houzez' ),
-                'a_title' => esc_html__( 'Title - ASC', 'houzez' ),
-                'd_title' => esc_html__( 'Title - DESC', 'houzez' ),
-                'd_date' => esc_html__( 'Date New to Old', 'houzez' ),
-                'a_date' => esc_html__( 'Date Old to New', 'houzez' ),
-                'd_price' => esc_html__( 'Price (High to Low)', 'houzez' ),
-                'a_price' => esc_html__( 'Price (Low to High)', 'houzez' ),
-                'featured_first' => esc_html__( 'Show Featured Listings on Top', 'houzez' ),
+                'default' => esc_html__( 'Default', 'houzez-child' ),
+                'a_title' => esc_html__( 'Title - ASC', 'houzez-child' ),
+                'd_title' => esc_html__( 'Title - DESC', 'houzez-child' ),
+                'd_date' => esc_html__( 'Date New to Old', 'houzez-child' ),
+                'a_date' => esc_html__( 'Date Old to New', 'houzez-child' ),
+                'd_price' => esc_html__( 'Price (High to Low)', 'houzez-child' ),
+                'a_price' => esc_html__( 'Price (Low to High)', 'houzez-child' ),
+                'featured_first' => esc_html__( 'Show Featured Listings on Top', 'houzez-child' ),
             ),
             'default' => 'default'
         ),
         array(
             'id'       => 'agent_stats',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Stats', 'houzez' ),
-            'subtitle' => esc_html__('Enable or disable the stats on agent detail page', 'houzez'),
+            'title'    => esc_html__( 'Stats', 'houzez-child' ),
+            'subtitle' => esc_html__('Enable or disable the stats on agent detail page', 'houzez-child'),
             'default'  => 1,
             'on'       => 'Enabled',
             'off'      => 'Disabled',
@@ -244,7 +244,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_review',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Review & Rating', 'houzez' ),
+            'title'    => esc_html__( 'Review & Rating', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -253,7 +253,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_listings',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Listings', 'houzez' ),
+            'title'    => esc_html__( 'Listings', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -262,7 +262,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_bio',
             'type'     => 'switch',
-            'title'    => esc_html__( 'About Agent', 'houzez' ),
+            'title'    => esc_html__( 'About Agent', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -271,7 +271,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_sidebar',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Agent Sidebar', 'houzez' ),
+            'title'    => esc_html__( 'Agent Sidebar', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',
@@ -280,7 +280,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'agent_sidebar_map',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Agent Map', 'houzez' ),
+            'title'    => esc_html__( 'Agent Map', 'houzez-child' ),
             'subtitle' => '',
             'default'  => 1,
             'on'       => 'Enabled',

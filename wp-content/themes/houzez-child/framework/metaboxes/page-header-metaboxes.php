@@ -12,7 +12,7 @@ if( !function_exists('houzez_page_header_metaboxes') ) {
 
         $meta_boxes[] = array(
             'id'        => 'fave_page_settings',
-            'title'     => esc_html__('Page Header Options', 'houzez' ),
+            'title'     => esc_html__('Page Header Options', 'houzez-child' ),
             'post_types'     => array( 'page' ),
             'context' => 'normal',
             'hide'       => array(
@@ -39,41 +39,41 @@ if( !function_exists('houzez_page_header_metaboxes') ) {
 
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Header Type', 'houzez' ),
+                    'name'      => esc_html__('Header Type', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'header_type',
                     'type'      => 'select',
                     'options'   => array(
-                        'none' => esc_html__('None', 'houzez' ),
-                        'property_slider' => esc_html__('Properties Slider', 'houzez' ),
-                        'rev_slider' => esc_html__('Revolution Slider', 'houzez' ),
-                        'property_map' => esc_html__('Properties Map', 'houzez' ),
-                        'static_image' => esc_html__('Image', 'houzez' ),
-                        'video' => esc_html__('Video', 'houzez' ),
-                        'elementor' => esc_html__('Elementor', 'houzez' ),
+                        'none' => esc_html__('None', 'houzez-child' ),
+                        'property_slider' => esc_html__('Properties Slider', 'houzez-child' ),
+                        'rev_slider' => esc_html__('Revolution Slider', 'houzez-child' ),
+                        'property_map' => esc_html__('Properties Map', 'houzez-child' ),
+                        'static_image' => esc_html__('Image', 'houzez-child' ),
+                        'video' => esc_html__('Video', 'houzez-child' ),
+                        'elementor' => esc_html__('Elementor', 'houzez-child' ),
                     ),
                     'std'       => array( 'none' ),
-                    'desc'      => esc_html__('Select the page header type','houzez')
+                    'desc'      => esc_html__('Select the page header type','houzez-child')
                 ),
                 array(
-                    'name'      => esc_html__('Title', 'houzez' ),
+                    'name'      => esc_html__('Title', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'page_header_title',
-                    'placeholder' => esc_html__( 'Enter the title', 'houzez' ),
+                    'placeholder' => esc_html__( 'Enter the title', 'houzez-child' ),
                     'type' => 'text',
                     'std' => '',
                     'desc' => '',
                     'visible' => array( $houzez_prefix.'header_type', 'in', array( 'static_image', 'video' ) )
                 ),
                 array(
-                    'name'      => esc_html__('Subtitle', 'houzez' ),
+                    'name'      => esc_html__('Subtitle', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'page_header_subtitle',
-                    'placeholder' => esc_html__( 'Enter the subtitle', 'houzez' ),
+                    'placeholder' => esc_html__( 'Enter the subtitle', 'houzez-child' ),
                     'type' => 'text',
                     'std' => '',
                     'desc' => '',
                     'visible' => array( $houzez_prefix.'header_type', 'in', array( 'static_image', 'video' ) )
                 ),
                 array(
-                    'name'      => esc_html__('Image', 'houzez' ),
+                    'name'      => esc_html__('Image', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'page_header_image',
                     'type' => 'image_advanced',
                     'max_file_uploads' => 1,
@@ -82,62 +82,62 @@ if( !function_exists('houzez_page_header_metaboxes') ) {
                 ),
 
                 array(
-                    'name' => esc_html__('MP4 File', 'houzez'),
+                    'name' => esc_html__('MP4 File', 'houzez-child'),
                     'id' => "{$houzez_prefix}page_header_bg_mp4",
-                    'placeholder' => esc_html__( 'Upload the video file', 'houzez' ),
-                    'desc' => esc_html__( 'This file is mandatory', 'houzez' ),
+                    'placeholder' => esc_html__( 'Upload the video file', 'houzez-child' ),
+                    'desc' => esc_html__( 'This file is mandatory', 'houzez-child' ),
                     'type' => 'file_input',
                     'visible' => array( $houzez_prefix.'header_type', '=', 'video' )
                 ),
                 array(
-                    'name' => esc_html__('WEBM File', 'houzez'),
+                    'name' => esc_html__('WEBM File', 'houzez-child'),
                     'id' => "{$houzez_prefix}page_header_bg_webm",
-                    'placeholder' => esc_html__( 'Upload the video file', 'houzez' ),
-                    'desc' => esc_html__( 'This file is mandatory', 'houzez' ),
+                    'placeholder' => esc_html__( 'Upload the video file', 'houzez-child' ),
+                    'desc' => esc_html__( 'This file is mandatory', 'houzez-child' ),
                     'type' => 'file_input',
                     'visible' => array( $houzez_prefix.'header_type', '=', 'video' )
                 ),
                 array(
-                    'name' => esc_html__('OGV File', 'houzez'),
+                    'name' => esc_html__('OGV File', 'houzez-child'),
                     'id' => "{$houzez_prefix}page_header_bg_ogv",
-                    'placeholder' => esc_html__( 'Upload the video file', 'houzez' ),
-                    'desc' => esc_html__( 'This file is mandatory', 'houzez' ),
+                    'placeholder' => esc_html__( 'Upload the video file', 'houzez-child' ),
+                    'desc' => esc_html__( 'This file is mandatory', 'houzez-child' ),
                     'type' => 'file_input',
                     'visible' => array( $houzez_prefix.'header_type', '=', 'video' )
                 ),
 
                 array(
-                    'name'      => esc_html__('Video Image', 'houzez'),
+                    'name'      => esc_html__('Video Image', 'houzez-child'),
                     'id'        => $houzez_prefix . 'page_header_video_img',
-                    'placeholder' => esc_html__( 'Upload a video cover image', 'houzez' ),
-                    'desc' => esc_html__( 'This file is mandatory', 'houzez' ),
+                    'placeholder' => esc_html__( 'Upload a video cover image', 'houzez-child' ),
+                    'desc' => esc_html__( 'This file is mandatory', 'houzez-child' ),
                     'type' => 'image_advanced',
                     'max_file_uploads' => 1,
                     'visible' => array( $houzez_prefix.'header_type', '=', 'video' )
                 ),
 
                 array(
-                    'name'      => esc_html__('Height', 'houzez' ),
-                    'placeholder' => esc_html__( 'Enter the banner height', 'houzez' ),
+                    'name'      => esc_html__('Height', 'houzez-child' ),
+                    'placeholder' => esc_html__( 'Enter the banner height', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'page_header_image_height',
                     'type' => 'text',
                     'std' => '',
-                    'desc' => esc_html__('Default is 600px', 'houzez'),
+                    'desc' => esc_html__('Default is 600px', 'houzez-child'),
                     'visible' => array( $houzez_prefix.'header_type', 'in', array( 'static_image', 'video' ) )
                 ),
 
                 array(
-                    'name'      => esc_html__('Height Mobile', 'houzez' ),
-                    'placeholder' => esc_html__( 'Enter the banner height for mobile devices', 'houzez' ),
+                    'name'      => esc_html__('Height Mobile', 'houzez-child' ),
+                    'placeholder' => esc_html__( 'Enter the banner height for mobile devices', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'header_image_height_mobile',
                     'type' => 'text',
                     'std' => '',
-                    'desc' => esc_html__('Default is 400px', 'houzez'),
+                    'desc' => esc_html__('Default is 400px', 'houzez-child'),
                     'visible' => array( $houzez_prefix.'header_type', 'in', array( 'static_image', 'video' ) )
                 ),
 
                 array(
-                    'name'      => esc_html__('Overlay Color Opacity', 'houzez' ),
+                    'name'      => esc_html__('Overlay Color Opacity', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'page_header_image_opacity',
                     'type' => 'select',
                     'options' => array(
@@ -159,49 +159,49 @@ if( !function_exists('houzez_page_header_metaboxes') ) {
                 ),
 
                 array(
-                    'name'      => esc_html__('Banner Search', 'houzez' ),
+                    'name'      => esc_html__('Banner Search', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'page_header_search',
                     'type' => 'switch',
                     'style'     => 'rounded',
-                    'on_label'  => esc_html__('Enable', 'houzez' ),
-                    'off_label' => esc_html__('Disable', 'houzez' ),
+                    'on_label'  => esc_html__('Enable', 'houzez-child' ),
+                    'off_label' => esc_html__('Disable', 'houzez-child' ),
                     'std'       => 0,
                     'desc' => '',
                     'visible' => array( $houzez_prefix.'header_type', 'in', array( 'static_image', 'video' ) )
                 ),
                 
                 array(
-                    'name'      => esc_html__('Full Screen', 'houzez' ),
+                    'name'      => esc_html__('Full Screen', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'header_full_screen',
                     'type' => 'switch',
                     'style'     => 'rounded',
-                    'on_label'  => esc_html__('Enable', 'houzez' ),
-                    'off_label' => esc_html__('Disable', 'houzez' ),
+                    'on_label'  => esc_html__('Enable', 'houzez-child' ),
+                    'off_label' => esc_html__('Disable', 'houzez-child' ),
                     'std'       => 0,
-                    'desc'      => esc_html__('If "Enable" it will fit according to screen size' ,'houzez'),
+                    'desc'      => esc_html__('If "Enable" it will fit according to screen size' ,'houzez-child'),
                     'visible' => array( $houzez_prefix.'header_type', 'in', array( 'static_image', 'video', 'property_map', 'property_slider' ) )
                 ),
         
                 /*------------------ Slider Revolution -------------*/
                 array(
-                    'name'      => esc_html__('Revolution Slider', 'houzez' ),
+                    'name'      => esc_html__('Revolution Slider', 'houzez-child' ),
                     'id'        => $houzez_prefix . 'page_header_revslider',
                     'type' => 'select_advanced',
                     'std' => '',
                     'options' => houzez_get_revolution_slider(),
                     'multiple'    => false,
-                    'placeholder' => esc_html__( 'Select an Slider', 'houzez' ),
+                    'placeholder' => esc_html__( 'Select an Slider', 'houzez-child' ),
                     'desc' => '',
                     'hidden' => array( $houzez_prefix.'header_type', '!=', 'rev_slider' )
                 ),
 
                 /*----------------- Map Settings ----------------*/
                 array(
-                    'name'      => esc_html__('Select City', 'houzez'),
+                    'name'      => esc_html__('Select City', 'houzez-child'),
                     'id'        => $houzez_prefix . 'map_city',
                     'type'      => 'select',
                     'options'   => $prop_locations,
-                    'desc'      => esc_html__('Select a city where to start the property map on header page. You can select multiple cities or keep all un-select to display properties from all the cities', 'houzez'),
+                    'desc'      => esc_html__('Select a city where to start the property map on header page. You can select multiple cities or keep all un-select to display properties from all the cities', 'houzez-child'),
                     'multiple' => true,
                     'class' => 'houzez-map-cities',
                     'hidden' => array( 'fave_header_type', '!=', 'property_map' )

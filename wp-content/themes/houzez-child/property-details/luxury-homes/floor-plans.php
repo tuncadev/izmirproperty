@@ -89,13 +89,13 @@ if( !empty( $floor_plans ) ) {
 								
 								<?php if( !empty( $fave_plan_price ) ) { ?>
 								<div class="fpl-price">
-									<?php esc_html_e( 'Price', 'houzez' ); ?>: 
+									<?php esc_html_e( 'Price', 'houzez-child' ); ?>: 
 			                        <strong><?php echo houzez_get_property_price( $fave_plan_price ).$price_postfix; ?></strong>
 			                     </div>
 			                 	<?php } ?>
 
 								<div class="floor-plan-description">
-									<p><strong><?php echo esc_html__('Description', 'houzez'); ?>:</strong><br>
+									<p><strong><?php echo esc_html__('Description', 'houzez-child'); ?>:</strong><br>
 										<?php 
 										if( isset($plan['fave_plan_description']) && !empty( $plan['fave_plan_description'] ) ) { 
 											echo wp_kses_post( $plan['fave_plan_description'] ); 
@@ -108,7 +108,7 @@ if( !empty( $floor_plans ) ) {
 									<div class="d-flex fw-property-floor-data-wrap fpl-rooms align-items-center">
 										<img class="img-fluid" src="<?php echo HOUZEZ_IMAGE; ?>streamline-icon-hotel-double-bed-1@40x40.png" alt="">
 										<div class="fw-property-floor-data">
-											<?php esc_html_e( 'Rooms', 'houzez' ); ?>:<br>
+											<?php esc_html_e( 'Rooms', 'houzez-child' ); ?>:<br>
 											<?php echo esc_attr( $plan['fave_plan_rooms'] ); ?>
 										</div><!-- fw-property-floor-data -->
 									</div><!-- "d-flex -->
@@ -118,7 +118,7 @@ if( !empty( $floor_plans ) ) {
 									<div class="d-flex fw-property-floor-data-wrap fpl-baths align-items-center">
 										<img class="img-fluid" src="<?php echo HOUZEZ_IMAGE; ?>streamline-icon-bathroom-shower-1@40x40.png" alt="">
 										<div class="fw-property-floor-data">
-											<?php esc_html_e( 'Baths', 'houzez' ); ?>:<br>
+											<?php esc_html_e( 'Baths', 'houzez-child' ); ?>:<br>
 											<?php echo esc_attr( $plan['fave_plan_bathrooms'] ); ?>
 										</div><!-- fw-property-floor-data -->
 									</div><!-- "d-flex -->
@@ -128,7 +128,7 @@ if( !empty( $floor_plans ) ) {
 									<div class="d-flex fw-property-floor-data-wrap fpl-size align-items-center">
 										<img class="img-fluid" src="<?php echo HOUZEZ_IMAGE; ?>streamline-icon-real-estate-dimensions-plan-1@40x40.png" alt="">
 										<div class="fw-property-floor-data">
-											<?php esc_html_e( 'Size', 'houzez' ); ?>:<br>
+											<?php esc_html_e( 'Size', 'houzez-child' ); ?>:<br>
 											<?php echo esc_attr( $plan['fave_plan_size'] ); ?>
 										</div><!-- fw-property-floor-data -->
 									</div><!-- "d-flex -->

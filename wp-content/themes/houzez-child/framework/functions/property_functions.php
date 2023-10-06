@@ -14,7 +14,7 @@ if( !function_exists('houzez_listing_expire')) {
         $manual_expire = get_post_meta( $post->ID, 'houzez_manual_expire', true );
         if( !empty( $manual_expire )) {
             $expiration_date = get_post_meta( $post->ID,'_houzez_expiration_date',true );
-            echo ( $expiration_date ? get_date_from_gmt(gmdate('Y-m-d H:i:s', $expiration_date), get_option('date_format').' '.get_option('time_format')) : __('Never', 'houzez'));
+            echo ( $expiration_date ? get_date_from_gmt(gmdate('Y-m-d H:i:s', $expiration_date), get_option('date_format').' '.get_option('time_format')) : __('Never', 'houzez-child'));
         } else {
             $submission_type = houzez_option('enable_paid_submission');
             // Per listing
@@ -61,7 +61,7 @@ if( !function_exists('houzez_featured_listing_expire')) {
             
             $featured_listing_expire = intval ( fave_option('featured_listing_expire', 30) );
 
-            echo '<br>'.esc_html__('Featured Expiration:', 'houzez'); echo ' '.date_i18n( get_option('date_format').' '.get_option('time_format'), strtotime( $prop_featured_date. ' + '.$featured_listing_expire.' days' ) );
+            echo '<br>'.esc_html__('Featured Expiration:', 'houzez-child'); echo ' '.date_i18n( get_option('date_format').' '.get_option('time_format'), strtotime( $prop_featured_date. ' + '.$featured_listing_expire.' days' ) );
             
         }
         
@@ -1206,7 +1206,7 @@ if( !function_exists('save_property_as_draft') ) {
             }
             
         }
-        echo json_encode( array( 'success' => true, 'property_id' => $prop_id, 'msg' => esc_html__('Successfull', 'houzez') ) );
+        echo json_encode( array( 'success' => true, 'property_id' => $prop_id, 'msg' => esc_html__('Successfull', 'houzez-child') ) );
         wp_die();
     }
 }
@@ -1223,14 +1223,14 @@ if( !function_exists('houzez_check_email') ) {
         $email = wp_kses( $_POST['useremail'], $allowed_html );
 
         if( email_exists( $email ) ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('This email address is already registered.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('This email address is already registered.', 'houzez-child') ) );
             wp_die();
         
         } elseif( !is_email( $email ) ) {
-            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid email address.', 'houzez') ) );
+            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid email address.', 'houzez-child') ) );
             wp_die();
         } else {
-            echo json_encode( array( 'success' => true, 'msg' => esc_html__('Successfull', 'houzez') ) );
+            echo json_encode( array( 'success' => true, 'msg' => esc_html__('Successfull', 'houzez-child') ) );
             wp_die();
         }
 
@@ -1245,8 +1245,8 @@ if ( ! function_exists('houzez_custom_post_status') ) {
     function houzez_custom_post_status() {
 
         $args = array(
-            'label'                     => _x( 'Expired', 'Status General Name', 'houzez' ),
-            'label_count'               => _n_noop( 'Expired (%s)',  'Expired (%s)', 'houzez' ),
+            'label'                     => _x( 'Expired', 'Status General Name', 'houzez-child' ),
+            'label_count'               => _n_noop( 'Expired (%s)',  'Expired (%s)', 'houzez-child' ),
             'public'                    => true,
             'show_in_admin_all_list'    => true,
             'show_in_admin_status_list' => true,
@@ -1265,8 +1265,8 @@ if ( ! function_exists('houzez_custom_post_disapproved') ) {
     function houzez_custom_post_disapproved() {
 
         $args = array(
-            'label'                     => _x( 'Disapproved', 'Status General Name', 'houzez' ),
-            'label_count'               => _n_noop( 'Disapproved (%s)',  'Disapproved (%s)', 'houzez' ),
+            'label'                     => _x( 'Disapproved', 'Status General Name', 'houzez-child' ),
+            'label_count'               => _n_noop( 'Disapproved (%s)',  'Disapproved (%s)', 'houzez-child' ),
             'public'                    => true,
             'show_in_admin_all_list'    => true,
             'show_in_admin_status_list' => true,
@@ -1285,8 +1285,8 @@ if ( ! function_exists('houzez_custom_post_status_on_hold') ) {
     function houzez_custom_post_status_on_hold() {
 
         $args = array(
-            'label'                     => _x( 'On Hold', 'Status General Name', 'houzez' ),
-            'label_count'               => _n_noop( 'On Hold (%s)',  'On Hold (%s)', 'houzez' ),
+            'label'                     => _x( 'On Hold', 'Status General Name', 'houzez-child' ),
+            'label_count'               => _n_noop( 'On Hold (%s)',  'On Hold (%s)', 'houzez-child' ),
             'public'                    => true,
             'show_in_admin_all_list'    => true,
             'show_in_admin_status_list' => true,
@@ -1308,8 +1308,8 @@ if ( ! function_exists('houzez_custom_post_status_sold') ) {
             return;
         }
         $args = array(
-            'label'                     => _x( 'Sold', 'Status General Name', 'houzez' ),
-            'label_count'               => _n_noop( 'Sold (%s)',  'Sold (%s)', 'houzez' ),
+            'label'                     => _x( 'Sold', 'Status General Name', 'houzez-child' ),
+            'label_count'               => _n_noop( 'Sold (%s)',  'Sold (%s)', 'houzez-child' ),
             'public'                    => true,
             'show_in_admin_all_list'    => true,
             'show_in_admin_status_list' => true,
@@ -1331,7 +1331,7 @@ if( !function_exists('houzez_save_search') ) {
         if( !wp_verify_nonce( $nonce, 'houzez-save-search-nounce' ) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__( 'Unverified Nonce!', 'houzez')
+                'msg' => esc_html__( 'Unverified Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -1363,7 +1363,7 @@ if( !function_exists('houzez_save_search') ) {
             )
         );
 
-        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Search is saved. You will receive an email notification when new properties matching your search will be published', 'houzez') ) );
+        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Search is saved. You will receive an email notification when new properties matching your search will be published', 'houzez-child') ) );
         wp_die();
     }
 }
@@ -1384,7 +1384,7 @@ if(!function_exists('houzez_delete_search') ) {
         if( !is_numeric( $property_id ) ){
             echo json_encode( array(
                 'success' => false,
-                'msg' => esc_html__('you don\'t have the right to delete this', 'houzez')
+                'msg' => esc_html__('you don\'t have the right to delete this', 'houzez-child')
             ));
             wp_die();
         }else{
@@ -1397,7 +1397,7 @@ if(!function_exists('houzez_delete_search') ) {
 
                 echo json_encode( array(
                     'success' => false,
-                    'msg' => esc_html__('you don\'t have the right to delete this', 'houzez')
+                    'msg' => esc_html__('you don\'t have the right to delete this', 'houzez-child')
                 ));
 
                 wp_die();
@@ -1408,7 +1408,7 @@ if(!function_exists('houzez_delete_search') ) {
 
                 echo json_encode( array(
                     'success' => true,
-                    'msg' => esc_html__('Deleted Successfully', 'houzez')
+                    'msg' => esc_html__('Deleted Successfully', 'houzez-child')
                 ));
 
                 wp_die();
@@ -1453,7 +1453,7 @@ if( !function_exists('houzez_resend_for_approval_perlisting') ):
         update_post_meta( $prop_id, 'houzez_featured_listing_date', '' );
         update_post_meta( $prop_id, 'fave_payment_status', 'not_paid' );
 
-        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Sent for approval','houzez') ) );
+        echo json_encode( array( 'success' => true, 'msg' => esc_html__('Sent for approval','houzez-child') ) );
 
         $submit_title =   get_the_title( $prop_id) ;
 
@@ -2540,14 +2540,14 @@ if( !function_exists( 'houzez_favorites' ) ) {
             $prop_fav = array();
             $prop_fav['1'] = $property_id;
             update_option( $fav_option, $prop_fav );
-            $arr = array( 'added' => true, 'response' => esc_html__('Added', 'houzez') );
+            $arr = array( 'added' => true, 'response' => esc_html__('Added', 'houzez-child') );
             echo json_encode($arr);
             wp_die();
         } else {
             if(  ! in_array ( $property_id, $current_prop_fav )  ) {
                 $current_prop_fav[] = $property_id;
                 update_option( $fav_option,  $current_prop_fav );
-                $arr = array( 'added' => true, 'response' => esc_html__('Added', 'houzez') );
+                $arr = array( 'added' => true, 'response' => esc_html__('Added', 'houzez-child') );
                 echo json_encode($arr);
                 wp_die();
             } else {
@@ -2558,7 +2558,7 @@ if( !function_exists( 'houzez_favorites' ) ) {
                 }
 
                 update_option( $fav_option, $current_prop_fav );
-                $arr = array( 'added' => false, 'response' => esc_html__('Removed', 'houzez') );
+                $arr = array( 'added' => false, 'response' => esc_html__('Removed', 'houzez-child') );
                 echo json_encode($arr);
                 wp_die();
             }
@@ -2651,7 +2651,7 @@ if( !function_exists('houzez_remove_property_thumbnail') ) {
 
             echo json_encode(array(
                 'remove_attachment' => false,
-                'reason' => esc_html__('Invalid Nonce', 'houzez')
+                'reason' => esc_html__('Invalid Nonce', 'houzez-child')
             ));
             wp_die();
         }
@@ -2699,7 +2699,7 @@ if( !function_exists('houzez_remove_property_documents') ) {
 
             echo json_encode(array(
                 'remove_attachment' => false,
-                'reason' => esc_html__('Invalid Nonce', 'houzez')
+                'reason' => esc_html__('Invalid Nonce', 'houzez-child')
             ));
             wp_die();
         }
@@ -3037,7 +3037,7 @@ if( !function_exists('houzez_create_print')) {
                         if( $print_agent != 0 && !empty($agent_array)) { ?>
                         <div class="print-agent-info-wrap">
                             
-                            <h2 class="print-title"><?php echo esc_html__('Contact Information', 'houzez'); ?></h2>
+                            <h2 class="print-title"><?php echo esc_html__('Contact Information', 'houzez-child'); ?></h2>
                             
                             <?php 
                             if( isset( $agent_array['agent_info'] ) ) {
@@ -3088,7 +3088,7 @@ if( !function_exists('houzez_create_print')) {
                         if( $print_description != 0 ) { ?>
 
                             <div class="print-section">
-                                <h2 class="print-title"><?php echo esc_html__('Description', 'houzez'); ?></h2>
+                                <h2 class="print-title"><?php echo esc_html__('Description', 'houzez-child'); ?></h2>
                                 <?php the_content(); ?>       
                             </div>
 
@@ -3098,7 +3098,7 @@ if( !function_exists('houzez_create_print')) {
                         if( $print_details != 0 ) { ?>
 
                             <div class="print-section">
-                                <h2 class="print-title"><?php echo esc_html__('Detail', 'houzez'); ?></h2>
+                                <h2 class="print-title"><?php echo esc_html__('Detail', 'houzez-child'); ?></h2>
                                 <div class="block-content-wrap">
                                     <?php get_template_part('property-details/partials/details'); ?> 
                                 </div><!-- block-content-wrap -->
@@ -3110,7 +3110,7 @@ if( !function_exists('houzez_create_print')) {
                         if( $print_features != 0 && !empty($property_features)) { ?>
 
                             <div class="print-section">
-                                <h2 class="print-title"><?php echo esc_html__('Features', 'houzez'); ?></h2>
+                                <h2 class="print-title"><?php echo esc_html__('Features', 'houzez-child'); ?></h2>
                                 <div class="block-content-wrap">
                                     <?php get_template_part('property-details/partials/features'); ?>  
                                 </div><!-- block-content-wrap -->
@@ -3121,7 +3121,7 @@ if( !function_exists('houzez_create_print')) {
                         <?php
                         if( houzez_option('print_energy_class') != 0 && !empty($energy_class) ) { ?>
                             <div class="print-section">
-                                <h2 class="print-title"><?php echo esc_html__('Energy Efficiency', 'houzez'); ?></h2>
+                                <h2 class="print-title"><?php echo esc_html__('Energy Efficiency', 'houzez-child'); ?></h2>
                                 <div class="block-content-wrap">
                                     <?php get_template_part('property-details/partials/energy-class'); ?> 
                                 </div><!-- block-content-wrap -->
@@ -3132,7 +3132,7 @@ if( !function_exists('houzez_create_print')) {
                         if( !empty( $floor_plans ) && $print_floorplans != 0 ) { ?>
 
                             <div class="print-section">
-                                <h2 class="print-title"><?php echo esc_html__('Floor Plans', 'houzez'); ?></h2>
+                                <h2 class="print-title"><?php echo esc_html__('Floor Plans', 'houzez-child'); ?></h2>
                                 
                                 <?php 
                                 foreach( $floor_plans as $plan ):
@@ -3151,7 +3151,7 @@ if( !function_exists('houzez_create_print')) {
                                             <ul class="floor-information list-unstyled list-inline m-0">
                                                 <?php if( !empty( $plan['fave_plan_size'] ) ) { ?>
                                                     <li class="list-inline-item">
-                                                        <?php esc_html_e( 'Size', 'houzez' ); ?>: 
+                                                        <?php esc_html_e( 'Size', 'houzez-child' ); ?>: 
                                                         <strong> <?php echo esc_attr( $plan['fave_plan_size'] ); ?></strong>
                                                     </li>
                                                 <?php } ?>
@@ -3172,7 +3172,7 @@ if( !function_exists('houzez_create_print')) {
 
                                                 <?php if( !empty( $plan['fave_plan_price'] ) ) { ?>
                                                     <li class="list-inline-item">
-                                                        <?php esc_html_e( 'Price', 'houzez' ); ?>: 
+                                                        <?php esc_html_e( 'Price', 'houzez-child' ); ?>: 
                                                         <strong><?php echo houzez_get_property_price( $plan['fave_plan_price'] ).$price_postfix; ?></strong>
                                                     </li>
                                                 <?php } ?>
@@ -3210,7 +3210,7 @@ if( !function_exists('houzez_create_print')) {
                         <?php 
                         if( !empty( $prop_images ) && $print_gallery != 0 ) { ?>
                         <div class="print-section">
-                            <h2 class="print-title"><?php esc_html_e('Property images', 'houzez'); ?></h2>
+                            <h2 class="print-title"><?php esc_html_e('Property images', 'houzez-child'); ?></h2>
                             <?php 
                             foreach( $prop_images as $img_id ): 
                                 $image_url = houzez_get_image_by_id($img_id, 'houzez-gallery');
@@ -3286,14 +3286,14 @@ if ( ! function_exists( 'houzez_switch_area' ) ) {
             } else {
                 echo json_encode( array(
                     'success' => false,
-                    'message' => __( "Failed to updated cookie !", 'houzez' )
+                    'message' => __( "Failed to updated cookie !", 'houzez-child' )
                 ) );
             }
 
         else:
             echo json_encode( array(
                     'success' => false,
-                    'message' => __( "Invalid Request !", 'houzez' )
+                    'message' => __( "Invalid Request !", 'houzez-child' )
                 )
             );
         endif;
@@ -3393,9 +3393,9 @@ if( !function_exists('houzez_generate_invoice') ):
         $inserted_post_id =  wp_insert_post( $args );
 
         if( $billionType != 'one_time' ) {
-            $billionType = __( 'Recurring', 'houzez' );
+            $billionType = __( 'Recurring', 'houzez-child' );
         } else {
-            $billionType = __( 'One Time', 'houzez' );
+            $billionType = __( 'One Time', 'houzez-child' );
         }
 
         if( $is_package == 0 ) {
@@ -3567,7 +3567,7 @@ if( !function_exists('houzez_get_agent_info') ) {
                         if( !empty( $args[ 'agent_mobile' ] ) ) {
                             $output .= '<dd><i class="fa fa-phone"></i><span class="clickToShow">'.esc_attr( $args[ 'agent_mobile' ] ).'</span></dd>';
                         }
-                        $output .= '<dd><a href="'.$args[ 'link' ].'" class="view">'.esc_html__('View my listing', 'houzez' ).'</a></dd>';
+                        $output .= '<dd><a href="'.$args[ 'link' ].'" class="view">'.esc_html__('View my listing', 'houzez-child' ).'</a></dd>';
                     $output .= '</dl>';
                 $output .= '</div>';
             $output .= '</div>';
@@ -4186,7 +4186,7 @@ if ( !function_exists( 'houzez_get_agent_info_bottom' ) ) {
                             if ( !empty( $args[ 'agent_whatsapp' ] ) && houzez_option('agent_whatsapp_num', 1) ) :
                             $output .= '<i class="houzez-icon icon-messaging-whatsapp mr-1"></i>';
                             $output .= '<span>';
-                                 $output .= '<a target="_blank" href="https://api.whatsapp.com/send?phone='.esc_attr( $args[ 'agent_whatsapp_call' ] ).'&text='.houzez_option('spl_con_interested', "Hello, I am interested in").' ['.get_the_title().'] '.get_permalink().'">'.esc_html__('WhatsApp', 'houzez').'</a>';
+                                 $output .= '<a target="_blank" href="https://api.whatsapp.com/send?phone='.esc_attr( $args[ 'agent_whatsapp_call' ] ).'&text='.houzez_option('spl_con_interested', "Hello, I am interested in").' ['.get_the_title().'] '.get_permalink().'">'.esc_html__('WhatsApp', 'houzez-child').'</a>';
                             $output .= '</span>';
                             endif;
 
@@ -4308,7 +4308,7 @@ if ( !function_exists( 'houzez_get_agent_info_bottom_v2' ) ) {
                     <?php if( !empty( $args['agent_whatsapp'] ) && houzez_option('agent_whatsapp_num', 1) ) { ?>
                         <i class="houzez-icon icon-messaging-whatsapp mr-1"></i>
                         <span>
-                            <a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo esc_attr( $args[ 'agent_whatsapp_call' ] ); ?>&text=<?php echo houzez_option('spl_con_interested', "Hello, I am interested in").' ['.get_the_title().'] '.get_permalink(); ?> "><?php echo esc_html__('WhatsApp', 'houzez'); ?></a>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=<?php echo esc_attr( $args[ 'agent_whatsapp_call' ] ); ?>&text=<?php echo houzez_option('spl_con_interested', "Hello, I am interested in").' ['.get_the_title().'] '.get_permalink(); ?> "><?php echo esc_html__('WhatsApp', 'houzez-child'); ?></a>
                         </span>
                     <?php } ?>
 
@@ -4920,11 +4920,11 @@ if ( !function_exists( 'houzez_create_invoice_print' ) ) {
                             <div class="invoice-date mb-3">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <strong><?php esc_html_e('Invoice', 'houzez'); ?>:</strong> 
+                                        <strong><?php esc_html_e('Invoice', 'houzez-child'); ?>:</strong> 
                                         <?php echo esc_attr($invoice_id); ?>
                                     </li>
                                     <li>
-                                        <strong><?php esc_html_e('Date', 'houzez'); ?>:</strong> 
+                                        <strong><?php esc_html_e('Date', 'houzez-child'); ?>:</strong> 
                                         <?php echo $publish_date; ?>
                                     </li>
                                 </ul>
@@ -4937,13 +4937,13 @@ if ( !function_exists( 'houzez_create_invoice_print' ) ) {
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <ul class="list-unstyled">
-                                <li><strong><?php esc_html_e('To:', 'houzez'); ?>:</strong></li>
+                                <li><strong><?php esc_html_e('To:', 'houzez-child'); ?>:</strong></li>
                                 <li><?php echo esc_attr($fullname); ?></li>
                                 <?php if( !empty($user_address)) { ?>
                                 <li><?php echo esc_attr($user_address); ?></li>
                                 <?php } ?>
 
-                                <li><?php esc_html_e('Email:', 'houzez'); ?> <?php echo esc_attr($user_email);?></li>
+                                <li><?php esc_html_e('Email:', 'houzez-child'); ?> <?php echo esc_attr($user_email);?></li>
                             </ul>
                         </div><!-- col-md-6 col-sm-12 -->
                         <div class="col-md-6 col-sm-12">
@@ -4960,7 +4960,7 @@ if ( !function_exists( 'houzez_create_invoice_print' ) ) {
                                 <?php } ?>
 
                                 <?php if( !empty($invoice_phone) ) { ?>
-                                <li><?php esc_html_e('Phone', 'houzez'); ?>: <?php echo esc_attr($invoice_phone); ?></li>
+                                <li><?php esc_html_e('Phone', 'houzez-child'); ?>: <?php echo esc_attr($invoice_phone); ?></li>
                                 <?php } ?>
                             </ul>
 
@@ -4978,7 +4978,7 @@ if ( !function_exists( 'houzez_create_invoice_print' ) ) {
                                     if( $invoice_data['invoice_billion_for'] != 'package' && $invoice_data['invoice_billion_for'] != 'Package' ) {
                                         echo esc_html($invoice_data['invoice_billion_for']);
                                     } else {
-                                        echo esc_html__('Membership Plan', 'houzez').' '. get_the_title( get_post_meta( $invoice_id, 'HOUZEZ_invoice_item_id', true) );
+                                        echo esc_html__('Membership Plan', 'houzez-child').' '. get_the_title( get_post_meta( $invoice_id, 'HOUZEZ_invoice_item_id', true) );
                                     }
                                     ?>
                                 </span>
@@ -5013,7 +5013,7 @@ if ( !function_exists( 'houzez_create_invoice_print' ) ) {
         
                         <?php if( !empty($invoice_additional_info)) { ?>
                         <div class="invoce-information">
-                            <p><strong><?php echo esc_html__('Additional Information:', 'houzez'); ?>:</strong></p>
+                            <p><strong><?php echo esc_html__('Additional Information:', 'houzez-child'); ?>:</strong></p>
                             <p><?php echo $invoice_additional_info; ?> </p>
                         </div><!-- invoce-information -->
                         <?php } ?>
@@ -5053,13 +5053,13 @@ if ( !function_exists( 'houzez_delete_property' ) ) {
 
         $nonce = $_REQUEST['security'];
         if ( ! wp_verify_nonce( $nonce, 'delete_my_property_nonce' ) ) {
-            $ajax_response = array( 'success' => false , 'reason' => esc_html__( 'Security check failed!', 'houzez' ) );
+            $ajax_response = array( 'success' => false , 'reason' => esc_html__( 'Security check failed!', 'houzez-child' ) );
             echo json_encode( $ajax_response );
             die;
         }
 
         if ( !isset( $_REQUEST['prop_id'] ) ) {
-            $ajax_response = array( 'success' => false , 'reason' => esc_html__( 'No Property ID found', 'houzez' ) );
+            $ajax_response = array( 'success' => false , 'reason' => esc_html__( 'No Property ID found', 'houzez-child' ) );
             echo json_encode( $ajax_response );
             die;
         }
@@ -5078,11 +5078,11 @@ if ( !function_exists( 'houzez_delete_property' ) ) {
             }
             wp_delete_post( $propID );
             houzez_plusone_package_listings($userID);
-            $ajax_response = array( 'success' => true , 'redirect' => $dashboard_listings, 'mesg' => esc_html__( 'Property Deleted', 'houzez' ) );
+            $ajax_response = array( 'success' => true , 'redirect' => $dashboard_listings, 'mesg' => esc_html__( 'Property Deleted', 'houzez-child' ) );
             echo json_encode( $ajax_response );
             die;
         } else {
-            $ajax_response = array( 'success' => false , 'reason' => esc_html__( 'Permission denied', 'houzez' ) );
+            $ajax_response = array( 'success' => false , 'reason' => esc_html__( 'Permission denied', 'houzez-child' ) );
             echo json_encode( $ajax_response );
             die;
         }
@@ -5394,7 +5394,7 @@ if(!function_exists('houzez_get_custom_add_listing_field')) {
                         $radios     = array_combine( $options, $options );
 
                         echo '<label class="control control--radio">';
-                            echo '<input type="radio" name="'.esc_attr($field_name).'" value="">'.esc_html__('None', 'houzez');
+                            echo '<input type="radio" name="'.esc_attr($field_name).'" value="">'.esc_html__('None', 'houzez-child');
                             echo '<span class="control__indicator"></span>';
                         echo '</label>';
 
@@ -5482,7 +5482,7 @@ if( !function_exists('houzez_listing_model')) {
         $listing_id = isset($_POST['listing_id']) ? $_POST['listing_id'] : '';
 
         if(empty($listing_id)) {
-            echo esc_html__('Nothing found', 'houzez');
+            echo esc_html__('Nothing found', 'houzez-child');
             return;
         }
         

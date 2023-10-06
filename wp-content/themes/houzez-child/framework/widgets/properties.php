@@ -15,8 +15,8 @@ class HOUZEZ_properties extends WP_Widget {
 
 		parent::__construct(
 			'houzez_properties', // Base ID
-			esc_html__( 'HOUZEZ: Properties', 'houzez' ), // Name
-			array( 'description' => esc_html__( 'Show properties', 'houzez' ), ) // Args
+			esc_html__( 'HOUZEZ: Properties', 'houzez-child' ), // Name
+			array( 'description' => esc_html__( 'Show properties', 'houzez-child' ), ) // Args
 		);
 
 	}
@@ -200,11 +200,11 @@ class HOUZEZ_properties extends WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_type' ) ); ?>"><?php esc_html_e('Property Type filter:', 'houzez'); ?></label><br>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_type' ) ); ?>"><?php esc_html_e('Property Type filter:', 'houzez-child'); ?></label><br>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'prop_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prop_type' ) ); ?>">
 
 				<?php
@@ -220,7 +220,7 @@ class HOUZEZ_properties extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_status' ) ); ?>"><?php esc_html_e('Property Status filter:', 'houzez'); ?></label><br>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_status' ) ); ?>"><?php esc_html_e('Property Status filter:', 'houzez-child'); ?></label><br>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'prop_status' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prop_status' ) ); ?>">
 
 				<?php
@@ -236,7 +236,7 @@ class HOUZEZ_properties extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_city' ) ); ?>"><?php esc_html_e('Property City filter:', 'houzez'); ?></label><br>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_city' ) ); ?>"><?php esc_html_e('Property City filter:', 'houzez-child'); ?></label><br>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'prop_city' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prop_city' ) ); ?>">
 
 				<?php
@@ -252,7 +252,7 @@ class HOUZEZ_properties extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_area' ) ); ?>"><?php esc_html_e('Property Area filter:', 'houzez'); ?></label><br>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_area' ) ); ?>"><?php esc_html_e('Property Area filter:', 'houzez-child'); ?></label><br>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'prop_area' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prop_area' ) ); ?>">
 
 				<?php
@@ -268,12 +268,12 @@ class HOUZEZ_properties extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_state' ) ); ?>"><?php esc_html_e('Property State filter:', 'houzez'); ?></label><br>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_state' ) ); ?>"><?php esc_html_e('Property State filter:', 'houzez-child'); ?></label><br>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'prop_state' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prop_state' ) ); ?>">
 
 				<?php
 
-				echo '<option value="">'.esc_html__(' - All - ', 'houzez').'</option>';
+				echo '<option value="">'.esc_html__(' - All - ', 'houzez-child').'</option>';
 
 				$prop_state = get_terms (
 					array(
@@ -293,12 +293,12 @@ class HOUZEZ_properties extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_label' ) ); ?>"><?php esc_html_e('Property Label filter:', 'houzez'); ?></label><br>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'prop_label' ) ); ?>"><?php esc_html_e('Property Label filter:', 'houzez-child'); ?></label><br>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'prop_label' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'prop_label' ) ); ?>">
 
 				<?php
 
-				echo '<option value="">'.esc_html__(' - All - ', 'houzez').'</option>';
+				echo '<option value="">'.esc_html__(' - All - ', 'houzez-child').'</option>';
 
 				$prop_label = get_terms (
 					array(
@@ -318,7 +318,7 @@ class HOUZEZ_properties extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"><?php esc_html_e('Maximum posts to show:', 'houzez'); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>"><?php esc_html_e('Maximum posts to show:', 'houzez-child'); ?></label>
 			<input type="text" id="<?php echo esc_attr( $this->get_field_id( 'items_num' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'items_num' ) ); ?>" value="<?php echo esc_attr( $instance['items_num'] ); ?>" size="1" />
 		</p>
 

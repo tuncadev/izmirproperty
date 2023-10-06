@@ -20,29 +20,29 @@ $allowed_html_array = array(
 );
 
 $yelp_categories = array (
-    'active' => array( 'name' => esc_html__( 'Active Life', 'houzez' ), 'icon' => 'fa fa-bicycle' ),
-    'arts' => array( 'name' => esc_html__( 'Arts & Entertainment', 'houzez' ), 'icon' => 'fas fa-image' ),
-    'auto' => array( 'name' => esc_html__( 'Automotive', 'houzez' ), 'icon' => 'fa fa-car' ),
-    'beautysvc' => array( 'name' => esc_html__( 'Beauty & Spas', 'houzez' ), 'icon' => 'fa fa-cutlery' ),
-    'education' => array( 'name' => esc_html__( 'Education', 'houzez' ), 'icon' => 'fa fa-graduation-cap' ),
-    'eventservices' => array( 'name' => esc_html__( 'Event Planning & Services', 'houzez' ), 'icon' => 'fa fa-birthday-cake' ),
-    'financialservices' => array( 'name' => esc_html__( 'Financial Services', 'houzez' ), 'icon' => 'far fa-money-bill-alt' ),
-    'food' => array( 'name' => esc_html__( 'Food', 'houzez' ), 'icon' => 'fa fa-shopping-basket' ),
-    'health' => array( 'name' => esc_html__( 'Health & Medical', 'houzez' ), 'icon' => 'fa fa-medkit' ),
-    'homeservices' => array( 'name' => esc_html__( 'Home Services ', 'houzez' ), 'icon' => 'fa fa-wrench' ),
-    'hotelstravel' => array( 'name' => esc_html__( 'Hotels & Travel', 'houzez' ), 'icon' => 'fa fa-bed' ),
-    'localflavor' => array( 'name' => esc_html__( 'Local Flavor', 'houzez' ), 'icon' => 'fa fa-coffee' ),
-    'localservices' => array( 'name' => esc_html__( 'Local Services', 'houzez' ), 'icon' => 'fa fa-dot-circle-o' ),
-    'massmedia' => array( 'name' => esc_html__( 'Mass Media', 'houzez' ), 'icon' => 'fa fa-television' ),
-    'nightlife' => array( 'name' => esc_html__( 'Nightlife', 'houzez' ), 'icon' => 'fas fa-glass-martini-alt' ),
-    'pets' => array( 'name' => esc_html__( 'Pets', 'houzez' ), 'icon' => 'fa fa-paw' ),
-    'professional' => array( 'name' => esc_html__( 'Professional Services', 'houzez' ), 'icon' => 'fa fa-suitcase' ),
-    'publicservicesgovt' => array( 'name' => esc_html__( 'Public Services & Government', 'houzez' ), 'icon' => 'fa fa-university' ),
-    'realestate' => array( 'name' => esc_html__( 'Real Estate', 'houzez' ), 'icon' => 'fa fa-building' ),
-    'religiousorgs' => array( 'name' => esc_html__( 'Religious Organizations', 'houzez' ), 'icon' => 'fa fa-universal-access' ),
-    'restaurants' => array( 'name' => esc_html__( 'Restaurants', 'houzez' ), 'icon' => 'fas fa-utensils' ),
-    'shopping' => array( 'name' => esc_html__( 'Shopping', 'houzez' ), 'icon' => 'fa fa-shopping-bag' ),
-    'transport' =>  array( 'name' => esc_html__( 'Transportation', 'houzez' ), 'icon' => 'fa fa-bus' )
+    'active' => array( 'name' => esc_html__( 'Active Life', 'houzez-child' ), 'icon' => 'fa fa-bicycle' ),
+    'arts' => array( 'name' => esc_html__( 'Arts & Entertainment', 'houzez-child' ), 'icon' => 'fas fa-image' ),
+    'auto' => array( 'name' => esc_html__( 'Automotive', 'houzez-child' ), 'icon' => 'fa fa-car' ),
+    'beautysvc' => array( 'name' => esc_html__( 'Beauty & Spas', 'houzez-child' ), 'icon' => 'fa fa-cutlery' ),
+    'education' => array( 'name' => esc_html__( 'Education', 'houzez-child' ), 'icon' => 'fa fa-graduation-cap' ),
+    'eventservices' => array( 'name' => esc_html__( 'Event Planning & Services', 'houzez-child' ), 'icon' => 'fa fa-birthday-cake' ),
+    'financialservices' => array( 'name' => esc_html__( 'Financial Services', 'houzez-child' ), 'icon' => 'far fa-money-bill-alt' ),
+    'food' => array( 'name' => esc_html__( 'Food', 'houzez-child' ), 'icon' => 'fa fa-shopping-basket' ),
+    'health' => array( 'name' => esc_html__( 'Health & Medical', 'houzez-child' ), 'icon' => 'fa fa-medkit' ),
+    'homeservices' => array( 'name' => esc_html__( 'Home Services ', 'houzez-child' ), 'icon' => 'fa fa-wrench' ),
+    'hotelstravel' => array( 'name' => esc_html__( 'Hotels & Travel', 'houzez-child' ), 'icon' => 'fa fa-bed' ),
+    'localflavor' => array( 'name' => esc_html__( 'Local Flavor', 'houzez-child' ), 'icon' => 'fa fa-coffee' ),
+    'localservices' => array( 'name' => esc_html__( 'Local Services', 'houzez-child' ), 'icon' => 'fa fa-dot-circle-o' ),
+    'massmedia' => array( 'name' => esc_html__( 'Mass Media', 'houzez-child' ), 'icon' => 'fa fa-television' ),
+    'nightlife' => array( 'name' => esc_html__( 'Nightlife', 'houzez-child' ), 'icon' => 'fas fa-glass-martini-alt' ),
+    'pets' => array( 'name' => esc_html__( 'Pets', 'houzez-child' ), 'icon' => 'fa fa-paw' ),
+    'professional' => array( 'name' => esc_html__( 'Professional Services', 'houzez-child' ), 'icon' => 'fa fa-suitcase' ),
+    'publicservicesgovt' => array( 'name' => esc_html__( 'Public Services & Government', 'houzez-child' ), 'icon' => 'fa fa-university' ),
+    'realestate' => array( 'name' => esc_html__( 'Real Estate', 'houzez-child' ), 'icon' => 'fa fa-building' ),
+    'religiousorgs' => array( 'name' => esc_html__( 'Religious Organizations', 'houzez-child' ), 'icon' => 'fa fa-universal-access' ),
+    'restaurants' => array( 'name' => esc_html__( 'Restaurants', 'houzez-child' ), 'icon' => 'fas fa-utensils' ),
+    'shopping' => array( 'name' => esc_html__( 'Shopping', 'houzez-child' ), 'icon' => 'fa fa-shopping-bag' ),
+    'transport' =>  array( 'name' => esc_html__( 'Transportation', 'houzez-child' ), 'icon' => 'fa fa-bus' )
 );
 
 $yelp_data = houzez_option( 'houzez_yelp_term' );
@@ -64,8 +64,8 @@ if ( $yelp_dist_unit == 'kilometers' ) {
     $link = site_url('wp-admin/admin.php?page=houzez_options&tab=30');
     if( empty( $houzez_yelp_api_key ) ) {
         echo '<div class="yelp-cat-block">';
-        echo esc_html__('Please supply your API key', 'houzez').' ';
-        echo '<a target="_blank" href="'.$link.'">'.esc_html__('Click Here', 'houzez').'</a>';
+        echo esc_html__('Please supply your API key', 'houzez-child').' ';
+        echo '<a target="_blank" href="'.$link.'">'.esc_html__('Click Here', 'houzez-child').'</a>';
         echo '</div>';
     } else {
 
@@ -148,7 +148,7 @@ if ( $yelp_dist_unit == 'kilometers' ) {
     								<div class="rating">                                            
     									<?php echo houzez_get_stars($data->rating); ?>
 
-    									<span class="time-review"><?php echo $data->review_count; ?> <?php esc_html_e('reviews', 'houzez');?></span>
+    									<span class="time-review"><?php echo $data->review_count; ?> <?php esc_html_e('reviews', 'houzez-child');?></span>
     								</div>
     							</div>
     						</div>

@@ -50,8 +50,8 @@ class Houzez_Admin {
 
         $sub_menus['plugins'] = array(
             'houzez_dashboard',
-            esc_html__( 'Plugins', 'houzez' ),
-            esc_html__( 'Plugins', 'houzez' ),
+            esc_html__( 'Plugins', 'houzez-child' ),
+            esc_html__( 'Plugins', 'houzez-child' ),
             'manage_options',
             'houzez_plugins',
             array( $this, 'plugins' ),
@@ -60,8 +60,8 @@ class Houzez_Admin {
         if( class_exists('Houzez') ) {
 	        $sub_menus['houzez_fbuilder'] = array( 
 	            'houzez_dashboard', 
-	            esc_html__( 'Fields builder', 'houzez' ),
-	            esc_html__( 'Fields builder', 'houzez' ),
+	            esc_html__( 'Fields builder', 'houzez-child' ),
+	            esc_html__( 'Fields builder', 'houzez-child' ),
 	            'manage_options', 
 	            'houzez_fbuilder', 
 	            array( 'Houzez_Fields_Builder', 'render' )
@@ -69,8 +69,8 @@ class Houzez_Admin {
 
 	        $sub_menus['houzez_currencies'] = array(
 	            'houzez_dashboard',
-	            esc_html__( 'Currencies', 'houzez' ),
-	            esc_html__( 'Currencies', 'houzez' ),
+	            esc_html__( 'Currencies', 'houzez-child' ),
+	            esc_html__( 'Currencies', 'houzez-child' ),
 	            'manage_options',
 	            'houzez_currencies',
 	            array( 'Houzez_Currencies', 'render' )
@@ -78,8 +78,8 @@ class Houzez_Admin {
 
 	        $sub_menus['fcc_api_settings'] = array(
 	            'houzez_dashboard',
-	            esc_html__( 'Currency Switcher', 'houzez' ),
-	            esc_html__( 'Currency Switcher', 'houzez' ),
+	            esc_html__( 'Currency Switcher', 'houzez-child' ),
+	            esc_html__( 'Currency Switcher', 'houzez-child' ),
 	            'manage_options',
 	            'fcc_api_settings',
 	            array( 'FCC_API_Settings', 'render' )
@@ -87,8 +87,8 @@ class Houzez_Admin {
 
 	        $sub_menus['houzez_post_types'] = array(
 	            'houzez_dashboard',
-	            esc_html__( 'Post Types', 'houzez' ),
-	            esc_html__( 'Post Types', 'houzez' ),
+	            esc_html__( 'Post Types', 'houzez-child' ),
+	            esc_html__( 'Post Types', 'houzez-child' ),
 	            'manage_options',
 	            'houzez_post_types',
 	            array( 'Houzez_Post_Type', 'render' )
@@ -96,8 +96,8 @@ class Houzez_Admin {
 
 	        $sub_menus['houzez_taxonomies'] = array(
 	            'houzez_dashboard',
-	            esc_html__( 'Taxonomies', 'houzez' ),
-	            esc_html__( 'Taxonomies', 'houzez' ),
+	            esc_html__( 'Taxonomies', 'houzez-child' ),
+	            esc_html__( 'Taxonomies', 'houzez-child' ),
 	            'manage_options',
 	            'houzez_taxonomies',
 	            array( 'Houzez_Taxonomies', 'render' )
@@ -105,8 +105,8 @@ class Houzez_Admin {
 
 	        $sub_menus['houzez_permalinks'] = array(
 	            'houzez_dashboard',
-	            esc_html__( 'Permalinks', 'houzez' ),
-	            esc_html__( 'Permalinks', 'houzez' ),
+	            esc_html__( 'Permalinks', 'houzez-child' ),
+	            esc_html__( 'Permalinks', 'houzez-child' ),
 	            'manage_options',
 	            'houzez_permalinks',
 	            array( 'Houzez_Permalinks', 'render' )
@@ -119,8 +119,8 @@ class Houzez_Admin {
 
         $sub_menus['documentation'] = array(
             'houzez_dashboard',
-            esc_html__( 'Documentation', 'houzez' ),
-            esc_html__( 'Documentation', 'houzez' ),
+            esc_html__( 'Documentation', 'houzez-child' ),
+            esc_html__( 'Documentation', 'houzez-child' ),
             'manage_options',
             'houzez_help',
             array( $this, 'documentation' ),
@@ -128,8 +128,8 @@ class Houzez_Admin {
 
         $sub_menus['feedback'] = array(
             'houzez_dashboard',
-            esc_html__( 'Feedback', 'houzez' ),
-            esc_html__( 'Feedback', 'houzez' ),
+            esc_html__( 'Feedback', 'houzez-child' ),
+            esc_html__( 'Feedback', 'houzez-child' ),
             'manage_options',
             'houzez_feedback',
             array( $this, 'feedback' ),
@@ -137,8 +137,8 @@ class Houzez_Admin {
 
         $sub_menus['purchase_code'] = array(
             'houzez_dashboard',
-            esc_html__( 'Purchase Code', 'houzez' ),
-            esc_html__( 'Purchase Code', 'houzez' ),
+            esc_html__( 'Purchase Code', 'houzez-child' ),
+            esc_html__( 'Purchase Code', 'houzez-child' ),
             'manage_options',
             'houzez_purchase',
             array( $this, 'purchase_code' ),
@@ -147,8 +147,8 @@ class Houzez_Admin {
 		if ( class_exists( 'OCDI_Plugin' ) && class_exists('Houzez') && houzez_theme_verified() ) {
 			$sub_menus['demo_import'] = array(
 				'houzez_dashboard',
-				esc_html__( 'Demo Import', 'houzez' ),
-				esc_html__( 'Demo Import', 'houzez' ),
+				esc_html__( 'Demo Import', 'houzez-child' ),
+				esc_html__( 'Demo Import', 'houzez-child' ),
 				'manage_options',
 				'admin.php?page=houzez-one-click-demo-import',
 			);
@@ -252,7 +252,7 @@ class Houzez_Admin {
         if (!wp_verify_nonce( $nonce, 'houzez_feedback_security') ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid Nonce!', 'houzez')
+                'msg' => esc_html__('Invalid Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -260,7 +260,7 @@ class Houzez_Admin {
 		if (!$sender_email) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Email address is Invalid!', 'houzez')
+                'msg' => esc_html__('Email address is Invalid!', 'houzez-child')
             ));
             wp_die();
         }
@@ -268,26 +268,26 @@ class Houzez_Admin {
         if ( empty($message) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Your message is empty!', 'houzez')
+                'msg' => esc_html__('Your message is empty!', 'houzez-child')
             ));
             wp_die();
         }
 
-        $subject = sprintf( esc_html__('New Feedback by %s from %s', 'houzez'), $sender_name, $website );
+        $subject = sprintf( esc_html__('New Feedback by %s from %s', 'houzez-child'), $sender_name, $website );
 
-        $body = esc_html__("You have received new message from: ", 'houzez') . $sender_name . " <br/>";
+        $body = esc_html__("You have received new message from: ", 'houzez-child') . $sender_name . " <br/>";
 
         if ( ! empty( $website ) ) {
-            $body .= esc_html__( "Website : ", 'houzez' ) . '<a href="' . esc_url( $site_url ) . '" target="_blank">' . $website . "</a><br/><br/>";
+            $body .= esc_html__( "Website : ", 'houzez-child' ) . '<a href="' . esc_url( $site_url ) . '" target="_blank">' . $website . "</a><br/><br/>";
         }
 
         if ( ! empty( $sender_subject ) ) {
-            $body .= esc_html__( "Subject : ", 'houzez' ) .$sender_subject. "<br/>";
+            $body .= esc_html__( "Subject : ", 'houzez-child' ) .$sender_subject. "<br/>";
         }
 
-        $body .= "<br/>" . esc_html__("Message:", 'houzez') . " <br/>";
+        $body .= "<br/>" . esc_html__("Message:", 'houzez-child') . " <br/>";
         $body .= wpautop( $message ) . " <br/>";
-        $body .= sprintf( esc_html__( 'You can contact %s via email %s', 'houzez'), $sender_name, $sender_email );
+        $body .= sprintf( esc_html__( 'You can contact %s via email %s', 'houzez-child'), $sender_name, $sender_email );
 
 		$headers[] = "Reply-To: $sender_name <$sender_email>";
 		$headers[] = "Content-Type: text/html; charset=UTF-8";
@@ -296,12 +296,12 @@ class Houzez_Admin {
 		if ( wp_mail( $target_email, $subject, $body, $headers ) ) {
             echo json_encode( array(
                 'success' => true,
-                'msg' => esc_html__("Thank you for your feedback!", 'houzez')
+                'msg' => esc_html__("Thank you for your feedback!", 'houzez-child')
             ));
         } else {
             echo json_encode(array(
                     'success' => false,
-                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez')
+                    'msg' => esc_html__("Server Error: Make sure Email function working on your server!", 'houzez-child')
                 )
             );
         }
@@ -316,7 +316,7 @@ class Houzez_Admin {
         if (!wp_verify_nonce( $nonce, 'envato_api_nonce') ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid Nonce!', 'houzez')
+                'msg' => esc_html__('Invalid Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -324,7 +324,7 @@ class Houzez_Admin {
 		if ( ! $item_purchase_code ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Please enter an item purchase code.', 'houzez')
+                'msg' => esc_html__('Please enter an item purchase code.', 'houzez-child')
             ));
             wp_die();
         }
@@ -352,7 +352,7 @@ class Houzez_Admin {
                 
                 echo json_encode(array(
 	                'success' => true,
-	                'msg' => esc_html__('Thanks for verifying houzez purchase!', 'houzez')
+	                'msg' => esc_html__('Thanks for verifying houzez purchase!', 'houzez-child')
 	            ));
 	            wp_die();
 
@@ -360,7 +360,7 @@ class Houzez_Admin {
 
                 echo json_encode(array(
 	                'success' => false,
-	                'msg' => esc_html__('Invalid purchase code, please provide valid purchase code!', 'houzez')
+	                'msg' => esc_html__('Invalid purchase code, please provide valid purchase code!', 'houzez-child')
 	            ));
 	            wp_die();
             }
@@ -370,7 +370,7 @@ class Houzez_Admin {
 
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('There is problem with API connection, try again.', 'houzez')
+                'msg' => esc_html__('There is problem with API connection, try again.', 'houzez-child')
             ));
             wp_die();
         }
@@ -382,7 +382,7 @@ class Houzez_Admin {
         if (!wp_verify_nonce( $nonce, 'envato_api_nonce') ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid Nonce!', 'houzez')
+                'msg' => esc_html__('Invalid Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -392,7 +392,7 @@ class Houzez_Admin {
 
         echo json_encode(array(
             'success' => true,
-            'msg' => esc_html__('Deactivated', 'houzez')
+            'msg' => esc_html__('Deactivated', 'houzez-child')
         ));
         wp_die();
 	}

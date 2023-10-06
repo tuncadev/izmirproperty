@@ -46,7 +46,7 @@ if( isset($floor_plans[0]['fave_plan_title']) && !empty( $floor_plans[0]['fave_p
 							<ul class="floor-information list-unstyled list-inline">
 								<?php if( isset($plan['fave_plan_size']) && !empty( $plan['fave_plan_size'] ) ) { ?>
 			                        <li class="list-inline-item fp-size">
-			                            <?php esc_html_e( 'Size', 'houzez' ); ?>: 
+			                            <?php esc_html_e( 'Size', 'houzez-child' ); ?>: 
 			                            <strong> <?php echo esc_attr( $plan['fave_plan_size'] ); ?></strong>
 			                        </li>
 			                    <?php } ?>
@@ -95,7 +95,7 @@ if( isset($floor_plans[0]['fave_plan_title']) && !empty( $floor_plans[0]['fave_p
 			                <?php } ?>
 							
 							<div class="floor-plan-description">
-								<p><strong><?php echo esc_html__('Description', 'houzez'); ?>:</strong><br>
+								<p><strong><?php echo esc_html__('Description', 'houzez-child'); ?>:</strong><br>
 									<?php 
 									if( isset($plan['fave_plan_description']) && !empty( $plan['fave_plan_description'] ) ) { 
 										echo wp_kses_post( $plan['fave_plan_description'] ); 

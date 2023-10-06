@@ -18,8 +18,8 @@ class houzez_instagram extends WP_Widget {
 		
 		parent::__construct(
 	 		'houzez_instagram', // Base ID
-			__( 'Houzez: Instagram Slider',  'houzez'  ), // Name
-			array( 'description' => __( 'A widget that displays a slider/thumbs with instagram images',  'houzez'  ), ) // Args
+			__( 'Houzez: Instagram Slider',  'houzez-child'  ), // Name
+			array( 'description' => __( 'A widget that displays a slider/thumbs with instagram images',  'houzez-child'  ), ) // Args
 		);
 		
 	}
@@ -120,7 +120,7 @@ echo $before_title . $title . $after_title; ?>
     function form($instance) {
       /* Set up some default widget settings. */
       $defaults = array(
-		 'title' 		=> __('Instagram Slider', 'houzez'),
+		 'title' 		=> __('Instagram Slider', 'houzez-child'),
 		 'userid' 		=> '',
 		 'accessToken'  => '',
 		 'template' 		=> 'slider',
@@ -133,31 +133,31 @@ echo $before_title . $title . $after_title; ?>
     ?>
     	<p>Generate your Instagram user ID and Instagram access token on: <a target="_blank" href="http://instagram.pixelunion.net/">Instagram access token generator</a> website</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'houzez'); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'houzez-child'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title']); ?>" />
 		</p>
-		<p><label for="<?php echo $this->get_field_id('userid'); ?>"><?php _e('Instagram user ID:', 'houzez'); ?> <input class="widefat" id="<?php echo $this->get_field_id('userid'); ?>" name="<?php echo $this->get_field_name('userid'); ?>" type="text" value="<?php echo $instance['userid']; ?>" /></label></p>
-	  	<p><label for="<?php echo $this->get_field_id('accessToken'); ?>"><?php _e('Instagram access token:', 'houzez'); ?> <input class="widefat" id="<?php echo $this->get_field_id('accessToken'); ?>" name="<?php echo $this->get_field_name('accessToken'); ?>" type="text" value="<?php echo $instance['accessToken']; ?>" /></label></p>
+		<p><label for="<?php echo $this->get_field_id('userid'); ?>"><?php _e('Instagram user ID:', 'houzez-child'); ?> <input class="widefat" id="<?php echo $this->get_field_id('userid'); ?>" name="<?php echo $this->get_field_name('userid'); ?>" type="text" value="<?php echo $instance['userid']; ?>" /></label></p>
+	  	<p><label for="<?php echo $this->get_field_id('accessToken'); ?>"><?php _e('Instagram access token:', 'houzez-child'); ?> <input class="widefat" id="<?php echo $this->get_field_id('accessToken'); ?>" name="<?php echo $this->get_field_name('accessToken'); ?>" type="text" value="<?php echo $instance['accessToken']; ?>" /></label></p>
         <p>
-          <label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Images Layout', 'houzez' ); ?>
+          <label for="<?php echo $this->get_field_id( 'template' ); ?>"><?php _e( 'Images Layout', 'houzez-child' ); ?>
           <select class="widefat" name="<?php echo $this->get_field_name( 'template' ); ?>">
-          <option value="slider" <?php echo ($instance['template'] == 'slider') ? ' selected="selected"' : ''; ?>><?php _e( 'Slider', 'houzez' ); ?></option>
-          <!-- <option value="slider-overlay" <?php echo ($instance['template'] == 'slider-overlay') ? ' selected="selected"' : ''; ?>><?php _e( 'Slider - Overlay Text', 'houzez' ); ?></option> -->
-          <option value="thumbs" <?php echo ($instance['template'] == 'thumbs') ? ' selected="selected"' : ''; ?>><?php _e( 'Thumbnails', 'houzez' ); ?></option>
+          <option value="slider" <?php echo ($instance['template'] == 'slider') ? ' selected="selected"' : ''; ?>><?php _e( 'Slider', 'houzez-child' ); ?></option>
+          <!-- <option value="slider-overlay" <?php echo ($instance['template'] == 'slider-overlay') ? ' selected="selected"' : ''; ?>><?php _e( 'Slider - Overlay Text', 'houzez-child' ); ?></option> -->
+          <option value="thumbs" <?php echo ($instance['template'] == 'thumbs') ? ' selected="selected"' : ''; ?>><?php _e( 'Thumbnails', 'houzez-child' ); ?></option>
           </select>  
           </label>
        </p>
        <p>
-            <?php _e('Link Images To:', 'houzez'); ?><br>
-            <label><input type="radio" id="<?php echo $this->get_field_id( 'images_link' ); ?>" name="<?php echo $this->get_field_name( 'images_link' ); ?>" value="image_url" <?php checked( 'image_url', $instance['images_link'] ); ?> /> <?php _e('Instagram Image', 'houzez'); ?></label><br />
-            <label><input type="radio" id="<?php echo $this->get_field_id( 'images_link' ); ?>" name="<?php echo $this->get_field_name( 'images_link' ); ?>" value="user_url" <?php checked( 'user_url', $instance['images_link'] ); ?> /> <?php _e('Instagram Profile', 'houzez'); ?></label><br />
+            <?php _e('Link Images To:', 'houzez-child'); ?><br>
+            <label><input type="radio" id="<?php echo $this->get_field_id( 'images_link' ); ?>" name="<?php echo $this->get_field_name( 'images_link' ); ?>" value="image_url" <?php checked( 'image_url', $instance['images_link'] ); ?> /> <?php _e('Instagram Image', 'houzez-child'); ?></label><br />
+            <label><input type="radio" id="<?php echo $this->get_field_id( 'images_link' ); ?>" name="<?php echo $this->get_field_name( 'images_link' ); ?>" value="user_url" <?php checked( 'user_url', $instance['images_link'] ); ?> /> <?php _e('Instagram Profile', 'houzez-child'); ?></label><br />
             
          </p>
 		   
 		<p>
-			<label  for="<?php echo $this->get_field_id( 'images_number' ); ?>"><?php _e('Number of Images to Show:', 'houzez'); ?>
+			<label  for="<?php echo $this->get_field_id( 'images_number' ); ?>"><?php _e('Number of Images to Show:', 'houzez-child'); ?>
 			<input  class="small-text" id="<?php echo $this->get_field_id( 'images_number' ); ?>" name="<?php echo $this->get_field_name( 'images_number' ); ?>" value="<?php echo $instance['images_number']; ?>" />
-			<small><?php _e('( max 20 )', 'houzez'); ?></small>
+			<small><?php _e('( max 20 )', 'houzez-child'); ?></small>
             </label>
 		</p>
 			

@@ -66,12 +66,12 @@ $hide_fields = houzez_option('hide_detail_prop_fields');
 							<i class="houzez-icon icon-task-list-plain-1 mr-1"></i> <?php echo esc_attr( $attachment_meta->post_title ); ?> - 
 							<?php if( $documents_download == 1 ) {
 			                    if( is_user_logged_in() ) { ?>
-			                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez' ); ?></a>
+			                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez-child' ); ?></a>
 			                    <?php } else { ?>
-			                        <a href="#" data-toggle="modal" data-target="#login-register-form"><?php esc_html_e( 'Download', 'houzez' ); ?></a>
+			                        <a href="#" data-toggle="modal" data-target="#login-register-form"><?php esc_html_e( 'Download', 'houzez-child' ); ?></a>
 			                    <?php } ?>
 			                <?php } else { ?>
-			                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez' ); ?></a>
+			                    <a href="<?php echo esc_url( $attachment_meta->guid ); ?>" target="_blank"><?php esc_html_e( 'Download', 'houzez-child' ); ?></a>
 			                <?php } ?>
 						</div>
 						<?php endif; ?>
@@ -282,7 +282,7 @@ $hide_fields = houzez_option('hide_detail_prop_fields');
 			</div><!-- fw-property-details-wrap -->
 
 			<?php if( $hide_fields['updated_date'] != 1 ) { ?>
-			<span class="small-text grey"><i class="houzez-icon icon-calendar-3 mr-1"></i> <?php esc_html_e( 'Updated on', 'houzez' ); ?> <?php the_modified_time('F j, Y'); ?> <?php esc_html_e( 'at', 'houzez' ); ?> <?php the_modified_time('g:i a'); ?> </span>	
+			<span class="small-text grey"><i class="houzez-icon icon-calendar-3 mr-1"></i> <?php esc_html_e( 'Updated on', 'houzez-child' ); ?> <?php the_modified_time('F j, Y'); ?> <?php esc_html_e( 'at', 'houzez-child' ); ?> <?php the_modified_time('g:i a'); ?> </span>	
 			<?php } ?>
 
 		</div><!-- fw-property-documents-wrap -->

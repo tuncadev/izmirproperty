@@ -9,7 +9,7 @@ if ( !is_user_logged_in() ) {
 get_header(); 
 
 if( !class_exists('Fave_Insights')) {
-    $msg = esc_html__('Please install and activate Favethemes Insights plugin.', 'houzez');
+    $msg = esc_html__('Please install and activate Favethemes Insights plugin.', 'houzez-child');
     wp_die($msg);
 }
 
@@ -82,7 +82,7 @@ if( $author_id != 0 && ( $author_id != $user_id ) ) {
             </div><!-- row -->
             <?php } else { ?>
                 <div class="dashboard-content-block">
-                    <?php esc_html_e("You Don't have permission to access this page.", 'houzez'); ?>
+                    <?php esc_html_e("You Don't have permission to access this page.", 'houzez-child'); ?>
                 </div><!-- dashboard-content-block -->
             <?php } ?>
         </div><!-- dashboard-content-block-wrap -->

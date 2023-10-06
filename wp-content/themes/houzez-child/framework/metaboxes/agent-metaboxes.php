@@ -22,7 +22,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
         
         $meta_boxes[] = array(
             'id'        => 'fave_agents_template',
-            'title'     => esc_html__('Agents Options', 'houzez'),
+            'title'     => esc_html__('Agents Options', 'houzez-child'),
             'post_types'     => array( 'page' ),
             'context' => 'normal',
             'priority'   => 'high',
@@ -34,7 +34,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
 
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Order By', 'houzez'),
+                    'name'      => esc_html__('Order By', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_orderby',
                     'type'      => 'select',
                     'options'   => array('none' => 'None', 'ID' => 'ID', 'title' => 'Title', 'date' => 'Date', 'rand' => 'Random', 'menu_order' => 'Menu Order' ),
@@ -43,7 +43,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                     'multiple' => false
                 ),
                 array(
-                    'name'      => esc_html__('Order', 'houzez'),
+                    'name'      => esc_html__('Order', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_order',
                     'type'      => 'select',
                     'options'   => array('ASC' => 'ASC', 'DESC' => 'DESC' ),
@@ -53,7 +53,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 ),
                 //Filters
                 array(
-                    'name'      => esc_html__('Agent Category', 'houzez'),
+                    'name'      => esc_html__('Agent Category', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_category',
                     'type'      => 'select',
                     'options'   => $agent_categories,
@@ -62,7 +62,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                     'multiple' => true
                 ),
                 array(
-                    'name'      => esc_html__('Agent City', 'houzez'),
+                    'name'      => esc_html__('Agent City', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_city',
                     'type'      => 'select',
                     'options'   => $agent_cities,
@@ -74,13 +74,13 @@ if( !function_exists('houzez_agent_metaboxes') ) {
         );
 
         $meta_boxes[] = array(
-            'title'  => esc_html__( 'Agent Information', 'houzez' ),
+            'title'  => esc_html__( 'Agent Information', 'houzez-child' ),
             'post_types'  => array('houzez_agent'),
             'fields' => array(
 
                 array(
-                    'name'      => esc_html__('Short Description', 'houzez'),
-                    'placeholder'      => esc_html__('Enter a short description', 'houzez'),
+                    'name'      => esc_html__('Short Description', 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter a short description', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_des',
                     'type'      => 'textarea',
                     'desc'      => '',
@@ -88,63 +88,63 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_email",
-                    'name' => esc_html__( 'Email Address', 'houzez' ),
-                    'placeholder'      => esc_html__('Enter the email address', 'houzez'),
-                    'desc' => esc_html__('All messages related to the agent from the contact form on property details page, will be sent on this email address. ', 'houzez'),
+                    'name' => esc_html__( 'Email Address', 'houzez-child' ),
+                    'placeholder'      => esc_html__('Enter the email address', 'houzez-child'),
+                    'desc' => esc_html__('All messages related to the agent from the contact form on property details page, will be sent on this email address. ', 'houzez-child'),
                     'type' => 'email',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_visible",
-                    'name' => esc_html__( 'Visibility Hidden', 'houzez' ),
-                    'desc' => esc_html__('Hide agent to show on front-end', 'houzez'),
+                    'name' => esc_html__( 'Visibility Hidden', 'houzez-child' ),
+                    'desc' => esc_html__('Hide agent to show on front-end', 'houzez-child'),
                     'type' => 'checkbox',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
-                    'name'      => esc_html__('Service Areas', 'houzez'),
+                    'name'      => esc_html__('Service Areas', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_service_area',
-                    'placeholder'      => esc_html__('Enter your service area', 'houzez'),
+                    'placeholder'      => esc_html__('Enter your service area', 'houzez-child'),
                     'type'      => 'text',
                     'desc'      => '',
                     'columns'   => 6
                 ),
                 array(
-                    'name'      => esc_html__('Specialties', 'houzez'),
+                    'name'      => esc_html__('Specialties', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_specialties',
-                    'placeholder'      => esc_html__('Enter your speciaties', 'houzez'),
+                    'placeholder'      => esc_html__('Enter your speciaties', 'houzez-child'),
                     'type'      => 'text',
                     'desc'      => '',
                     'columns'   => 6
                 ),
                 array(
-                    'name'      => esc_html__('Position', 'houzez'),
+                    'name'      => esc_html__('Position', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_position',
                     'type'      => 'text',
-                    'placeholder'      => esc_html__('Enter your position. Example: CEO & Founder', 'houzez'),
+                    'placeholder'      => esc_html__('Enter your position. Example: CEO & Founder', 'houzez-child'),
                     'columns'   => 6
                 ),
                 array(
-                    'name'      => esc_html__('Company Name', 'houzez'),
-                    'placeholder'      => esc_html__('Enter the company name', 'houzez'),
+                    'name'      => esc_html__('Company Name', 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the company name', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_company',
                     'type'      => 'text',
                     'desc'      => '',
                     'columns'   => 6
                 ),
                 array(
-                    'name'      => esc_html__('License', 'houzez'),
-                    'placeholder'      => esc_html__('Enter the license', 'houzez'),
+                    'name'      => esc_html__('License', 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the license', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_license',
                     'type'      => 'text',
                     'desc'      => '',
                     'columns'   => 6
                 ),
                 array(
-                    'name'      => esc_html__('Tax Number', 'houzez'),
-                    'placeholder'      => esc_html__('Enter the tax number', 'houzez'),
+                    'name'      => esc_html__('Tax Number', 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the tax number', 'houzez-child'),
                     'id'        => $houzez_prefix . 'agent_tax_no',
                     'type'      => 'text',
                     'desc'      => '',
@@ -152,49 +152,49 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_mobile",
-                    'name' => esc_html__("Mobile Number", 'houzez'),
-                    'placeholder'      => esc_html__('Enter the mobile number', 'houzez'),
+                    'name' => esc_html__("Mobile Number", 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the mobile number', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_whatsapp",
-                    'name' => esc_html__("WhatsApp", 'houzez'),
-                    'placeholder'      => esc_html__('Enter the WhatsApp number with country code', 'houzez'),
+                    'name' => esc_html__("WhatsApp", 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the WhatsApp number with country code', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_office_num",
-                    'name' => esc_html__("Office Number", 'houzez'),
-                    'placeholder'      => esc_html__('Enter the office number', 'houzez'),
+                    'name' => esc_html__("Office Number", 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the office number', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_fax",
-                    'name' => esc_html__("Fax Number", 'houzez'),
-                    'placeholder'      => esc_html__('Enter the fax number', 'houzez'),
+                    'name' => esc_html__("Fax Number", 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the fax number', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_language",
-                    'name' => esc_html__( 'Language', 'houzez' ),
-                    'placeholder'      => esc_html__('Enter the language you speak', 'houzez'),
+                    'name' => esc_html__( 'Language', 'houzez-child' ),
+                    'placeholder'      => esc_html__('Enter the language you speak', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_address",
-                    'name' => esc_html__( 'Address', 'houzez' ),
-                    'placeholder'      => esc_html__('Enter your address', 'houzez'),
-                    'desc' => esc_html__('It will be used for invoices ', 'houzez'),
+                    'name' => esc_html__( 'Address', 'houzez-child' ),
+                    'placeholder'      => esc_html__('Enter your address', 'houzez-child'),
+                    'desc' => esc_html__('It will be used for invoices ', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -202,15 +202,15 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_skype",
                     'name' => "Skype",
-                    'placeholder'      => esc_html__('Enter your Skype account', 'houzez'),
+                    'placeholder'      => esc_html__('Enter your Skype account', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
                 ),
                 array(
                     'id' => "{$houzez_prefix}agent_website",
-                    'name' => esc_html__("Website", 'houzez'),
-                    'placeholder'      => esc_html__('Enter your website URL', 'houzez'),
+                    'name' => esc_html__("Website", 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter your website URL', 'houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -218,7 +218,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_facebook",
                     'name' => "Facebook URL",
-                    'placeholder'      => esc_html__('Enter your Facebook profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Facebook profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -226,7 +226,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_twitter",
                     'name' => "Twitter URL",
-                    'placeholder'      => esc_html__('Enter your Twitter profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Twitter profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -234,7 +234,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_linkedin",
                     'name' => "Linkedin URL",
-                    'placeholder'      => esc_html__('Enter your Linkedin profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Linkedin profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -242,7 +242,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_googleplus",
                     'name' => "Google Plus URL",
-                    'placeholder'      => esc_html__('Enter your Google Plus profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Google Plus profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -250,7 +250,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_youtube",
                     'name' => "Youtube URL",
-                    'placeholder'      => esc_html__('Enter your Youtube profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Youtube profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -258,7 +258,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_tiktok",
                     'name' => "Tiktok URL",
-                    'placeholder'      => esc_html__('Enter your Tiktok profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Tiktok profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -266,7 +266,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_telegram",
                     'name' => "Telegram URL",
-                    'placeholder'      => esc_html__('Enter your telegram profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your telegram profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -274,7 +274,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_instagram",
                     'name' => "Instagram URL",
-                    'placeholder'      => esc_html__('Enter your instagram profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your instagram profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -282,7 +282,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_pinterest",
                     'name' => "Pinterest URL",
-                    'placeholder'      => esc_html__('Enter your Pinterest profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Pinterest profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
@@ -290,14 +290,14 @@ if( !function_exists('houzez_agent_metaboxes') ) {
                 array(
                     'id' => "{$houzez_prefix}agent_vimeo",
                     'name' => "Vimeo URL",
-                    'placeholder'      => esc_html__('Enter your Vimeo profile URL','houzez'),
+                    'placeholder'      => esc_html__('Enter your Vimeo profile URL','houzez-child'),
                     'type' => 'text',
                     'std' => "",
                     'columns'   => 6
                 ),
                 
                 array(
-                    'name'    => esc_html__('Company Logo', 'houzez'),
+                    'name'    => esc_html__('Company Logo', 'houzez-child'),
                     'id'      => $houzez_prefix . 'agent_logo',
                     'type' => 'image_advanced',
                     'max_file_uploads' => 1,
@@ -308,7 +308,7 @@ if( !function_exists('houzez_agent_metaboxes') ) {
         );
 
         $meta_boxes[] = array(
-            'title'  => esc_html__( 'Agencies', 'houzez' ),
+            'title'  => esc_html__( 'Agencies', 'houzez-child' ),
             'post_types'  => array('houzez_agent'),
             'context' => 'side',
             'priority' => 'high',

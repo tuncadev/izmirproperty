@@ -5,7 +5,7 @@ if( !function_exists('houzez_property_additional_metaboxes') ) {
         $houzez_prefix = 'fave_';
         
         $meta_boxes[] = array(
-            'title' => esc_html__('Additional Features', 'houzez'),
+            'title' => esc_html__('Additional Features', 'houzez-child'),
             'post_types' => array( 'property' ),
             'fields' => array(
                 
@@ -16,16 +16,16 @@ if( !function_exists('houzez_property_additional_metaboxes') ) {
                     'sort_clone' => true,
                     'fields' => array(
                         array(
-                            'name' => esc_html__('Title', 'houzez'),
+                            'name' => esc_html__('Title', 'houzez-child'),
                             'id' => "{$houzez_prefix}additional_feature_title",
-                            'placeholder' => esc_html__('Enter the title', 'houzez'),
+                            'placeholder' => esc_html__('Enter the title', 'houzez-child'),
                             'type' => 'text',
                             'columns' => 6,
                         ),
                         array(
-                            'name' => esc_html__('Value', 'houzez'),
+                            'name' => esc_html__('Value', 'houzez-child'),
                             'id' => "{$houzez_prefix}additional_feature_value",
-                            'placeholder' => esc_html__('Enter the value', 'houzez'),
+                            'placeholder' => esc_html__('Enter the value', 'houzez-child'),
                             'type' => 'text',
                             'columns' => 6,
                         )

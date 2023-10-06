@@ -155,14 +155,14 @@ $args = houzez_prop_sort ( $args );
                 <table class="dashboard-table dashboard-table-properties table-lined responsive-table">
                 <thead>
                     <tr>
-                        <th><?php echo esc_html__('Thumbnail', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Title', 'houzez'); ?></th>
+                        <th><?php echo esc_html__('Thumbnail', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Title', 'houzez-child'); ?></th>
                         <th></th>
-                        <th><?php echo esc_html__('Type', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Status', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Price', 'houzez'); ?></th>
-                        <th><?php echo esc_html__('Featured', 'houzez'); ?></th>
-                        <th class="action-col"><?php echo esc_html__('Actions', 'houzez'); ?></th>
+                        <th><?php echo esc_html__('Type', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Status', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Price', 'houzez-child'); ?></th>
+                        <th><?php echo esc_html__('Featured', 'houzez-child'); ?></th>
+                        <th class="action-col"><?php echo esc_html__('Actions', 'houzez-child'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -185,12 +185,12 @@ $args = houzez_prop_sort ( $args );
                 if(isset($_GET['keyword'])) {
 
                     echo '<div class="dashboard-content-block">
-                        '.esc_html__("No results found", 'houzez').'
+                        '.esc_html__("No results found", 'houzez-child').'
                     </div>';
 
                 } else {
                     echo '<div class="dashboard-content-block">
-                        '.esc_html__("You don't have any property listed.", 'houzez').' <a href="'.esc_url($dashboard_add_listing).'"><strong>'.esc_html__('Create a listing', 'houzez').'</strong></a>
+                        '.esc_html__("You don't have any property listed.", 'houzez-child').' <a href="'.esc_url($dashboard_add_listing).'"><strong>'.esc_html__('Create a listing', 'houzez-child').'</strong></a>
                     </div>';
                 }
                 

@@ -30,15 +30,15 @@ $allowed_html_array = array(
                     <?php
                     if( houzez_option('header_login') ) { 
                         echo '<span class="login-link">';
-                        echo wp_kses(__( 'To view this listing please <a class="hhh_login" href="#" data-toggle="modal" data-target="#login-register-form">sign in</a>.', 'houzez' ), $allowed_html_array); 
+                        echo wp_kses(__( 'To view this listing please <a class="hhh_login" href="#" data-toggle="modal" data-target="#login-register-form">sign in</a>.', 'houzez-child' ), $allowed_html_array); 
                         echo '</span> ';
                     } else {
-                        echo wp_kses(__( 'To view this listing please sign in.', 'houzez' ), $allowed_html_array); 
+                        echo wp_kses(__( 'To view this listing please sign in.', 'houzez-child' ), $allowed_html_array); 
                     }
 
                     if( houzez_option('header_register') ) { 
                         echo '<span class="register-link">';
-                        echo wp_kses(__( 'Don’t you have an account? <a class="hhh_regis" href="#" data-toggle="modal" data-target="#login-register-form">Register</a>', 'houzez' ), $allowed_html_array); 
+                        echo wp_kses(__( 'Don’t you have an account? <a class="hhh_regis" href="#" data-toggle="modal" data-target="#login-register-form">Register</a>', 'houzez-child' ), $allowed_html_array); 
                         echo '</span>';
                     }
                     ?>

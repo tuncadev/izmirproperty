@@ -9,7 +9,7 @@ if ( !is_user_logged_in() || ! houzez_check_role() ) {
 get_header(); 
 
 if( !class_exists('Houzez_CRM')) {
-    $msg = esc_html__('Please install and activate Houzez CRM plugin.', 'houzez');
+    $msg = esc_html__('Please install and activate Houzez CRM plugin.', 'houzez-child');
     wp_die($msg);
 }
 

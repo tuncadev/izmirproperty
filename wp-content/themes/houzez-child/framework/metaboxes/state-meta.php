@@ -14,12 +14,12 @@ if ( !function_exists( 'houzez_property_state_add_meta_fields' ) ) :
         if(taxonomy_exists('property_country')) {
         ?>
         <div class="form-field">
-            <label><?php _e( 'Which country has this state?', 'houzez' ); ?></label>
+            <label><?php _e( 'Which country has this state?', 'houzez-child' ); ?></label>
             <select name="fave[parent_country]" class="widefat">
-                <option value=""><?php esc_html_e('Select Country', 'houzez'); ?></option>
+                <option value=""><?php esc_html_e('Select Country', 'houzez-child'); ?></option>
                 <?php echo houzez_get_all_countries(); ?>
             </select>
-            <p class="description"><?php _e( 'Select country which has this state.', 'houzez' ); ?></p>
+            <p class="description"><?php _e( 'Select country which has this state.', 'houzez-child' ); ?></p>
         </div>
         <?php
         }
@@ -48,13 +48,13 @@ if ( !function_exists( 'houzez_property_state_edit_meta_fields' ) ) :
         ?>
 
         <tr class="form-field">
-            <th scope="row" valign="top"><label><?php _e( 'Which country has this state?', 'houzez' ); ?></label></th>
+            <th scope="row" valign="top"><label><?php _e( 'Which country has this state?', 'houzez-child' ); ?></label></th>
             <td>
                 <select name="fave[parent_country]" class="widefat">
-                    <option value=""><?php esc_html_e('Select Country', 'houzez'); ?></option>
+                    <option value=""><?php esc_html_e('Select Country', 'houzez-child'); ?></option>
                     <?php echo houzez_get_all_countries($parent_country); ?>
                 </select>
-                <p class="description"><?php _e( 'Select country which has this state.', 'houzez' ); ?></p>
+                <p class="description"><?php _e( 'Select country which has this state.', 'houzez-child' ); ?></p>
             </td>
         </tr>
 

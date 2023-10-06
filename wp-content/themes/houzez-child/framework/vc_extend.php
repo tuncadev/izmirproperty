@@ -118,13 +118,13 @@ if (class_exists('Vc_Manager')) {
 	}
 
 	$sort_by = array( 
-		esc_html__('Default', 'houzez') => '', 
-		esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-		esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-		esc_html__('Date Old to New', 'houzez') => 'a_date',
-		esc_html__('Date New to Old', 'houzez') => 'd_date',
-		esc_html__('Featured on Top', 'houzez') => 'featured_top',
-		esc_html__('Random', 'houzez') => 'random',
+		esc_html__('Default', 'houzez-child') => '', 
+		esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+		esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+		esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+		esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+		esc_html__('Featured on Top', 'houzez-child') => 'featured_top',
+		esc_html__('Random', 'houzez-child') => 'random',
 	);
 
 	/*---------------------------------------------------------------------------------
@@ -236,7 +236,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -316,12 +316,12 @@ if (class_exists('Vc_Manager')) {
 				"param_name" => "houzez_user_role",
 				"type" => "dropdown",
 				"value" => array(
-					esc_html__('All', 'houzez') => '',
-					esc_html__('Owner', 'houzez') => 'houzez_owner',
-					esc_html__('Manager', 'houzez') => 'houzez_manager',
-					esc_html__('Agent', 'houzez') => 'houzez_agent',
-					esc_html__('Author', 'houzez') => 'author',
-					esc_html__('Agency', 'houzez') => 'houzez_agency'
+					esc_html__('All', 'houzez-child') => '',
+					esc_html__('Owner', 'houzez-child') => 'houzez_owner',
+					esc_html__('Manager', 'houzez-child') => 'houzez_manager',
+					esc_html__('Agent', 'houzez-child') => 'houzez_agent',
+					esc_html__('Author', 'houzez-child') => 'author',
+					esc_html__('Agency', 'houzez-child') => 'houzez_agency'
 				),
 				"heading" => esc_html__("User Role:", "houzez"),
 				"description" => "",
@@ -332,7 +332,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"group" => 'Filters',
@@ -352,12 +352,12 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Sort By", "houzez"),
 				"value" => array( 
-					esc_html__('Default', 'houzez') => '', 
-					esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-					esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-					esc_html__('Date Old to New', 'houzez') => 'a_date',
-					esc_html__('Date New to Old', 'houzez') => 'd_date',
-					esc_html__('Featured on Top', 'houzez') => 'featured_top'
+					esc_html__('Default', 'houzez-child') => '', 
+					esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+					esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+					esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+					esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+					esc_html__('Featured on Top', 'houzez-child') => 'featured_top'
 				),
 				"description" => '',
 				"save_always" => true
@@ -376,8 +376,8 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Pagination", "houzez"),
 				"value" => array( 
-					esc_html__('Load More', 'houzez') => 'loadmore', 
-					esc_html__('Number', 'houzez') => 'number'
+					esc_html__('Load More', 'houzez-child') => 'loadmore', 
+					esc_html__('Number', 'houzez-child') => 'number'
 				),
 				"description" => '',
 				"save_always" => true
@@ -411,7 +411,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -491,12 +491,12 @@ if (class_exists('Vc_Manager')) {
 				"param_name" => "houzez_user_role",
 				"type" => "dropdown",
 				"value" => array(
-					esc_html__('All', 'houzez') => '',
-					esc_html__('Owner', 'houzez') => 'houzez_owner',
-					esc_html__('Manager', 'houzez') => 'houzez_manager',
-					esc_html__('Agent', 'houzez') => 'houzez_agent',
-					esc_html__('Author', 'houzez') => 'author',
-					esc_html__('Agency', 'houzez') => 'houzez_agency'
+					esc_html__('All', 'houzez-child') => '',
+					esc_html__('Owner', 'houzez-child') => 'houzez_owner',
+					esc_html__('Manager', 'houzez-child') => 'houzez_manager',
+					esc_html__('Agent', 'houzez-child') => 'houzez_agent',
+					esc_html__('Author', 'houzez-child') => 'author',
+					esc_html__('Agency', 'houzez-child') => 'houzez_agency'
 				),
 				"heading" => esc_html__("User Role:", "houzez"),
 				"description" => "",
@@ -507,7 +507,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"group" => 'Filters',
@@ -527,12 +527,12 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Sort By", "houzez"),
 				"value" => array( 
-					esc_html__('Default', 'houzez') => '', 
-					esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-					esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-					esc_html__('Date Old to New', 'houzez') => 'a_date',
-					esc_html__('Date New to Old', 'houzez') => 'd_date',
-					esc_html__('Featured on Top', 'houzez') => 'featured_top'
+					esc_html__('Default', 'houzez-child') => '', 
+					esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+					esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+					esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+					esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+					esc_html__('Featured on Top', 'houzez-child') => 'featured_top'
 				),
 				"description" => '',
 				"save_always" => true
@@ -551,8 +551,8 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Pagination", "houzez"),
 				"value" => array( 
-					esc_html__('Load More', 'houzez') => 'loadmore', 
-					esc_html__('Number', 'houzez') => 'number'
+					esc_html__('Load More', 'houzez-child') => 'loadmore', 
+					esc_html__('Number', 'houzez-child') => 'number'
 				),
 				"description" => '',
 				"save_always" => true
@@ -585,7 +585,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -665,12 +665,12 @@ if (class_exists('Vc_Manager')) {
 				"param_name" => "houzez_user_role",
 				"type" => "dropdown",
 				"value" => array(
-					esc_html__('All', 'houzez') => '',
-					esc_html__('Owner', 'houzez') => 'houzez_owner',
-					esc_html__('Manager', 'houzez') => 'houzez_manager',
-					esc_html__('Agent', 'houzez') => 'houzez_agent',
-					esc_html__('Author', 'houzez') => 'author',
-					esc_html__('Agency', 'houzez') => 'houzez_agency'
+					esc_html__('All', 'houzez-child') => '',
+					esc_html__('Owner', 'houzez-child') => 'houzez_owner',
+					esc_html__('Manager', 'houzez-child') => 'houzez_manager',
+					esc_html__('Agent', 'houzez-child') => 'houzez_agent',
+					esc_html__('Author', 'houzez-child') => 'author',
+					esc_html__('Agency', 'houzez-child') => 'houzez_agency'
 				),
 				"heading" => esc_html__("User Role:", "houzez"),
 				"description" => "",
@@ -681,7 +681,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"group" => 'Filters',
@@ -701,12 +701,12 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Sort By", "houzez"),
 				"value" => array( 
-					esc_html__('Default', 'houzez') => '', 
-					esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-					esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-					esc_html__('Date Old to New', 'houzez') => 'a_date',
-					esc_html__('Date New to Old', 'houzez') => 'd_date',
-					esc_html__('Featured on Top', 'houzez') => 'featured_top'
+					esc_html__('Default', 'houzez-child') => '', 
+					esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+					esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+					esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+					esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+					esc_html__('Featured on Top', 'houzez-child') => 'featured_top'
 				),
 				"description" => '',
 				"save_always" => true
@@ -725,8 +725,8 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Pagination", "houzez"),
 				"value" => array( 
-					esc_html__('Load More', 'houzez') => 'loadmore', 
-					esc_html__('Number', 'houzez') => 'number'
+					esc_html__('Load More', 'houzez-child') => 'loadmore', 
+					esc_html__('Number', 'houzez-child') => 'number'
 				),
 				"description" => '',
 				"save_always" => true
@@ -752,7 +752,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -832,12 +832,12 @@ if (class_exists('Vc_Manager')) {
 				"param_name" => "houzez_user_role",
 				"type" => "dropdown",
 				"value" => array(
-					esc_html__('All', 'houzez') => '',
-					esc_html__('Owner', 'houzez') => 'houzez_owner',
-					esc_html__('Manager', 'houzez') => 'houzez_manager',
-					esc_html__('Agent', 'houzez') => 'houzez_agent',
-					esc_html__('Author', 'houzez') => 'author',
-					esc_html__('Agency', 'houzez') => 'houzez_agency'
+					esc_html__('All', 'houzez-child') => '',
+					esc_html__('Owner', 'houzez-child') => 'houzez_owner',
+					esc_html__('Manager', 'houzez-child') => 'houzez_manager',
+					esc_html__('Agent', 'houzez-child') => 'houzez_agent',
+					esc_html__('Author', 'houzez-child') => 'author',
+					esc_html__('Agency', 'houzez-child') => 'houzez_agency'
 				),
 				"heading" => esc_html__("User Role:", "houzez"),
 				"description" => "",
@@ -848,7 +848,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"group" => 'Filters',
@@ -868,12 +868,12 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Sort By", "houzez"),
 				"value" => array( 
-					esc_html__('Default', 'houzez') => '', 
-					esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-					esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-					esc_html__('Date Old to New', 'houzez') => 'a_date',
-					esc_html__('Date New to Old', 'houzez') => 'd_date',
-					esc_html__('Featured on Top', 'houzez') => 'featured_top'
+					esc_html__('Default', 'houzez-child') => '', 
+					esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+					esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+					esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+					esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+					esc_html__('Featured on Top', 'houzez-child') => 'featured_top'
 				),
 				"description" => '',
 				"save_always" => true
@@ -892,8 +892,8 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Pagination", "houzez"),
 				"value" => array( 
-					esc_html__('Load More', 'houzez') => 'loadmore', 
-					esc_html__('Number', 'houzez') => 'number'
+					esc_html__('Load More', 'houzez-child') => 'loadmore', 
+					esc_html__('Number', 'houzez-child') => 'number'
 				),
 				"description" => '',
 				"save_always" => true
@@ -926,7 +926,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -1006,12 +1006,12 @@ if (class_exists('Vc_Manager')) {
 				"param_name" => "houzez_user_role",
 				"type" => "dropdown",
 				"value" => array(
-					esc_html__('All', 'houzez') => '',
-					esc_html__('Owner', 'houzez') => 'houzez_owner',
-					esc_html__('Manager', 'houzez') => 'houzez_manager',
-					esc_html__('Agent', 'houzez') => 'houzez_agent',
-					esc_html__('Author', 'houzez') => 'author',
-					esc_html__('Agency', 'houzez') => 'houzez_agency'
+					esc_html__('All', 'houzez-child') => '',
+					esc_html__('Owner', 'houzez-child') => 'houzez_owner',
+					esc_html__('Manager', 'houzez-child') => 'houzez_manager',
+					esc_html__('Agent', 'houzez-child') => 'houzez_agent',
+					esc_html__('Author', 'houzez-child') => 'author',
+					esc_html__('Agency', 'houzez-child') => 'houzez_agency'
 				),
 				"heading" => esc_html__("User Role:", "houzez"),
 				"description" => "",
@@ -1022,7 +1022,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"group" => 'Filters',
@@ -1042,12 +1042,12 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Sort By", "houzez"),
 				"value" => array( 
-					esc_html__('Default', 'houzez') => '', 
-					esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-					esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-					esc_html__('Date Old to New', 'houzez') => 'a_date',
-					esc_html__('Date New to Old', 'houzez') => 'd_date',
-					esc_html__('Featured on Top', 'houzez') => 'featured_top'
+					esc_html__('Default', 'houzez-child') => '', 
+					esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+					esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+					esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+					esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+					esc_html__('Featured on Top', 'houzez-child') => 'featured_top'
 				),
 				"description" => '',
 				"save_always" => true
@@ -1066,8 +1066,8 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Pagination", "houzez"),
 				"value" => array( 
-					esc_html__('Load More', 'houzez') => 'loadmore', 
-					esc_html__('Number', 'houzez') => 'number'
+					esc_html__('Load More', 'houzez-child') => 'loadmore', 
+					esc_html__('Number', 'houzez-child') => 'number'
 				),
 				"description" => '',
 				"save_always" => true
@@ -1100,7 +1100,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -1180,12 +1180,12 @@ if (class_exists('Vc_Manager')) {
 				"param_name" => "houzez_user_role",
 				"type" => "dropdown",
 				"value" => array(
-					esc_html__('All', 'houzez') => '',
-					esc_html__('Owner', 'houzez') => 'houzez_owner',
-					esc_html__('Manager', 'houzez') => 'houzez_manager',
-					esc_html__('Agent', 'houzez') => 'houzez_agent',
-					esc_html__('Author', 'houzez') => 'author',
-					esc_html__('Agency', 'houzez') => 'houzez_agency'
+					esc_html__('All', 'houzez-child') => '',
+					esc_html__('Owner', 'houzez-child') => 'houzez_owner',
+					esc_html__('Manager', 'houzez-child') => 'houzez_manager',
+					esc_html__('Agent', 'houzez-child') => 'houzez_agent',
+					esc_html__('Author', 'houzez-child') => 'author',
+					esc_html__('Agency', 'houzez-child') => 'houzez_agency'
 				),
 				"heading" => esc_html__("User Role:", "houzez"),
 				"description" => "",
@@ -1196,7 +1196,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"group" => 'Filters',
@@ -1216,12 +1216,12 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Sort By", "houzez"),
 				"value" => array( 
-					esc_html__('Default', 'houzez') => '', 
-					esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-					esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-					esc_html__('Date Old to New', 'houzez') => 'a_date',
-					esc_html__('Date New to Old', 'houzez') => 'd_date',
-					esc_html__('Featured on Top', 'houzez') => 'featured_top'
+					esc_html__('Default', 'houzez-child') => '', 
+					esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+					esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+					esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+					esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+					esc_html__('Featured on Top', 'houzez-child') => 'featured_top'
 				),
 				"description" => '',
 				"save_always" => true
@@ -1240,8 +1240,8 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Pagination", "houzez"),
 				"value" => array( 
-					esc_html__('Load More', 'houzez') => 'loadmore', 
-					esc_html__('Number', 'houzez') => 'number'
+					esc_html__('Load More', 'houzez-child') => 'loadmore', 
+					esc_html__('Number', 'houzez-child') => 'number'
 				),
 				"description" => '',
 				"save_always" => true
@@ -1282,7 +1282,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -1362,12 +1362,12 @@ if (class_exists('Vc_Manager')) {
 				"param_name" => "houzez_user_role",
 				"type" => "dropdown",
 				"value" => array(
-					esc_html__('All', 'houzez') => '',
-					esc_html__('Owner', 'houzez') => 'houzez_owner',
-					esc_html__('Manager', 'houzez') => 'houzez_manager',
-					esc_html__('Agent', 'houzez') => 'houzez_agent',
-					esc_html__('Author', 'houzez') => 'author',
-					esc_html__('Agency', 'houzez') => 'houzez_agency'
+					esc_html__('All', 'houzez-child') => '',
+					esc_html__('Owner', 'houzez-child') => 'houzez_owner',
+					esc_html__('Manager', 'houzez-child') => 'houzez_manager',
+					esc_html__('Agent', 'houzez-child') => 'houzez_agent',
+					esc_html__('Author', 'houzez-child') => 'author',
+					esc_html__('Agency', 'houzez-child') => 'houzez_agency'
 				),
 				"heading" => esc_html__("User Role:", "houzez"),
 				"description" => "",
@@ -1378,7 +1378,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"group" => 'Filters',
@@ -1398,12 +1398,12 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Sort By", "houzez"),
 				"value" => array( 
-					esc_html__('Default', 'houzez') => '', 
-					esc_html__('Price (Low to High)', 'houzez') => 'a_price', 
-					esc_html__('Price (High to Low)', 'houzez') => 'd_price',
-					esc_html__('Date Old to New', 'houzez') => 'a_date',
-					esc_html__('Date New to Old', 'houzez') => 'd_date',
-					esc_html__('Featured on Top', 'houzez') => 'featured_top'
+					esc_html__('Default', 'houzez-child') => '', 
+					esc_html__('Price (Low to High)', 'houzez-child') => 'a_price', 
+					esc_html__('Price (High to Low)', 'houzez-child') => 'd_price',
+					esc_html__('Date Old to New', 'houzez-child') => 'a_date',
+					esc_html__('Date New to Old', 'houzez-child') => 'd_date',
+					esc_html__('Featured on Top', 'houzez-child') => 'featured_top'
 				),
 				"description" => '',
 				"save_always" => true
@@ -1422,8 +1422,8 @@ if (class_exists('Vc_Manager')) {
 				"type" => "dropdown",
 				"heading" => esc_html__("Pagination", "houzez"),
 				"value" => array( 
-					esc_html__('Load More', 'houzez') => 'loadmore', 
-					esc_html__('Number', 'houzez') => 'number'
+					esc_html__('Load More', 'houzez-child') => 'loadmore', 
+					esc_html__('Number', 'houzez-child') => 'number'
 				),
 				"description" => '',
 				"save_always" => true
@@ -1448,7 +1448,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -1521,7 +1521,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"save_always" => true
@@ -1685,7 +1685,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -1758,7 +1758,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"save_always" => true
@@ -1922,7 +1922,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -1995,7 +1995,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 			),
@@ -2186,7 +2186,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -2259,7 +2259,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"save_always" => true
@@ -2421,7 +2421,7 @@ if (class_exists('Vc_Manager')) {
 
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -2494,7 +2494,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"save_always" => true
@@ -2886,7 +2886,7 @@ if (class_exists('Vc_Manager')) {
 			),
 			array(
 				'type'          => 'houzez_get_taxonomy_list',
-				'heading'       => esc_html__('Property Type filter:', 'houzez'),
+				'heading'       => esc_html__('Property Type filter:', 'houzez-child'),
 				'taxonomy'      => 'property_type',
 				'is_multiple'   => true,
 				'is_hide_empty'   => true,
@@ -2959,7 +2959,7 @@ if (class_exists('Vc_Manager')) {
 			array(
 				"param_name" => "featured_prop",
 				"type" => "dropdown",
-				"value" => array(esc_html__('- Any -', 'houzez') => '', esc_html__('Without Featured', 'houzez') => 'no', esc_html__('Only Featured', 'houzez') => 'yes'),
+				"value" => array(esc_html__('- Any -', 'houzez-child') => '', esc_html__('Without Featured', 'houzez-child') => 'no', esc_html__('Only Featured', 'houzez-child') => 'yes'),
 				"heading" => esc_html__("Featured Properties:", "houzez"),
 				"description" => esc_html__("You can make a post featured by clicking featured properties checkbox while add/edit post", "houzez"),
 				"save_always" => true
@@ -3018,7 +3018,7 @@ if (class_exists('Vc_Manager')) {
 	/*---------------------------------------------------------------------------------
 	 Price Tables
 	-----------------------------------------------------------------------------------*/
-	$packages_array = array( esc_html__('None', 'houzez') => '');
+	$packages_array = array( esc_html__('None', 'houzez-child') => '');
 	$packages_posts = get_posts(array('post_type' => 'houzez_packages', 'posts_per_page' => -1));
 	if (!empty($packages_posts)) {
 		foreach ($packages_posts as $package_post) {
@@ -3939,7 +3939,7 @@ if (class_exists('Vc_Manager')) {
 	        {
 	            ?>
 	            <select name="<?php echo esc_attr($param_name); ?>" class="wpb_vc_param_value <?php echo esc_attr($param_name); ?>" <?php echo esc_attr($isMultiple); ?>>
-	            	<option value=""><?php esc_html_e('- All -', 'houzez')?></option>
+	            	<option value=""><?php esc_html_e('- All -', 'houzez-child')?></option>
 	                <?php
 	                    foreach ( $getTerms as $getTerm ) :
 	                        if ( in_array($getTerm->slug, $value) )
@@ -3955,11 +3955,11 @@ if (class_exists('Vc_Manager')) {
 	                ?>
 	            </select>
 	            <?php if ( !empty($isMultiple) ) : ?>
-	            <button style="margin-top: 5px;" class="button button-primary" id="houzez-toggle-select"><?php esc_html_e('Toggle Select', 'houzez'); ?></button>
+	            <button style="margin-top: 5px;" class="button button-primary" id="houzez-toggle-select"><?php esc_html_e('Toggle Select', 'houzez-child'); ?></button>
 	            <?php endif; ?>
 	            <?php
 	        }else{
-	            esc_html_e('There are no taxonomy found', 'houzez');
+	            esc_html_e('There are no taxonomy found', 'houzez-child');
 	        }
 
 	        $output = ob_get_clean();

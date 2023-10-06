@@ -157,7 +157,7 @@ if($enable_search != 0 && $search_style != 'v4') {
         <div class="page-title-wrap">
             <div class="d-flex align-items-center">
                 <div class="page-title flex-grow-1">
-                    <span><?php echo esc_attr($total_properties); ?></span> <?php esc_html_e('Results Found', 'houzez');?>
+                    <span><?php echo esc_attr($total_properties); ?></span> <?php esc_html_e('Results Found', 'houzez-child');?>
                 </div>
 
                 <?php get_template_part('template-parts/listing/listing-sort-by'); ?>  
@@ -182,7 +182,7 @@ if($enable_search != 0 && $search_style != 'v4') {
                 else:
                     
                     echo '<div class="search-no-results-found">';
-                        esc_html_e('No results found', 'houzez');
+                        esc_html_e('No results found', 'houzez-child');
                     echo '</div>';
                     
                 endif;

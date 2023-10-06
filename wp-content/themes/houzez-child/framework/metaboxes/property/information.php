@@ -42,7 +42,7 @@ function houzez_information_metabox_fields( $metabox_fields ) {
     if($multi_currency == 1 ) {
         $multi_currency_field = array(
                 'id' => "{$houzez_prefix}currency",
-                'name' => esc_html__('Currency', 'houzez'),
+                'name' => esc_html__('Currency', 'houzez-child'),
                 'type' => 'select',
                 'options' => houzez_available_currencies(),
                 'std' => houzez_option('default_multi_currency'),

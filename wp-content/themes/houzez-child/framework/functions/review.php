@@ -13,7 +13,7 @@ if( !function_exists('houzez_submit_review') ) {
         if (!wp_verify_nonce( $nonce, 'review-nonce') ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Invalid Nonce!', 'houzez')
+                'msg' => esc_html__('Invalid Nonce!', 'houzez-child')
             ));
             wp_die();
         }
@@ -39,7 +39,7 @@ if( !function_exists('houzez_submit_review') ) {
         if ( empty($review_title) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Review title field is empty!', 'houzez')
+                'msg' => esc_html__('Review title field is empty!', 'houzez-child')
             ));
             wp_die();
         }
@@ -47,7 +47,7 @@ if( !function_exists('houzez_submit_review') ) {
         if ( empty($review_stars) ) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Select rating!', 'houzez')
+                'msg' => esc_html__('Select rating!', 'houzez-child')
             ));
             wp_die();
         }
@@ -55,7 +55,7 @@ if( !function_exists('houzez_submit_review') ) {
         if (empty($review)) {
             echo json_encode(array(
                 'success' => false,
-                'msg' => esc_html__('Write review!', 'houzez')
+                'msg' => esc_html__('Write review!', 'houzez-child')
             ));
             wp_die();
         }
@@ -79,7 +79,7 @@ if( !function_exists('houzez_submit_review') ) {
 				echo json_encode( array (
 		            'success' => false,
 		            'review_link' => '',
-		            'msg' => esc_html__("Sorry! You have already posted review on this listing!", 'houzez')
+		            'msg' => esc_html__("Sorry! You have already posted review on this listing!", 'houzez-child')
 		        ));
 		        wp_die();
 
@@ -88,7 +88,7 @@ if( !function_exists('houzez_submit_review') ) {
 				echo json_encode( array (
 		            'success' => false,
 		            'review_link' => '',
-		            'msg' => esc_html__("Sorry! Listing owners can not post review on their listings!", 'houzez')
+		            'msg' => esc_html__("Sorry! Listing owners can not post review on their listings!", 'houzez-child')
 		        ));
 		        wp_die();
 
@@ -123,12 +123,12 @@ if( !function_exists('houzez_submit_review') ) {
 
 	    	if( !is_email( $reviewer_email ) ) {
 
-	            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid email address.', 'houzez') ) );
+	            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Invalid email address.', 'houzez-child') ) );
 	            wp_die();
 
 	        } else if( email_exists( $reviewer_email ) ) {
 
-	            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Email already exists! Please login or change email', 'houzez') ) );
+	            echo json_encode( array( 'success' => false, 'msg' => esc_html__('Email already exists! Please login or change email', 'houzez-child') ) );
 	            wp_die();
 
 	        } else {
@@ -138,7 +138,7 @@ if( !function_exists('houzez_submit_review') ) {
 				$username .=rand(1,100);
 
 				if( username_exists( $username ) ) {
-		            echo json_encode( array( 'success' => false, 'msg' => $username.' '.esc_html__('Username already exist!', 'houzez') ) );
+		            echo json_encode( array( 'success' => false, 'msg' => $username.' '.esc_html__('Username already exist!', 'houzez-child') ) );
 		            wp_die();
 		        }
 
@@ -196,19 +196,19 @@ if( !function_exists('houzez_submit_review') ) {
       
         	$site_name = get_bloginfo('name');
 
-	        $subject = sprintf( esc_html__('A new rating has been received for %s', 'houzez'), $listing_title, $site_name );
+	        $subject = sprintf( esc_html__('A new rating has been received for %s', 'houzez-child'), $listing_title, $site_name );
 
-	        $body = esc_html__("Rating:", 'houzez') .' '. esc_attr($review_stars) . " ".esc_html__('stars', 'houzez')." <br/>";
+	        $body = esc_html__("Rating:", 'houzez-child') .' '. esc_attr($review_stars) . " ".esc_html__('stars', 'houzez-child')." <br/>";
 
-	     	$body .= esc_html__("Review Title:", 'houzez') .' '. $review_title . " <br/>";
+	     	$body .= esc_html__("Review Title:", 'houzez-child') .' '. $review_title . " <br/>";
 
-	     	$body .= esc_html__("Comment:", 'houzez') .' '.( $review ). " <br/>";
+	     	$body .= esc_html__("Comment:", 'houzez-child') .' '.( $review ). " <br/>";
 
 			$body .= "<br>------------------------------------<br>";
 
-			$body .= "<br>".esc_html__("You can view this at", 'houzez').' '.esc_url( $review_link ). " <br/>";
+			$body .= "<br>".esc_html__("You can view this at", 'houzez-child').' '.esc_url( $review_link ). " <br/>";
 
-			$body .= "<br>".esc_html__('Do not reply to this email.', 'houzez')."<br>";
+			$body .= "<br>".esc_html__('Do not reply to this email.', 'houzez-child')."<br>";
 
 	        $headers = "Content-Type: text/html; charset=UTF-8\r\n";
 	        $headers .= 'From: '.$site_name.' <do-not-reply@'.$_SERVER['HTTP_HOST'].'>' . "\r\n";
@@ -219,7 +219,7 @@ if( !function_exists('houzez_submit_review') ) {
 	        echo json_encode( array(
 	            'success' => true,
 	            'review_link' => $review_link,
-	            'msg' => esc_html__("Review has been submitted successfully!", 'houzez')
+	            'msg' => esc_html__("Review has been submitted successfully!", 'houzez-child')
 	        ));
 	    }
 
@@ -387,7 +387,7 @@ if(!function_exists('houzez_reviews_likes_dislikes')) {
 	            'success' => true,
 	            'likes' => $current_likes,
 	            'dislikes' => $current_dislikes,
-	            'msg' => esc_html__('Thanks for voting', 'houzez')
+	            'msg' => esc_html__('Thanks for voting', 'houzez-child')
 	        ));
 	        wp_die();
 
@@ -395,7 +395,7 @@ if(!function_exists('houzez_reviews_likes_dislikes')) {
 		
 			echo json_encode( array(
 	            'success' => false,
-	            'msg' => esc_html__("You have already voted", 'houzez')
+	            'msg' => esc_html__("You have already voted", 'houzez-child')
 	        ));
 	        wp_die();
 		}
@@ -665,7 +665,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Poor', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Poor', 'houzez-child').'</span>';
 		        }
 
 		} elseif($stars >= 1.5 && $stars < 2) {
@@ -678,7 +678,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Fair', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Fair', 'houzez-child').'</span>';
 		        }
 
 		} elseif($stars >= 2 & $stars < 2.5) {
@@ -691,7 +691,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Fair', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Fair', 'houzez-child').'</span>';
 		        }
 
 		}  elseif($stars >= 2.5 & $stars < 3) {
@@ -704,7 +704,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Average', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Average', 'houzez-child').'</span>';
 		        }
 
 		} elseif($stars >= 3 && $stars < 3.5 ) {
@@ -717,7 +717,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Average', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Average', 'houzez-child').'</span>';
 		        }
 
 		} elseif($stars >= 3.5 && $stars < 4 ) {
@@ -730,7 +730,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Good', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Good', 'houzez-child').'</span>';
 		        }
 
 		} elseif($stars >= 4 && $stars < 4.5) {
@@ -743,7 +743,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Good', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Good', 'houzez-child').'</span>';
 		        }
 
 		}  elseif($stars >= 4.5 && $stars < 5) {
@@ -756,7 +756,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Exceptional', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Exceptional', 'houzez-child').'</span>';
 		        }
 
 		} elseif($stars == 5) {
@@ -769,7 +769,7 @@ if(!function_exists('houzez_get_stars')) {
 				';
 
 	            if($is_label) {
-		            $output .= '<span class="label bg-success">'.esc_html__('Exceptional', 'houzez').'</span>';
+		            $output .= '<span class="label bg-success">'.esc_html__('Exceptional', 'houzez-child').'</span>';
 		        }
 		}
 

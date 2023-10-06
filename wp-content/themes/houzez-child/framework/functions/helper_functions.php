@@ -302,7 +302,7 @@ if( !function_exists('houzez_minify_js') ) {
 
 if( ! function_exists('houzez_get_popup_gallery_type') ) {
     function houzez_get_popup_gallery_type() {
-        $property_gallery_popup_type = houzez_option('property_gallery_popup_type', 'houzez');
+        $property_gallery_popup_type = houzez_option('property_gallery_popup_type', 'houzez-child');
         return $property_gallery_popup_type;
     }
 }
@@ -334,7 +334,7 @@ if ( !function_exists( 'houzez_theme_branding' ) ) {
 
     function houzez_theme_branding() {
 
-        $return = esc_html__( 'Houzez', 'houzez' );
+        $return = esc_html__( 'Houzez', 'houzez-child' );
 
         return apply_filters( 'favethemes_theme_branding', $return );
     }
@@ -725,29 +725,29 @@ if(!function_exists('houzez_search_builtIn_fields')) {
 if(!function_exists('houzez_search_builtIn_fields_elementor')) {
     function houzez_search_builtIn_fields_elementor() {
         $array = array(
-            'keyword' => esc_html__('keyword', 'houzez'),
-            'status' => esc_html__('Status', 'houzez'),
-            'type' => esc_html__('Type', 'houzez'),
-            'bedrooms' => esc_html__('Bedrooms', 'houzez'),
-            'rooms' => esc_html__('Bedrooms', 'houzez'),
-            'bathrooms' => esc_html__('Bathrooms', 'houzez'),
-            'min-area' => esc_html__('Min Area', 'houzez'),
-            'max-area' => esc_html__('Max Area', 'houzez'),
-            'min-price' => esc_html__('Min Price', 'houzez'),
-            'max-price' => esc_html__('Max Price', 'houzez'),
-            'property-id' => esc_html__('Property ID', 'houzez'),
-            'label' => esc_html__('Labels', 'houzez'),
-            'min-land-area' => esc_html__('Min Land Area', 'houzez'),
-            'max-land-area' => esc_html__('Max Land Area', 'houzez'),
-            'country' => esc_html__('Country', 'houzez'),
-            'state' => esc_html__('State', 'houzez'),
-            'city' => esc_html__('City', 'houzez'),
-            'areas' => esc_html__('Area', 'houzez'),
-            'geolocation' => esc_html__('Geolocation', 'houzez'),
-            'price-range' => esc_html__('Price Range', 'houzez'),
-            'garage' => esc_html__('Garage', 'houzez'),
-            'year-built' => esc_html__('Year Built', 'houzez'),
-            'submit-button' => esc_html__('Search Button', 'houzez'),
+            'keyword' => esc_html__('keyword', 'houzez-child'),
+            'status' => esc_html__('Status', 'houzez-child'),
+            'type' => esc_html__('Type', 'houzez-child'),
+            'bedrooms' => esc_html__('Bedrooms', 'houzez-child'),
+            'rooms' => esc_html__('Bedrooms', 'houzez-child'),
+            'bathrooms' => esc_html__('Bathrooms', 'houzez-child'),
+            'min-area' => esc_html__('Min Area', 'houzez-child'),
+            'max-area' => esc_html__('Max Area', 'houzez-child'),
+            'min-price' => esc_html__('Min Price', 'houzez-child'),
+            'max-price' => esc_html__('Max Price', 'houzez-child'),
+            'property-id' => esc_html__('Property ID', 'houzez-child'),
+            'label' => esc_html__('Labels', 'houzez-child'),
+            'min-land-area' => esc_html__('Min Land Area', 'houzez-child'),
+            'max-land-area' => esc_html__('Max Land Area', 'houzez-child'),
+            'country' => esc_html__('Country', 'houzez-child'),
+            'state' => esc_html__('State', 'houzez-child'),
+            'city' => esc_html__('City', 'houzez-child'),
+            'areas' => esc_html__('Area', 'houzez-child'),
+            'geolocation' => esc_html__('Geolocation', 'houzez-child'),
+            'price-range' => esc_html__('Price Range', 'houzez-child'),
+            'garage' => esc_html__('Garage', 'houzez-child'),
+            'year-built' => esc_html__('Year Built', 'houzez-child'),
+            'submit-button' => esc_html__('Search Button', 'houzez-child'),
         );
 
         if(!taxonomy_exists('property_country')) {
@@ -872,14 +872,14 @@ if(!function_exists('houzez_overview_composer_fields')) {
 if(!function_exists('houzez_listing_fields_for_icons')) {
     function houzez_listing_fields_for_icons() {
         $array = array(
-            'bed' => esc_html__('Bed', 'houzez'),
-            'room' => esc_html__('Room', 'houzez'),
-            'bath' => esc_html__('Bath', 'houzez'),
-            'garage' => esc_html__('Garage', 'houzez'),
-            'area-size' => esc_html__('Area Size', 'houzez'),
-            'land-area' => esc_html__('Land Area Size', 'houzez'),
-            'year-built' => esc_html__('Year Built', 'houzez'),
-            'property-id' => esc_html__('Property ID', 'houzez'),
+            'bed' => esc_html__('Bed', 'houzez-child'),
+            'room' => esc_html__('Room', 'houzez-child'),
+            'bath' => esc_html__('Bath', 'houzez-child'),
+            'garage' => esc_html__('Garage', 'houzez-child'),
+            'area-size' => esc_html__('Area Size', 'houzez-child'),
+            'land-area' => esc_html__('Land Area Size', 'houzez-child'),
+            'year-built' => esc_html__('Year Built', 'houzez-child'),
+            'property-id' => esc_html__('Property ID', 'houzez-child'),
         );
         return $array;
     }
@@ -888,15 +888,15 @@ if(!function_exists('houzez_listing_fields_for_icons')) {
 if(!function_exists('houzez_listing_fields_for_icons_luxury')) {
     function houzez_listing_fields_for_icons_luxury() {
         $array = array(
-            'icon_prop_id' => esc_html__('Property ID', 'houzez'),
-            'icon_bedrooms' => esc_html__('Bedrooms', 'houzez'),
-            'icon_rooms' => esc_html__('Rooms', 'houzez'),
-            'icon_bathrooms' => esc_html__('Bathrooms', 'houzez'),
-            'icon_prop_size' => esc_html__('Property Size', 'houzez'),
-            'icon_prop_land' => esc_html__('Land Size', 'houzez'),
-            'icon_garage_size' => esc_html__('Garage Size', 'houzez'),
-            'icon_garage' => esc_html__('Garage', 'houzez'),
-            'icon_year' => esc_html__('Year Built', 'houzez'),
+            'icon_prop_id' => esc_html__('Property ID', 'houzez-child'),
+            'icon_bedrooms' => esc_html__('Bedrooms', 'houzez-child'),
+            'icon_rooms' => esc_html__('Rooms', 'houzez-child'),
+            'icon_bathrooms' => esc_html__('Bathrooms', 'houzez-child'),
+            'icon_prop_size' => esc_html__('Property Size', 'houzez-child'),
+            'icon_prop_land' => esc_html__('Land Size', 'houzez-child'),
+            'icon_garage_size' => esc_html__('Garage Size', 'houzez-child'),
+            'icon_garage' => esc_html__('Garage', 'houzez-child'),
+            'icon_year' => esc_html__('Year Built', 'houzez-child'),
         );
         return $array;
     }
@@ -2983,7 +2983,7 @@ if( !function_exists('houzez_number_list') ) {
             }
         }
 
-        $any_text = houzez_option('srh_any', esc_html__( 'Any', 'houzez'));
+        $any_text = houzez_option('srh_any', esc_html__( 'Any', 'houzez-child'));
 
         if( $searched_num == 'any' )  {
             echo '<option value="any" selected="selected">'.$any_text.'</option>';
@@ -3681,7 +3681,7 @@ if( !function_exists( 'houzez_ajax_pagination' ) ){
 
 if( !function_exists( 'houzez_loadmore' ) ) {
     function houzez_loadmore($max_num_pages) {
-        $more_link = get_next_posts_link( __('Load More', 'houzez'), $max_num_pages );
+        $more_link = get_next_posts_link( __('Load More', 'houzez-child'), $max_num_pages );
         $allowed_html_array = array(
             'a' => array(
                 'href' => array(),
@@ -3722,8 +3722,8 @@ if ( !function_exists( 'houzez_pagination_deprecated' ) ):
             'format' => '',
             'total' => $wp_query->max_num_pages,
             'current' => $current,
-            'prev_text' => wp_kses(__( '<span aria-hidden="true"><i class="fa fa-angle-left"></i></span>', 'houzez' ), $allowed_html_array),
-            'next_text' => wp_kses(__( '<span aria-hidden="true"><i class="fa fa-angle-right"></i></span>', 'houzez' ), $allowed_html_array),
+            'prev_text' => wp_kses(__( '<span aria-hidden="true"><i class="fa fa-angle-left"></i></span>', 'houzez-child' ), $allowed_html_array),
+            'next_text' => wp_kses(__( '<span aria-hidden="true"><i class="fa fa-angle-right"></i></span>', 'houzez-child' ), $allowed_html_array),
             'type' => 'array'
         );
         if ( $wp_rewrite->using_permalinks() )
@@ -3761,7 +3761,7 @@ if( !function_exists('houzez_listing_meta_v1') ) {
         $output .= '<p>';
         if( !empty( $prop_bed ) ) {
             $prop_bed = esc_attr( $prop_bed );
-            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Beds', 'houzez' ) : esc_html__( 'Bed', 'houzez' );
+            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Beds', 'houzez-child' ) : esc_html__( 'Bed', 'houzez-child' );
 
             $output .= '<span class="h-beds">';
             $output .= $prop_bed_lebel .': '. $prop_bed;
@@ -3769,7 +3769,7 @@ if( !function_exists('houzez_listing_meta_v1') ) {
         }
         if( !empty( $prop_bath ) ) {
             $prop_bath = esc_attr( $prop_bath );
-            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Baths', 'houzez' ) : esc_html__( 'Bath', 'houzez' );
+            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Baths', 'houzez-child' ) : esc_html__( 'Bath', 'houzez-child' );
 
             $output .= '<span class="h-baths">';
             $output .= $prop_bath_lebel .': '. $prop_bath;
@@ -3804,7 +3804,7 @@ if( !function_exists('houzez_listing_meta_v1_without_p') ) {
         $output = '';
         if( !empty( $prop_bed ) ) {
             $prop_bed = esc_attr( $prop_bed );
-            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Beds', 'houzez' ) : esc_html__( 'Bed', 'houzez' );
+            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Beds', 'houzez-child' ) : esc_html__( 'Bed', 'houzez-child' );
 
             $output .= '<span class="h-beds">';
             $output .= $prop_bed_lebel .': '. $prop_bed;
@@ -3812,7 +3812,7 @@ if( !function_exists('houzez_listing_meta_v1_without_p') ) {
         }
         if( !empty( $prop_bath ) ) {
             $prop_bath = esc_attr( $prop_bath );
-            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Baths', 'houzez' ) : esc_html__( 'Bath', 'houzez' );
+            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Baths', 'houzez-child' ) : esc_html__( 'Bath', 'houzez-child' );
 
             $output .= '<span class="h-baths">';
             $output .= $prop_bath_lebel .': '. $prop_bath;
@@ -3846,7 +3846,7 @@ if( !function_exists('houzez_listing_meta_v3') ) {
         $output .= '<ul class="item-amenities">';
         if( !empty( $prop_bed ) ) {
             $prop_bed = esc_attr( $prop_bed );
-            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Bedrooms', 'houzez' ) : esc_html__( 'Bedroom', 'houzez' );
+            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Bedrooms', 'houzez-child' ) : esc_html__( 'Bedroom', 'houzez-child' );
 
             $output .= '<li class="h-beds">';
             $output .= '<span>'.$prop_bed.'</span>';
@@ -3855,7 +3855,7 @@ if( !function_exists('houzez_listing_meta_v3') ) {
         }
         if( !empty( $prop_bath ) ) {
             $prop_bath = esc_attr( $prop_bath );
-            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Bathrooms', 'houzez' ) : esc_html__( 'Bathroom', 'houzez' );
+            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Bathrooms', 'houzez-child' ) : esc_html__( 'Bathroom', 'houzez-child' );
 
             $output .= '<li class="h-baths">';
             $output .= '<span>'.$prop_bath.'</span>';
@@ -4118,13 +4118,13 @@ if( !function_exists('houzez_listing_meta_widget') ) {
 
         if( !empty( $prop_bed ) ) {
             $prop_bed = esc_attr( $prop_bed );
-            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'beds', 'houzez' ) : esc_html__( 'bed', 'houzez' );
+            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'beds', 'houzez-child' ) : esc_html__( 'bed', 'houzez-child' );
 
             echo esc_attr( $prop_bed ).' '.esc_attr( $prop_bed_lebel ).' • ';
         }
         if( !empty( $prop_bath ) ) {
             $prop_bath = esc_attr( $prop_bath );
-            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'baths', 'houzez' ) : esc_html__( 'bath', 'houzez' );
+            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'baths', 'houzez-child' ) : esc_html__( 'bath', 'houzez-child' );
 
             echo esc_attr( $prop_bath ).' '. esc_attr( $prop_bath_lebel ).' • ';
         }
@@ -4145,7 +4145,7 @@ if( !function_exists('houzez_listing_meta_v2') ) {
 
         if( !empty( $prop_bed ) ) {
             $prop_bed = esc_attr( $prop_bed );
-            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'bd', 'houzez' ) : esc_html__( 'bd', 'houzez' );
+            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'bd', 'houzez-child' ) : esc_html__( 'bd', 'houzez-child' );
 
             echo '<li>';
             echo esc_attr( $prop_bed ).' '. esc_attr( $prop_bed_lebel );
@@ -4153,7 +4153,7 @@ if( !function_exists('houzez_listing_meta_v2') ) {
         }
         if( !empty( $prop_bath ) ) {
             $prop_bath = esc_attr( $prop_bath );
-            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'ba', 'houzez' ) : esc_html__( 'ba', 'houzez' );
+            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'ba', 'houzez-child' ) : esc_html__( 'ba', 'houzez-child' );
 
             echo '<li>';
             echo esc_attr( $prop_bath ).' '. esc_attr( $prop_bath_lebel );
@@ -4242,7 +4242,7 @@ if( !function_exists('houzez_property_slider_meta') ) {
         echo '<ul class="list-inline">';
         if( !empty( $prop_bed ) ) {
             $prop_bed = esc_attr( $prop_bed );
-            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Beds', 'houzez' ) : esc_html__( 'Bed', 'houzez' );
+            $prop_bed_lebel = ($prop_bed > 1 ) ? esc_html__( 'Beds', 'houzez-child' ) : esc_html__( 'Bed', 'houzez-child' );
 
             echo '<li>';
             echo '<strong>'.$prop_bed_lebel .':</strong> '. $prop_bed;
@@ -4250,7 +4250,7 @@ if( !function_exists('houzez_property_slider_meta') ) {
         }
         if( !empty( $prop_bath ) ) {
             $prop_bath = esc_attr( $prop_bath );
-            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Baths', 'houzez' ) : esc_html__( 'Bath', 'houzez' );
+            $prop_bath_lebel = ($prop_bath > 1 ) ? esc_html__( 'Baths', 'houzez-child' ) : esc_html__( 'Bath', 'houzez-child' );
 
             echo '<li>';
             echo '<strong>'.$prop_bath_lebel .'</strong> '. $prop_bath;
@@ -5617,8 +5617,8 @@ endif;
 if(!function_exists('houzez_theme_activate')) {
     function houzez_theme_activate() {
 
-        if(isset($_GET['houzez'])) {
-            update_option( 'houzez_activation', $_GET['houzez'] );
+        if(isset($_GET['houzez-child'])) {
+            update_option( 'houzez_activation', $_GET['houzez-child'] );
         }
 
         if(isset($_GET['houzez_code'])) {
@@ -5753,9 +5753,9 @@ if(!function_exists('houzez_get_taxonomies_for_edit_listing')){
 
         $taxonomy_id = intval($taxonomy_id);
         if( !empty($taxonomy_id)) {
-            echo '<option value="-1">'.esc_html__( 'None', 'houzez').'</option>';
+            echo '<option value="-1">'.esc_html__( 'None', 'houzez-child').'</option>';
         } else {
-            echo '<option value="-1" selected="selected">'.esc_html__( 'None', 'houzez').'</option>';
+            echo '<option value="-1" selected="selected">'.esc_html__( 'None', 'houzez-child').'</option>';
         }
         $parent_taxonomy = get_terms(
             array(
@@ -6544,21 +6544,21 @@ if( !function_exists('HOUZEZ_billing_period') ) {
     function HOUZEZ_billing_period($biling_period) {
 
         if ($biling_period == 'Day') {
-            return esc_html__('day', 'houzez');
+            return esc_html__('day', 'houzez-child');
         } else if ($biling_period == 'Days') {
-            return esc_html__('days', 'houzez');
+            return esc_html__('days', 'houzez-child');
         } else if ($biling_period == 'Week') {
-            return esc_html__('week', 'houzez');
+            return esc_html__('week', 'houzez-child');
         } else if ($biling_period == 'Weeks') {
-            return esc_html__('weeks', 'houzez');
+            return esc_html__('weeks', 'houzez-child');
         } else if ($biling_period == 'Month') {
-            return esc_html__('month', 'houzez');
+            return esc_html__('month', 'houzez-child');
         } else if ($biling_period == 'Months') {
-            return esc_html__('months', 'houzez');
+            return esc_html__('months', 'houzez-child');
         } else if ($biling_period == 'Year') {
-            return esc_html__('year', 'houzez');
+            return esc_html__('year', 'houzez-child');
         } else if ($biling_period == 'Years') {
-            return esc_html__('years', 'houzez');
+            return esc_html__('years', 'houzez-child');
         }
     }
 }
@@ -6570,253 +6570,253 @@ if( !function_exists('HOUZEZ_billing_period') ) {
 if( !function_exists('houzez_country_code_to_country') ):
     function houzez_country_code_to_country( $code ){
         $country = '';
-        if( $code == 'AF' ) $country = esc_html__('Afghanistan', 'houzez');
-        if( $code == 'AX' ) $country = esc_html__('Aland Islands', 'houzez');
-        if( $code == 'AL' ) $country = esc_html__('Albania', 'houzez');
-        if( $code == 'DZ' ) $country = esc_html__('Algeria', 'houzez');
-        if( $code == 'AS' ) $country = esc_html__('American Samoa', 'houzez');
-        if( $code == 'AD' ) $country = esc_html__('Andorra', 'houzez');
-        if( $code == 'AO' ) $country = esc_html__('Angola', 'houzez');
-        if( $code == 'AI' ) $country = esc_html__('Anguilla', 'houzez');
-        if( $code == 'AQ' ) $country = esc_html__('Antarctica', 'houzez');
-        if( $code == 'AG' ) $country = esc_html__('Antigua and Barbuda', 'houzez');
-        if( $code == 'AR' ) $country = esc_html__('Argentina', 'houzez');
-        if( $code == 'AM' ) $country = esc_html__('Armenia', 'houzez');
-        if( $code == 'AW' ) $country = esc_html__('Aruba', 'houzez');
-        if( $code == 'AU' ) $country = esc_html__('Australia', 'houzez');
-        if( $code == 'AT' ) $country = esc_html__('Austria', 'houzez');
-        if( $code == 'AZ' ) $country = esc_html__('Azerbaijan', 'houzez');
-        if( $code == 'BS' ) $country = esc_html__('Bahamas the', 'houzez');
-        if( $code == 'BH' ) $country = esc_html__('Bahrain', 'houzez');
-        if( $code == 'BD' ) $country = esc_html__('Bangladesh', 'houzez');
-        if( $code == 'BB' ) $country = esc_html__('Barbados', 'houzez');
-        if( $code == 'BY' ) $country = esc_html__('Belarus', 'houzez');
-        if( $code == 'BE' ) $country = esc_html__('Belgium', 'houzez');
-        if( $code == 'BZ' ) $country = esc_html__('Belize', 'houzez');
-        if( $code == 'BJ' ) $country = esc_html__('Benin', 'houzez');
-        if( $code == 'BM' ) $country = esc_html__('Bermuda', 'houzez');
-        if( $code == 'BT' ) $country = esc_html__('Bhutan', 'houzez');
-        if( $code == 'BO' ) $country = esc_html__('Bolivia', 'houzez');
-        if( $code == 'BA' ) $country = esc_html__('Bosnia and Herzegovina', 'houzez');
-        if( $code == 'BW' ) $country = esc_html__('Botswana', 'houzez');
-        if( $code == 'BV' ) $country = esc_html__('Bouvet Island (Bouvetoya)', 'houzez');
-        if( $code == 'BR' ) $country = esc_html__('Brazil', 'houzez');
-        if( $code == 'IO' ) $country = esc_html__('British Indian Ocean Territory (Chagos Archipelago)', 'houzez');
-        if( $code == 'VG' ) $country = esc_html__('British Virgin Islands', 'houzez');
-        if( $code == 'BN' ) $country = esc_html__('Brunei Darussalam', 'houzez');
-        if( $code == 'BG' ) $country = esc_html__('Bulgaria', 'houzez');
-        if( $code == 'BF' ) $country = esc_html__('Burkina Faso', 'houzez');
-        if( $code == 'BI' ) $country = esc_html__('Burundi', 'houzez');
-        if( $code == 'KH' ) $country = esc_html__('Cambodia', 'houzez');
-        if( $code == 'CM' ) $country = esc_html__('Cameroon', 'houzez');
-        if( $code == 'CA' ) $country = esc_html__('Canada', 'houzez');
-        if( $code == 'CV' ) $country = esc_html__('Cape Verde', 'houzez');
-        if( $code == 'KY' ) $country = esc_html__('Cayman Islands', 'houzez');
-        if( $code == 'CF' ) $country = esc_html__('Central African Republic', 'houzez');
-        if( $code == 'TD' ) $country = esc_html__('Chad', 'houzez');
-        if( $code == 'CL' ) $country = esc_html__('Chile', 'houzez');
-        if( $code == 'CN' ) $country = esc_html__('China', 'houzez');
-        if( $code == 'CX' ) $country = esc_html__('Christmas Island', 'houzez');
-        if( $code == 'CC' ) $country = esc_html__('Cocos (Keeling) Islands', 'houzez');
-        if( $code == 'CO' ) $country = esc_html__('Colombia', 'houzez');
-        if( $code == 'KM' ) $country = esc_html__('Comoros the', 'houzez');
-        if( $code == 'CD' ) $country = esc_html__('Congo', 'houzez');
-        if( $code == 'CG' ) $country = esc_html__('Congo the', 'houzez');
-        if( $code == 'CK' ) $country = esc_html__('Cook Islands', 'houzez');
-        if( $code == 'CR' ) $country = esc_html__('Costa Rica', 'houzez');
-        if( $code == 'CI' ) $country = esc_html__("Cote d'Ivoire", 'houzez');
-        if( $code == 'HR' ) $country = esc_html__('Croatia', 'houzez');
-        if( $code == 'CU' ) $country = esc_html__('Cuba', 'houzez');
-        if( $code == 'CW' ) $country = esc_html__('Curaçao', 'houzez');
-        if( $code == 'CY' ) $country = esc_html__('Cyprus', 'houzez');
-        if( $code == 'CZ' ) $country = esc_html__('Czech Republic', 'houzez');
-        if( $code == 'DK' ) $country = esc_html__('Denmark', 'houzez');
-        if( $code == 'DJ' ) $country = esc_html__('Djibouti', 'houzez');
-        if( $code == 'DM' ) $country = esc_html__('Dominica', 'houzez');
-        if( $code == 'DO' ) $country = esc_html__('Dominican Republic', 'houzez');
-        if( $code == 'EC' ) $country = esc_html__('Ecuador', 'houzez');
-        if( $code == 'EG' ) $country = esc_html__('Egypt', 'houzez');
-        if( $code == 'SV' ) $country = esc_html__('El Salvador', 'houzez');
-        if( $code == 'GQ' ) $country = esc_html__('Equatorial Guinea', 'houzez');
-        if( $code == 'ER' ) $country = esc_html__('Eritrea', 'houzez');
-        if( $code == 'EE' ) $country = esc_html__('Estonia', 'houzez');
-        if( $code == 'ET' ) $country = esc_html__('Ethiopia', 'houzez');
-        if( $code == 'FO' ) $country = esc_html__('Faroe Islands', 'houzez');
-        if( $code == 'FK' ) $country = esc_html__('Falkland Islands (Malvinas)', 'houzez');
-        if( $code == 'FJ' ) $country = esc_html__('Fiji the Fiji Islands', 'houzez');
-        if( $code == 'FI' ) $country = esc_html__('Finland', 'houzez');
-        if( $code == 'FR' ) $country = esc_html__('France', 'houzez');
-        if( $code == 'GF' ) $country = esc_html__('French Guiana', 'houzez');
-        if( $code == 'PF' ) $country = esc_html__('French Polynesia', 'houzez');
-        if( $code == 'TF' ) $country = esc_html__('French Southern Territories', 'houzez');
-        if( $code == 'GA' ) $country = esc_html__('Gabon', 'houzez');
-        if( $code == 'GM' ) $country = esc_html__('Gambia the', 'houzez');
-        if( $code == 'GE' ) $country = esc_html__('Georgia', 'houzez');
-        if( $code == 'DE' ) $country = esc_html__('Germany', 'houzez');
-        if( $code == 'GH' ) $country = esc_html__('Ghana', 'houzez');
-        if( $code == 'GI' ) $country = esc_html__('Gibraltar', 'houzez');
-        if( $code == 'GR' ) $country = esc_html__('Greece', 'houzez');
-        if( $code == 'GL' ) $country = esc_html__('Greenland', 'houzez');
-        if( $code == 'GD' ) $country = esc_html__('Grenada', 'houzez');
-        if( $code == 'GP' ) $country = esc_html__('Guadeloupe', 'houzez');
-        if( $code == 'GU' ) $country = esc_html__('Guam', 'houzez');
-        if( $code == 'GT' ) $country = esc_html__('Guatemala', 'houzez');
-        if( $code == 'GG' ) $country = esc_html__('Guernsey', 'houzez');
-        if( $code == 'GN' ) $country = esc_html__('Guinea', 'houzez');
-        if( $code == 'GW' ) $country = esc_html__('Guinea-Bissau', 'houzez');
-        if( $code == 'GY' ) $country = esc_html__('Guyana', 'houzez');
-        if( $code == 'HT' ) $country = esc_html__('Haiti', 'houzez');
-        if( $code == 'HM' ) $country = esc_html__('Heard Island and McDonald Islands', 'houzez');
-        if( $code == 'VA' ) $country = esc_html__('Holy See (Vatican City State)', 'houzez');
-        if( $code == 'HN' ) $country = esc_html__('Honduras', 'houzez');
-        if( $code == 'HK' ) $country = esc_html__('Hong Kong', 'houzez');
-        if( $code == 'HU' ) $country = esc_html__('Hungary', 'houzez');
-        if( $code == 'IS' ) $country = esc_html__('Iceland', 'houzez');
-        if( $code == 'IN' ) $country = esc_html__('India', 'houzez');
-        if( $code == 'ID' ) $country = esc_html__('Indonesia', 'houzez');
-        if( $code == 'IR' ) $country = esc_html__('Iran', 'houzez');
-        if( $code == 'IQ' ) $country = esc_html__('Iraq', 'houzez');
-        if( $code == 'IE' ) $country = esc_html__('Ireland', 'houzez');
-        if( $code == 'IM' ) $country = esc_html__('Isle of Man', 'houzez');
-        if( $code == 'IL' ) $country = esc_html__('Israel', 'houzez');
-        if( $code == 'IT' ) $country = esc_html__('Italy', 'houzez');
-        if( $code == 'JM' ) $country = esc_html__('Jamaica', 'houzez');
-        if( $code == 'JP' ) $country = esc_html__('Japan', 'houzez');
-        if( $code == 'JE' ) $country = esc_html__('Jersey', 'houzez');
-        if( $code == 'JO' ) $country = esc_html__('Jordan', 'houzez');
-        if( $code == 'KZ' ) $country = esc_html__('Kazakhstan', 'houzez');
-        if( $code == 'KE' ) $country = esc_html__('Kenya', 'houzez');
-        if( $code == 'KI' ) $country = esc_html__('Kiribati', 'houzez');
-        if( $code == 'KP' ) $country = esc_html__('Korea', 'houzez');
-        if( $code == 'KR' ) $country = esc_html__('Korea', 'houzez');
-        if( $code == 'KW' ) $country = esc_html__('Kuwait', 'houzez');
-        if( $code == 'KG' ) $country = esc_html__('Kyrgyz Republic', 'houzez');
-        if( $code == 'LA' ) $country = esc_html__('Lao', 'houzez');
-        if( $code == 'LV' ) $country = esc_html__('Latvia', 'houzez');
-        if( $code == 'LB' ) $country = esc_html__('Lebanon', 'houzez');
-        if( $code == 'LS' ) $country = esc_html__('Lesotho', 'houzez');
-        if( $code == 'LR' ) $country = esc_html__('Liberia', 'houzez');
-        if( $code == 'LY' ) $country = esc_html__('Libyan Arab Jamahiriya', 'houzez');
-        if( $code == 'LI' ) $country = esc_html__('Liechtenstein', 'houzez');
-        if( $code == 'LT' ) $country = esc_html__('Lithuania', 'houzez');
-        if( $code == 'LU' ) $country = esc_html__('Luxembourg', 'houzez');
-        if( $code == 'MO' ) $country = esc_html__('Macao', 'houzez');
-        if( $code == 'MK' ) $country = esc_html__('Macedonia', 'houzez');
-        if( $code == 'MG' ) $country = esc_html__('Madagascar', 'houzez');
-        if( $code == 'MW' ) $country = esc_html__('Malawi', 'houzez');
-        if( $code == 'MY' ) $country = esc_html__('Malaysia', 'houzez');
-        if( $code == 'MV' ) $country = esc_html__('Maldives', 'houzez');
-        if( $code == 'ML' ) $country = esc_html__('Mali', 'houzez');
-        if( $code == 'MT' ) $country = esc_html__('Malta', 'houzez');
-        if( $code == 'MH' ) $country = esc_html__('Marshall Islands', 'houzez');
-        if( $code == 'MQ' ) $country = esc_html__('Martinique', 'houzez');
-        if( $code == 'MR' ) $country = esc_html__('Mauritania', 'houzez');
-        if( $code == 'MU' ) $country = esc_html__('Mauritius', 'houzez');
-        if( $code == 'YT' ) $country = esc_html__('Mayotte', 'houzez');
-        if( $code == 'MX' ) $country = esc_html__('Mexico', 'houzez');
-        if( $code == 'FM' ) $country = esc_html__('Micronesia', 'houzez');
-        if( $code == 'MD' ) $country = esc_html__('Moldova', 'houzez');
-        if( $code == 'MC' ) $country = esc_html__('Monaco', 'houzez');
-        if( $code == 'MN' ) $country = esc_html__('Mongolia', 'houzez');
-        if( $code == 'ME' ) $country = esc_html__('Montenegro', 'houzez');
-        if( $code == 'MS' ) $country = esc_html__('Montserrat', 'houzez');
-        if( $code == 'MA' ) $country = esc_html__('Morocco', 'houzez');
-        if( $code == 'MZ' ) $country = esc_html__('Mozambique', 'houzez');
-        if( $code == 'MM' ) $country = esc_html__('Myanmar', 'houzez');
-        if( $code == 'NA' ) $country = esc_html__('Namibia', 'houzez');
-        if( $code == 'NR' ) $country = esc_html__('Nauru', 'houzez');
-        if( $code == 'NP' ) $country = esc_html__('Nepal', 'houzez');
-        if( $code == 'AN' ) $country = esc_html__('Netherlands Antilles', 'houzez');
-        if( $code == 'NL' ) $country = esc_html__('Netherlands the', 'houzez');
-        if( $code == 'NC' ) $country = esc_html__('New Caledonia', 'houzez');
-        if( $code == 'NZ' ) $country = esc_html__('New Zealand', 'houzez');
-        if( $code == 'NI' ) $country = esc_html__('Nicaragua', 'houzez');
-        if( $code == 'NE' ) $country = esc_html__('Niger', 'houzez');
-        if( $code == 'NG' ) $country = esc_html__('Nigeria', 'houzez');
-        if( $code == 'NU' ) $country = esc_html__('Niue', 'houzez');
-        if( $code == 'NF' ) $country = esc_html__('Norfolk Island', 'houzez');
-        if( $code == 'MP' ) $country = esc_html__('Northern Mariana Islands', 'houzez');
-        if( $code == 'NO' ) $country = esc_html__('Norway', 'houzez');
-        if( $code == 'OM' ) $country = esc_html__('Oman', 'houzez');
-        if( $code == 'PK' ) $country = esc_html__('Pakistan', 'houzez');
-        if( $code == 'PW' ) $country = esc_html__('Palau', 'houzez');
-        if( $code == 'PS' ) $country = esc_html__('Palestinian Territory', 'houzez');
-        if( $code == 'PA' ) $country = esc_html__('Panama', 'houzez');
-        if( $code == 'PG' ) $country = esc_html__('Papua New Guinea', 'houzez');
-        if( $code == 'PY' ) $country = esc_html__('Paraguay', 'houzez');
-        if( $code == 'PE' ) $country = esc_html__('Peru', 'houzez');
-        if( $code == 'PH' ) $country = esc_html__('Philippines', 'houzez');
-        if( $code == 'PN' ) $country = esc_html__('Pitcairn Islands', 'houzez');
-        if( $code == 'PL' ) $country = esc_html__('Poland', 'houzez');
-        if( $code == 'PT' ) $country = esc_html__('Portugal, Portuguese Republic', 'houzez');
-        if( $code == 'PR' ) $country = esc_html__('Puerto Rico', 'houzez');
-        if( $code == 'QA' ) $country = esc_html__('Qatar', 'houzez');
-        if( $code == 'RE' ) $country = esc_html__('Reunion', 'houzez');
-        if( $code == 'RO' ) $country = esc_html__('Romania', 'houzez');
-        if( $code == 'RU' ) $country = esc_html__('Russian Federation', 'houzez');
-        if( $code == 'RW' ) $country = esc_html__('Rwanda', 'houzez');
-        if( $code == 'BL' ) $country = esc_html__('Saint Barthelemy', 'houzez');
-        if( $code == 'SH' ) $country = esc_html__('Saint Helena', 'houzez');
-        if( $code == 'KN' ) $country = esc_html__('Saint Kitts and Nevis', 'houzez');
-        if( $code == 'LC' ) $country = esc_html__('Saint Lucia', 'houzez');
-        if( $code == 'MF' ) $country = esc_html__('Saint Martin', 'houzez');
-        if( $code == 'PM' ) $country = esc_html__('Saint Pierre and Miquelon', 'houzez');
-        if( $code == 'VC' ) $country = esc_html__('Saint Vincent and the Grenadines', 'houzez');
-        if( $code == 'WS' ) $country = esc_html__('Samoa', 'houzez');
-        if( $code == 'SM' ) $country = esc_html__('San Marino', 'houzez');
-        if( $code == 'ST' ) $country = esc_html__('Sao Tome and Principe', 'houzez');
-        if( $code == 'SA' ) $country = esc_html__('Saudi Arabia', 'houzez');
-        if( $code == 'SN' ) $country = esc_html__('Senegal', 'houzez');
-        if( $code == 'RS' ) $country = esc_html__('Serbia', 'houzez');
-        if( $code == 'SC' ) $country = esc_html__('Seychelles', 'houzez');
-        if( $code == 'SL' ) $country = esc_html__('Sierra Leone', 'houzez');
-        if( $code == 'SG' ) $country = esc_html__('Singapore', 'houzez');
-        if( $code == 'SK' ) $country = esc_html__('Slovakia (Slovak Republic)', 'houzez');
-        if( $code == 'SI' ) $country = esc_html__('Slovenia', 'houzez');
-        if( $code == 'SB' ) $country = esc_html__('Solomon Islands', 'houzez');
-        if( $code == 'SO' ) $country = esc_html__('Somalia, Somali Republic', 'houzez');
-        if( $code == 'ZA' ) $country = esc_html__('South Africa', 'houzez');
-        if( $code == 'GS' ) $country = esc_html__('South Georgia and the South Sandwich Islands', 'houzez');
-        if( $code == 'ES' ) $country = esc_html__('Spain', 'houzez');
-        if( $code == 'LK' ) $country = esc_html__('Sri Lanka', 'houzez');
-        if( $code == 'SD' ) $country = esc_html__('Sudan', 'houzez');
-        if( $code == 'SR' ) $country = esc_html__('Suriname', 'houzez');
-        if( $code == 'SJ' ) $country = esc_html__('Svalbard & Jan Mayen Islands', 'houzez');
-        if( $code == 'SZ' ) $country = esc_html__('Swaziland', 'houzez');
-        if( $code == 'SE' ) $country = esc_html__('Sweden', 'houzez');
-        if( $code == 'CH' ) $country = esc_html__('Switzerland', 'houzez');
-        if( $code == 'SY' ) $country = esc_html__('Syrian Arab Republic', 'houzez');
-        if( $code == 'TW' ) $country = esc_html__('Taiwan', 'houzez');
-        if( $code == 'TJ' ) $country = esc_html__('Tajikistan', 'houzez');
-        if( $code == 'TZ' ) $country = esc_html__('Tanzania', 'houzez');
-        if( $code == 'TH' ) $country = esc_html__('Thailand', 'houzez');
-        if( $code == 'TL' ) $country = esc_html__('Timor-Leste', 'houzez');
-        if( $code == 'TG' ) $country = esc_html__('Togo', 'houzez');
-        if( $code == 'TK' ) $country = esc_html__('Tokelau', 'houzez');
-        if( $code == 'TO' ) $country = esc_html__('Tonga', 'houzez');
-        if( $code == 'TT' ) $country = esc_html__('Trinidad and Tobago', 'houzez');
-        if( $code == 'TN' ) $country = esc_html__('Tunisia', 'houzez');
-        if( $code == 'TR' ) $country = esc_html__('Turkey', 'houzez');
-        if( $code == 'TM' ) $country = esc_html__('Turkmenistan', 'houzez');
-        if( $code == 'TC' ) $country = esc_html__('Turks and Caicos Islands', 'houzez');
-        if( $code == 'TV' ) $country = esc_html__('Tuvalu', 'houzez');
-        if( $code == 'UG' ) $country = esc_html__('Uganda', 'houzez');
-        if( $code == 'UA' ) $country = esc_html__('Ukraine', 'houzez');
-        if( $code == 'UAE' ) $country = esc_html__('United Arab Emirates', 'houzez');
-        if( $code == 'GB' ) $country = esc_html__('United Kingdom', 'houzez');
-        if( $code == 'US' ) $country = esc_html__('United States', 'houzez');
-        if( $code == 'UM' ) $country = esc_html__('United States Minor Outlying Islands', 'houzez');
-        if( $code == 'VI' ) $country = esc_html__('United States Virgin Islands', 'houzez');
-        if( $code == 'UY' ) $country = esc_html__('Uruguay, Eastern Republic of', 'houzez');
-        if( $code == 'UZ' ) $country = esc_html__('Uzbekistan', 'houzez');
-        if( $code == 'VU' ) $country = esc_html__('Vanuatu', 'houzez');
-        if( $code == 'VE' ) $country = esc_html__('Venezuela', 'houzez');
-        if( $code == 'VN' ) $country = esc_html__('Vietnam', 'houzez');
-        if( $code == 'WF' ) $country = esc_html__('Wallis and Futuna', 'houzez');
-        if( $code == 'EH' ) $country = esc_html__('Western Sahara', 'houzez');
-        if( $code == 'YE' ) $country = esc_html__('Yemen', 'houzez');
-        if( $code == 'ZM' ) $country = esc_html__('Zambia', 'houzez');
-        if( $code == 'ZW' ) $country = esc_html__('Zimbabwe', 'houzez');
+        if( $code == 'AF' ) $country = esc_html__('Afghanistan', 'houzez-child');
+        if( $code == 'AX' ) $country = esc_html__('Aland Islands', 'houzez-child');
+        if( $code == 'AL' ) $country = esc_html__('Albania', 'houzez-child');
+        if( $code == 'DZ' ) $country = esc_html__('Algeria', 'houzez-child');
+        if( $code == 'AS' ) $country = esc_html__('American Samoa', 'houzez-child');
+        if( $code == 'AD' ) $country = esc_html__('Andorra', 'houzez-child');
+        if( $code == 'AO' ) $country = esc_html__('Angola', 'houzez-child');
+        if( $code == 'AI' ) $country = esc_html__('Anguilla', 'houzez-child');
+        if( $code == 'AQ' ) $country = esc_html__('Antarctica', 'houzez-child');
+        if( $code == 'AG' ) $country = esc_html__('Antigua and Barbuda', 'houzez-child');
+        if( $code == 'AR' ) $country = esc_html__('Argentina', 'houzez-child');
+        if( $code == 'AM' ) $country = esc_html__('Armenia', 'houzez-child');
+        if( $code == 'AW' ) $country = esc_html__('Aruba', 'houzez-child');
+        if( $code == 'AU' ) $country = esc_html__('Australia', 'houzez-child');
+        if( $code == 'AT' ) $country = esc_html__('Austria', 'houzez-child');
+        if( $code == 'AZ' ) $country = esc_html__('Azerbaijan', 'houzez-child');
+        if( $code == 'BS' ) $country = esc_html__('Bahamas the', 'houzez-child');
+        if( $code == 'BH' ) $country = esc_html__('Bahrain', 'houzez-child');
+        if( $code == 'BD' ) $country = esc_html__('Bangladesh', 'houzez-child');
+        if( $code == 'BB' ) $country = esc_html__('Barbados', 'houzez-child');
+        if( $code == 'BY' ) $country = esc_html__('Belarus', 'houzez-child');
+        if( $code == 'BE' ) $country = esc_html__('Belgium', 'houzez-child');
+        if( $code == 'BZ' ) $country = esc_html__('Belize', 'houzez-child');
+        if( $code == 'BJ' ) $country = esc_html__('Benin', 'houzez-child');
+        if( $code == 'BM' ) $country = esc_html__('Bermuda', 'houzez-child');
+        if( $code == 'BT' ) $country = esc_html__('Bhutan', 'houzez-child');
+        if( $code == 'BO' ) $country = esc_html__('Bolivia', 'houzez-child');
+        if( $code == 'BA' ) $country = esc_html__('Bosnia and Herzegovina', 'houzez-child');
+        if( $code == 'BW' ) $country = esc_html__('Botswana', 'houzez-child');
+        if( $code == 'BV' ) $country = esc_html__('Bouvet Island (Bouvetoya)', 'houzez-child');
+        if( $code == 'BR' ) $country = esc_html__('Brazil', 'houzez-child');
+        if( $code == 'IO' ) $country = esc_html__('British Indian Ocean Territory (Chagos Archipelago)', 'houzez-child');
+        if( $code == 'VG' ) $country = esc_html__('British Virgin Islands', 'houzez-child');
+        if( $code == 'BN' ) $country = esc_html__('Brunei Darussalam', 'houzez-child');
+        if( $code == 'BG' ) $country = esc_html__('Bulgaria', 'houzez-child');
+        if( $code == 'BF' ) $country = esc_html__('Burkina Faso', 'houzez-child');
+        if( $code == 'BI' ) $country = esc_html__('Burundi', 'houzez-child');
+        if( $code == 'KH' ) $country = esc_html__('Cambodia', 'houzez-child');
+        if( $code == 'CM' ) $country = esc_html__('Cameroon', 'houzez-child');
+        if( $code == 'CA' ) $country = esc_html__('Canada', 'houzez-child');
+        if( $code == 'CV' ) $country = esc_html__('Cape Verde', 'houzez-child');
+        if( $code == 'KY' ) $country = esc_html__('Cayman Islands', 'houzez-child');
+        if( $code == 'CF' ) $country = esc_html__('Central African Republic', 'houzez-child');
+        if( $code == 'TD' ) $country = esc_html__('Chad', 'houzez-child');
+        if( $code == 'CL' ) $country = esc_html__('Chile', 'houzez-child');
+        if( $code == 'CN' ) $country = esc_html__('China', 'houzez-child');
+        if( $code == 'CX' ) $country = esc_html__('Christmas Island', 'houzez-child');
+        if( $code == 'CC' ) $country = esc_html__('Cocos (Keeling) Islands', 'houzez-child');
+        if( $code == 'CO' ) $country = esc_html__('Colombia', 'houzez-child');
+        if( $code == 'KM' ) $country = esc_html__('Comoros the', 'houzez-child');
+        if( $code == 'CD' ) $country = esc_html__('Congo', 'houzez-child');
+        if( $code == 'CG' ) $country = esc_html__('Congo the', 'houzez-child');
+        if( $code == 'CK' ) $country = esc_html__('Cook Islands', 'houzez-child');
+        if( $code == 'CR' ) $country = esc_html__('Costa Rica', 'houzez-child');
+        if( $code == 'CI' ) $country = esc_html__("Cote d'Ivoire", 'houzez-child');
+        if( $code == 'HR' ) $country = esc_html__('Croatia', 'houzez-child');
+        if( $code == 'CU' ) $country = esc_html__('Cuba', 'houzez-child');
+        if( $code == 'CW' ) $country = esc_html__('Curaçao', 'houzez-child');
+        if( $code == 'CY' ) $country = esc_html__('Cyprus', 'houzez-child');
+        if( $code == 'CZ' ) $country = esc_html__('Czech Republic', 'houzez-child');
+        if( $code == 'DK' ) $country = esc_html__('Denmark', 'houzez-child');
+        if( $code == 'DJ' ) $country = esc_html__('Djibouti', 'houzez-child');
+        if( $code == 'DM' ) $country = esc_html__('Dominica', 'houzez-child');
+        if( $code == 'DO' ) $country = esc_html__('Dominican Republic', 'houzez-child');
+        if( $code == 'EC' ) $country = esc_html__('Ecuador', 'houzez-child');
+        if( $code == 'EG' ) $country = esc_html__('Egypt', 'houzez-child');
+        if( $code == 'SV' ) $country = esc_html__('El Salvador', 'houzez-child');
+        if( $code == 'GQ' ) $country = esc_html__('Equatorial Guinea', 'houzez-child');
+        if( $code == 'ER' ) $country = esc_html__('Eritrea', 'houzez-child');
+        if( $code == 'EE' ) $country = esc_html__('Estonia', 'houzez-child');
+        if( $code == 'ET' ) $country = esc_html__('Ethiopia', 'houzez-child');
+        if( $code == 'FO' ) $country = esc_html__('Faroe Islands', 'houzez-child');
+        if( $code == 'FK' ) $country = esc_html__('Falkland Islands (Malvinas)', 'houzez-child');
+        if( $code == 'FJ' ) $country = esc_html__('Fiji the Fiji Islands', 'houzez-child');
+        if( $code == 'FI' ) $country = esc_html__('Finland', 'houzez-child');
+        if( $code == 'FR' ) $country = esc_html__('France', 'houzez-child');
+        if( $code == 'GF' ) $country = esc_html__('French Guiana', 'houzez-child');
+        if( $code == 'PF' ) $country = esc_html__('French Polynesia', 'houzez-child');
+        if( $code == 'TF' ) $country = esc_html__('French Southern Territories', 'houzez-child');
+        if( $code == 'GA' ) $country = esc_html__('Gabon', 'houzez-child');
+        if( $code == 'GM' ) $country = esc_html__('Gambia the', 'houzez-child');
+        if( $code == 'GE' ) $country = esc_html__('Georgia', 'houzez-child');
+        if( $code == 'DE' ) $country = esc_html__('Germany', 'houzez-child');
+        if( $code == 'GH' ) $country = esc_html__('Ghana', 'houzez-child');
+        if( $code == 'GI' ) $country = esc_html__('Gibraltar', 'houzez-child');
+        if( $code == 'GR' ) $country = esc_html__('Greece', 'houzez-child');
+        if( $code == 'GL' ) $country = esc_html__('Greenland', 'houzez-child');
+        if( $code == 'GD' ) $country = esc_html__('Grenada', 'houzez-child');
+        if( $code == 'GP' ) $country = esc_html__('Guadeloupe', 'houzez-child');
+        if( $code == 'GU' ) $country = esc_html__('Guam', 'houzez-child');
+        if( $code == 'GT' ) $country = esc_html__('Guatemala', 'houzez-child');
+        if( $code == 'GG' ) $country = esc_html__('Guernsey', 'houzez-child');
+        if( $code == 'GN' ) $country = esc_html__('Guinea', 'houzez-child');
+        if( $code == 'GW' ) $country = esc_html__('Guinea-Bissau', 'houzez-child');
+        if( $code == 'GY' ) $country = esc_html__('Guyana', 'houzez-child');
+        if( $code == 'HT' ) $country = esc_html__('Haiti', 'houzez-child');
+        if( $code == 'HM' ) $country = esc_html__('Heard Island and McDonald Islands', 'houzez-child');
+        if( $code == 'VA' ) $country = esc_html__('Holy See (Vatican City State)', 'houzez-child');
+        if( $code == 'HN' ) $country = esc_html__('Honduras', 'houzez-child');
+        if( $code == 'HK' ) $country = esc_html__('Hong Kong', 'houzez-child');
+        if( $code == 'HU' ) $country = esc_html__('Hungary', 'houzez-child');
+        if( $code == 'IS' ) $country = esc_html__('Iceland', 'houzez-child');
+        if( $code == 'IN' ) $country = esc_html__('India', 'houzez-child');
+        if( $code == 'ID' ) $country = esc_html__('Indonesia', 'houzez-child');
+        if( $code == 'IR' ) $country = esc_html__('Iran', 'houzez-child');
+        if( $code == 'IQ' ) $country = esc_html__('Iraq', 'houzez-child');
+        if( $code == 'IE' ) $country = esc_html__('Ireland', 'houzez-child');
+        if( $code == 'IM' ) $country = esc_html__('Isle of Man', 'houzez-child');
+        if( $code == 'IL' ) $country = esc_html__('Israel', 'houzez-child');
+        if( $code == 'IT' ) $country = esc_html__('Italy', 'houzez-child');
+        if( $code == 'JM' ) $country = esc_html__('Jamaica', 'houzez-child');
+        if( $code == 'JP' ) $country = esc_html__('Japan', 'houzez-child');
+        if( $code == 'JE' ) $country = esc_html__('Jersey', 'houzez-child');
+        if( $code == 'JO' ) $country = esc_html__('Jordan', 'houzez-child');
+        if( $code == 'KZ' ) $country = esc_html__('Kazakhstan', 'houzez-child');
+        if( $code == 'KE' ) $country = esc_html__('Kenya', 'houzez-child');
+        if( $code == 'KI' ) $country = esc_html__('Kiribati', 'houzez-child');
+        if( $code == 'KP' ) $country = esc_html__('Korea', 'houzez-child');
+        if( $code == 'KR' ) $country = esc_html__('Korea', 'houzez-child');
+        if( $code == 'KW' ) $country = esc_html__('Kuwait', 'houzez-child');
+        if( $code == 'KG' ) $country = esc_html__('Kyrgyz Republic', 'houzez-child');
+        if( $code == 'LA' ) $country = esc_html__('Lao', 'houzez-child');
+        if( $code == 'LV' ) $country = esc_html__('Latvia', 'houzez-child');
+        if( $code == 'LB' ) $country = esc_html__('Lebanon', 'houzez-child');
+        if( $code == 'LS' ) $country = esc_html__('Lesotho', 'houzez-child');
+        if( $code == 'LR' ) $country = esc_html__('Liberia', 'houzez-child');
+        if( $code == 'LY' ) $country = esc_html__('Libyan Arab Jamahiriya', 'houzez-child');
+        if( $code == 'LI' ) $country = esc_html__('Liechtenstein', 'houzez-child');
+        if( $code == 'LT' ) $country = esc_html__('Lithuania', 'houzez-child');
+        if( $code == 'LU' ) $country = esc_html__('Luxembourg', 'houzez-child');
+        if( $code == 'MO' ) $country = esc_html__('Macao', 'houzez-child');
+        if( $code == 'MK' ) $country = esc_html__('Macedonia', 'houzez-child');
+        if( $code == 'MG' ) $country = esc_html__('Madagascar', 'houzez-child');
+        if( $code == 'MW' ) $country = esc_html__('Malawi', 'houzez-child');
+        if( $code == 'MY' ) $country = esc_html__('Malaysia', 'houzez-child');
+        if( $code == 'MV' ) $country = esc_html__('Maldives', 'houzez-child');
+        if( $code == 'ML' ) $country = esc_html__('Mali', 'houzez-child');
+        if( $code == 'MT' ) $country = esc_html__('Malta', 'houzez-child');
+        if( $code == 'MH' ) $country = esc_html__('Marshall Islands', 'houzez-child');
+        if( $code == 'MQ' ) $country = esc_html__('Martinique', 'houzez-child');
+        if( $code == 'MR' ) $country = esc_html__('Mauritania', 'houzez-child');
+        if( $code == 'MU' ) $country = esc_html__('Mauritius', 'houzez-child');
+        if( $code == 'YT' ) $country = esc_html__('Mayotte', 'houzez-child');
+        if( $code == 'MX' ) $country = esc_html__('Mexico', 'houzez-child');
+        if( $code == 'FM' ) $country = esc_html__('Micronesia', 'houzez-child');
+        if( $code == 'MD' ) $country = esc_html__('Moldova', 'houzez-child');
+        if( $code == 'MC' ) $country = esc_html__('Monaco', 'houzez-child');
+        if( $code == 'MN' ) $country = esc_html__('Mongolia', 'houzez-child');
+        if( $code == 'ME' ) $country = esc_html__('Montenegro', 'houzez-child');
+        if( $code == 'MS' ) $country = esc_html__('Montserrat', 'houzez-child');
+        if( $code == 'MA' ) $country = esc_html__('Morocco', 'houzez-child');
+        if( $code == 'MZ' ) $country = esc_html__('Mozambique', 'houzez-child');
+        if( $code == 'MM' ) $country = esc_html__('Myanmar', 'houzez-child');
+        if( $code == 'NA' ) $country = esc_html__('Namibia', 'houzez-child');
+        if( $code == 'NR' ) $country = esc_html__('Nauru', 'houzez-child');
+        if( $code == 'NP' ) $country = esc_html__('Nepal', 'houzez-child');
+        if( $code == 'AN' ) $country = esc_html__('Netherlands Antilles', 'houzez-child');
+        if( $code == 'NL' ) $country = esc_html__('Netherlands the', 'houzez-child');
+        if( $code == 'NC' ) $country = esc_html__('New Caledonia', 'houzez-child');
+        if( $code == 'NZ' ) $country = esc_html__('New Zealand', 'houzez-child');
+        if( $code == 'NI' ) $country = esc_html__('Nicaragua', 'houzez-child');
+        if( $code == 'NE' ) $country = esc_html__('Niger', 'houzez-child');
+        if( $code == 'NG' ) $country = esc_html__('Nigeria', 'houzez-child');
+        if( $code == 'NU' ) $country = esc_html__('Niue', 'houzez-child');
+        if( $code == 'NF' ) $country = esc_html__('Norfolk Island', 'houzez-child');
+        if( $code == 'MP' ) $country = esc_html__('Northern Mariana Islands', 'houzez-child');
+        if( $code == 'NO' ) $country = esc_html__('Norway', 'houzez-child');
+        if( $code == 'OM' ) $country = esc_html__('Oman', 'houzez-child');
+        if( $code == 'PK' ) $country = esc_html__('Pakistan', 'houzez-child');
+        if( $code == 'PW' ) $country = esc_html__('Palau', 'houzez-child');
+        if( $code == 'PS' ) $country = esc_html__('Palestinian Territory', 'houzez-child');
+        if( $code == 'PA' ) $country = esc_html__('Panama', 'houzez-child');
+        if( $code == 'PG' ) $country = esc_html__('Papua New Guinea', 'houzez-child');
+        if( $code == 'PY' ) $country = esc_html__('Paraguay', 'houzez-child');
+        if( $code == 'PE' ) $country = esc_html__('Peru', 'houzez-child');
+        if( $code == 'PH' ) $country = esc_html__('Philippines', 'houzez-child');
+        if( $code == 'PN' ) $country = esc_html__('Pitcairn Islands', 'houzez-child');
+        if( $code == 'PL' ) $country = esc_html__('Poland', 'houzez-child');
+        if( $code == 'PT' ) $country = esc_html__('Portugal, Portuguese Republic', 'houzez-child');
+        if( $code == 'PR' ) $country = esc_html__('Puerto Rico', 'houzez-child');
+        if( $code == 'QA' ) $country = esc_html__('Qatar', 'houzez-child');
+        if( $code == 'RE' ) $country = esc_html__('Reunion', 'houzez-child');
+        if( $code == 'RO' ) $country = esc_html__('Romania', 'houzez-child');
+        if( $code == 'RU' ) $country = esc_html__('Russian Federation', 'houzez-child');
+        if( $code == 'RW' ) $country = esc_html__('Rwanda', 'houzez-child');
+        if( $code == 'BL' ) $country = esc_html__('Saint Barthelemy', 'houzez-child');
+        if( $code == 'SH' ) $country = esc_html__('Saint Helena', 'houzez-child');
+        if( $code == 'KN' ) $country = esc_html__('Saint Kitts and Nevis', 'houzez-child');
+        if( $code == 'LC' ) $country = esc_html__('Saint Lucia', 'houzez-child');
+        if( $code == 'MF' ) $country = esc_html__('Saint Martin', 'houzez-child');
+        if( $code == 'PM' ) $country = esc_html__('Saint Pierre and Miquelon', 'houzez-child');
+        if( $code == 'VC' ) $country = esc_html__('Saint Vincent and the Grenadines', 'houzez-child');
+        if( $code == 'WS' ) $country = esc_html__('Samoa', 'houzez-child');
+        if( $code == 'SM' ) $country = esc_html__('San Marino', 'houzez-child');
+        if( $code == 'ST' ) $country = esc_html__('Sao Tome and Principe', 'houzez-child');
+        if( $code == 'SA' ) $country = esc_html__('Saudi Arabia', 'houzez-child');
+        if( $code == 'SN' ) $country = esc_html__('Senegal', 'houzez-child');
+        if( $code == 'RS' ) $country = esc_html__('Serbia', 'houzez-child');
+        if( $code == 'SC' ) $country = esc_html__('Seychelles', 'houzez-child');
+        if( $code == 'SL' ) $country = esc_html__('Sierra Leone', 'houzez-child');
+        if( $code == 'SG' ) $country = esc_html__('Singapore', 'houzez-child');
+        if( $code == 'SK' ) $country = esc_html__('Slovakia (Slovak Republic)', 'houzez-child');
+        if( $code == 'SI' ) $country = esc_html__('Slovenia', 'houzez-child');
+        if( $code == 'SB' ) $country = esc_html__('Solomon Islands', 'houzez-child');
+        if( $code == 'SO' ) $country = esc_html__('Somalia, Somali Republic', 'houzez-child');
+        if( $code == 'ZA' ) $country = esc_html__('South Africa', 'houzez-child');
+        if( $code == 'GS' ) $country = esc_html__('South Georgia and the South Sandwich Islands', 'houzez-child');
+        if( $code == 'ES' ) $country = esc_html__('Spain', 'houzez-child');
+        if( $code == 'LK' ) $country = esc_html__('Sri Lanka', 'houzez-child');
+        if( $code == 'SD' ) $country = esc_html__('Sudan', 'houzez-child');
+        if( $code == 'SR' ) $country = esc_html__('Suriname', 'houzez-child');
+        if( $code == 'SJ' ) $country = esc_html__('Svalbard & Jan Mayen Islands', 'houzez-child');
+        if( $code == 'SZ' ) $country = esc_html__('Swaziland', 'houzez-child');
+        if( $code == 'SE' ) $country = esc_html__('Sweden', 'houzez-child');
+        if( $code == 'CH' ) $country = esc_html__('Switzerland', 'houzez-child');
+        if( $code == 'SY' ) $country = esc_html__('Syrian Arab Republic', 'houzez-child');
+        if( $code == 'TW' ) $country = esc_html__('Taiwan', 'houzez-child');
+        if( $code == 'TJ' ) $country = esc_html__('Tajikistan', 'houzez-child');
+        if( $code == 'TZ' ) $country = esc_html__('Tanzania', 'houzez-child');
+        if( $code == 'TH' ) $country = esc_html__('Thailand', 'houzez-child');
+        if( $code == 'TL' ) $country = esc_html__('Timor-Leste', 'houzez-child');
+        if( $code == 'TG' ) $country = esc_html__('Togo', 'houzez-child');
+        if( $code == 'TK' ) $country = esc_html__('Tokelau', 'houzez-child');
+        if( $code == 'TO' ) $country = esc_html__('Tonga', 'houzez-child');
+        if( $code == 'TT' ) $country = esc_html__('Trinidad and Tobago', 'houzez-child');
+        if( $code == 'TN' ) $country = esc_html__('Tunisia', 'houzez-child');
+        if( $code == 'TR' ) $country = esc_html__('Turkey', 'houzez-child');
+        if( $code == 'TM' ) $country = esc_html__('Turkmenistan', 'houzez-child');
+        if( $code == 'TC' ) $country = esc_html__('Turks and Caicos Islands', 'houzez-child');
+        if( $code == 'TV' ) $country = esc_html__('Tuvalu', 'houzez-child');
+        if( $code == 'UG' ) $country = esc_html__('Uganda', 'houzez-child');
+        if( $code == 'UA' ) $country = esc_html__('Ukraine', 'houzez-child');
+        if( $code == 'UAE' ) $country = esc_html__('United Arab Emirates', 'houzez-child');
+        if( $code == 'GB' ) $country = esc_html__('United Kingdom', 'houzez-child');
+        if( $code == 'US' ) $country = esc_html__('United States', 'houzez-child');
+        if( $code == 'UM' ) $country = esc_html__('United States Minor Outlying Islands', 'houzez-child');
+        if( $code == 'VI' ) $country = esc_html__('United States Virgin Islands', 'houzez-child');
+        if( $code == 'UY' ) $country = esc_html__('Uruguay, Eastern Republic of', 'houzez-child');
+        if( $code == 'UZ' ) $country = esc_html__('Uzbekistan', 'houzez-child');
+        if( $code == 'VU' ) $country = esc_html__('Vanuatu', 'houzez-child');
+        if( $code == 'VE' ) $country = esc_html__('Venezuela', 'houzez-child');
+        if( $code == 'VN' ) $country = esc_html__('Vietnam', 'houzez-child');
+        if( $code == 'WF' ) $country = esc_html__('Wallis and Futuna', 'houzez-child');
+        if( $code == 'EH' ) $country = esc_html__('Western Sahara', 'houzez-child');
+        if( $code == 'YE' ) $country = esc_html__('Yemen', 'houzez-child');
+        if( $code == 'ZM' ) $country = esc_html__('Zambia', 'houzez-child');
+        if( $code == 'ZW' ) $country = esc_html__('Zimbabwe', 'houzez-child');
         if( $country == '') $country = $code;
         return $country;
     }
@@ -6825,255 +6825,255 @@ endif;
 if( !function_exists('houzez_countries_list') ) {
     function houzez_countries_list() {
         $Countries = array(
-            'US' => esc_html__('United States', 'houzez'),
-            'CA' => esc_html__('Canada', 'houzez'),
-            'AU' => esc_html__('Australia', 'houzez'),
-            'FR' => esc_html__('France', 'houzez'),
-            'DE' => esc_html__('Germany', 'houzez'),
-            'IS' => esc_html__('Iceland', 'houzez'),
-            'IE' => esc_html__('Ireland', 'houzez'),
-            'IT' => esc_html__('Italy', 'houzez'),
-            'ES' => esc_html__('Spain', 'houzez'),
-            'SE' => esc_html__('Sweden', 'houzez'),
-            'AT' => esc_html__('Austria', 'houzez'),
-            'BE' => esc_html__('Belgium', 'houzez'),
-            'FI' => esc_html__('Finland', 'houzez'),
-            'CZ' => esc_html__('Czech Republic', 'houzez'),
-            'DK' => esc_html__('Denmark', 'houzez'),
-            'NO' => esc_html__('Norway', 'houzez'),
-            'GB' => esc_html__('United Kingdom', 'houzez'),
-            'CH' => esc_html__('Switzerland', 'houzez'),
-            'NZ' => esc_html__('New Zealand', 'houzez'),
-            'RU' => esc_html__('Russian Federation', 'houzez'),
-            'PT' => esc_html__('Portugal', 'houzez'),
-            'NL' => esc_html__('Netherlands', 'houzez'),
-            'IM' => esc_html__('Isle of Man', 'houzez'),
-            'AF' => esc_html__('Afghanistan', 'houzez'),
-            'AX' => esc_html__('Aland Islands ', 'houzez'),
-            'AL' => esc_html__('Albania', 'houzez'),
-            'DZ' => esc_html__('Algeria', 'houzez'),
-            'AS' => esc_html__('American Samoa', 'houzez'),
-            'AD' => esc_html__('Andorra', 'houzez'),
-            'AO' => esc_html__('Angola', 'houzez'),
-            'AI' => esc_html__('Anguilla', 'houzez'),
-            'AQ' => esc_html__('Antarctica', 'houzez'),
-            'AG' => esc_html__('Antigua and Barbuda', 'houzez'),
-            'AR' => esc_html__('Argentina', 'houzez'),
-            'AM' => esc_html__('Armenia', 'houzez'),
-            'AW' => esc_html__('Aruba', 'houzez'),
-            'AZ' => esc_html__('Azerbaijan', 'houzez'),
-            'BS' => esc_html__('Bahamas', 'houzez'),
-            'BH' => esc_html__('Bahrain', 'houzez'),
-            'BD' => esc_html__('Bangladesh', 'houzez'),
-            'BB' => esc_html__('Barbados', 'houzez'),
-            'BY' => esc_html__('Belarus', 'houzez'),
-            'BZ' => esc_html__('Belize', 'houzez'),
-            'BJ' => esc_html__('Benin', 'houzez'),
-            'BM' => esc_html__('Bermuda', 'houzez'),
-            'BT' => esc_html__('Bhutan', 'houzez'),
-            'BO' => esc_html__('Bolivia, Plurinational State of', 'houzez'),
-            'BQ' => esc_html__('Bonaire, Sint Eustatius and Saba', 'houzez'),
-            'BA' => esc_html__('Bosnia and Herzegovina', 'houzez'),
-            'BW' => esc_html__('Botswana', 'houzez'),
-            'BV' => esc_html__('Bouvet Island', 'houzez'),
-            'BR' => esc_html__('Brazil', 'houzez'),
-            'IO' => esc_html__('British Indian Ocean Territory', 'houzez'),
-            'BN' => esc_html__('Brunei Darussalam', 'houzez'),
-            'BG' => esc_html__('Bulgaria', 'houzez'),
-            'BF' => esc_html__('Burkina Faso', 'houzez'),
-            'BI' => esc_html__('Burundi', 'houzez'),
-            'KH' => esc_html__('Cambodia', 'houzez'),
-            'CM' => esc_html__('Cameroon', 'houzez'),
-            'CV' => esc_html__('Cape Verde', 'houzez'),
-            'KY' => esc_html__('Cayman Islands', 'houzez'),
-            'CF' => esc_html__('Central African Republic', 'houzez'),
-            'TD' => esc_html__('Chad', 'houzez'),
-            'CL' => esc_html__('Chile', 'houzez'),
-            'CN' => esc_html__('China', 'houzez'),
-            'CX' => esc_html__('Christmas Island', 'houzez'),
-            'CC' => esc_html__('Cocos (Keeling) Islands', 'houzez'),
-            'CO' => esc_html__('Colombia', 'houzez'),
-            'KM' => esc_html__('Comoros', 'houzez'),
-            'CG' => esc_html__('Congo', 'houzez'),
-            'CD' => esc_html__('Congo, the Democratic Republic of the', 'houzez'),
-            'CK' => esc_html__('Cook Islands', 'houzez'),
-            'CR' => esc_html__('Costa Rica', 'houzez'),
-            'CI' => esc_html__("Cote d'Ivoire", 'houzez'),
-            'HR' => esc_html__('Croatia', 'houzez'),
-            'CU' => esc_html__('Cuba', 'houzez'),
-            'CW' => esc_html__('Curaçao', 'houzez'),
-            'CY' => esc_html__('Cyprus', 'houzez'),
-            'DJ' => esc_html__('Djibouti', 'houzez'),
-            'DM' => esc_html__('Dominica', 'houzez'),
-            'DO' => esc_html__('Dominican Republic', 'houzez'),
-            'EC' => esc_html__('Ecuador', 'houzez'),
-            'EG' => esc_html__('Egypt', 'houzez'),
-            'SV' => esc_html__('El Salvador', 'houzez'),
-            'GQ' => esc_html__('Equatorial Guinea', 'houzez'),
-            'ER' => esc_html__('Eritrea', 'houzez'),
-            'EE' => esc_html__('Estonia', 'houzez'),
-            'ET' => esc_html__('Ethiopia', 'houzez'),
-            'FK' => esc_html__('Falkland Islands (Malvinas)', 'houzez'),
-            'FO' => esc_html__('Faroe Islands', 'houzez'),
-            'FJ' => esc_html__('Fiji', 'houzez'),
-            'GF' => esc_html__('French Guiana', 'houzez'),
-            'PF' => esc_html__('French Polynesia', 'houzez'),
-            'TF' => esc_html__('French Southern Territories', 'houzez'),
-            'GA' => esc_html__('Gabon', 'houzez'),
-            'GM' => esc_html__('Gambia', 'houzez'),
-            'GE' => esc_html__('Georgia', 'houzez'),
-            'GH' => esc_html__('Ghana', 'houzez'),
-            'GI' => esc_html__('Gibraltar', 'houzez'),
-            'GR' => esc_html__('Greece', 'houzez'),
-            'GL' => esc_html__('Greenland', 'houzez'),
-            'GD' => esc_html__('Grenada', 'houzez'),
-            'GP' => esc_html__('Guadeloupe', 'houzez'),
-            'GU' => esc_html__('Guam', 'houzez'),
-            'GT' => esc_html__('Guatemala', 'houzez'),
-            'GG' => esc_html__('Guernsey', 'houzez'),
-            'GN' => esc_html__('Guinea', 'houzez'),
-            'GW' => esc_html__('Guinea-Bissau', 'houzez'),
-            'GY' => esc_html__('Guyana', 'houzez'),
-            'HT' => esc_html__('Haiti', 'houzez'),
-            'HM' => esc_html__('Heard Island and McDonald Islands', 'houzez'),
-            'VA' => esc_html__('Holy See (Vatican City State)', 'houzez'),
-            'HN' => esc_html__('Honduras', 'houzez'),
-            'HK' => esc_html__('Hong Kong', 'houzez'),
-            'HU' => esc_html__('Hungary', 'houzez'),
-            'IN' => esc_html__('India', 'houzez'),
-            'ID' => esc_html__('Indonesia', 'houzez'),
-            'IR' => esc_html__('Iran, Islamic Republic of', 'houzez'),
-            'IQ' => esc_html__('Iraq', 'houzez'),
-            'IL' => esc_html__('Israel', 'houzez'),
-            'JM' => esc_html__('Jamaica', 'houzez'),
-            'JP' => esc_html__('Japan', 'houzez'),
-            'JE' => esc_html__('Jersey', 'houzez'),
-            'JO' => esc_html__('Jordan', 'houzez'),
-            'KZ' => esc_html__('Kazakhstan', 'houzez'),
-            'KE' => esc_html__('Kenya', 'houzez'),
-            'KI' => esc_html__('Kiribati', 'houzez'),
-            'KP' => esc_html__('Korea, Democratic People\'s Republic of', 'houzez'),
-            'KR' => esc_html__('Korea, Republic of', 'houzez'),
-            'KV' => esc_html__('kosovo', 'houzez'),
-            'KW' => esc_html__('Kuwait', 'houzez'),
-            'KG' => esc_html__('Kyrgyzstan', 'houzez'),
-            'LA' => esc_html__('Lao People\'s Democratic Republic', 'houzez'),
-            'LV' => esc_html__('Latvia', 'houzez'),
-            'LB' => esc_html__('Lebanon', 'houzez'),
-            'LS' => esc_html__('Lesotho', 'houzez'),
-            'LR' => esc_html__('Liberia', 'houzez'),
-            'LY' => esc_html__('Libyan Arab Jamahiriya', 'houzez'),
-            'LI' => esc_html__('Liechtenstein', 'houzez'),
-            'LT' => esc_html__('Lithuania', 'houzez'),
-            'LU' => esc_html__('Luxembourg', 'houzez'),
-            'MO' => esc_html__('Macao', 'houzez'),
-            'MK' => esc_html__('Macedonia', 'houzez'),
-            'MG' => esc_html__('Madagascar', 'houzez'),
-            'MW' => esc_html__('Malawi', 'houzez'),
-            'MY' => esc_html__('Malaysia', 'houzez'),
-            'MV' => esc_html__('Maldives', 'houzez'),
-            'ML' => esc_html__('Mali', 'houzez'),
-            'MT' => esc_html__('Malta', 'houzez'),
-            'MH' => esc_html__('Marshall Islands', 'houzez'),
-            'MQ' => esc_html__('Martinique', 'houzez'),
-            'MR' => esc_html__('Mauritania', 'houzez'),
-            'MU' => esc_html__('Mauritius', 'houzez'),
-            'YT' => esc_html__('Mayotte', 'houzez'),
-            'MX' => esc_html__('Mexico', 'houzez'),
-            'FM' => esc_html__('Micronesia, Federated States of', 'houzez'),
-            'MD' => esc_html__('Moldova, Republic of', 'houzez'),
-            'MC' => esc_html__('Monaco', 'houzez'),
-            'MN' => esc_html__('Mongolia', 'houzez'),
-            'ME' => esc_html__('Montenegro', 'houzez'),
-            'MS' => esc_html__('Montserrat', 'houzez'),
-            'MA' => esc_html__('Morocco', 'houzez'),
-            'MZ' => esc_html__('Mozambique', 'houzez'),
-            'MM' => esc_html__('Myanmar', 'houzez'),
-            'NA' => esc_html__('Namibia', 'houzez'),
-            'NR' => esc_html__('Nauru', 'houzez'),
-            'NP' => esc_html__('Nepal', 'houzez'),
-            'NC' => esc_html__('New Caledonia', 'houzez'),
-            'NI' => esc_html__('Nicaragua', 'houzez'),
-            'NE' => esc_html__('Niger', 'houzez'),
-            'NG' => esc_html__('Nigeria', 'houzez'),
-            'NU' => esc_html__('Niue', 'houzez'),
-            'NF' => esc_html__('Norfolk Island', 'houzez'),
-            'MP' => esc_html__('Northern Mariana Islands', 'houzez'),
-            'OM' => esc_html__('Oman', 'houzez'),
-            'PK' => esc_html__('Pakistan', 'houzez'),
-            'PW' => esc_html__('Palau', 'houzez'),
-            'PS' => esc_html__('Palestinian Territory, Occupied', 'houzez'),
-            'PA' => esc_html__('Panama', 'houzez'),
-            'PG' => esc_html__('Papua New Guinea', 'houzez'),
-            'PY' => esc_html__('Paraguay', 'houzez'),
-            'PE' => esc_html__('Peru', 'houzez'),
-            'PH' => esc_html__('Philippines', 'houzez'),
-            'PN' => esc_html__('Pitcairn', 'houzez'),
-            'PL' => esc_html__('Poland', 'houzez'),
-            'PR' => esc_html__('Puerto Rico', 'houzez'),
-            'QA' => esc_html__('Qatar', 'houzez'),
-            'RE' => esc_html__('Reunion', 'houzez'),
-            'RO' => esc_html__('Romania', 'houzez'),
-            'RW' => esc_html__('Rwanda', 'houzez'),
-            'BL' => esc_html__('Saint Barthélemy', 'houzez'),
-            'SH' => esc_html__('Saint Helena', 'houzez'),
-            'KN' => esc_html__('Saint Kitts and Nevis', 'houzez'),
-            'LC' => esc_html__('Saint Lucia', 'houzez'),
-            'MF' => esc_html__('Saint Martin (French part)', 'houzez'),
-            'PM' => esc_html__('Saint Pierre and Miquelon', 'houzez'),
-            'VC' => esc_html__('Saint Vincent and the Grenadines', 'houzez'),
-            'WS' => esc_html__('Samoa', 'houzez'),
-            'SM' => esc_html__('San Marino', 'houzez'),
-            'ST' => esc_html__('Sao Tome and Principe', 'houzez'),
-            'SA' => esc_html__('Saudi Arabia', 'houzez'),
-            'SN' => esc_html__('Senegal', 'houzez'),
-            'RS' => esc_html__('Serbia', 'houzez'),
-            'SC' => esc_html__('Seychelles', 'houzez'),
-            'SL' => esc_html__('Sierra Leone', 'houzez'),
-            'SG' => esc_html__('Singapore', 'houzez'),
-            'SX' => esc_html__('Sint Maarten (Dutch part)', 'houzez'),
-            'SK' => esc_html__('Slovakia', 'houzez'),
-            'SI' => esc_html__('Slovenia', 'houzez'),
-            'SB' => esc_html__('Solomon Islands', 'houzez'),
-            'SO' => esc_html__('Somalia', 'houzez'),
-            'ZA' => esc_html__('South Africa', 'houzez'),
-            'GS' => esc_html__('South Georgia and the South Sandwich Islands', 'houzez'),
-            'LK' => esc_html__('Sri Lanka', 'houzez'),
-            'SD' => esc_html__('Sudan', 'houzez'),
-            'SR' => esc_html__('Suriname', 'houzez'),
-            'SJ' => esc_html__('Svalbard and Jan Mayen', 'houzez'),
-            'SZ' => esc_html__('Swaziland', 'houzez'),
-            'SY' => esc_html__('Syrian Arab Republic', 'houzez'),
-            'TW' => esc_html__('Taiwan, Province of China', 'houzez'),
-            'TJ' => esc_html__('Tajikistan', 'houzez'),
-            'TZ' => esc_html__('Tanzania, United Republic of', 'houzez'),
-            'TH' => esc_html__('Thailand', 'houzez'),
-            'TL' => esc_html__('Timor-Leste', 'houzez'),
-            'TG' => esc_html__('Togo', 'houzez'),
-            'TK' => esc_html__('Tokelau', 'houzez'),
-            'TO' => esc_html__('Tonga', 'houzez'),
-            'TT' => esc_html__('Trinidad and Tobago', 'houzez'),
-            'TN' => esc_html__('Tunisia', 'houzez'),
-            'TR' => esc_html__('Turkey', 'houzez'),
-            'TM' => esc_html__('Turkmenistan', 'houzez'),
-            'TC' => esc_html__('Turks and Caicos Islands', 'houzez'),
-            'TV' => esc_html__('Tuvalu', 'houzez'),
-            'UG' => esc_html__('Uganda', 'houzez'),
-            'UA' => esc_html__('Ukraine', 'houzez'),
-            'UAE' => esc_html__('United Arab Emirates', 'houzez'),
-            'UM' => esc_html__('United States Minor Outlying Islands', 'houzez'),
-            'UY' => esc_html__('Uruguay', 'houzez'),
-            'UZ' => esc_html__('Uzbekistan', 'houzez'),
-            'VU' => esc_html__('Vanuatu', 'houzez'),
-            'VE' => esc_html__('Venezuela, Bolivarian Republic of', 'houzez'),
-            'VN' => esc_html__('Viet Nam', 'houzez'),
-            'VG' => esc_html__('Virgin Islands, British', 'houzez'),
-            'VI' => esc_html__('Virgin Islands, U.S.', 'houzez'),
-            'WF' => esc_html__('Wallis and Futuna', 'houzez'),
-            'EH' => esc_html__('Western Sahara', 'houzez'),
-            'YE' => esc_html__('Yemen', 'houzez'),
-            'ZM' => esc_html__('Zambia', 'houzez'),
-            'ZW' => esc_html__('Zimbabwe', 'houzez')
+            'US' => esc_html__('United States', 'houzez-child'),
+            'CA' => esc_html__('Canada', 'houzez-child'),
+            'AU' => esc_html__('Australia', 'houzez-child'),
+            'FR' => esc_html__('France', 'houzez-child'),
+            'DE' => esc_html__('Germany', 'houzez-child'),
+            'IS' => esc_html__('Iceland', 'houzez-child'),
+            'IE' => esc_html__('Ireland', 'houzez-child'),
+            'IT' => esc_html__('Italy', 'houzez-child'),
+            'ES' => esc_html__('Spain', 'houzez-child'),
+            'SE' => esc_html__('Sweden', 'houzez-child'),
+            'AT' => esc_html__('Austria', 'houzez-child'),
+            'BE' => esc_html__('Belgium', 'houzez-child'),
+            'FI' => esc_html__('Finland', 'houzez-child'),
+            'CZ' => esc_html__('Czech Republic', 'houzez-child'),
+            'DK' => esc_html__('Denmark', 'houzez-child'),
+            'NO' => esc_html__('Norway', 'houzez-child'),
+            'GB' => esc_html__('United Kingdom', 'houzez-child'),
+            'CH' => esc_html__('Switzerland', 'houzez-child'),
+            'NZ' => esc_html__('New Zealand', 'houzez-child'),
+            'RU' => esc_html__('Russian Federation', 'houzez-child'),
+            'PT' => esc_html__('Portugal', 'houzez-child'),
+            'NL' => esc_html__('Netherlands', 'houzez-child'),
+            'IM' => esc_html__('Isle of Man', 'houzez-child'),
+            'AF' => esc_html__('Afghanistan', 'houzez-child'),
+            'AX' => esc_html__('Aland Islands ', 'houzez-child'),
+            'AL' => esc_html__('Albania', 'houzez-child'),
+            'DZ' => esc_html__('Algeria', 'houzez-child'),
+            'AS' => esc_html__('American Samoa', 'houzez-child'),
+            'AD' => esc_html__('Andorra', 'houzez-child'),
+            'AO' => esc_html__('Angola', 'houzez-child'),
+            'AI' => esc_html__('Anguilla', 'houzez-child'),
+            'AQ' => esc_html__('Antarctica', 'houzez-child'),
+            'AG' => esc_html__('Antigua and Barbuda', 'houzez-child'),
+            'AR' => esc_html__('Argentina', 'houzez-child'),
+            'AM' => esc_html__('Armenia', 'houzez-child'),
+            'AW' => esc_html__('Aruba', 'houzez-child'),
+            'AZ' => esc_html__('Azerbaijan', 'houzez-child'),
+            'BS' => esc_html__('Bahamas', 'houzez-child'),
+            'BH' => esc_html__('Bahrain', 'houzez-child'),
+            'BD' => esc_html__('Bangladesh', 'houzez-child'),
+            'BB' => esc_html__('Barbados', 'houzez-child'),
+            'BY' => esc_html__('Belarus', 'houzez-child'),
+            'BZ' => esc_html__('Belize', 'houzez-child'),
+            'BJ' => esc_html__('Benin', 'houzez-child'),
+            'BM' => esc_html__('Bermuda', 'houzez-child'),
+            'BT' => esc_html__('Bhutan', 'houzez-child'),
+            'BO' => esc_html__('Bolivia, Plurinational State of', 'houzez-child'),
+            'BQ' => esc_html__('Bonaire, Sint Eustatius and Saba', 'houzez-child'),
+            'BA' => esc_html__('Bosnia and Herzegovina', 'houzez-child'),
+            'BW' => esc_html__('Botswana', 'houzez-child'),
+            'BV' => esc_html__('Bouvet Island', 'houzez-child'),
+            'BR' => esc_html__('Brazil', 'houzez-child'),
+            'IO' => esc_html__('British Indian Ocean Territory', 'houzez-child'),
+            'BN' => esc_html__('Brunei Darussalam', 'houzez-child'),
+            'BG' => esc_html__('Bulgaria', 'houzez-child'),
+            'BF' => esc_html__('Burkina Faso', 'houzez-child'),
+            'BI' => esc_html__('Burundi', 'houzez-child'),
+            'KH' => esc_html__('Cambodia', 'houzez-child'),
+            'CM' => esc_html__('Cameroon', 'houzez-child'),
+            'CV' => esc_html__('Cape Verde', 'houzez-child'),
+            'KY' => esc_html__('Cayman Islands', 'houzez-child'),
+            'CF' => esc_html__('Central African Republic', 'houzez-child'),
+            'TD' => esc_html__('Chad', 'houzez-child'),
+            'CL' => esc_html__('Chile', 'houzez-child'),
+            'CN' => esc_html__('China', 'houzez-child'),
+            'CX' => esc_html__('Christmas Island', 'houzez-child'),
+            'CC' => esc_html__('Cocos (Keeling) Islands', 'houzez-child'),
+            'CO' => esc_html__('Colombia', 'houzez-child'),
+            'KM' => esc_html__('Comoros', 'houzez-child'),
+            'CG' => esc_html__('Congo', 'houzez-child'),
+            'CD' => esc_html__('Congo, the Democratic Republic of the', 'houzez-child'),
+            'CK' => esc_html__('Cook Islands', 'houzez-child'),
+            'CR' => esc_html__('Costa Rica', 'houzez-child'),
+            'CI' => esc_html__("Cote d'Ivoire", 'houzez-child'),
+            'HR' => esc_html__('Croatia', 'houzez-child'),
+            'CU' => esc_html__('Cuba', 'houzez-child'),
+            'CW' => esc_html__('Curaçao', 'houzez-child'),
+            'CY' => esc_html__('Cyprus', 'houzez-child'),
+            'DJ' => esc_html__('Djibouti', 'houzez-child'),
+            'DM' => esc_html__('Dominica', 'houzez-child'),
+            'DO' => esc_html__('Dominican Republic', 'houzez-child'),
+            'EC' => esc_html__('Ecuador', 'houzez-child'),
+            'EG' => esc_html__('Egypt', 'houzez-child'),
+            'SV' => esc_html__('El Salvador', 'houzez-child'),
+            'GQ' => esc_html__('Equatorial Guinea', 'houzez-child'),
+            'ER' => esc_html__('Eritrea', 'houzez-child'),
+            'EE' => esc_html__('Estonia', 'houzez-child'),
+            'ET' => esc_html__('Ethiopia', 'houzez-child'),
+            'FK' => esc_html__('Falkland Islands (Malvinas)', 'houzez-child'),
+            'FO' => esc_html__('Faroe Islands', 'houzez-child'),
+            'FJ' => esc_html__('Fiji', 'houzez-child'),
+            'GF' => esc_html__('French Guiana', 'houzez-child'),
+            'PF' => esc_html__('French Polynesia', 'houzez-child'),
+            'TF' => esc_html__('French Southern Territories', 'houzez-child'),
+            'GA' => esc_html__('Gabon', 'houzez-child'),
+            'GM' => esc_html__('Gambia', 'houzez-child'),
+            'GE' => esc_html__('Georgia', 'houzez-child'),
+            'GH' => esc_html__('Ghana', 'houzez-child'),
+            'GI' => esc_html__('Gibraltar', 'houzez-child'),
+            'GR' => esc_html__('Greece', 'houzez-child'),
+            'GL' => esc_html__('Greenland', 'houzez-child'),
+            'GD' => esc_html__('Grenada', 'houzez-child'),
+            'GP' => esc_html__('Guadeloupe', 'houzez-child'),
+            'GU' => esc_html__('Guam', 'houzez-child'),
+            'GT' => esc_html__('Guatemala', 'houzez-child'),
+            'GG' => esc_html__('Guernsey', 'houzez-child'),
+            'GN' => esc_html__('Guinea', 'houzez-child'),
+            'GW' => esc_html__('Guinea-Bissau', 'houzez-child'),
+            'GY' => esc_html__('Guyana', 'houzez-child'),
+            'HT' => esc_html__('Haiti', 'houzez-child'),
+            'HM' => esc_html__('Heard Island and McDonald Islands', 'houzez-child'),
+            'VA' => esc_html__('Holy See (Vatican City State)', 'houzez-child'),
+            'HN' => esc_html__('Honduras', 'houzez-child'),
+            'HK' => esc_html__('Hong Kong', 'houzez-child'),
+            'HU' => esc_html__('Hungary', 'houzez-child'),
+            'IN' => esc_html__('India', 'houzez-child'),
+            'ID' => esc_html__('Indonesia', 'houzez-child'),
+            'IR' => esc_html__('Iran, Islamic Republic of', 'houzez-child'),
+            'IQ' => esc_html__('Iraq', 'houzez-child'),
+            'IL' => esc_html__('Israel', 'houzez-child'),
+            'JM' => esc_html__('Jamaica', 'houzez-child'),
+            'JP' => esc_html__('Japan', 'houzez-child'),
+            'JE' => esc_html__('Jersey', 'houzez-child'),
+            'JO' => esc_html__('Jordan', 'houzez-child'),
+            'KZ' => esc_html__('Kazakhstan', 'houzez-child'),
+            'KE' => esc_html__('Kenya', 'houzez-child'),
+            'KI' => esc_html__('Kiribati', 'houzez-child'),
+            'KP' => esc_html__('Korea, Democratic People\'s Republic of', 'houzez-child'),
+            'KR' => esc_html__('Korea, Republic of', 'houzez-child'),
+            'KV' => esc_html__('kosovo', 'houzez-child'),
+            'KW' => esc_html__('Kuwait', 'houzez-child'),
+            'KG' => esc_html__('Kyrgyzstan', 'houzez-child'),
+            'LA' => esc_html__('Lao People\'s Democratic Republic', 'houzez-child'),
+            'LV' => esc_html__('Latvia', 'houzez-child'),
+            'LB' => esc_html__('Lebanon', 'houzez-child'),
+            'LS' => esc_html__('Lesotho', 'houzez-child'),
+            'LR' => esc_html__('Liberia', 'houzez-child'),
+            'LY' => esc_html__('Libyan Arab Jamahiriya', 'houzez-child'),
+            'LI' => esc_html__('Liechtenstein', 'houzez-child'),
+            'LT' => esc_html__('Lithuania', 'houzez-child'),
+            'LU' => esc_html__('Luxembourg', 'houzez-child'),
+            'MO' => esc_html__('Macao', 'houzez-child'),
+            'MK' => esc_html__('Macedonia', 'houzez-child'),
+            'MG' => esc_html__('Madagascar', 'houzez-child'),
+            'MW' => esc_html__('Malawi', 'houzez-child'),
+            'MY' => esc_html__('Malaysia', 'houzez-child'),
+            'MV' => esc_html__('Maldives', 'houzez-child'),
+            'ML' => esc_html__('Mali', 'houzez-child'),
+            'MT' => esc_html__('Malta', 'houzez-child'),
+            'MH' => esc_html__('Marshall Islands', 'houzez-child'),
+            'MQ' => esc_html__('Martinique', 'houzez-child'),
+            'MR' => esc_html__('Mauritania', 'houzez-child'),
+            'MU' => esc_html__('Mauritius', 'houzez-child'),
+            'YT' => esc_html__('Mayotte', 'houzez-child'),
+            'MX' => esc_html__('Mexico', 'houzez-child'),
+            'FM' => esc_html__('Micronesia, Federated States of', 'houzez-child'),
+            'MD' => esc_html__('Moldova, Republic of', 'houzez-child'),
+            'MC' => esc_html__('Monaco', 'houzez-child'),
+            'MN' => esc_html__('Mongolia', 'houzez-child'),
+            'ME' => esc_html__('Montenegro', 'houzez-child'),
+            'MS' => esc_html__('Montserrat', 'houzez-child'),
+            'MA' => esc_html__('Morocco', 'houzez-child'),
+            'MZ' => esc_html__('Mozambique', 'houzez-child'),
+            'MM' => esc_html__('Myanmar', 'houzez-child'),
+            'NA' => esc_html__('Namibia', 'houzez-child'),
+            'NR' => esc_html__('Nauru', 'houzez-child'),
+            'NP' => esc_html__('Nepal', 'houzez-child'),
+            'NC' => esc_html__('New Caledonia', 'houzez-child'),
+            'NI' => esc_html__('Nicaragua', 'houzez-child'),
+            'NE' => esc_html__('Niger', 'houzez-child'),
+            'NG' => esc_html__('Nigeria', 'houzez-child'),
+            'NU' => esc_html__('Niue', 'houzez-child'),
+            'NF' => esc_html__('Norfolk Island', 'houzez-child'),
+            'MP' => esc_html__('Northern Mariana Islands', 'houzez-child'),
+            'OM' => esc_html__('Oman', 'houzez-child'),
+            'PK' => esc_html__('Pakistan', 'houzez-child'),
+            'PW' => esc_html__('Palau', 'houzez-child'),
+            'PS' => esc_html__('Palestinian Territory, Occupied', 'houzez-child'),
+            'PA' => esc_html__('Panama', 'houzez-child'),
+            'PG' => esc_html__('Papua New Guinea', 'houzez-child'),
+            'PY' => esc_html__('Paraguay', 'houzez-child'),
+            'PE' => esc_html__('Peru', 'houzez-child'),
+            'PH' => esc_html__('Philippines', 'houzez-child'),
+            'PN' => esc_html__('Pitcairn', 'houzez-child'),
+            'PL' => esc_html__('Poland', 'houzez-child'),
+            'PR' => esc_html__('Puerto Rico', 'houzez-child'),
+            'QA' => esc_html__('Qatar', 'houzez-child'),
+            'RE' => esc_html__('Reunion', 'houzez-child'),
+            'RO' => esc_html__('Romania', 'houzez-child'),
+            'RW' => esc_html__('Rwanda', 'houzez-child'),
+            'BL' => esc_html__('Saint Barthélemy', 'houzez-child'),
+            'SH' => esc_html__('Saint Helena', 'houzez-child'),
+            'KN' => esc_html__('Saint Kitts and Nevis', 'houzez-child'),
+            'LC' => esc_html__('Saint Lucia', 'houzez-child'),
+            'MF' => esc_html__('Saint Martin (French part)', 'houzez-child'),
+            'PM' => esc_html__('Saint Pierre and Miquelon', 'houzez-child'),
+            'VC' => esc_html__('Saint Vincent and the Grenadines', 'houzez-child'),
+            'WS' => esc_html__('Samoa', 'houzez-child'),
+            'SM' => esc_html__('San Marino', 'houzez-child'),
+            'ST' => esc_html__('Sao Tome and Principe', 'houzez-child'),
+            'SA' => esc_html__('Saudi Arabia', 'houzez-child'),
+            'SN' => esc_html__('Senegal', 'houzez-child'),
+            'RS' => esc_html__('Serbia', 'houzez-child'),
+            'SC' => esc_html__('Seychelles', 'houzez-child'),
+            'SL' => esc_html__('Sierra Leone', 'houzez-child'),
+            'SG' => esc_html__('Singapore', 'houzez-child'),
+            'SX' => esc_html__('Sint Maarten (Dutch part)', 'houzez-child'),
+            'SK' => esc_html__('Slovakia', 'houzez-child'),
+            'SI' => esc_html__('Slovenia', 'houzez-child'),
+            'SB' => esc_html__('Solomon Islands', 'houzez-child'),
+            'SO' => esc_html__('Somalia', 'houzez-child'),
+            'ZA' => esc_html__('South Africa', 'houzez-child'),
+            'GS' => esc_html__('South Georgia and the South Sandwich Islands', 'houzez-child'),
+            'LK' => esc_html__('Sri Lanka', 'houzez-child'),
+            'SD' => esc_html__('Sudan', 'houzez-child'),
+            'SR' => esc_html__('Suriname', 'houzez-child'),
+            'SJ' => esc_html__('Svalbard and Jan Mayen', 'houzez-child'),
+            'SZ' => esc_html__('Swaziland', 'houzez-child'),
+            'SY' => esc_html__('Syrian Arab Republic', 'houzez-child'),
+            'TW' => esc_html__('Taiwan, Province of China', 'houzez-child'),
+            'TJ' => esc_html__('Tajikistan', 'houzez-child'),
+            'TZ' => esc_html__('Tanzania, United Republic of', 'houzez-child'),
+            'TH' => esc_html__('Thailand', 'houzez-child'),
+            'TL' => esc_html__('Timor-Leste', 'houzez-child'),
+            'TG' => esc_html__('Togo', 'houzez-child'),
+            'TK' => esc_html__('Tokelau', 'houzez-child'),
+            'TO' => esc_html__('Tonga', 'houzez-child'),
+            'TT' => esc_html__('Trinidad and Tobago', 'houzez-child'),
+            'TN' => esc_html__('Tunisia', 'houzez-child'),
+            'TR' => esc_html__('Turkey', 'houzez-child'),
+            'TM' => esc_html__('Turkmenistan', 'houzez-child'),
+            'TC' => esc_html__('Turks and Caicos Islands', 'houzez-child'),
+            'TV' => esc_html__('Tuvalu', 'houzez-child'),
+            'UG' => esc_html__('Uganda', 'houzez-child'),
+            'UA' => esc_html__('Ukraine', 'houzez-child'),
+            'UAE' => esc_html__('United Arab Emirates', 'houzez-child'),
+            'UM' => esc_html__('United States Minor Outlying Islands', 'houzez-child'),
+            'UY' => esc_html__('Uruguay', 'houzez-child'),
+            'UZ' => esc_html__('Uzbekistan', 'houzez-child'),
+            'VU' => esc_html__('Vanuatu', 'houzez-child'),
+            'VE' => esc_html__('Venezuela, Bolivarian Republic of', 'houzez-child'),
+            'VN' => esc_html__('Viet Nam', 'houzez-child'),
+            'VG' => esc_html__('Virgin Islands, British', 'houzez-child'),
+            'VI' => esc_html__('Virgin Islands, U.S.', 'houzez-child'),
+            'WF' => esc_html__('Wallis and Futuna', 'houzez-child'),
+            'EH' => esc_html__('Western Sahara', 'houzez-child'),
+            'YE' => esc_html__('Yemen', 'houzez-child'),
+            'ZM' => esc_html__('Zambia', 'houzez-child'),
+            'ZW' => esc_html__('Zimbabwe', 'houzez-child')
         );
         return $Countries;
     }
@@ -7093,13 +7093,13 @@ if ( ! function_exists( 'houzez_breadcrumbs' ) ) {
             )
         );
 
-        $text['home']     = esc_html__('Home', 'houzez'); // text for the 'Home' link
-        $text['category'] = esc_html__('%s', 'houzez'); // text for a category page
-        $text['tax']      = esc_html__('%s', 'houzez'); // text for a taxonomy page
-        $text['search']   = esc_html__('Search Results for "%s" Query', 'houzez'); // text for a search results page
-        $text['tag']      = esc_html__('%s', 'houzez'); // text for a tag page
-        $text['author']   = esc_html__('%s', 'houzez'); // text for an author page
-        $text['404']      = esc_html__('Error 404', 'houzez'); // text for the 404 page
+        $text['home']     = esc_html__('Home', 'houzez-child'); // text for the 'Home' link
+        $text['category'] = esc_html__('%s', 'houzez-child'); // text for a category page
+        $text['tax']      = esc_html__('%s', 'houzez-child'); // text for a taxonomy page
+        $text['search']   = esc_html__('Search Results for "%s" Query', 'houzez-child'); // text for a search results page
+        $text['tag']      = esc_html__('%s', 'houzez-child'); // text for a tag page
+        $text['author']   = esc_html__('%s', 'houzez-child'); // text for an author page
+        $text['404']      = esc_html__('Error 404', 'houzez-child'); // text for the 404 page
 
         $defaults = array(
             'show_current' => 1, // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -7400,7 +7400,7 @@ if ( ! function_exists( 'houzez_breadcrumbs' ) ) {
             if (get_query_var('paged')) {
 
                 if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
-                    echo ' (' . esc_html__('Page', 'houzez') . ' ' . get_query_var('paged') . ')';
+                    echo ' (' . esc_html__('Page', 'houzez-child') . ' ' . get_query_var('paged') . ')';
                 }
             }
 
@@ -7575,7 +7575,7 @@ if( !function_exists('houzez_verify_purchase_key') ) {
         $error = new WP_Error();
 
         if ( empty( $code_to_verify ) ) {
-            $error->add( 'error', esc_html__( 'Please enter an item purchase code.', 'houzez' ) );
+            $error->add( 'error', esc_html__( 'Please enter an item purchase code.', 'houzez-child' ) );
 
             return $error;
         }
@@ -7599,14 +7599,14 @@ if( !function_exists('houzez_verify_purchase_key') ) {
                 update_option( 'houzez_purchase_code', sanitize_text_field( $code_to_verify ) );
                 return true;
             } else {
-                $error->add( 'error', esc_html__( 'Invalid purchase code, please provide valid purchase code!', 'houzez' ) );
+                $error->add( 'error', esc_html__( 'Invalid purchase code, please provide valid purchase code!', 'houzez-child' ) );
                 return $error;
             }
 
 
         } else {
 
-            $error->add( 'error', esc_html__( 'There is problem with API connection, try again.', 'houzez' ) );
+            $error->add( 'error', esc_html__( 'There is problem with API connection, try again.', 'houzez-child' ) );
             return $error;
         }
 

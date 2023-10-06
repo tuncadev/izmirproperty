@@ -28,7 +28,7 @@ $allowed_html_array = array(
             <div id="property_login_required" class="login-required-block detail-block target-block">
                 <div class="alert alert-info login-link">
                     <?php
-                    echo esc_html__('This listing expired', 'houzez'); 
+                    echo esc_html__('This listing expired', 'houzez-child'); 
                     ?>
                 </div>
             </div>

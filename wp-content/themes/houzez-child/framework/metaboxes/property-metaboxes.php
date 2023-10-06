@@ -39,7 +39,7 @@ if( !function_exists('houzez_register_property_metaboxes') ) {
 
         $meta_boxes[] = array(
             'id'         => 'houzez-property-meta-box',
-            'title'      => esc_html__('Property', 'houzez'),
+            'title'      => esc_html__('Property', 'houzez-child'),
             'post_types' => array( 'property' ),
             'tabs'       => apply_filters( 'houzez_property_metabox_tabs', $meta_boxes_tabs ),
             'tab_style'  => 'left',

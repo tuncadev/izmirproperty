@@ -11,7 +11,7 @@ if ( !function_exists( 'houzez_start_thread' ) ) {
 		if ( !wp_verify_nonce( $nonce, 'property_agent_contact_nonce') ) {
 			echo json_encode( array(
 				'success' => false,
-				'msg' => esc_html__('Unverified Nonce!', 'houzez')
+				'msg' => esc_html__('Unverified Nonce!', 'houzez-child')
 			));
 			wp_die();
 		}
@@ -27,7 +27,7 @@ if ( !function_exists( 'houzez_start_thread' ) ) {
 				echo json_encode(
 					array(
 						'success' => true,
-						'msg' => esc_html__("Message sent successfully!", 'houzez')
+						'msg' => esc_html__("Message sent successfully!", 'houzez-child')
 					)
 				);
 
@@ -40,7 +40,7 @@ if ( !function_exists( 'houzez_start_thread' ) ) {
 		echo json_encode(
 			array(
 				'success' => false,
-				'msg' => esc_html__("Some errors occurred! Please try again.", 'houzez')
+				'msg' => esc_html__("Some errors occurred! Please try again.", 'houzez-child')
 			)
 		);
 
@@ -63,7 +63,7 @@ if ( !function_exists( 'houzez_thread_message' ) ) {
 			echo json_encode( array(
 				'success' => false,
 				'url' => houzez_get_template_link_2('template/user_dashboard_messages.php') . '?' . http_build_query( array( 'thread_id' => $thread_id, 'success' => false ) ),
-				'msg' => esc_html__('Unverified Nonce!', 'houzez')
+				'msg' => esc_html__('Unverified Nonce!', 'houzez-child')
 			));
 			wp_die();
 		}
@@ -85,7 +85,7 @@ if ( !function_exists( 'houzez_thread_message' ) ) {
 					array(
 						'success' => true,
 						'url' => houzez_get_template_link_2('template/user_dashboard_messages.php') . '?' . http_build_query( array( 'thread_id' => $thread_id, 'success' => true ) ),
-						'msg' => esc_html__("Thread success fully created!", 'houzez')
+						'msg' => esc_html__("Thread success fully created!", 'houzez-child')
 					)
 				);
 
@@ -99,7 +99,7 @@ if ( !function_exists( 'houzez_thread_message' ) ) {
 			array(
 				'success' => false,
 				'url' => houzez_get_template_link_2('template/user_dashboard_messages.php') . '?' . http_build_query( array( 'thread_id' => $thread_id, 'success' => false ) ),
-				'msg' => esc_html__("Some errors occurred! Please try again.", 'houzez')
+				'msg' => esc_html__("Some errors occurred! Please try again.", 'houzez-child')
 			)
 		);
 
@@ -531,13 +531,13 @@ if ( !function_exists( 'houzez_message_email_notification_filter' ) ) {
 			<tbody>
 			<tr style="font-family:'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif;font-size:100%;line-height:1.6em;margin:0;padding:0">
 				<td style="font-family:'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif;font-size:100%;line-height:1.6em;margin:0;padding:0">
-					<p style="margin:0 0 15px;padding:0"><?php esc_html_e( 'You have a new message on', 'houzez' ); ?> <b><?php echo esc_attr( get_option('blogname') );?></b> <?php echo esc_html_e('from', 'houzez');?> <i><?php echo esc_attr($sender_name); ?></i></p>
+					<p style="margin:0 0 15px;padding:0"><?php esc_html_e( 'You have a new message on', 'houzez-child' ); ?> <b><?php echo esc_attr( get_option('blogname') );?></b> <?php echo esc_html_e('from', 'houzez-child');?> <i><?php echo esc_attr($sender_name); ?></i></p>
 					<div style="padding-left:20px;margin:0;border-left:2px solid #ccc;color:#888">
 						<p><?php echo $message; ?></p>
 					</div>
 					<p style="padding:20px 0 0 0;margin:0">
 						<a style="color:#15bcaf" href="<?php echo esc_url( $thread_link ); ?>">
-							<?php echo esc_html__('Click here to see message on website dashboard.', 'houzez');?>
+							<?php echo esc_html__('Click here to see message on website dashboard.', 'houzez-child');?>
 						</a>
 					</p>
 				</td>
@@ -550,7 +550,7 @@ if ( !function_exists( 'houzez_message_email_notification_filter' ) ) {
 
 		ob_clean();
 
-		$subject = esc_html__( 'You have new message!', 'houzez' );
+		$subject = esc_html__( 'You have new message!', 'houzez-child' );
 
 		houzez_send_messages_emails( $email, $subject, $data );
 
@@ -594,7 +594,7 @@ if ( !function_exists( 'houzez_thread_email_notification_filter' ) ) {
 							<?php } ?>
 							<tr style="font-family:'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif;font-size:100%;line-height:1.6em;margin:0;padding:0">
 								<td style="font-family:'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif;font-size:100%;line-height:1.6em;margin:0;padding:0">
-									<p style="margin:0 0 15px;padding:0"><?php esc_html_e( 'You have received a message from:', 'houzez' ); ?> <i><?php echo esc_attr($sender_name); ?></i></p>
+									<p style="margin:0 0 15px;padding:0"><?php esc_html_e( 'You have received a message from:', 'houzez-child' ); ?> <i><?php echo esc_attr($sender_name); ?></i></p>
 									<div style="padding-left:20px;margin:0;border-left:2px solid #ccc;color:#888">
 										<p><?php echo $message; ?></p>
 										<p><br></p>
@@ -615,7 +615,7 @@ if ( !function_exists( 'houzez_thread_email_notification_filter' ) ) {
 
 		ob_clean();
 
-		$subject = sprintf( esc_html__('New message sent by %s using agent contact form at %s', 'houzez'), $sender_name, get_bloginfo('name') );
+		$subject = sprintf( esc_html__('New message sent by %s using agent contact form at %s', 'houzez-child'), $sender_name, get_bloginfo('name') );
 
 		houzez_send_messages_emails( $email, $subject, $data );
 

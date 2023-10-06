@@ -6,17 +6,17 @@ if( !function_exists('houzez_partner_metaboxes') ) {
         
         $meta_boxes[] = array(
             'id'        => 'fave_partners',
-            'title'     => esc_html__('Partner Details', 'houzez'),
+            'title'     => esc_html__('Partner Details', 'houzez-child'),
             'post_types'     => array( 'houzez_partner' ),
             'context' => 'normal',
 
             'fields'    => array(
                 array(
-                    'name'      => esc_html__('Partner website address', 'houzez'),
-                    'placeholder'      => esc_html__('Enter the website address','houzez'),
+                    'name'      => esc_html__('Partner website address', 'houzez-child'),
+                    'placeholder'      => esc_html__('Enter the website address','houzez-child'),
                     'id'        => $houzez_prefix . 'partner_website',
                     'type'      => 'url',
-                    'desc'      => esc_html__('Example: https://houzez.co/','houzez'),
+                    'desc'      => esc_html__('Example: https://houzez.co/','houzez-child'),
                 )
             )
         );

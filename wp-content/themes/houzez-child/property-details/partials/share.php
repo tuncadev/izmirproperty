@@ -7,22 +7,22 @@ $query_string = urlencode(get_the_title()) . '&nbsp;' . urlencode(get_permalink(
 ?>
 
 <a class="dropdown-item" target="_blank" href="https://api.whatsapp.com/send?text=<?php echo ($query_string); ?>">
-	<i class="houzez-icon icon-messaging-whatsapp mr-1"></i> <?php esc_html_e('WhatsApp', 'houzez'); ?>
+	<i class="houzez-icon icon-messaging-whatsapp mr-1"></i> <?php esc_html_e('WhatsApp', 'houzez-child'); ?>
 </a>
 
 <?php
 echo '<a class="dropdown-item" href="https://www.facebook.com/sharer.php?u=' . urlencode(get_permalink()) . '&amp;t='.urlencode(get_the_title()).'" onclick="window.open(this.href, \'mywin\',\'left=50,top=50,width=600,height=350,toolbar=0\'); return false;">
-	<i class="houzez-icon icon-social-media-facebook mr-1"></i> '.esc_html__('Facebook', 'houzez').'
+	<i class="houzez-icon icon-social-media-facebook mr-1"></i> '.esc_html__('Facebook', 'houzez-child').'
 </a>
 <a class="dropdown-item" href="https://twitter.com/intent/tweet?text=' . urlencode(get_the_title()) . '&url=' .  urlencode(get_permalink()) . '&via=' . urlencode($twitter_user ? $twitter_user : get_bloginfo('name')) .'" onclick="if(!document.getElementById(\'td_social_networks_buttons\')){window.open(this.href, \'mywin\',\'left=50,top=50,width=600,height=350,toolbar=0\'); return false;}">
-	<i class="houzez-icon icon-social-media-twitter mr-1"></i> '.esc_html__('Twitter', 'houzez').'
+	<i class="houzez-icon icon-social-media-twitter mr-1"></i> '.esc_html__('Twitter', 'houzez-child').'
 </a>
 <a class="dropdown-item" href="https://pinterest.com/pin/create/button/?url='. urlencode( get_permalink() ) .'&amp;media=' . (!empty($image[0]) ? $image[0] : '') . '" onclick="window.open(this.href, \'mywin\',\'left=50,top=50,width=600,height=350,toolbar=0\'); return false;">
-	<i class="houzez-icon icon-social-pinterest mr-1"></i> '.esc_html__('Pinterest', 'houzez').'
+	<i class="houzez-icon icon-social-pinterest mr-1"></i> '.esc_html__('Pinterest', 'houzez-child').'
 </a>
 <a class="dropdown-item" href="https://www.linkedin.com/shareArticle?mini=true&url='. urlencode( get_permalink() ) .'&title=' . urlencode( get_the_title() ) . '&source='.urlencode( home_url( '/' ) ).'" onclick="window.open(this.href, \'mywin\',\'left=50,top=50,width=600,height=350,toolbar=0\'); return false;">
-	<i class="houzez-icon icon-professional-network-linkedin mr-1"></i> '.esc_html__('Linkedin', 'houzez').'
+	<i class="houzez-icon icon-professional-network-linkedin mr-1"></i> '.esc_html__('Linkedin', 'houzez-child').'
 </a>
 <a class="dropdown-item" href="mailto:someone@example.com?Subject='.get_the_title().'&body='. urlencode( get_permalink() ) .'">
-	<i class="houzez-icon icon-envelope mr-1"></i>'.esc_html__('Email', 'houzez').'
+	<i class="houzez-icon icon-envelope mr-1"></i>'.esc_html__('Email', 'houzez-child').'
 </a>';

@@ -42,13 +42,13 @@ if( $key != false || $key != '' ) {
 							<ul class="list-inline">
 								<?php if( houzez_option('prop_detail_favorite') != 0 ) { ?>
 								<li class="list-inline-item btn-favorite">
-									<a class="add-favorite-js" data-listid="<?php echo intval($post->ID)?>" href="#"><i class="houzez-icon icon-love-it mr-2 <?php echo esc_attr($icon); ?>"></i> <span class="display-none"><?php esc_html_e('Favorite', 'houzez'); ?></span></a>
+									<a class="add-favorite-js" data-listid="<?php echo intval($post->ID)?>" href="#"><i class="houzez-icon icon-love-it mr-2 <?php echo esc_attr($icon); ?>"></i> <span class="display-none"><?php esc_html_e('Favorite', 'houzez-child'); ?></span></a>
 								</li>
 								<?php } ?>
 
 								<?php if( houzez_option('prop_detail_share') != 0 ) { ?>
 								<li class="list-inline-item btn-share">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="houzez-icon icon-share mr-2"></i> <span><?php esc_html_e('Share', 'houzez'); ?></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="houzez-icon icon-share mr-2"></i> <span><?php esc_html_e('Share', 'houzez-child'); ?></span></a>
 									<div class="dropdown-menu dropdown-menu-right item-tool-dropdown-menu">
 										<?php get_template_part('property-details/partials/share'); ?>
 									</div>

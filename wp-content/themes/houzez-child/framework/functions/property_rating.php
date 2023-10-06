@@ -15,7 +15,7 @@ if ( !function_exists( 'houzez_property_raring' ) ) {
         if ( !wp_verify_nonce( $nonce, 'property-rating-form-nonce') ) {
             echo json_encode( array(
                 'success' => false,
-                'msg' => esc_html__('Unverified Nonce!', 'houzez')
+                'msg' => esc_html__('Unverified Nonce!', 'houzez-child')
             ));
             wp_die();
         }

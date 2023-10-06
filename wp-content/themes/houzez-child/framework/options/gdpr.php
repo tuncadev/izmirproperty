@@ -1,7 +1,7 @@
 <?php
 global $houzez_opt_name, $allowed_html_array;
 Redux::setSection( $houzez_opt_name, array(
-    'title'  => esc_html__( 'GDPR Agreement', 'houzez' ),
+    'title'  => esc_html__( 'GDPR Agreement', 'houzez-child' ),
     'id'     => 'gdpr-agreement',
     'desc'   => '',
     'icon'   => 'el-icon-bookmark el-icon-small',
@@ -12,13 +12,13 @@ Redux::setSection( $houzez_opt_name, array(
             'type'   => 'info',
             'notice' => false,
             'style'  => 'info',
-            'title'  => esc_html__( 'GDPR for Add Property', 'houzez' ),
+            'title'  => esc_html__( 'GDPR for Add Property', 'houzez-child' ),
             'desc'   => ''
         ),
         array(
             'id'       => 'add-prop-gdpr-enabled',
             'type'     => 'switch',
-            'title'    => esc_html__( 'Enable/Disable GRPR on add property page.', 'houzez' ),
+            'title'    => esc_html__( 'Enable/Disable GRPR on add property page.', 'houzez-child' ),
             'desc'     => '',
             'subtitle' => '',
             'default'  => 0,
@@ -28,7 +28,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'add-prop-gdpr-label',
             'type'     => 'text',
-            'title'    => esc_html__( 'GDPR Label.', 'houzez' ),
+            'title'    => esc_html__( 'GDPR Label.', 'houzez-child' ),
             'desc'     => '',
             'subtitle' => '',
             'default'  => 'I consent to having this website to store my submitted infomation, read more infomation below',
@@ -36,7 +36,7 @@ Redux::setSection( $houzez_opt_name, array(
         array(
             'id'       => 'add-prop-gdpr-agreement-content',
             'type'     => 'textarea',
-            'title'    => esc_html__( 'GDPR Description', 'houzez' ),
+            'title'    => esc_html__( 'GDPR Description', 'houzez-child' ),
             'desc'     => '',
             'subtitle' => '',
             'default'  => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed risus lacus, sollicitudin at finibus at, pretium id dui. Nunc erat felis, pharetra id feugiat et, faucibus a justo. Donec eu condimentum nisi. Integer facilisis luctus massa, sit amet commodo nulla vehicula ac. Fusce vehicula nibh magna, in efficitur elit euismod eget. Quisque egestas consectetur diam, eu facilisis justo vestibulum a. Aenean facilisis volutpat orci. Mauris in pellentesque nulla. Maecenas justo felis, vestibulum non cursus sit amet, blandit et velit.

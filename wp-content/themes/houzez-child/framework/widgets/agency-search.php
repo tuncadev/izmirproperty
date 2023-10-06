@@ -15,8 +15,8 @@ class HOUZEZ_agency_search extends WP_Widget {
 
         parent::__construct(
             'houzez_agency_search', // Base ID
-            esc_html__( 'HOUZEZ: Agency Search', 'houzez' ), // Name
-            array( 'description' => esc_html__( 'Agency Search', 'houzez' ), 'classname' => 'widget-agency-search'  ) // Args
+            esc_html__( 'HOUZEZ: Agency Search', 'houzez-child' ), // Name
+            array( 'description' => esc_html__( 'Agency Search', 'houzez-child' ), 'classname' => 'widget-agency-search'  ) // Args
         );
 
     }
@@ -81,7 +81,7 @@ class HOUZEZ_agency_search extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez'); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e('Title:', 'houzez-child'); ?></label>
             <input type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
         </p>
 
